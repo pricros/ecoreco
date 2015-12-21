@@ -14,6 +14,9 @@
 		187B92D21C26716600DA3BDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187B92D01C26716600DA3BDF /* LaunchScreen.storyboard */; };
 		187B92DD1C26716600DA3BDF /* ecorecoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B92DC1C26716600DA3BDF /* ecorecoTests.swift */; };
 		187B92E81C26716600DA3BDF /* ecorecoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B92E71C26716600DA3BDF /* ecorecoUITests.swift */; };
+		187B92FB1C27B37300DA3BDF /* p1.png in Resources */ = {isa = PBXBuildFile; fileRef = 187B92FA1C27B37300DA3BDF /* p1.png */; };
+		187B92FE1C27B73400DA3BDF /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 187B92FC1C27B73400DA3BDF /* lock.png */; };
+		187B92FF1C27B73400DA3BDF /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = 187B92FD1C27B73400DA3BDF /* header.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		187B92E31C26716600DA3BDF /* ecorecoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ecorecoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		187B92E71C26716600DA3BDF /* ecorecoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ecorecoUITests.swift; sourceTree = "<group>"; };
 		187B92E91C26716600DA3BDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		187B92FA1C27B37300DA3BDF /* p1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = p1.png; path = images/p1.png; sourceTree = "<group>"; };
+		187B92FC1C27B73400DA3BDF /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lock.png; path = images/lock.png; sourceTree = "<group>"; };
+		187B92FD1C27B73400DA3BDF /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = header.png; path = images/header.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,7 @@
 		187B92BB1C26716500DA3BDF = {
 			isa = PBXGroup;
 			children = (
+				187B92F91C27B35F00DA3BDF /* images */,
 				187B92C61C26716500DA3BDF /* ecoreco */,
 				187B92DB1C26716600DA3BDF /* ecorecoTests */,
 				187B92E61C26716600DA3BDF /* ecorecoUITests */,
@@ -123,6 +130,16 @@
 				187B92E91C26716600DA3BDF /* Info.plist */,
 			);
 			path = ecorecoUITests;
+			sourceTree = "<group>";
+		};
+		187B92F91C27B35F00DA3BDF /* images */ = {
+			isa = PBXGroup;
+			children = (
+				187B92FC1C27B73400DA3BDF /* lock.png */,
+				187B92FD1C27B73400DA3BDF /* header.png */,
+				187B92FA1C27B37300DA3BDF /* p1.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,8 +249,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187B92FF1C27B73400DA3BDF /* header.png in Resources */,
 				187B92D21C26716600DA3BDF /* LaunchScreen.storyboard in Resources */,
+				187B92FE1C27B73400DA3BDF /* lock.png in Resources */,
 				187B92CF1C26716600DA3BDF /* Assets.xcassets in Resources */,
+				187B92FB1C27B37300DA3BDF /* p1.png in Resources */,
 				187B92CD1C26716600DA3BDF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
