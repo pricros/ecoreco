@@ -17,6 +17,12 @@
 		187B92FB1C27B37300DA3BDF /* p1.png in Resources */ = {isa = PBXBuildFile; fileRef = 187B92FA1C27B37300DA3BDF /* p1.png */; };
 		187B92FE1C27B73400DA3BDF /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 187B92FC1C27B73400DA3BDF /* lock.png */; };
 		187B92FF1C27B73400DA3BDF /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = 187B92FD1C27B73400DA3BDF /* header.png */; };
+		187B93051C27FAAD00DA3BDF /* speed.png in Resources */ = {isa = PBXBuildFile; fileRef = 187B93001C27FAAC00DA3BDF /* speed.png */; };
+		187B93061C27FAAD00DA3BDF /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 187B93011C27FAAC00DA3BDF /* arrow.png */; };
+		187B93071C27FAAD00DA3BDF /* odometer.png in Resources */ = {isa = PBXBuildFile; fileRef = 187B93021C27FAAC00DA3BDF /* odometer.png */; };
+		187B93081C27FAAD00DA3BDF /* dash1.png in Resources */ = {isa = PBXBuildFile; fileRef = 187B93031C27FAAD00DA3BDF /* dash1.png */; };
+		187B93091C27FAAD00DA3BDF /* header_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 187B93041C27FAAD00DA3BDF /* header_2.png */; };
+		187B930F1C28023400DA3BDF /* DashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B930E1C28023400DA3BDF /* DashViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,12 @@
 		187B92FA1C27B37300DA3BDF /* p1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = p1.png; path = images/p1.png; sourceTree = "<group>"; };
 		187B92FC1C27B73400DA3BDF /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lock.png; path = images/lock.png; sourceTree = "<group>"; };
 		187B92FD1C27B73400DA3BDF /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = header.png; path = images/header.png; sourceTree = "<group>"; };
+		187B93001C27FAAC00DA3BDF /* speed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = speed.png; path = images/speed.png; sourceTree = "<group>"; };
+		187B93011C27FAAC00DA3BDF /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrow.png; path = images/arrow.png; sourceTree = "<group>"; };
+		187B93021C27FAAC00DA3BDF /* odometer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = odometer.png; path = images/odometer.png; sourceTree = "<group>"; };
+		187B93031C27FAAD00DA3BDF /* dash1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dash1.png; path = images/dash1.png; sourceTree = "<group>"; };
+		187B93041C27FAAD00DA3BDF /* header_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = header_2.png; path = images/header_2.png; sourceTree = "<group>"; };
+		187B930E1C28023400DA3BDF /* DashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +122,7 @@
 				187B92CE1C26716600DA3BDF /* Assets.xcassets */,
 				187B92D01C26716600DA3BDF /* LaunchScreen.storyboard */,
 				187B92D31C26716600DA3BDF /* Info.plist */,
+				187B930E1C28023400DA3BDF /* DashViewController.swift */,
 			);
 			path = ecoreco;
 			sourceTree = "<group>";
@@ -135,6 +148,11 @@
 		187B92F91C27B35F00DA3BDF /* images */ = {
 			isa = PBXGroup;
 			children = (
+				187B93001C27FAAC00DA3BDF /* speed.png */,
+				187B93011C27FAAC00DA3BDF /* arrow.png */,
+				187B93021C27FAAC00DA3BDF /* odometer.png */,
+				187B93031C27FAAD00DA3BDF /* dash1.png */,
+				187B93041C27FAAD00DA3BDF /* header_2.png */,
 				187B92FC1C27B73400DA3BDF /* lock.png */,
 				187B92FD1C27B73400DA3BDF /* header.png */,
 				187B92FA1C27B37300DA3BDF /* p1.png */,
@@ -250,11 +268,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				187B92FF1C27B73400DA3BDF /* header.png in Resources */,
+				187B93071C27FAAD00DA3BDF /* odometer.png in Resources */,
 				187B92D21C26716600DA3BDF /* LaunchScreen.storyboard in Resources */,
 				187B92FE1C27B73400DA3BDF /* lock.png in Resources */,
+				187B93051C27FAAD00DA3BDF /* speed.png in Resources */,
 				187B92CF1C26716600DA3BDF /* Assets.xcassets in Resources */,
 				187B92FB1C27B37300DA3BDF /* p1.png in Resources */,
 				187B92CD1C26716600DA3BDF /* Main.storyboard in Resources */,
+				187B93091C27FAAD00DA3BDF /* header_2.png in Resources */,
+				187B93061C27FAAD00DA3BDF /* arrow.png in Resources */,
+				187B93081C27FAAD00DA3BDF /* dash1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				187B92CA1C26716500DA3BDF /* ViewController.swift in Sources */,
+				187B930F1C28023400DA3BDF /* DashViewController.swift in Sources */,
 				187B92C81C26716500DA3BDF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
