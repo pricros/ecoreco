@@ -14,6 +14,10 @@ class DashViewController: UIViewController {
     @IBOutlet weak var headerImage: UIImageView!
     @IBOutlet weak var speedImage: UIImageView!
     
+    @IBAction func goSetting(sender: AnyObject) {
+        self.navigationController?.pushViewController(self.storyboard?.instantiateViewControllerWithIdentifier("SettingView") as! SettingViewController, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,6 +27,9 @@ class DashViewController: UIViewController {
 //        partitionImage.image = image1
         speedImage.image = imageSpeed
         headerImage.image = imageHeader
+        
+    
+        
     }
     
     override func didReceiveMemoryWarning() {

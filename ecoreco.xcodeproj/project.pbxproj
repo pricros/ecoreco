@@ -23,6 +23,10 @@
 		187B93081C27FAAD00DA3BDF /* dash1.png in Resources */ = {isa = PBXBuildFile; fileRef = 187B93031C27FAAD00DA3BDF /* dash1.png */; };
 		187B93091C27FAAD00DA3BDF /* header_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 187B93041C27FAAD00DA3BDF /* header_2.png */; };
 		187B930F1C28023400DA3BDF /* DashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B930E1C28023400DA3BDF /* DashViewController.swift */; };
+		18B781831C2935FE00AF0C07 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B781821C2935FE00AF0C07 /* SettingViewController.swift */; };
+		18B781871C29374300AF0C07 /* p_4_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B781841C29374300AF0C07 /* p_4_1.png */; };
+		18B781881C29374300AF0C07 /* p_4_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B781851C29374300AF0C07 /* p_4_2.png */; };
+		18B781891C29374300AF0C07 /* p_4_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B781861C29374300AF0C07 /* p_4_3.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,10 @@
 		187B93031C27FAAD00DA3BDF /* dash1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dash1.png; path = images/dash1.png; sourceTree = "<group>"; };
 		187B93041C27FAAD00DA3BDF /* header_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = header_2.png; path = images/header_2.png; sourceTree = "<group>"; };
 		187B930E1C28023400DA3BDF /* DashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashViewController.swift; sourceTree = "<group>"; };
+		18B781821C2935FE00AF0C07 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		18B781841C29374300AF0C07 /* p_4_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p_4_1.png; sourceTree = "<group>"; };
+		18B781851C29374300AF0C07 /* p_4_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p_4_2.png; sourceTree = "<group>"; };
+		18B781861C29374300AF0C07 /* p_4_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p_4_3.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +131,7 @@
 				187B92D01C26716600DA3BDF /* LaunchScreen.storyboard */,
 				187B92D31C26716600DA3BDF /* Info.plist */,
 				187B930E1C28023400DA3BDF /* DashViewController.swift */,
+				18B781821C2935FE00AF0C07 /* SettingViewController.swift */,
 			);
 			path = ecoreco;
 			sourceTree = "<group>";
@@ -148,6 +157,9 @@
 		187B92F91C27B35F00DA3BDF /* images */ = {
 			isa = PBXGroup;
 			children = (
+				18B781841C29374300AF0C07 /* p_4_1.png */,
+				18B781851C29374300AF0C07 /* p_4_2.png */,
+				18B781861C29374300AF0C07 /* p_4_3.png */,
 				187B93001C27FAAC00DA3BDF /* speed.png */,
 				187B93011C27FAAC00DA3BDF /* arrow.png */,
 				187B93021C27FAAC00DA3BDF /* odometer.png */,
@@ -270,6 +282,7 @@
 				187B92FF1C27B73400DA3BDF /* header.png in Resources */,
 				187B93071C27FAAD00DA3BDF /* odometer.png in Resources */,
 				187B92D21C26716600DA3BDF /* LaunchScreen.storyboard in Resources */,
+				18B781891C29374300AF0C07 /* p_4_3.png in Resources */,
 				187B92FE1C27B73400DA3BDF /* lock.png in Resources */,
 				187B93051C27FAAD00DA3BDF /* speed.png in Resources */,
 				187B92CF1C26716600DA3BDF /* Assets.xcassets in Resources */,
@@ -277,7 +290,9 @@
 				187B92CD1C26716600DA3BDF /* Main.storyboard in Resources */,
 				187B93091C27FAAD00DA3BDF /* header_2.png in Resources */,
 				187B93061C27FAAD00DA3BDF /* arrow.png in Resources */,
+				18B781881C29374300AF0C07 /* p_4_2.png in Resources */,
 				187B93081C27FAAD00DA3BDF /* dash1.png in Resources */,
+				18B781871C29374300AF0C07 /* p_4_1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +320,7 @@
 				187B92CA1C26716500DA3BDF /* ViewController.swift in Sources */,
 				187B930F1C28023400DA3BDF /* DashViewController.swift in Sources */,
 				187B92C81C26716500DA3BDF /* AppDelegate.swift in Sources */,
+				18B781831C2935FE00AF0C07 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,6 +545,7 @@
 				187B92EE1C26716600DA3BDF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		187B92EF1C26716600DA3BDF /* Build configuration list for PBXNativeTarget "ecorecoTests" */ = {
 			isa = XCConfigurationList;
@@ -537,6 +554,7 @@
 				187B92F11C26716600DA3BDF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		187B92F21C26716600DA3BDF /* Build configuration list for PBXNativeTarget "ecorecoUITests" */ = {
 			isa = XCConfigurationList;
@@ -545,6 +563,7 @@
 				187B92F41C26716600DA3BDF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
