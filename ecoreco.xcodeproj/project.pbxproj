@@ -35,6 +35,14 @@
 		18EEF0C51C2A3C480065AFE7 /* img_mapBtn2.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EEF0BF1C2A3C480065AFE7 /* img_mapBtn2.png */; };
 		18EEF0C61C2A3C480065AFE7 /* img_mapBtn1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EEF0C01C2A3C480065AFE7 /* img_mapBtn1.png */; };
 		18EEF0C81C2AFEB40065AFE7 /* NRFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEF0C71C2AFEB40065AFE7 /* NRFManager.swift */; };
+		18EEF0CA1C2BB8B60065AFE7 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEF0C91C2BB8B60065AFE7 /* DashboardViewController.swift */; };
+		18EEF0D21C2BB9A90065AFE7 /* img_dashboardLine1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EEF0CB1C2BB9A90065AFE7 /* img_dashboardLine1.png */; };
+		18EEF0D31C2BB9A90065AFE7 /* img_dashBoardLine2.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EEF0CC1C2BB9A90065AFE7 /* img_dashBoardLine2.png */; };
+		18EEF0D41C2BB9A90065AFE7 /* img_dashboardBtn2.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EEF0CD1C2BB9A90065AFE7 /* img_dashboardBtn2.png */; };
+		18EEF0D51C2BB9A90065AFE7 /* img_modeBoostOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EEF0CE1C2BB9A90065AFE7 /* img_modeBoostOff.png */; };
+		18EEF0D61C2BB9A90065AFE7 /* img_modeEkickOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EEF0CF1C2BB9A90065AFE7 /* img_modeEkickOff.png */; };
+		18EEF0D71C2BB9A90065AFE7 /* img_modeRideOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EEF0D01C2BB9A90065AFE7 /* img_modeRideOff.png */; };
+		18EEF0D81C2BB9A90065AFE7 /* img_modeRideOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EEF0D11C2BB9A90065AFE7 /* img_modeRideOn.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +97,14 @@
 		18EEF0BF1C2A3C480065AFE7 /* img_mapBtn2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_mapBtn2.png; sourceTree = "<group>"; };
 		18EEF0C01C2A3C480065AFE7 /* img_mapBtn1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_mapBtn1.png; sourceTree = "<group>"; };
 		18EEF0C71C2AFEB40065AFE7 /* NRFManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRFManager.swift; sourceTree = "<group>"; };
+		18EEF0C91C2BB8B60065AFE7 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		18EEF0CB1C2BB9A90065AFE7 /* img_dashboardLine1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_dashboardLine1.png; sourceTree = "<group>"; };
+		18EEF0CC1C2BB9A90065AFE7 /* img_dashBoardLine2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_dashBoardLine2.png; sourceTree = "<group>"; };
+		18EEF0CD1C2BB9A90065AFE7 /* img_dashboardBtn2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_dashboardBtn2.png; sourceTree = "<group>"; };
+		18EEF0CE1C2BB9A90065AFE7 /* img_modeBoostOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_modeBoostOff.png; sourceTree = "<group>"; };
+		18EEF0CF1C2BB9A90065AFE7 /* img_modeEkickOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_modeEkickOff.png; sourceTree = "<group>"; };
+		18EEF0D01C2BB9A90065AFE7 /* img_modeRideOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_modeRideOff.png; sourceTree = "<group>"; };
+		18EEF0D11C2BB9A90065AFE7 /* img_modeRideOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_modeRideOn.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +159,7 @@
 				18EEF0C71C2AFEB40065AFE7 /* NRFManager.swift */,
 				18EEF0B91C2A3C380065AFE7 /* MapViewController.swift */,
 				187B92C71C26716500DA3BDF /* AppDelegate.swift */,
+				18EEF0C91C2BB8B60065AFE7 /* DashboardViewController.swift */,
 				187B92C91C26716500DA3BDF /* ViewController.swift */,
 				187B92CB1C26716600DA3BDF /* Main.storyboard */,
 				187B92CE1C26716600DA3BDF /* Assets.xcassets */,
@@ -175,6 +192,13 @@
 		187B92F91C27B35F00DA3BDF /* images */ = {
 			isa = PBXGroup;
 			children = (
+				18EEF0CB1C2BB9A90065AFE7 /* img_dashboardLine1.png */,
+				18EEF0CC1C2BB9A90065AFE7 /* img_dashBoardLine2.png */,
+				18EEF0CD1C2BB9A90065AFE7 /* img_dashboardBtn2.png */,
+				18EEF0CE1C2BB9A90065AFE7 /* img_modeBoostOff.png */,
+				18EEF0CF1C2BB9A90065AFE7 /* img_modeEkickOff.png */,
+				18EEF0D01C2BB9A90065AFE7 /* img_modeRideOff.png */,
+				18EEF0D11C2BB9A90065AFE7 /* img_modeRideOn.png */,
 				18EEF0BB1C2A3C480065AFE7 /* img_dashboardBtn1.png */,
 				18EEF0BC1C2A3C480065AFE7 /* img_dashBoardBg.png */,
 				18EEF0BD1C2A3C480065AFE7 /* img_mapBtn4.png */,
@@ -303,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18EEF0D71C2BB9A90065AFE7 /* img_modeRideOff.png in Resources */,
 				187B92FF1C27B73400DA3BDF /* header.png in Resources */,
 				187B93071C27FAAD00DA3BDF /* odometer.png in Resources */,
 				187B92D21C26716600DA3BDF /* LaunchScreen.storyboard in Resources */,
@@ -311,16 +336,22 @@
 				187B92FE1C27B73400DA3BDF /* lock.png in Resources */,
 				187B93051C27FAAD00DA3BDF /* speed.png in Resources */,
 				187B92CF1C26716600DA3BDF /* Assets.xcassets in Resources */,
+				18EEF0D81C2BB9A90065AFE7 /* img_modeRideOn.png in Resources */,
+				18EEF0D21C2BB9A90065AFE7 /* img_dashboardLine1.png in Resources */,
 				187B92FB1C27B37300DA3BDF /* p1.png in Resources */,
 				187B92CD1C26716600DA3BDF /* Main.storyboard in Resources */,
 				187B93091C27FAAD00DA3BDF /* header_2.png in Resources */,
 				18EEF0C51C2A3C480065AFE7 /* img_mapBtn2.png in Resources */,
+				18EEF0D41C2BB9A90065AFE7 /* img_dashboardBtn2.png in Resources */,
 				187B93061C27FAAD00DA3BDF /* arrow.png in Resources */,
 				18B781881C29374300AF0C07 /* p_4_2.png in Resources */,
 				18EEF0C31C2A3C480065AFE7 /* img_mapBtn4.png in Resources */,
 				187B93081C27FAAD00DA3BDF /* dash1.png in Resources */,
+				18EEF0D51C2BB9A90065AFE7 /* img_modeBoostOff.png in Resources */,
 				18EEF0C41C2A3C480065AFE7 /* img_mapBtn3.png in Resources */,
 				18EEF0C61C2A3C480065AFE7 /* img_mapBtn1.png in Resources */,
+				18EEF0D31C2BB9A90065AFE7 /* img_dashBoardLine2.png in Resources */,
+				18EEF0D61C2BB9A90065AFE7 /* img_modeEkickOff.png in Resources */,
 				18B781871C29374300AF0C07 /* p_4_1.png in Resources */,
 				18EEF0C11C2A3C480065AFE7 /* img_dashboardBtn1.png in Resources */,
 			);
@@ -348,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				187B92CA1C26716500DA3BDF /* ViewController.swift in Sources */,
+				18EEF0CA1C2BB8B60065AFE7 /* DashboardViewController.swift in Sources */,
 				187B930F1C28023400DA3BDF /* DashViewController.swift in Sources */,
 				187B92C81C26716500DA3BDF /* AppDelegate.swift in Sources */,
 				18EEF0BA1C2A3C380065AFE7 /* MapViewController.swift in Sources */,
