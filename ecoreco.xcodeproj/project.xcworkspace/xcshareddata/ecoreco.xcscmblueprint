@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D1126211801208D11A0CB5D42F8366C5D22592C3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D1126211801208D11A0CB5D42F8366C5D22592C3" : 0,
+    "18AA08754D2532593C9EAE73C4486599434125F9" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B05F4552-D312-45FE-AB2F-B6046B9F60B5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D1126211801208D11A0CB5D42F8366C5D22592C3" : "ecoreco\/",
+    "18AA08754D2532593C9EAE73C4486599434125F9" : "..\/map\/map"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ecoreco",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ecoreco.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/pricros\/map.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "18AA08754D2532593C9EAE73C4486599434125F9"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/pricros\/ecoreco.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D1126211801208D11A0CB5D42F8366C5D22592C3"
+    }
+  ]
+}

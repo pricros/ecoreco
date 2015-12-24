@@ -8,76 +8,121 @@ import UIKit
 class DashboardViewController: UIViewController {
 
     
-    
+    @IBOutlet weak var imgProfile: UIImageView!
+    @IBOutlet weak var imgPower: UIImageView!
     @IBOutlet weak var imgNavi: UIImageView!
-    
     @IBOutlet weak var imgSetting: UIImageView!
-    
-    @IBOutlet weak var scrollView: UIScrollView!
+
+    @IBOutlet weak var scrollMode: UIScrollView!
+
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //add tpa action to imgNavi
-        let tapGestureRecognizerImgNavi = UITapGestureRecognizer(target: self, action:Selector("tappedNavi"))
-        imgNavi.userInteractionEnabled = true
-        imgNavi.addGestureRecognizer(tapGestureRecognizerImgNavi)
         
         //add tpa action to imgSetting
         let tapGestureRecognizerImgSetting = UITapGestureRecognizer(target: self, action:Selector("tappedSetting"))
         imgSetting.userInteractionEnabled = true
         imgSetting.addGestureRecognizer(tapGestureRecognizerImgSetting)
+
         
+        //add tpa action to imgPower
+        let tapGestureRecognizerImgPower = UITapGestureRecognizer(target: self, action:Selector("tappedPower"))
+        imgPower.userInteractionEnabled = true
+        imgPower.addGestureRecognizer(tapGestureRecognizerImgPower)
+
+        
+        //add tpa action to imgProfile
+        let tapGestureRecognizerImgProfile = UITapGestureRecognizer(target: self, action:Selector("tappedProfile"))
+        imgProfile.userInteractionEnabled = true
+        imgProfile.addGestureRecognizer(tapGestureRecognizerImgProfile)
+
+        //add tpa action to imgNavi
+        let tapGestureRecognizerImgNavi = UITapGestureRecognizer(target: self, action:Selector("tappedNavi"))
+        imgNavi.userInteractionEnabled = true
+        imgNavi.addGestureRecognizer(tapGestureRecognizerImgNavi)
+        
+        
+        
+        //scroll view
+        let scrollingView = modeButtonsView()
+        scrollMode.addSubview(scrollingView)
+        scrollMode.contentSize = scrollingView.frame.size
+        scrollMode.scrollEnabled = true
+        scrollMode.showsHorizontalScrollIndicator = true
+        scrollMode.indicatorStyle = .Default
         
     }
 
+    func tappedSetting(){
+        self.navigationController?.pushViewController(self.storyboard?.instantiateViewControllerWithIdentifier("SettingView") as! SettingViewController, animated: true)
+    }
     
+    func tappedPower(){
+        appDelegate.sendData("0")
+        print("power off")
+    }
+    
+    func tappedProfile(){
+        appDelegate.sendData("1")
+        print("go to profilt")
+    }
     
     func tappedNavi(){
         self.navigationController?.pushViewController(self.storyboard?.instantiateViewControllerWithIdentifier("MapView") as! MapViewController, animated: true)
     }
     
 
-    func tappedSetting(){
-         self.navigationController?.pushViewController(self.storyboard?.instantiateViewControllerWithIdentifier("SettingView") as! SettingViewController, animated: true)
+    var lastMode: UIButton?
+    func modePressed(sender:UIButton){
+        lastMode?.backgroundColor = UIColor.grayColor()
+        sender.backgroundColor = UIColor(hue: 0.5, saturation: 0.5, brightness: 1.0, alpha: 1.0)
+        self.lastMode = sender
     }
     
     
+    func modeButtonsView() -> UIView {
+        let images = [
+            UIImage(named: "img_modeBoostOff.png") as UIImage!,
+            UIImage(named: "img_modeRideOff.png") as UIImage!,
+            UIImage(named: "img_modeEkickOff.png") as UIImage!,
+            UIImage(named: "img_modeEkickOff.png") as UIImage!,
+            UIImage(named: "img_modeEkickOff.png") as UIImage!,
+            UIImage(named: "img_modeEkickOff.png") as UIImage!
+        ]
+        
+        let buttonView = UIView()
+ 
+        buttonView.backgroundColor = UIColor.blackColor()
+        buttonView.frame.origin = CGPointMake(0,0)
+        
+        let padding = CGSizeMake(10, 0)
+        let buttonSize = CGSizeMake(109.0,75.0)//same with image size
+        buttonView.frame.size.width = (buttonSize.width + padding.width) * CGFloat(images.count)
+        buttonView.frame.size.height = 75
+        
+        var buttonPosition = CGPointMake(padding.width * 0.5, padding.height)
+        let buttonIncrement = buttonSize.width + padding.width
+
+        for i in 0 ... (images.count-1)  {
+            let button = UIButton(type: .Custom) as UIButton
+            button.setImage(images[i], forState: .Normal)
+            
+            button.frame.size = buttonSize
+            button.frame.origin = buttonPosition
+            buttonPosition.x = buttonPosition.x + buttonIncrement
+            button.backgroundColor = UIColor.grayColor()
+            button.addTarget(self, action: "modePressed:", forControlEvents: .TouchUpInside)
+            
+            buttonView.addSubview(button)
+        }
+
+        return buttonView
+    }
     
     
-    
-    
-//    
-//    func sample {
-//        OTPageView *PScrollView = [[OTPageView alloc]
-//        initWithFrame:CGRectMake(0, 60, [[UIScreen mainScreen] bounds].size.width, 200)];
-//        PScrollView.pageScrollView.dataSource = self;
-//        PScrollView.pageScrollView.delegate = self;
-//        PScrollView.pageScrollView.padding =50;
-//        PScrollView.pageScrollView.leftRightOffset = 0;
-//        PScrollView.pageScrollView.frame = CGRectMake(([[UIScreen mainScreen] bounds].size.width -150)/2, 60, 150, 100);
-//        
-//        PScrollView.backgroundColor = [UIColor colorWithRed:239.0f/255.0f green:79.0f/255.0f blue:104.0f/255.0f alpha:1.0f];
-//        
-//        _dataArray = [NSArray arrayWithObjects: @"0 Google", @"1 Yahoo", @"2 Facebook", @"3 Twitter", @"4 Amazon", @"5 microsoft", @"6 evernote", @"7 MSN", @"8 abc", @"9 123",nil];
-//        
-//        
-//        [PScrollView.pageScrollView reloadData];
-//        [self.view addSubview:PScrollView];
-//        UIView *arrowView = [[UIView alloc] initWithFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width/2-2, 260, 4, 10)];
-//        arrowView.backgroundColor = [UIColor colorWithRed:239.0f/255.0f green:79.0f/255.0f blue:104.0f/255.0f alpha:1.0f];
-//        [self.view addSubview:arrowView];} -
-//    
-//    (NSInteger)numberOfPageInPageScrollView:(OTPageScrollView*)pageScrollView{
-//    return [_dataArray count];
-//    }
-//    
-//    (UIView*)pageScrollView:(OTPageScrollView*)pageScrollView viewForRowAtIndex:(int)index{ UIView *cell = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)]; cell.backgroundColor = [UIColor whiteColor]; UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, cell.frame.size.width-40, cell.frame.size.height - 40)]; label.text = _dataArray[index]; [cell addSubview:label]; return cell; } - (CGSize)sizeCellForPageScrollView:(OTPageScrollView*)pageScrollView { return CGSizeMake(100, 100); } - (void)pageScrollView:(OTPageScrollView *)pageScrollView didTapPageAtIndex:(NSInteger)index{ NSLog(@"click cell at %ld",index); } - (void)scrollViewDidEndDecelerating:(UIScrollView *)
-//    
-//    scrollView { NSInteger index = scrollView.contentOffset.x / scrollView.frame.size.width; NSLog(@"click cell at %ld",index);
-//    
-//    
-//    }
+
 }
 
