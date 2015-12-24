@@ -28,8 +28,7 @@ class DashViewController: UIViewController {
         speedImage.image = imageSpeed
         headerImage.image = imageHeader
         
-    
-        
+
     }
     
     override func didReceiveMemoryWarning() {

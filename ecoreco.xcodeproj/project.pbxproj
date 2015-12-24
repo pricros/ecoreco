@@ -27,6 +27,14 @@
 		18B781871C29374300AF0C07 /* p_4_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B781841C29374300AF0C07 /* p_4_1.png */; };
 		18B781881C29374300AF0C07 /* p_4_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B781851C29374300AF0C07 /* p_4_2.png */; };
 		18B781891C29374300AF0C07 /* p_4_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B781861C29374300AF0C07 /* p_4_3.png */; };
+		18EEF0BA1C2A3C380065AFE7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEF0B91C2A3C380065AFE7 /* MapViewController.swift */; };
+		18EEF0C11C2A3C480065AFE7 /* img_dashboardBtn1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EEF0BB1C2A3C480065AFE7 /* img_dashboardBtn1.png */; };
+		18EEF0C21C2A3C480065AFE7 /* img_dashBoardBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EEF0BC1C2A3C480065AFE7 /* img_dashBoardBg.png */; };
+		18EEF0C31C2A3C480065AFE7 /* img_mapBtn4.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EEF0BD1C2A3C480065AFE7 /* img_mapBtn4.png */; };
+		18EEF0C41C2A3C480065AFE7 /* img_mapBtn3.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EEF0BE1C2A3C480065AFE7 /* img_mapBtn3.png */; };
+		18EEF0C51C2A3C480065AFE7 /* img_mapBtn2.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EEF0BF1C2A3C480065AFE7 /* img_mapBtn2.png */; };
+		18EEF0C61C2A3C480065AFE7 /* img_mapBtn1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EEF0C01C2A3C480065AFE7 /* img_mapBtn1.png */; };
+		18EEF0C81C2AFEB40065AFE7 /* NRFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEF0C71C2AFEB40065AFE7 /* NRFManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +81,14 @@
 		18B781841C29374300AF0C07 /* p_4_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p_4_1.png; sourceTree = "<group>"; };
 		18B781851C29374300AF0C07 /* p_4_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p_4_2.png; sourceTree = "<group>"; };
 		18B781861C29374300AF0C07 /* p_4_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p_4_3.png; sourceTree = "<group>"; };
+		18EEF0B91C2A3C380065AFE7 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		18EEF0BB1C2A3C480065AFE7 /* img_dashboardBtn1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_dashboardBtn1.png; sourceTree = "<group>"; };
+		18EEF0BC1C2A3C480065AFE7 /* img_dashBoardBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_dashBoardBg.png; sourceTree = "<group>"; };
+		18EEF0BD1C2A3C480065AFE7 /* img_mapBtn4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_mapBtn4.png; sourceTree = "<group>"; };
+		18EEF0BE1C2A3C480065AFE7 /* img_mapBtn3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_mapBtn3.png; sourceTree = "<group>"; };
+		18EEF0BF1C2A3C480065AFE7 /* img_mapBtn2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_mapBtn2.png; sourceTree = "<group>"; };
+		18EEF0C01C2A3C480065AFE7 /* img_mapBtn1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_mapBtn1.png; sourceTree = "<group>"; };
+		18EEF0C71C2AFEB40065AFE7 /* NRFManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRFManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +140,8 @@
 		187B92C61C26716500DA3BDF /* ecoreco */ = {
 			isa = PBXGroup;
 			children = (
+				18EEF0C71C2AFEB40065AFE7 /* NRFManager.swift */,
+				18EEF0B91C2A3C380065AFE7 /* MapViewController.swift */,
 				187B92C71C26716500DA3BDF /* AppDelegate.swift */,
 				187B92C91C26716500DA3BDF /* ViewController.swift */,
 				187B92CB1C26716600DA3BDF /* Main.storyboard */,
@@ -157,6 +175,12 @@
 		187B92F91C27B35F00DA3BDF /* images */ = {
 			isa = PBXGroup;
 			children = (
+				18EEF0BB1C2A3C480065AFE7 /* img_dashboardBtn1.png */,
+				18EEF0BC1C2A3C480065AFE7 /* img_dashBoardBg.png */,
+				18EEF0BD1C2A3C480065AFE7 /* img_mapBtn4.png */,
+				18EEF0BE1C2A3C480065AFE7 /* img_mapBtn3.png */,
+				18EEF0BF1C2A3C480065AFE7 /* img_mapBtn2.png */,
+				18EEF0C01C2A3C480065AFE7 /* img_mapBtn1.png */,
 				18B781841C29374300AF0C07 /* p_4_1.png */,
 				18B781851C29374300AF0C07 /* p_4_2.png */,
 				18B781861C29374300AF0C07 /* p_4_3.png */,
@@ -282,6 +306,7 @@
 				187B92FF1C27B73400DA3BDF /* header.png in Resources */,
 				187B93071C27FAAD00DA3BDF /* odometer.png in Resources */,
 				187B92D21C26716600DA3BDF /* LaunchScreen.storyboard in Resources */,
+				18EEF0C21C2A3C480065AFE7 /* img_dashBoardBg.png in Resources */,
 				18B781891C29374300AF0C07 /* p_4_3.png in Resources */,
 				187B92FE1C27B73400DA3BDF /* lock.png in Resources */,
 				187B93051C27FAAD00DA3BDF /* speed.png in Resources */,
@@ -289,10 +314,15 @@
 				187B92FB1C27B37300DA3BDF /* p1.png in Resources */,
 				187B92CD1C26716600DA3BDF /* Main.storyboard in Resources */,
 				187B93091C27FAAD00DA3BDF /* header_2.png in Resources */,
+				18EEF0C51C2A3C480065AFE7 /* img_mapBtn2.png in Resources */,
 				187B93061C27FAAD00DA3BDF /* arrow.png in Resources */,
 				18B781881C29374300AF0C07 /* p_4_2.png in Resources */,
+				18EEF0C31C2A3C480065AFE7 /* img_mapBtn4.png in Resources */,
 				187B93081C27FAAD00DA3BDF /* dash1.png in Resources */,
+				18EEF0C41C2A3C480065AFE7 /* img_mapBtn3.png in Resources */,
+				18EEF0C61C2A3C480065AFE7 /* img_mapBtn1.png in Resources */,
 				18B781871C29374300AF0C07 /* p_4_1.png in Resources */,
+				18EEF0C11C2A3C480065AFE7 /* img_dashboardBtn1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +350,8 @@
 				187B92CA1C26716500DA3BDF /* ViewController.swift in Sources */,
 				187B930F1C28023400DA3BDF /* DashViewController.swift in Sources */,
 				187B92C81C26716500DA3BDF /* AppDelegate.swift in Sources */,
+				18EEF0BA1C2A3C380065AFE7 /* MapViewController.swift in Sources */,
+				18EEF0C81C2AFEB40065AFE7 /* NRFManager.swift in Sources */,
 				18B781831C2935FE00AF0C07 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
