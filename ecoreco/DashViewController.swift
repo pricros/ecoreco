@@ -13,6 +13,8 @@ class DashViewController: UIViewController {
     
     @IBOutlet weak var headerImage: UIImageView!
     @IBOutlet weak var speedImage: UIImageView!
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
     
     @IBAction func goSetting(sender: AnyObject) {
         self.navigationController?.pushViewController(self.storyboard?.instantiateViewControllerWithIdentifier("SettingView") as! SettingViewController, animated: true)
@@ -36,4 +38,20 @@ class DashViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func mode2(sender: UIButton) {
+        appDelegate.sendData("M2")
+    }
+    
+    @IBAction func mode1(sender: UIButton) {
+        appDelegate.sendData("M1")
+    }
+    
+    
+    @IBAction func light(sender: UIButton) {
+        appDelegate.sendData("1")
+    }
+    
+    @IBAction func turnoff(sender: AnyObject) {
+        appDelegate.sendData("0")
+    }
 }

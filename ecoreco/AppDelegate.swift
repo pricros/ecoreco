@@ -9,14 +9,31 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate ,NRFManagerDelegate {
 
     var window: UIWindow?
+    var nrfManager:NRFManager!
 
- 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        nrfManager = NRFManager(
+            onConnect: {
+                self.log("\(__FILE__) \(__LINE__) \nC: ★ Connected")
+            },
+            onDisconnect: {
+                self.log("\(__FILE__) \(__LINE__) \nC: ★ Disconnected")
+            },
+            onData: {
+                (data:NSData?, string:String?)->() in
+                self.log("\(__FILE__) \(__LINE__) \nC: ⬇ Received data - String: \(string) - Data: \(data)")
+            },
+            autoConnect: false
+        )
+        
+        nrfManager.verbose = true
+        nrfManager.delegate = self
+        
         return true
     }
 
@@ -40,6 +57,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func log(string:String)
+    {
+        print(string)
+    }
+
+    func sendData(string:String)
+    {
+        let result = self.nrfManager.writeString(string)
+        log("\(__FILE__) \(__LINE__) \n⬆ Sent string: \(string) - Result: \(result)")
     }
 
 

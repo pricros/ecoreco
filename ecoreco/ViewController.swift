@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var headerImage: UIImageView!
     @IBOutlet weak var lockImage: UIImageView!
     @IBOutlet weak var partitionImage: UIImageView!
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,7 @@ class ViewController: UIViewController {
         
         let digit = sender.currentTitle
         print("digit=\(digit)")
+        appDelegate.nrfManager.connect()
         
     }
 
