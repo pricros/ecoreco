@@ -9,21 +9,6 @@
 /* Begin PBXBuildFile section */
 		1876A54F1C30D6CB0016EBCA /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A54E1C30D6CB0016EBCA /* header.png */; };
 		1876A5511C30DB400016EBCA /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5501C30DB400016EBCA /* settings.png */; };
-		1876A5611C30F30F0016EBCA /* img_dashboardBattery.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5521C30F30F0016EBCA /* img_dashboardBattery.png */; };
-		1876A5621C30F30F0016EBCA /* img_dashboardBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5531C30F30F0016EBCA /* img_dashboardBg.png */; };
-		1876A5631C30F30F0016EBCA /* img_dashboardBtnNavi.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5541C30F30F0016EBCA /* img_dashboardBtnNavi.png */; };
-		1876A5641C30F30F0016EBCA /* img_dashBoardPower.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5551C30F30F0016EBCA /* img_dashBoardPower.png */; };
-		1876A5651C30F30F0016EBCA /* img_dashBoardProfile.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5561C30F30F0016EBCA /* img_dashBoardProfile.png */; };
-		1876A5661C30F30F0016EBCA /* img_dashBoardSetting.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5571C30F30F0016EBCA /* img_dashBoardSetting.png */; };
-		1876A5671C30F30F0016EBCA /* img_mapBtn1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5581C30F30F0016EBCA /* img_mapBtn1.png */; };
-		1876A5681C30F30F0016EBCA /* img_mapBtn2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5591C30F30F0016EBCA /* img_mapBtn2.png */; };
-		1876A5691C30F30F0016EBCA /* img_mapBtn3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A55A1C30F30F0016EBCA /* img_mapBtn3.png */; };
-		1876A56A1C30F30F0016EBCA /* img_mapBtn4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A55B1C30F30F0016EBCA /* img_mapBtn4.png */; };
-		1876A56B1C30F30F0016EBCA /* img_modeBoostOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A55C1C30F30F0016EBCA /* img_modeBoostOff.png */; };
-		1876A56C1C30F30F0016EBCA /* img_modeEkickOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A55D1C30F30F0016EBCA /* img_modeEkickOff.png */; };
-		1876A56D1C30F30F0016EBCA /* img_modeRideOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A55E1C30F30F0016EBCA /* img_modeRideOff.png */; };
-		1876A56E1C30F30F0016EBCA /* img_dashboardLine1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A55F1C30F30F0016EBCA /* img_dashboardLine1.png */; };
-		1876A56F1C30F30F0016EBCA /* img_dashBoardLine2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5601C30F30F0016EBCA /* img_dashBoardLine2.png */; };
 		1876A5711C311C890016EBCA /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5701C311C890016EBCA /* back.png */; };
 		1876A5731C322EC00016EBCA /* digit_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5721C322EC00016EBCA /* digit_1.png */; };
 		1876A57E1C3238E60016EBCA /* digit_clear.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5741C3238E60016EBCA /* digit_clear.png */; };
@@ -36,6 +21,29 @@
 		1876A5851C3238E60016EBCA /* digit_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A57B1C3238E60016EBCA /* digit_4.png */; };
 		1876A5861C3238E60016EBCA /* digit_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A57C1C3238E60016EBCA /* digit_3.png */; };
 		1876A5871C3238E60016EBCA /* digit_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A57D1C3238E60016EBCA /* digit_2.png */; };
+		1876A59F1C3265430016EBCA /* dashboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5881C3265430016EBCA /* dashboard.png */; };
+		1876A5A01C3265430016EBCA /* iconBattery.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5891C3265430016EBCA /* iconBattery.png */; };
+		1876A5A11C3265430016EBCA /* iconNavi.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A58A1C3265430016EBCA /* iconNavi.png */; };
+		1876A5A21C3265430016EBCA /* iconPowerOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A58B1C3265430016EBCA /* iconPowerOff.png */; };
+		1876A5A31C3265430016EBCA /* iconPowerOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A58C1C3265430016EBCA /* iconPowerOn.png */; };
+		1876A5A41C3265430016EBCA /* iconProfile.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A58D1C3265430016EBCA /* iconProfile.png */; };
+		1876A5A51C3265430016EBCA /* iconSetting.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A58E1C3265430016EBCA /* iconSetting.png */; };
+		1876A5A61C3265430016EBCA /* iconSpeed.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A58F1C3265430016EBCA /* iconSpeed.png */; };
+		1876A5A71C3265430016EBCA /* infoBattery.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5901C3265430016EBCA /* infoBattery.png */; };
+		1876A5A81C3265430016EBCA /* infoRangeEst.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5911C3265430016EBCA /* infoRangeEst.png */; };
+		1876A5A91C3265430016EBCA /* infoTrip.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5921C3265430016EBCA /* infoTrip.png */; };
+		1876A5AA1C3265430016EBCA /* lineBottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5931C3265430016EBCA /* lineBottom.png */; };
+		1876A5AB1C3265430016EBCA /* lineTop.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5941C3265430016EBCA /* lineTop.png */; };
+		1876A5AC1C3265430016EBCA /* modeBoostOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5951C3265430016EBCA /* modeBoostOff.png */; };
+		1876A5AD1C3265430016EBCA /* modeBoostOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5961C3265430016EBCA /* modeBoostOn.png */; };
+		1876A5AE1C3265430016EBCA /* modeEcoOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5971C3265430016EBCA /* modeEcoOff.png */; };
+		1876A5AF1C3265430016EBCA /* modeEcoOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5981C3265430016EBCA /* modeEcoOn.png */; };
+		1876A5B01C3265430016EBCA /* modeEkickAmplifiedOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5991C3265430016EBCA /* modeEkickAmplifiedOff.png */; };
+		1876A5B11C3265430016EBCA /* modeEkickAmplifiedOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A59A1C3265430016EBCA /* modeEkickAmplifiedOn.png */; };
+		1876A5B21C3265430016EBCA /* modeEkickExtendOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A59B1C3265430016EBCA /* modeEkickExtendOff.png */; };
+		1876A5B31C3265430016EBCA /* modeEkickExtendOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A59C1C3265430016EBCA /* modeEkickExtendOn.png */; };
+		1876A5B41C3265430016EBCA /* modeRideOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A59D1C3265430016EBCA /* modeRideOff.png */; };
+		1876A5B51C3265430016EBCA /* modeRideOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A59E1C3265430016EBCA /* modeRideOn.png */; };
 		187B92C81C26716500DA3BDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B92C71C26716500DA3BDF /* AppDelegate.swift */; };
 		187B92CA1C26716500DA3BDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B92C91C26716500DA3BDF /* ViewController.swift */; };
 		187B92CD1C26716600DA3BDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187B92CB1C26716600DA3BDF /* Main.storyboard */; };
@@ -70,21 +78,6 @@
 /* Begin PBXFileReference section */
 		1876A54E1C30D6CB0016EBCA /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = header.png; path = images/header.png; sourceTree = "<group>"; };
 		1876A5501C30DB400016EBCA /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = images/settings.png; sourceTree = "<group>"; };
-		1876A5521C30F30F0016EBCA /* img_dashboardBattery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img_dashboardBattery.png; path = images/img_dashboardBattery.png; sourceTree = "<group>"; };
-		1876A5531C30F30F0016EBCA /* img_dashboardBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img_dashboardBg.png; path = images/img_dashboardBg.png; sourceTree = "<group>"; };
-		1876A5541C30F30F0016EBCA /* img_dashboardBtnNavi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img_dashboardBtnNavi.png; path = images/img_dashboardBtnNavi.png; sourceTree = "<group>"; };
-		1876A5551C30F30F0016EBCA /* img_dashBoardPower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img_dashBoardPower.png; path = images/img_dashBoardPower.png; sourceTree = "<group>"; };
-		1876A5561C30F30F0016EBCA /* img_dashBoardProfile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img_dashBoardProfile.png; path = images/img_dashBoardProfile.png; sourceTree = "<group>"; };
-		1876A5571C30F30F0016EBCA /* img_dashBoardSetting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img_dashBoardSetting.png; path = images/img_dashBoardSetting.png; sourceTree = "<group>"; };
-		1876A5581C30F30F0016EBCA /* img_mapBtn1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img_mapBtn1.png; path = images/img_mapBtn1.png; sourceTree = "<group>"; };
-		1876A5591C30F30F0016EBCA /* img_mapBtn2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img_mapBtn2.png; path = images/img_mapBtn2.png; sourceTree = "<group>"; };
-		1876A55A1C30F30F0016EBCA /* img_mapBtn3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img_mapBtn3.png; path = images/img_mapBtn3.png; sourceTree = "<group>"; };
-		1876A55B1C30F30F0016EBCA /* img_mapBtn4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img_mapBtn4.png; path = images/img_mapBtn4.png; sourceTree = "<group>"; };
-		1876A55C1C30F30F0016EBCA /* img_modeBoostOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img_modeBoostOff.png; path = images/img_modeBoostOff.png; sourceTree = "<group>"; };
-		1876A55D1C30F30F0016EBCA /* img_modeEkickOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img_modeEkickOff.png; path = images/img_modeEkickOff.png; sourceTree = "<group>"; };
-		1876A55E1C30F30F0016EBCA /* img_modeRideOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img_modeRideOff.png; path = images/img_modeRideOff.png; sourceTree = "<group>"; };
-		1876A55F1C30F30F0016EBCA /* img_dashboardLine1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img_dashboardLine1.png; path = images/img_dashboardLine1.png; sourceTree = "<group>"; };
-		1876A5601C30F30F0016EBCA /* img_dashBoardLine2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img_dashBoardLine2.png; path = images/img_dashBoardLine2.png; sourceTree = "<group>"; };
 		1876A5701C311C890016EBCA /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = images/back.png; sourceTree = "<group>"; };
 		1876A5721C322EC00016EBCA /* digit_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = digit_1.png; path = images/digit_1.png; sourceTree = "<group>"; };
 		1876A5741C3238E60016EBCA /* digit_clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = digit_clear.png; path = images/digit_clear.png; sourceTree = "<group>"; };
@@ -97,6 +90,29 @@
 		1876A57B1C3238E60016EBCA /* digit_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = digit_4.png; path = images/digit_4.png; sourceTree = "<group>"; };
 		1876A57C1C3238E60016EBCA /* digit_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = digit_3.png; path = images/digit_3.png; sourceTree = "<group>"; };
 		1876A57D1C3238E60016EBCA /* digit_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = digit_2.png; path = images/digit_2.png; sourceTree = "<group>"; };
+		1876A5881C3265430016EBCA /* dashboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dashboard.png; path = images/dashboard.png; sourceTree = "<group>"; };
+		1876A5891C3265430016EBCA /* iconBattery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconBattery.png; path = images/iconBattery.png; sourceTree = "<group>"; };
+		1876A58A1C3265430016EBCA /* iconNavi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconNavi.png; path = images/iconNavi.png; sourceTree = "<group>"; };
+		1876A58B1C3265430016EBCA /* iconPowerOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconPowerOff.png; path = images/iconPowerOff.png; sourceTree = "<group>"; };
+		1876A58C1C3265430016EBCA /* iconPowerOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconPowerOn.png; path = images/iconPowerOn.png; sourceTree = "<group>"; };
+		1876A58D1C3265430016EBCA /* iconProfile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconProfile.png; path = images/iconProfile.png; sourceTree = "<group>"; };
+		1876A58E1C3265430016EBCA /* iconSetting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconSetting.png; path = images/iconSetting.png; sourceTree = "<group>"; };
+		1876A58F1C3265430016EBCA /* iconSpeed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconSpeed.png; path = images/iconSpeed.png; sourceTree = "<group>"; };
+		1876A5901C3265430016EBCA /* infoBattery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = infoBattery.png; path = images/infoBattery.png; sourceTree = "<group>"; };
+		1876A5911C3265430016EBCA /* infoRangeEst.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = infoRangeEst.png; path = images/infoRangeEst.png; sourceTree = "<group>"; };
+		1876A5921C3265430016EBCA /* infoTrip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = infoTrip.png; path = images/infoTrip.png; sourceTree = "<group>"; };
+		1876A5931C3265430016EBCA /* lineBottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lineBottom.png; path = images/lineBottom.png; sourceTree = "<group>"; };
+		1876A5941C3265430016EBCA /* lineTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lineTop.png; path = images/lineTop.png; sourceTree = "<group>"; };
+		1876A5951C3265430016EBCA /* modeBoostOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = modeBoostOff.png; path = images/modeBoostOff.png; sourceTree = "<group>"; };
+		1876A5961C3265430016EBCA /* modeBoostOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = modeBoostOn.png; path = images/modeBoostOn.png; sourceTree = "<group>"; };
+		1876A5971C3265430016EBCA /* modeEcoOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = modeEcoOff.png; path = images/modeEcoOff.png; sourceTree = "<group>"; };
+		1876A5981C3265430016EBCA /* modeEcoOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = modeEcoOn.png; path = images/modeEcoOn.png; sourceTree = "<group>"; };
+		1876A5991C3265430016EBCA /* modeEkickAmplifiedOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = modeEkickAmplifiedOff.png; path = images/modeEkickAmplifiedOff.png; sourceTree = "<group>"; };
+		1876A59A1C3265430016EBCA /* modeEkickAmplifiedOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = modeEkickAmplifiedOn.png; path = images/modeEkickAmplifiedOn.png; sourceTree = "<group>"; };
+		1876A59B1C3265430016EBCA /* modeEkickExtendOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = modeEkickExtendOff.png; path = images/modeEkickExtendOff.png; sourceTree = "<group>"; };
+		1876A59C1C3265430016EBCA /* modeEkickExtendOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = modeEkickExtendOn.png; path = images/modeEkickExtendOn.png; sourceTree = "<group>"; };
+		1876A59D1C3265430016EBCA /* modeRideOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = modeRideOff.png; path = images/modeRideOff.png; sourceTree = "<group>"; };
+		1876A59E1C3265430016EBCA /* modeRideOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = modeRideOn.png; path = images/modeRideOn.png; sourceTree = "<group>"; };
 		187B92C41C26716500DA3BDF /* ecoreco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ecoreco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		187B92C71C26716500DA3BDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		187B92C91C26716500DA3BDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -201,6 +217,29 @@
 		187B92F91C27B35F00DA3BDF /* images */ = {
 			isa = PBXGroup;
 			children = (
+				1876A5881C3265430016EBCA /* dashboard.png */,
+				1876A5891C3265430016EBCA /* iconBattery.png */,
+				1876A58A1C3265430016EBCA /* iconNavi.png */,
+				1876A58B1C3265430016EBCA /* iconPowerOff.png */,
+				1876A58C1C3265430016EBCA /* iconPowerOn.png */,
+				1876A58D1C3265430016EBCA /* iconProfile.png */,
+				1876A58E1C3265430016EBCA /* iconSetting.png */,
+				1876A58F1C3265430016EBCA /* iconSpeed.png */,
+				1876A5901C3265430016EBCA /* infoBattery.png */,
+				1876A5911C3265430016EBCA /* infoRangeEst.png */,
+				1876A5921C3265430016EBCA /* infoTrip.png */,
+				1876A5931C3265430016EBCA /* lineBottom.png */,
+				1876A5941C3265430016EBCA /* lineTop.png */,
+				1876A5951C3265430016EBCA /* modeBoostOff.png */,
+				1876A5961C3265430016EBCA /* modeBoostOn.png */,
+				1876A5971C3265430016EBCA /* modeEcoOff.png */,
+				1876A5981C3265430016EBCA /* modeEcoOn.png */,
+				1876A5991C3265430016EBCA /* modeEkickAmplifiedOff.png */,
+				1876A59A1C3265430016EBCA /* modeEkickAmplifiedOn.png */,
+				1876A59B1C3265430016EBCA /* modeEkickExtendOff.png */,
+				1876A59C1C3265430016EBCA /* modeEkickExtendOn.png */,
+				1876A59D1C3265430016EBCA /* modeRideOff.png */,
+				1876A59E1C3265430016EBCA /* modeRideOn.png */,
 				1876A5741C3238E60016EBCA /* digit_clear.png */,
 				1876A5751C3238E60016EBCA /* digit_0.png */,
 				1876A5761C3238E60016EBCA /* digit_9.png */,
@@ -213,21 +252,6 @@
 				1876A57D1C3238E60016EBCA /* digit_2.png */,
 				1876A5721C322EC00016EBCA /* digit_1.png */,
 				1876A5701C311C890016EBCA /* back.png */,
-				1876A5521C30F30F0016EBCA /* img_dashboardBattery.png */,
-				1876A5531C30F30F0016EBCA /* img_dashboardBg.png */,
-				1876A5541C30F30F0016EBCA /* img_dashboardBtnNavi.png */,
-				1876A5551C30F30F0016EBCA /* img_dashBoardPower.png */,
-				1876A5561C30F30F0016EBCA /* img_dashBoardProfile.png */,
-				1876A5571C30F30F0016EBCA /* img_dashBoardSetting.png */,
-				1876A5581C30F30F0016EBCA /* img_mapBtn1.png */,
-				1876A5591C30F30F0016EBCA /* img_mapBtn2.png */,
-				1876A55A1C30F30F0016EBCA /* img_mapBtn3.png */,
-				1876A55B1C30F30F0016EBCA /* img_mapBtn4.png */,
-				1876A55C1C30F30F0016EBCA /* img_modeBoostOff.png */,
-				1876A55D1C30F30F0016EBCA /* img_modeEkickOff.png */,
-				1876A55E1C30F30F0016EBCA /* img_modeRideOff.png */,
-				1876A55F1C30F30F0016EBCA /* img_dashboardLine1.png */,
-				1876A5601C30F30F0016EBCA /* img_dashBoardLine2.png */,
 				1876A5501C30DB400016EBCA /* settings.png */,
 				1876A54E1C30D6CB0016EBCA /* header.png */,
 				187B93031C27FAAD00DA3BDF /* dash1.png */,
@@ -345,36 +369,44 @@
 				1876A5811C3238E60016EBCA /* digit_8.png in Resources */,
 				187B92D21C26716600DA3BDF /* LaunchScreen.storyboard in Resources */,
 				1876A5731C322EC00016EBCA /* digit_1.png in Resources */,
-				1876A56D1C30F30F0016EBCA /* img_modeRideOff.png in Resources */,
 				1876A5861C3238E60016EBCA /* digit_3.png in Resources */,
+				1876A5A41C3265430016EBCA /* iconProfile.png in Resources */,
 				1876A5831C3238E60016EBCA /* digit_6.png in Resources */,
+				1876A5AF1C3265430016EBCA /* modeEcoOn.png in Resources */,
+				1876A5AA1C3265430016EBCA /* lineBottom.png in Resources */,
+				1876A5A61C3265430016EBCA /* iconSpeed.png in Resources */,
 				1876A5821C3238E60016EBCA /* digit_7.png in Resources */,
-				1876A56C1C30F30F0016EBCA /* img_modeEkickOff.png in Resources */,
+				1876A5A01C3265430016EBCA /* iconBattery.png in Resources */,
+				1876A5AD1C3265430016EBCA /* modeBoostOn.png in Resources */,
 				1876A57E1C3238E60016EBCA /* digit_clear.png in Resources */,
 				1876A5511C30DB400016EBCA /* settings.png in Resources */,
 				1876A5711C311C890016EBCA /* back.png in Resources */,
-				1876A56A1C30F30F0016EBCA /* img_mapBtn4.png in Resources */,
 				1876A5871C3238E60016EBCA /* digit_2.png in Resources */,
-				1876A5631C30F30F0016EBCA /* img_dashboardBtnNavi.png in Resources */,
+				1876A5A21C3265430016EBCA /* iconPowerOff.png in Resources */,
+				1876A5A91C3265430016EBCA /* infoTrip.png in Resources */,
 				1876A54F1C30D6CB0016EBCA /* header.png in Resources */,
-				1876A5681C30F30F0016EBCA /* img_mapBtn2.png in Resources */,
-				1876A5641C30F30F0016EBCA /* img_dashBoardPower.png in Resources */,
+				1876A5A31C3265430016EBCA /* iconPowerOn.png in Resources */,
+				1876A59F1C3265430016EBCA /* dashboard.png in Resources */,
+				1876A5A11C3265430016EBCA /* iconNavi.png in Resources */,
 				187B92CF1C26716600DA3BDF /* Assets.xcassets in Resources */,
+				1876A5B31C3265430016EBCA /* modeEkickExtendOn.png in Resources */,
 				1876A5851C3238E60016EBCA /* digit_4.png in Resources */,
-				1876A5651C30F30F0016EBCA /* img_dashBoardProfile.png in Resources */,
-				1876A56F1C30F30F0016EBCA /* img_dashBoardLine2.png in Resources */,
-				1876A5671C30F30F0016EBCA /* img_mapBtn1.png in Resources */,
-				1876A56E1C30F30F0016EBCA /* img_dashboardLine1.png in Resources */,
-				1876A5611C30F30F0016EBCA /* img_dashboardBattery.png in Resources */,
-				1876A5691C30F30F0016EBCA /* img_mapBtn3.png in Resources */,
-				1876A56B1C30F30F0016EBCA /* img_modeBoostOff.png in Resources */,
+				1876A5B01C3265430016EBCA /* modeEkickAmplifiedOff.png in Resources */,
+				1876A5A51C3265430016EBCA /* iconSetting.png in Resources */,
+				1876A5AC1C3265430016EBCA /* modeBoostOff.png in Resources */,
+				1876A5B41C3265430016EBCA /* modeRideOff.png in Resources */,
+				1876A5AB1C3265430016EBCA /* lineTop.png in Resources */,
+				1876A5A81C3265430016EBCA /* infoRangeEst.png in Resources */,
+				1876A5AE1C3265430016EBCA /* modeEcoOff.png in Resources */,
+				1876A5A71C3265430016EBCA /* infoBattery.png in Resources */,
+				1876A5B21C3265430016EBCA /* modeEkickExtendOff.png in Resources */,
+				1876A5B51C3265430016EBCA /* modeRideOn.png in Resources */,
 				1876A5801C3238E60016EBCA /* digit_9.png in Resources */,
 				187B92CD1C26716600DA3BDF /* Main.storyboard in Resources */,
 				1876A57F1C3238E60016EBCA /* digit_0.png in Resources */,
-				1876A5661C30F30F0016EBCA /* img_dashBoardSetting.png in Resources */,
 				1876A5841C3238E60016EBCA /* digit_5.png in Resources */,
 				187B93081C27FAAD00DA3BDF /* dash1.png in Resources */,
-				1876A5621C30F30F0016EBCA /* img_dashboardBg.png in Resources */,
+				1876A5B11C3265430016EBCA /* modeEkickAmplifiedOn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
