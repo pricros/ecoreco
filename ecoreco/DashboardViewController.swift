@@ -12,9 +12,8 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var imgViewProfile: UIImageView!
     @IBOutlet weak var imgViewNavi: UIImageView!
     
+    @IBOutlet weak var scrollViewMode: UIScrollView!
     
-    @IBOutlet weak var scrollMode: UIScrollView!
-
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     
@@ -48,11 +47,11 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate {
         
         //scroll view
         let scrollingView = modeButtonsView()
-        scrollMode.addSubview(scrollingView)
-        scrollMode.contentSize = scrollingView.frame.size
-        scrollMode.scrollEnabled = true
-        scrollMode.showsHorizontalScrollIndicator = true
-        scrollMode.indicatorStyle = .Default
+        scrollViewMode.addSubview(scrollingView)
+        scrollViewMode.contentSize = scrollingView.frame.size
+        scrollViewMode.scrollEnabled = true
+        scrollViewMode.showsHorizontalScrollIndicator = true
+        scrollViewMode.indicatorStyle = .Default
         
     }
 
@@ -89,20 +88,17 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate {
        // self.navigationController?.pushViewController(self.storyboard?.instantiateViewControllerWithIdentifier("MapView") as! MapViewController, animated: true)
     }
     
-
-    var lastMode: UIButton?
-    func modePressed(sender:UIButton){
-        lastMode?.backgroundColor = UIColor.grayColor()
-        sender.backgroundColor = UIColor(hue: 0.5, saturation: 0.5, brightness: 1.0, alpha: 1.0)
-        self.lastMode = sender
-    }
     
     
     
-    
-    
-    
-    let images = [
+    let imagesModeOn = [
+        UIImage(named: "modeBoostOn.png") as UIImage!,
+        UIImage(named: "modeRideOn.png") as UIImage!,
+        UIImage(named: "modeEkickExtendOn.png") as UIImage!,
+        UIImage(named: "modeEkickAmplifiedOn.png") as UIImage!,
+        UIImage(named: "modeEcoOn.png") as UIImage!
+    ]
+    let imagesModeOff = [
         UIImage(named: "modeBoostOff.png") as UIImage!,
         UIImage(named: "modeRideOff.png") as UIImage!,
         UIImage(named: "modeEkickExtendOff.png") as UIImage!,
@@ -110,32 +106,48 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate {
         UIImage(named: "modeEcoOff.png") as UIImage!
     ]
 
-    let buttonView = UIView()
+    var lastMode: UIButton?
+    func modePressed(sender:UIButton){
+        //lastMode?.backgroundColor = UIColor.grayColor()
+        //sender.backgroundColor = UIColor(hue: 0.5, saturation: 0.5, brightness: 1.0, alpha: 1.0)
+        
+        if(self.lastMode != nil){
+            self.lastMode!.setImage(imagesModeOff[(lastMode!.tag)], forState: .Normal)
+        }
+        
+        sender.setImage(imagesModeOn[sender.tag], forState: .Normal)
+        self.lastMode = sender
+        self.lastMode!.tag = sender.tag
+    }
+
 
     func modeButtonsView() -> UIView {
  
+        let buttonView = UIView()
         buttonView.backgroundColor = UIColor.blackColor()
         buttonView.frame.origin = CGPointMake(0,0)
         
         let padding = CGSizeMake(10, 0)
         let buttonSize = CGSizeMake(109.0,75.0)//same with image size
-        buttonView.frame.size.width = (buttonSize.width + padding.width) * CGFloat(images.count)
+        buttonView.frame.size.width = (buttonSize.width + padding.width) * CGFloat(imagesModeOff.count)
         buttonView.frame.size.height = 75
         
         var buttonPosition = CGPointMake(padding.width * 0.5, padding.height)
         let buttonIncrement = buttonSize.width + padding.width
 
-        for i in 0 ... (images.count-1)  {
+        for i in 0 ... (imagesModeOff.count-1)  {
             let button = UIButton(type: .Custom) as UIButton
-            button.setImage(images[i], forState: .Normal)
+            button.setImage(imagesModeOff[i], forState: .Normal)
             
             button.frame.size = buttonSize
             button.frame.origin = buttonPosition
             buttonPosition.x = buttonPosition.x + buttonIncrement
-            button.layer.cornerRadius = 2;
-            button.layer.borderWidth = 1;
-            button.layer.borderColor = UIColor.whiteColor().CGColor
-            button.backgroundColor = UIColor.grayColor()
+            //button.layer.cornerRadius = 2;
+            //button.layer.borderWidth = 1;
+            //button.layer.borderColor = UIColor.whiteColor().CGColor
+            //button.backgroundColor = UIColor.grayColor()
+            
+            button.tag = i
             button.addTarget(self, action: "modePressed:", forControlEvents: .TouchUpInside)
             
             buttonView.addSubview(button)
