@@ -32,12 +32,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        let imageHeader  = UIImage(named: "header")
         var fileName:String
         self.digitImages = [self.imageDigit0,self.imageDigit1,self.imageDigit2,self.imageDigit3,self.imageDigit4,self.imageDigit5,self.imageDigit6,self.imageDigit7,self.imageDigit8,self.imageDigit9,self.imageClear]
-        
- 
-        headerImage.image = imageHeader
         
         for index in 0...10 {
             if (index < 10)

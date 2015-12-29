@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rs3-YE-9AM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="header.png" translatesAutoresizingMaskIntoConstraints="NO" id="rs3-YE-9AM">
                                 <rect key="frame" x="5" y="0.0" width="590" height="373"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Bv-rM-TF7">
@@ -165,7 +165,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.19997067656188758" green="0.20324770942408377" blue="0.17180792886382437" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.14418014943999732" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.10000000000000001" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="meU-Hz-E8Y" firstAttribute="trailing" secondItem="9g1-CY-f04" secondAttribute="trailing" id="1Xy-aa-URk"/>
                             <constraint firstItem="jIw-ED-Kdd" firstAttribute="leading" secondItem="7Bv-rM-TF7" secondAttribute="leading" id="4GI-fX-QJz"/>
@@ -655,6 +656,7 @@
     </scenes>
     <resources>
         <image name="back.png" width="835" height="835"/>
+        <image name="header.png" width="1077" height="1262"/>
         <image name="img_dashBoardLine2.png" width="594" height="12"/>
         <image name="img_dashBoardPower.png" width="96" height="96"/>
         <image name="img_dashBoardProfile.png" width="96" height="96"/>
