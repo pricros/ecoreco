@@ -48,6 +48,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
     func tappedImage(){
         print("back to dash-board")
+        self.performSegueWithIdentifier("segueMapToDash", sender: nil)
     }
     
 

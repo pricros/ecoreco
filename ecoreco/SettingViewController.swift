@@ -10,12 +10,18 @@ import UIKit
 
 class SettingViewController: UIViewController {
     
+    @IBOutlet weak var imgBack: UIImageView!
     
     @IBOutlet weak var settingsImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //add tpa action to imgSetting
+        let tapGestureRecognizerImgBack = UITapGestureRecognizer(target: self, action:Selector("tappedBack"))
+        imgBack.userInteractionEnabled = true
+        imgBack.addGestureRecognizer(tapGestureRecognizerImgBack)
         
         let imageSettings  = UIImage(named: "settings")
         //        partitionImage.image = image1
@@ -29,6 +35,10 @@ class SettingViewController: UIViewController {
     
     @IBAction func backToView(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func tappedBack(){
+        self.performSegueWithIdentifier("segueSettingToDash", sender: nil)
     }
 }
 

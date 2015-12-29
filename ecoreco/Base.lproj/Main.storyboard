@@ -124,7 +124,7 @@
                                 </state>
                                 <connections>
                                     <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dmm-Pw-Vug"/>
-                                    <segue destination="yUb-3n-mMq" kind="show" id="LrI-aJ-hV9"/>
+                                    <segue destination="WcE-8l-zMW" kind="show" id="W42-Cj-Pcj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aw0-iR-4wT">
@@ -251,31 +251,62 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z34-L8-CD3">
                                 <rect key="frame" x="0.0" y="5" width="600" height="595"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zpj-tW-Fks">
-                                <rect key="frame" x="20" y="20" width="45" height="30"/>
-                                <state key="normal" title="回上頁"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back.png" translatesAutoresizingMaskIntoConstraints="NO" id="UTr-hU-ewj">
+                                <rect key="frame" x="20" y="20" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Zor-6X-7ev"/>
+                                    <constraint firstAttribute="width" constant="50" id="rqB-68-mKG"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Zor-6X-7ev"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5Y-qq-9SO">
+                                <rect key="frame" x="78" y="28" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="backToView:" destination="gdk-A0-4cy" eventType="touchUpInside" id="CJj-qk-n1R"/>
+                                    <segue destination="WcE-8l-zMW" kind="show" id="aIQ-nH-7cH"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="z34-L8-CD3" firstAttribute="top" secondItem="PnR-gd-BVW" secondAttribute="topMargin" constant="5" id="5Yb-oh-96D"/>
-                            <constraint firstItem="Zpj-tW-Fks" firstAttribute="leading" secondItem="PnR-gd-BVW" secondAttribute="leadingMargin" id="H97-cI-C1G"/>
-                            <constraint firstItem="Zpj-tW-Fks" firstAttribute="top" secondItem="RQ5-c7-fbQ" secondAttribute="bottom" id="UJN-9N-ewb"/>
-                            <constraint firstItem="z34-L8-CD3" firstAttribute="leading" secondItem="PnR-gd-BVW" secondAttribute="leading" id="VSG-HJ-pkO"/>
-                            <constraint firstItem="z34-L8-CD3" firstAttribute="bottom" secondItem="hyE-cH-vp0" secondAttribute="top" id="bir-to-GSx"/>
-                            <constraint firstAttribute="trailing" secondItem="z34-L8-CD3" secondAttribute="trailing" id="ihw-07-9h8"/>
+                            <constraint firstItem="UTr-hU-ewj" firstAttribute="top" secondItem="RQ5-c7-fbQ" secondAttribute="bottom" id="8JW-Ds-4nl"/>
+                            <constraint firstItem="N5Y-qq-9SO" firstAttribute="leading" secondItem="UTr-hU-ewj" secondAttribute="trailing" constant="8" symbolic="YES" id="Eug-DZ-42F"/>
+                            <constraint firstItem="N5Y-qq-9SO" firstAttribute="top" secondItem="RQ5-c7-fbQ" secondAttribute="bottom" constant="8" symbolic="YES" id="GSI-Xu-nv1"/>
+                            <constraint firstAttribute="trailing" secondItem="z34-L8-CD3" secondAttribute="trailing" id="IC8-py-m1U"/>
+                            <constraint firstItem="z34-L8-CD3" firstAttribute="top" secondItem="PnR-gd-BVW" secondAttribute="topMargin" constant="5" id="JL3-Dz-r2e"/>
+                            <constraint firstItem="hyE-cH-vp0" firstAttribute="top" secondItem="UTr-hU-ewj" secondAttribute="bottom" constant="530" id="JMq-xN-2In"/>
+                            <constraint firstItem="UTr-hU-ewj" firstAttribute="top" secondItem="RQ5-c7-fbQ" secondAttribute="bottom" id="Qj8-YU-hEA"/>
+                            <constraint firstItem="UTr-hU-ewj" firstAttribute="leading" secondItem="PnR-gd-BVW" secondAttribute="leadingMargin" id="Rsr-By-iYd"/>
+                            <constraint firstItem="z34-L8-CD3" firstAttribute="bottom" secondItem="hyE-cH-vp0" secondAttribute="top" id="S6G-VH-mvB"/>
+                            <constraint firstItem="z34-L8-CD3" firstAttribute="leading" secondItem="PnR-gd-BVW" secondAttribute="leading" id="TCf-s3-Xfx"/>
+                            <constraint firstItem="hyE-cH-vp0" firstAttribute="top" secondItem="UTr-hU-ewj" secondAttribute="bottom" constant="470" id="cMd-cu-DMi"/>
+                            <constraint firstItem="hyE-cH-vp0" firstAttribute="top" secondItem="UTr-hU-ewj" secondAttribute="bottom" constant="530" id="si0-gg-0pd"/>
+                            <constraint firstItem="UTr-hU-ewj" firstAttribute="leading" secondItem="PnR-gd-BVW" secondAttribute="leadingMargin" id="tug-8e-2Ox"/>
+                            <constraint firstItem="hyE-cH-vp0" firstAttribute="top" secondItem="UTr-hU-ewj" secondAttribute="bottom" constant="542" id="wXT-7P-kbr"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Qj8-YU-hEA"/>
+                                <exclude reference="Rsr-By-iYd"/>
+                                <exclude reference="JMq-xN-2In"/>
+                                <exclude reference="cMd-cu-DMi"/>
+                                <exclude reference="wXT-7P-kbr"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="imgBack" destination="UTr-hU-ewj" id="Jbl-Zc-G93"/>
                         <outlet property="settingsImage" destination="z34-L8-CD3" id="3fM-Xw-6xL"/>
+                        <segue destination="WcE-8l-zMW" kind="show" identifier="segueSettingToDash" id="03a-JY-tzB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dvu-Nt-dQr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="829" y="845"/>
+            <point key="canvasLocation" x="1003" y="-7"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="aFU-Zd-iLo">
@@ -394,11 +425,12 @@
                     <connections>
                         <outlet property="imgDashBoard" destination="3mW-gD-CLy" id="ULN-5J-e9R"/>
                         <outlet property="mapView" destination="34b-bb-EDd" id="y74-3E-KrD"/>
+                        <segue destination="WcE-8l-zMW" kind="show" identifier="segueMapToDash" id="chf-MG-JOd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SOl-9i-iXW" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1873" y="254"/>
+            <point key="canvasLocation" x="631" y="-712"/>
         </scene>
         <!--Dashboard View Controller-->
         <scene sceneID="QWK-Vd-Th5">
@@ -472,13 +504,13 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dashBoardLine2.png" translatesAutoresizingMaskIntoConstraints="NO" id="cOq-ah-w0m">
                                 <rect key="frame" x="0.0" y="499" width="600" height="7"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="img_dashboardLine1.png" translatesAutoresizingMaskIntoConstraints="NO" id="9Y9-EP-wLY">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dashboardLine1.png" translatesAutoresizingMaskIntoConstraints="NO" id="9Y9-EP-wLY">
                                 <rect key="frame" x="0.0" y="20" width="600" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="jOs-3S-ANI"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="img_dashBoardBg.png" translatesAutoresizingMaskIntoConstraints="NO" id="6fG-hC-t4K">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dashboardBg.png" translatesAutoresizingMaskIntoConstraints="NO" id="6fG-hC-t4K">
                                 <rect key="frame" x="0.0" y="109" width="600" height="306"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="380" id="vyl-oh-eqS"/>
@@ -491,7 +523,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="img_dashBoardSetting.png" translatesAutoresizingMaskIntoConstraints="NO" id="8XT-Pl-bSk">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dashBoardSetting.png" translatesAutoresizingMaskIntoConstraints="NO" id="8XT-Pl-bSk">
                                 <rect key="frame" x="20" y="43" width="66" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" id="0SX-ov-pHF"/>
@@ -506,7 +538,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="img_dashBoardPower.png" translatesAutoresizingMaskIntoConstraints="NO" id="EYa-79-Yxz">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dashBoardPower.png" translatesAutoresizingMaskIntoConstraints="NO" id="EYa-79-Yxz">
                                 <rect key="frame" x="267" y="43" width="66" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" id="TtP-hL-NRM"/>
@@ -518,13 +550,13 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="img_dashboardBattery.png" translatesAutoresizingMaskIntoConstraints="NO" id="F4A-KV-Any">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dashboardBattery.png" translatesAutoresizingMaskIntoConstraints="NO" id="F4A-KV-Any">
                                 <rect key="frame" x="341" y="43" width="66" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" id="onk-Od-MWp"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="img_dashBoardProfile.png" translatesAutoresizingMaskIntoConstraints="NO" id="sez-Ea-UPN">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dashBoardProfile.png" translatesAutoresizingMaskIntoConstraints="NO" id="sez-Ea-UPN">
                                 <rect key="frame" x="514" y="43" width="66" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" id="FdL-pF-elH"/>
@@ -590,38 +622,23 @@
                         <outlet property="imgProfile" destination="sez-Ea-UPN" id="oZi-ym-bIS"/>
                         <outlet property="imgSetting" destination="8XT-Pl-bSk" id="kR0-Qu-Gun"/>
                         <outlet property="scrollMode" destination="ype-BO-0Rm" id="Y4g-Ve-6ak"/>
+                        <segue destination="VZy-Dz-cfl" kind="show" identifier="segueDashToMap" id="gFW-It-ZZu"/>
+                        <segue destination="gdk-A0-4cy" kind="show" identifier="segueDashToSetting" id="2Gd-Tk-KwF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nsS-TJ-0WI" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="837" y="133"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ouB-vz-Bfy">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Emg-LI-Dbj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yUb-3n-mMq" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="715-mA-Vt6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="WcE-8l-zMW" kind="relationship" relationship="rootViewController" id="AOr-te-Op6"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="115" y="133"/>
+            <point key="canvasLocation" x="185" y="0.0"/>
         </scene>
     </scenes>
     <resources>
-        <image name="img_dashBoardBg.png" width="592" height="642"/>
+        <image name="back.png" width="835" height="835"/>
         <image name="img_dashBoardLine2.png" width="594" height="12"/>
         <image name="img_dashBoardPower.png" width="96" height="96"/>
         <image name="img_dashBoardProfile.png" width="96" height="96"/>
         <image name="img_dashBoardSetting.png" width="96" height="96"/>
         <image name="img_dashboardBattery.png" width="96" height="96"/>
+        <image name="img_dashboardBg.png" width="592" height="642"/>
         <image name="img_dashboardBtnNavi.png" width="96" height="96"/>
         <image name="img_dashboardLine1.png" width="592" height="22"/>
         <image name="img_mapBtn1.png" width="104" height="96"/>
@@ -629,4 +646,7 @@
         <image name="img_mapBtn3.png" width="104" height="96"/>
         <image name="img_mapBtn4.png" width="96" height="96"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="03a-JY-tzB"/>
+    </inferredMetricsTieBreakers>
 </document>

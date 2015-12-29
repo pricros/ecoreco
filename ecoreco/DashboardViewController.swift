@@ -57,7 +57,8 @@ class DashboardViewController: UIViewController {
     }
 
     func tappedSetting(){
-        self.navigationController?.pushViewController(self.storyboard?.instantiateViewControllerWithIdentifier("SettingView") as! SettingViewController, animated: true)
+        self.performSegueWithIdentifier("segueDashToSetting", sender: nil)
+        // self.navigationController?.pushViewController(self.storyboard?.instantiateViewControllerWithIdentifier("SettingView") as! SettingViewController, animated: true)
     }
     
     func tappedPower(){
@@ -71,7 +72,9 @@ class DashboardViewController: UIViewController {
     }
     
     func tappedNavi(){
-        self.navigationController?.pushViewController(self.storyboard?.instantiateViewControllerWithIdentifier("MapView") as! MapViewController, animated: true)
+        self.performSegueWithIdentifier("segueDashToMap", sender: nil)
+        
+       // self.navigationController?.pushViewController(self.storyboard?.instantiateViewControllerWithIdentifier("MapView") as! MapViewController, animated: true)
     }
     
 
