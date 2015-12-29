@@ -19,33 +19,31 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             mapView.mapType = .Standard
             mapView.delegate = self
         }
-        
     }
     
+
     
-    @IBOutlet weak var imgDashBoard: UIImageView!
+    @IBOutlet weak var imgViewDashBoard: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //show location
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.requestWhenInUseAuthorization()
         //self.locationManager.requestAlwaysAuthorization()
         self.locationManager.startUpdatingLocation()
-        
         self.mapView.showsUserLocation = true
-        
-        
-        //configureToolBar()
         
         
         //add tpa action to imageView
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action:Selector("tappedImage"))
-        imgDashBoard.userInteractionEnabled = true
-        imgDashBoard.addGestureRecognizer(tapGestureRecognizer)
+        imgViewDashBoard.userInteractionEnabled = true
+        imgViewDashBoard.addGestureRecognizer(tapGestureRecognizer)
     }
 
+    
     func tappedImage(){
         print("back to dash-board")
         self.performSegueWithIdentifier("segueMapToDash", sender: nil)
@@ -63,7 +61,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         self.mapView.setRegion(region, animated: true)
         
-        self.locationManager.stopUpdatingLocation()
+        //self.locationManager.stopUpdatingLocation()
         
     }
     
@@ -72,6 +70,15 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         print("Errors: " + error.localizedDescription)
     }
     
+    
+    override func viewDidDisappear(animated: Bool) {
+        print("remove mapVIew")
+        self.mapView.showsUserLocation = false
+        self.locationManager.stopUpdatingLocation()
+        self.locationManager.delegate = nil
+        self.mapView.removeFromSuperview()
+        self.mapView.delegate = nil
+    }
     
     
 //    @IBOutlet weak var toolBar: UIToolbar!

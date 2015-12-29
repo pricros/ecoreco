@@ -5,14 +5,14 @@
 
 import UIKit
 
-class DashboardViewController: UIViewController {
+class DashboardViewController: UIViewController, UIScrollViewDelegate {
 
+    @IBOutlet weak var imgViewSetting: UIImageView!
+    @IBOutlet weak var imgViewPower: UIImageView!
+    @IBOutlet weak var imgViewProfile: UIImageView!
+    @IBOutlet weak var imgViewNavi: UIImageView!
     
-    @IBOutlet weak var imgProfile: UIImageView!
-    @IBOutlet weak var imgPower: UIImageView!
-    @IBOutlet weak var imgNavi: UIImageView!
-    @IBOutlet weak var imgSetting: UIImageView!
-
+    
     @IBOutlet weak var scrollMode: UIScrollView!
 
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -22,27 +22,27 @@ class DashboardViewController: UIViewController {
         super.viewDidLoad()
         
         
-        //add tpa action to imgSetting
-        let tapGestureRecognizerImgSetting = UITapGestureRecognizer(target: self, action:Selector("tappedSetting"))
-        imgSetting.userInteractionEnabled = true
-        imgSetting.addGestureRecognizer(tapGestureRecognizerImgSetting)
+        //add tpa action to [Setting]
+        let tapGestureRecognizerSetting = UITapGestureRecognizer(target: self, action:Selector("tappedSetting"))
+        imgViewSetting.userInteractionEnabled = true
+        imgViewSetting.addGestureRecognizer(tapGestureRecognizerSetting)
 
         
-        //add tpa action to imgPower
-        let tapGestureRecognizerImgPower = UITapGestureRecognizer(target: self, action:Selector("tappedPower"))
-        imgPower.userInteractionEnabled = true
-        imgPower.addGestureRecognizer(tapGestureRecognizerImgPower)
+        //add tpa action to [Power]
+        let tapGestureRecognizerPower = UITapGestureRecognizer(target: self, action:Selector("tappedPower"))
+        imgViewPower.userInteractionEnabled = true
+        imgViewPower.addGestureRecognizer(tapGestureRecognizerPower)
 
         
-        //add tpa action to imgProfile
-        let tapGestureRecognizerImgProfile = UITapGestureRecognizer(target: self, action:Selector("tappedProfile"))
-        imgProfile.userInteractionEnabled = true
-        imgProfile.addGestureRecognizer(tapGestureRecognizerImgProfile)
+        //add tpa action to [Profile]
+        let tapGestureRecognizerProfile = UITapGestureRecognizer(target: self, action:Selector("tappedProfile"))
+        imgViewProfile.userInteractionEnabled = true
+        imgViewProfile.addGestureRecognizer(tapGestureRecognizerProfile)
 
-        //add tpa action to imgNavi
-        let tapGestureRecognizerImgNavi = UITapGestureRecognizer(target: self, action:Selector("tappedNavi"))
-        imgNavi.userInteractionEnabled = true
-        imgNavi.addGestureRecognizer(tapGestureRecognizerImgNavi)
+        //add tpa action to [Navi]
+        let tapGestureRecognizerNavi = UITapGestureRecognizer(target: self, action:Selector("tappedNavi"))
+        imgViewNavi.userInteractionEnabled = true
+        imgViewNavi.addGestureRecognizer(tapGestureRecognizerNavi)
         
         
         
@@ -61,14 +61,26 @@ class DashboardViewController: UIViewController {
         // self.navigationController?.pushViewController(self.storyboard?.instantiateViewControllerWithIdentifier("SettingView") as! SettingViewController, animated: true)
     }
     
+    var isPowerOn = true
+    let imgPowerOn = UIImage(named: "iconPowerOn.png") as UIImage!
+    let imgPowerOff = UIImage(named: "iconPowerOff.png") as UIImage!
     func tappedPower(){
-        appDelegate.sendData("0")
         print("power off")
+        
+        if (isPowerOn == true) {
+            appDelegate.sendData("0")
+            self.imgViewPower.image = imgPowerOff
+            isPowerOn = false
+        }else{
+            appDelegate.sendData("0")
+            self.imgViewPower.image = imgPowerOn
+            isPowerOn = true
+        }
     }
     
     func tappedProfile(){
-        appDelegate.sendData("1")
         print("go to profilt")
+        appDelegate.sendData("1")
     }
     
     func tappedNavi(){
@@ -86,17 +98,21 @@ class DashboardViewController: UIViewController {
     }
     
     
+    
+    
+    
+    
+    let images = [
+        UIImage(named: "modeBoostOff.png") as UIImage!,
+        UIImage(named: "modeRideOff.png") as UIImage!,
+        UIImage(named: "modeEkickExtendOff.png") as UIImage!,
+        UIImage(named: "modeEkickAmplifiedOff.png") as UIImage!,
+        UIImage(named: "modeEcoOff.png") as UIImage!
+    ]
+
+    let buttonView = UIView()
+
     func modeButtonsView() -> UIView {
-        let images = [
-            UIImage(named: "img_modeBoostOff.png") as UIImage!,
-            UIImage(named: "img_modeRideOff.png") as UIImage!,
-            UIImage(named: "img_modeEkickOff.png") as UIImage!,
-            UIImage(named: "img_modeEkickOff.png") as UIImage!,
-            UIImage(named: "img_modeEkickOff.png") as UIImage!,
-            UIImage(named: "img_modeEkickOff.png") as UIImage!
-        ]
-        
-        let buttonView = UIView()
  
         buttonView.backgroundColor = UIColor.blackColor()
         buttonView.frame.origin = CGPointMake(0,0)
@@ -116,6 +132,9 @@ class DashboardViewController: UIViewController {
             button.frame.size = buttonSize
             button.frame.origin = buttonPosition
             buttonPosition.x = buttonPosition.x + buttonIncrement
+            button.layer.cornerRadius = 2;
+            button.layer.borderWidth = 1;
+            button.layer.borderColor = UIColor.whiteColor().CGColor
             button.backgroundColor = UIColor.grayColor()
             button.addTarget(self, action: "modePressed:", forControlEvents: .TouchUpInside)
             
@@ -124,6 +143,9 @@ class DashboardViewController: UIViewController {
 
         return buttonView
     }
+    
+    
+    
     
     
 
