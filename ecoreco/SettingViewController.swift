@@ -18,6 +18,8 @@ class SettingViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
         //add tpa action to imgSetting
         let tapGestureRecognizerImgBack = UITapGestureRecognizer(target: self, action:Selector("tappedBack"))
         imgBack.userInteractionEnabled = true
@@ -33,12 +35,8 @@ class SettingViewController: UIViewController {
         // Dispose of any resources thatp can be recreated.
     }
     
-    @IBAction func backToView(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
-    }
-    
     func tappedBack(){
-        self.performSegueWithIdentifier("segueSettingToDash", sender: nil)
+        self.navigationController?.popViewControllerAnimated(true)
     }
 }
 

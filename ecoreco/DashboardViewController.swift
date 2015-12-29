@@ -20,7 +20,7 @@ class DashboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         
         //add tpa action to imgSetting
         let tapGestureRecognizerImgSetting = UITapGestureRecognizer(target: self, action:Selector("tappedSetting"))
