@@ -27,6 +27,15 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //set view bgcolor
+        self.view.backgroundColor = UIColor(
+            red: 0.33,
+            green: 0.33,
+            blue: 0.33,
+            alpha: 0.4)
+        
+        
         self.navigationController?.setNavigationBarHidden(true, animated: true)
 
         //show location

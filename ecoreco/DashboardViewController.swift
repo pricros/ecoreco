@@ -19,6 +19,15 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+ 
+        //set view bgcolor
+        self.view.backgroundColor = UIColor(
+            red: 0.33,
+            green: 0.33,
+            blue: 0.33,
+            alpha: 0.4)
+        
+        
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         
         //add tpa action to [Setting]
@@ -70,6 +79,7 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate {
             appDelegate.sendData("0")
             self.imgViewPower.image = imgPowerOff
             isPowerOn = false
+            clearAll()
         }else{
             appDelegate.sendData("0")
             self.imgViewPower.image = imgPowerOn
@@ -105,7 +115,22 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate {
         UIImage(named: "modeEkickAmplifiedOff.png") as UIImage!,
         UIImage(named: "modeEcoOff.png") as UIImage!
     ]
+    var modeButtons = [
+        UIButton(type: .Custom) as UIButton!,
+        UIButton(type: .Custom) as UIButton!,
+        UIButton(type: .Custom) as UIButton!,
+        UIButton(type: .Custom) as UIButton!,
+        UIButton(type: .Custom) as UIButton!
+    ]
 
+    func clearAll(){
+        for i in 0 ... (modeButtons.count-1) {
+            modeButtons[i].setImage(imagesModeOff[i], forState: .Normal)
+        }
+    }
+    
+    
+    
     var lastMode: UIButton?
     func modePressed(sender:UIButton){
         //lastMode?.backgroundColor = UIColor.grayColor()
@@ -136,7 +161,7 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate {
         let buttonIncrement = buttonSize.width + padding.width
 
         for i in 0 ... (imagesModeOff.count-1)  {
-            let button = UIButton(type: .Custom) as UIButton
+            let button = modeButtons[i]  //UIButton(type: .Custom) as UIButton
             button.setImage(imagesModeOff[i], forState: .Normal)
             
             button.frame.size = buttonSize
