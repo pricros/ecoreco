@@ -21,7 +21,6 @@
 		1876A5851C3238E60016EBCA /* digit_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A57B1C3238E60016EBCA /* digit_4.png */; };
 		1876A5861C3238E60016EBCA /* digit_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A57C1C3238E60016EBCA /* digit_3.png */; };
 		1876A5871C3238E60016EBCA /* digit_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A57D1C3238E60016EBCA /* digit_2.png */; };
-		1876A59F1C3265430016EBCA /* dashboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5881C3265430016EBCA /* dashboard.png */; };
 		1876A5A01C3265430016EBCA /* iconBattery.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5891C3265430016EBCA /* iconBattery.png */; };
 		1876A5A11C3265430016EBCA /* iconNavi.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A58A1C3265430016EBCA /* iconNavi.png */; };
 		1876A5A21C3265430016EBCA /* iconPowerOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A58B1C3265430016EBCA /* iconPowerOff.png */; };
@@ -56,6 +55,8 @@
 		18EEF0BA1C2A3C380065AFE7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEF0B91C2A3C380065AFE7 /* MapViewController.swift */; };
 		18EEF0C81C2AFEB40065AFE7 /* NRFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEF0C71C2AFEB40065AFE7 /* NRFManager.swift */; };
 		18EEF0F81C2BF06F0065AFE7 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEF0F71C2BF06F0065AFE7 /* DashboardViewController.swift */; };
+		3C0B71581C34BDD700123C07 /* lineMiddle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0B71571C34BDD700123C07 /* lineMiddle.png */; };
+		3C0B715A1C34BDDF00123C07 /* speedMeter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0B71591C34BDDF00123C07 /* speedMeter.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +91,6 @@
 		1876A57B1C3238E60016EBCA /* digit_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = digit_4.png; path = images/digit_4.png; sourceTree = "<group>"; };
 		1876A57C1C3238E60016EBCA /* digit_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = digit_3.png; path = images/digit_3.png; sourceTree = "<group>"; };
 		1876A57D1C3238E60016EBCA /* digit_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = digit_2.png; path = images/digit_2.png; sourceTree = "<group>"; };
-		1876A5881C3265430016EBCA /* dashboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dashboard.png; path = images/dashboard.png; sourceTree = "<group>"; };
 		1876A5891C3265430016EBCA /* iconBattery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconBattery.png; path = images/iconBattery.png; sourceTree = "<group>"; };
 		1876A58A1C3265430016EBCA /* iconNavi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconNavi.png; path = images/iconNavi.png; sourceTree = "<group>"; };
 		1876A58B1C3265430016EBCA /* iconPowerOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconPowerOff.png; path = images/iconPowerOff.png; sourceTree = "<group>"; };
@@ -131,6 +131,8 @@
 		18EEF0B91C2A3C380065AFE7 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		18EEF0C71C2AFEB40065AFE7 /* NRFManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRFManager.swift; sourceTree = "<group>"; };
 		18EEF0F71C2BF06F0065AFE7 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		3C0B71571C34BDD700123C07 /* lineMiddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lineMiddle.png; path = images/lineMiddle.png; sourceTree = "<group>"; };
+		3C0B71591C34BDDF00123C07 /* speedMeter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = speedMeter.png; path = images/speedMeter.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,7 +219,8 @@
 		187B92F91C27B35F00DA3BDF /* images */ = {
 			isa = PBXGroup;
 			children = (
-				1876A5881C3265430016EBCA /* dashboard.png */,
+				3C0B71591C34BDDF00123C07 /* speedMeter.png */,
+				3C0B71571C34BDD700123C07 /* lineMiddle.png */,
 				1876A5891C3265430016EBCA /* iconBattery.png */,
 				1876A58A1C3265430016EBCA /* iconNavi.png */,
 				1876A58B1C3265430016EBCA /* iconPowerOff.png */,
@@ -376,6 +379,7 @@
 				1876A5AA1C3265430016EBCA /* lineBottom.png in Resources */,
 				1876A5A61C3265430016EBCA /* iconSpeed.png in Resources */,
 				1876A5821C3238E60016EBCA /* digit_7.png in Resources */,
+				3C0B71581C34BDD700123C07 /* lineMiddle.png in Resources */,
 				1876A5A01C3265430016EBCA /* iconBattery.png in Resources */,
 				1876A5AD1C3265430016EBCA /* modeBoostOn.png in Resources */,
 				1876A57E1C3238E60016EBCA /* digit_clear.png in Resources */,
@@ -386,7 +390,6 @@
 				1876A5A91C3265430016EBCA /* infoTrip.png in Resources */,
 				1876A54F1C30D6CB0016EBCA /* header.png in Resources */,
 				1876A5A31C3265430016EBCA /* iconPowerOn.png in Resources */,
-				1876A59F1C3265430016EBCA /* dashboard.png in Resources */,
 				1876A5A11C3265430016EBCA /* iconNavi.png in Resources */,
 				187B92CF1C26716600DA3BDF /* Assets.xcassets in Resources */,
 				1876A5B31C3265430016EBCA /* modeEkickExtendOn.png in Resources */,
@@ -401,6 +404,7 @@
 				1876A5A71C3265430016EBCA /* infoBattery.png in Resources */,
 				1876A5B21C3265430016EBCA /* modeEkickExtendOff.png in Resources */,
 				1876A5B51C3265430016EBCA /* modeRideOn.png in Resources */,
+				3C0B715A1C34BDDF00123C07 /* speedMeter.png in Resources */,
 				1876A5801C3238E60016EBCA /* digit_9.png in Resources */,
 				187B92CD1C26716600DA3BDF /* Main.storyboard in Resources */,
 				1876A57F1C3238E60016EBCA /* digit_0.png in Resources */,
