@@ -76,12 +76,12 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate {
         print("power off")
         
         if (isPowerOn == true) {
-            appDelegate.sendData("0")
+            appDelegate.sendData("L1")
             self.imgViewPower.image = imgPowerOff
             isPowerOn = false
             clearAll()
         }else{
-            appDelegate.sendData("0")
+            appDelegate.sendData("L0")
             self.imgViewPower.image = imgPowerOn
             isPowerOn = true
         }
@@ -143,6 +143,25 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate {
         sender.setImage(imagesModeOn[sender.tag], forState: .Normal)
         self.lastMode = sender
         self.lastMode!.tag = sender.tag
+        
+        switch(sender.tag){
+            case 0: //boost
+                appDelegate.sendData("M0")
+                break
+            case 1:
+                appDelegate.sendData("M1")
+                break
+            case 2:
+                appDelegate.sendData("M2")
+                break
+            case 3:
+                appDelegate.sendData("M3")
+                break
+            case 4:
+                appDelegate.sendData("M4")
+                break
+            default:break
+        }
     }
 
 
