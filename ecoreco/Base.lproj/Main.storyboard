@@ -283,9 +283,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back.png" translatesAutoresizingMaskIntoConstraints="NO" id="UTr-hU-ewj">
                                 <rect key="frame" x="20" y="36" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="UTr-hU-ewj" secondAttribute="height" multiplier="1:1" id="LUV-a2-CcD"/>
+                                    <constraint firstAttribute="width" secondItem="UTr-hU-ewj" secondAttribute="height" multiplier="1:1" id="LZ4-xE-55u"/>
+                                    <constraint firstAttribute="width" constant="50" id="WAa-23-OrO"/>
                                     <constraint firstAttribute="width" constant="40" id="Zor-6X-7ev"/>
-                                    <constraint firstAttribute="width" constant="50" id="mTM-wm-u5h"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -293,27 +293,37 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHy-bF-hf0">
+                                <rect key="frame" x="538" y="36" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="z34-L8-CD3" firstAttribute="top" secondItem="RQ5-c7-fbQ" secondAttribute="bottom" id="6Su-Ul-Bxv"/>
                             <constraint firstItem="UTr-hU-ewj" firstAttribute="top" secondItem="RQ5-c7-fbQ" secondAttribute="bottom" constant="16" id="CXd-Eh-pWv"/>
+                            <constraint firstItem="UTr-hU-ewj" firstAttribute="top" secondItem="RQ5-c7-fbQ" secondAttribute="bottom" constant="16" id="Deh-o8-4ew"/>
                             <constraint firstItem="hyE-cH-vp0" firstAttribute="top" secondItem="UTr-hU-ewj" secondAttribute="bottom" constant="514" id="HiP-fi-ktZ"/>
                             <constraint firstItem="hyE-cH-vp0" firstAttribute="top" secondItem="UTr-hU-ewj" secondAttribute="bottom" constant="530" id="JMq-xN-2In"/>
                             <constraint firstItem="z34-L8-CD3" firstAttribute="top" secondItem="UTr-hU-ewj" secondAttribute="bottom" constant="-86" id="Kvb-M2-02c"/>
-                            <constraint firstItem="UTr-hU-ewj" firstAttribute="leading" secondItem="PnR-gd-BVW" secondAttribute="leadingMargin" id="McE-wJ-N06"/>
                             <constraint firstItem="hyE-cH-vp0" firstAttribute="top" secondItem="UTr-hU-ewj" secondAttribute="bottom" constant="514" id="Pj2-wd-dhF"/>
                             <constraint firstItem="UTr-hU-ewj" firstAttribute="top" secondItem="RQ5-c7-fbQ" secondAttribute="bottom" id="Qj8-YU-hEA"/>
-                            <constraint firstItem="z34-L8-CD3" firstAttribute="top" secondItem="PnR-gd-BVW" secondAttribute="top" id="R7O-uo-Idb"/>
+                            <constraint firstItem="UTr-hU-ewj" firstAttribute="leading" secondItem="PnR-gd-BVW" secondAttribute="leadingMargin" id="RX5-U5-ZLX"/>
                             <constraint firstItem="UTr-hU-ewj" firstAttribute="leading" secondItem="PnR-gd-BVW" secondAttribute="leadingMargin" id="Rsr-By-iYd"/>
+                            <constraint firstItem="z34-L8-CD3" firstAttribute="top" secondItem="QHy-bF-hf0" secondAttribute="bottom" constant="-57" id="Srp-4X-14r"/>
                             <constraint firstItem="UTr-hU-ewj" firstAttribute="leading" secondItem="PnR-gd-BVW" secondAttribute="leadingMargin" id="XiY-ho-yI6"/>
+                            <constraint firstItem="QHy-bF-hf0" firstAttribute="top" secondItem="UTr-hU-ewj" secondAttribute="top" id="ZdA-Sm-8Dk"/>
+                            <constraint firstItem="QHy-bF-hf0" firstAttribute="trailing" secondItem="PnR-gd-BVW" secondAttribute="trailingMargin" id="a0k-Nf-lXg"/>
                             <constraint firstItem="hyE-cH-vp0" firstAttribute="top" secondItem="UTr-hU-ewj" secondAttribute="bottom" constant="470" id="cMd-cu-DMi"/>
-                            <constraint firstItem="z34-L8-CD3" firstAttribute="bottom" secondItem="hyE-cH-vp0" secondAttribute="top" id="fAl-b0-KvG"/>
-                            <constraint firstItem="UTr-hU-ewj" firstAttribute="top" secondItem="RQ5-c7-fbQ" secondAttribute="bottom" constant="16" id="gkq-Wu-Uk3"/>
+                            <constraint firstAttribute="trailing" secondItem="z34-L8-CD3" secondAttribute="trailing" id="fKR-gx-6bo"/>
+                            <constraint firstItem="z34-L8-CD3" firstAttribute="leading" secondItem="PnR-gd-BVW" secondAttribute="leading" id="mUV-qs-Asj"/>
                             <constraint firstItem="z34-L8-CD3" firstAttribute="top" secondItem="UTr-hU-ewj" secondAttribute="bottom" constant="-86" id="o75-fy-kLR"/>
-                            <constraint firstItem="z34-L8-CD3" firstAttribute="leading" secondItem="PnR-gd-BVW" secondAttribute="leading" id="sFw-zw-QTr"/>
+                            <constraint firstItem="z34-L8-CD3" firstAttribute="top" secondItem="PnR-gd-BVW" secondAttribute="top" id="op4-uC-ibd"/>
+                            <constraint firstItem="hyE-cH-vp0" firstAttribute="top" secondItem="UTr-hU-ewj" secondAttribute="bottom" constant="514" id="rWN-fF-Cf8"/>
+                            <constraint firstItem="z34-L8-CD3" firstAttribute="bottom" secondItem="hyE-cH-vp0" secondAttribute="top" id="sJy-A5-Kkh"/>
                             <constraint firstItem="hyE-cH-vp0" firstAttribute="top" secondItem="UTr-hU-ewj" secondAttribute="bottom" constant="542" id="wXT-7P-kbr"/>
-                            <constraint firstAttribute="trailing" secondItem="z34-L8-CD3" secondAttribute="trailing" id="z0o-m8-p7z"/>
                             <constraint firstItem="hyE-cH-vp0" firstAttribute="top" secondItem="UTr-hU-ewj" secondAttribute="bottom" constant="530" id="zmJ-d6-ovy"/>
                         </constraints>
                         <variation key="default">
@@ -325,10 +335,12 @@
                                 <exclude reference="Qj8-YU-hEA"/>
                                 <exclude reference="Rsr-By-iYd"/>
                                 <exclude reference="XiY-ho-yI6"/>
+                                <exclude reference="ZdA-Sm-8Dk"/>
                                 <exclude reference="HiP-fi-ktZ"/>
                                 <exclude reference="JMq-xN-2In"/>
                                 <exclude reference="Pj2-wd-dhF"/>
                                 <exclude reference="cMd-cu-DMi"/>
+                                <exclude reference="rWN-fF-Cf8"/>
                                 <exclude reference="wXT-7P-kbr"/>
                                 <exclude reference="zmJ-d6-ovy"/>
                             </mask>
@@ -336,6 +348,7 @@
                     </view>
                     <connections>
                         <outlet property="imgBack" destination="UTr-hU-ewj" id="Jbl-Zc-G93"/>
+                        <outlet property="labelVer" destination="QHy-bF-hf0" id="X7p-6c-bj9"/>
                         <outlet property="settingsImage" destination="z34-L8-CD3" id="3fM-Xw-6xL"/>
                     </connections>
                 </viewController>

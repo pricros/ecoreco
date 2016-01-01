@@ -14,6 +14,8 @@ class SettingViewController: UIViewController {
     
     @IBOutlet weak var settingsImage: UIImageView!
     
+    @IBOutlet weak var labelVer: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -28,6 +30,10 @@ class SettingViewController: UIViewController {
         let imageSettings  = UIImage(named: "settings")
         //        partitionImage.image = image1
         settingsImage.image = imageSettings
+        if let version = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as? String {
+            self.labelVer.text = version
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
