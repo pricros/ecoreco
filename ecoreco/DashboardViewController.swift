@@ -171,10 +171,10 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate {
         buttonView.backgroundColor = UIColor.blackColor()
         buttonView.frame.origin = CGPointMake(0,0)
         
-        let padding = CGSizeMake(10, 0)
-        let buttonSize = CGSizeMake(109.0,75.0)//same with image size
+        let padding = CGSizeMake(10, 5)
+        let buttonSize = CGSizeMake(90.0,62.0)//same with image size
         buttonView.frame.size.width = (buttonSize.width + padding.width) * CGFloat(imagesModeOff.count)
-        buttonView.frame.size.height = 75
+        buttonView.frame.size.height = 72
         
         var buttonPosition = CGPointMake(padding.width * 0.5, padding.height)
         let buttonIncrement = buttonSize.width + padding.width

@@ -21,9 +21,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
     }
     
-
     
     @IBOutlet weak var imgViewDashBoard: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
