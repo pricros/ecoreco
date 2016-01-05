@@ -548,6 +548,28 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HyR-Vj-CnV">
                                 <rect key="frame" x="0.0" y="443" width="600" height="72"/>
                             </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eb6-Nc-FB9">
+                                <rect key="frame" x="250" y="216" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="72P-jI-zzL"/>
+                                    <constraint firstAttribute="height" constant="100" id="FQn-Ih-P2z"/>
+                                    <constraint firstAttribute="width" constant="104" id="RlJ-c0-0ee"/>
+                                    <constraint firstAttribute="width" constant="100" id="Wfy-FU-nAD"/>
+                                    <constraint firstAttribute="height" constant="100" id="e7J-xa-mWa"/>
+                                    <constraint firstAttribute="height" constant="85" id="kwY-xF-FAB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <color key="textColor" red="0.40784313729999999" green="0.53333333329999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="RlJ-c0-0ee"/>
+                                        <exclude reference="Wfy-FU-nAD"/>
+                                        <exclude reference="e7J-xa-mWa"/>
+                                        <exclude reference="kwY-xF-FAB"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <constraints>
                             <constraint firstItem="9gA-Ek-2pd" firstAttribute="leading" secondItem="Na3-Wb-4BU" secondAttribute="leading" id="8ub-kY-06w"/>
@@ -558,6 +580,7 @@
                             <constraint firstItem="j1I-19-Cqr" firstAttribute="leading" secondItem="fOL-L3-by1" secondAttribute="leadingMargin" id="EaH-kb-jbT"/>
                             <constraint firstItem="j1I-19-Cqr" firstAttribute="top" secondItem="Na3-Wb-4BU" secondAttribute="bottom" constant="8" symbolic="YES" id="FAO-ug-cYK"/>
                             <constraint firstItem="HyR-Vj-CnV" firstAttribute="leading" secondItem="9gA-Ek-2pd" secondAttribute="leading" id="Gg1-LJ-09f"/>
+                            <constraint firstItem="eb6-Nc-FB9" firstAttribute="centerY" secondItem="W6q-aP-fbL" secondAttribute="centerY" id="HAl-JB-P7G"/>
                             <constraint firstItem="pnC-yZ-j82" firstAttribute="top" secondItem="HyR-Vj-CnV" secondAttribute="bottom" id="Hgv-nm-Fp5"/>
                             <constraint firstItem="NqL-gw-6v7" firstAttribute="centerY" secondItem="PEJ-M0-wJ1" secondAttribute="centerY" id="I47-hi-XBq"/>
                             <constraint firstItem="HyR-Vj-CnV" firstAttribute="trailing" secondItem="9gA-Ek-2pd" secondAttribute="trailing" id="IeH-gg-S6F"/>
@@ -565,6 +588,7 @@
                             <constraint firstItem="NqL-gw-6v7" firstAttribute="trailing" secondItem="3Dw-VJ-0ZV" secondAttribute="trailing" id="Pd8-W7-x0D"/>
                             <constraint firstItem="3Dw-VJ-0ZV" firstAttribute="bottom" secondItem="Bsi-JO-ldK" secondAttribute="bottom" id="TiD-7s-oNF"/>
                             <constraint firstItem="Na3-Wb-4BU" firstAttribute="top" secondItem="RDI-0t-z9F" secondAttribute="bottom" id="Vek-k5-0VZ"/>
+                            <constraint firstItem="eb6-Nc-FB9" firstAttribute="centerX" secondItem="9gA-Ek-2pd" secondAttribute="centerX" id="Weg-t3-M6v"/>
                             <constraint firstItem="kht-Ek-zkB" firstAttribute="bottom" secondItem="bqf-CL-svE" secondAttribute="bottom" id="bEh-Au-Ms3"/>
                             <constraint firstItem="3Dw-VJ-0ZV" firstAttribute="trailing" secondItem="fOL-L3-by1" secondAttribute="trailingMargin" id="bbH-L0-NX5"/>
                             <constraint firstItem="71u-Fg-RJL" firstAttribute="top" secondItem="j1I-19-Cqr" secondAttribute="top" id="cds-kX-b1t"/>
@@ -597,6 +621,8 @@
                         <outlet property="imgViewPower" destination="71u-Fg-RJL" id="Fwj-iI-Vau"/>
                         <outlet property="imgViewProfile" destination="3Dw-VJ-0ZV" id="cIg-sa-fuB"/>
                         <outlet property="imgViewSetting" destination="j1I-19-Cqr" id="vs9-aR-kw2"/>
+                        <outlet property="imgViewSpeedMeter" destination="W6q-aP-fbL" id="xLI-Vu-OyW"/>
+                        <outlet property="labelSpeed" destination="eb6-Nc-FB9" id="lYs-r9-BGq"/>
                         <outlet property="scrollViewMode" destination="HyR-Vj-CnV" id="931-Au-JE4"/>
                         <segue destination="TT6-ou-MM9" kind="show" identifier="segueDashToMap" id="giZ-QP-kgy"/>
                         <segue destination="gdk-A0-4cy" kind="show" identifier="segueDashToSetting" id="FT4-ja-zaY"/>
@@ -789,6 +815,6 @@
         <image name="lineBottom.png" width="1080" height="15"/>
         <image name="lineMiddle.png" width="1080" height="40"/>
         <image name="lineTop.png" width="1080" height="33"/>
-        <image name="speedMeter.png" width="1059" height="1051"/>
+        <image name="speedMeter.png" width="1068" height="1028"/>
     </resources>
 </document>

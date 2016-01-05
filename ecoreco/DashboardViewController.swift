@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class DashboardViewController: UIViewController, UIScrollViewDelegate {
 
@@ -11,11 +12,13 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var imgViewPower: UIImageView!
     @IBOutlet weak var imgViewProfile: UIImageView!
     @IBOutlet weak var imgViewNavi: UIImageView!
-    
+    @IBOutlet weak var labelSpeed: UILabel!
+    @IBOutlet weak var imgViewSpeedMeter: UIImageView!
     @IBOutlet weak var scrollViewMode: UIScrollView!
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    
+    var layer:CALayer?
+    var testSpeedArray:[Int] = [10,14,16,19,20,23,22,15,9]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +29,53 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate {
             green: 0.33,
             blue: 0.33,
             alpha: 0.4)
+        
+        
+        // create init pointer image
+        let pointerImage = UIImage(named: "pointer.png") as UIImage!
+        layer = CALayer()
+        let speedMeterStartX = (self.view.frame.width - imgViewSpeedMeter.frame.width)/2
+        let speedMeterStartY = imgViewSpeedMeter.frame.origin.y + imgViewSpeedMeter.bounds.height/2 - 24/2
+        layer?.frame = CGRectMake(speedMeterStartX,speedMeterStartY,imgViewSpeedMeter.bounds.width,24)
+        
+        print("x: \(speedMeterStartX)")
+        print("x: \(speedMeterStartY)")
+        print("w: \(imgViewSpeedMeter.bounds.width)")
+        
+        layer?.contents = pointerImage.CGImage as? AnyObject
+        self.view.layer.addSublayer(layer!)
+        
+        // prepare to rotate the pointer image
+        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+        var deg:Float = 1
+        var rad:Float = deg / 180.0 * Float(M_PI)
+        var rotation:CGAffineTransform = CGAffineTransformMakeRotation(CGFloat(rad))
+        var speed:Int = 0
+
+        
+        dispatch_async(dispatch_get_global_queue(priority, 0)){
+            var i:Int = 0
+            while true {
+                usleep(200000)
+                
+                speed = self.testSpeedArray[i]
+                i++
+                if i == (self.testSpeedArray.endIndex - 1) {
+                    i = 0
+                }
+                
+                
+                //speed = random()%25
+                deg = self.speedToDegree(speed)
+                rad = deg / 180.0 * Float(M_PI)
+                rotation = CGAffineTransformMakeRotation(CGFloat(rad))
+                
+                dispatch_async(dispatch_get_main_queue()){
+                    self.layer?.setAffineTransform(rotation)
+                    self.labelSpeed.text = "\(speed)"
+                }
+            }
+        }
         
         
         self.navigationController?.setNavigationBarHidden(true, animated: true)
@@ -62,6 +112,12 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate {
         scrollViewMode.showsHorizontalScrollIndicator = true
         scrollViewMode.indicatorStyle = .Default
         
+    }
+    
+    func speedToDegree(speed:Int)->Float{
+        var degree:Float = 0.0
+        degree = Float(speed)/25 * 180
+        return degree
     }
 
     func tappedSetting(){
