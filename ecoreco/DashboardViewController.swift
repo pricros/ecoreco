@@ -18,25 +18,16 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate {
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var layer:CALayer?
-    var testSpeedArray:[Int] = [10,14,16,19,20,23,22,15,9]
+    var testSpeedArray:[Int] = [0,0,1,1,3,3,5,5,10,14,16,19,20,23,22,15,9]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
- 
-        //set view bgcolor
-        self.view.backgroundColor = UIColor(
-            red: 0.33,
-            green: 0.33,
-            blue: 0.33,
-            alpha: 0.4)
-        
-        
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         // create init pointer image
         let pointerImage = UIImage(named: "pointer.png") as UIImage!
         layer = CALayer()
         let speedMeterStartX = (self.view.frame.width - imgViewSpeedMeter.frame.width)/2
-        let speedMeterStartY = imgViewSpeedMeter.frame.origin.y + imgViewSpeedMeter.bounds.height/2 - 24/2
-        layer?.frame = CGRectMake(speedMeterStartX,speedMeterStartY,imgViewSpeedMeter.bounds.width,24)
+        let speedMeterStartY = imgViewSpeedMeter.frame.origin.y + imgViewSpeedMeter.frame.height/2 - 35/2
+        layer?.frame = CGRectMake(speedMeterStartX,speedMeterStartY,imgViewSpeedMeter.frame.width,35)
         
         print("x: \(speedMeterStartX)")
         print("x: \(speedMeterStartY)")
@@ -51,7 +42,7 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate {
         var rad:Float = deg / 180.0 * Float(M_PI)
         var rotation:CGAffineTransform = CGAffineTransformMakeRotation(CGFloat(rad))
         var speed:Int = 0
-
+        
         
         dispatch_async(dispatch_get_global_queue(priority, 0)){
             var i:Int = 0
@@ -76,6 +67,19 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate {
                 }
             }
         }
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+ 
+        //set view bgcolor
+        self.view.backgroundColor = UIColor(
+            red: 0.33,
+            green: 0.33,
+            blue: 0.33,
+            alpha: 0.4)
+        
         
         
         self.navigationController?.setNavigationBarHidden(true, animated: true)

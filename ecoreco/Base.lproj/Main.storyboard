@@ -780,6 +780,6 @@
         <image name="lineBottom.png" width="1080" height="15"/>
         <image name="lineMiddle.png" width="1080" height="40"/>
         <image name="lineTop.png" width="1080" height="33"/>
-        <image name="speedMeter.png" width="1068" height="1028"/>
+        <image name="speedMeter.png" width="1081" height="1080"/>
     </resources>
 </document>
