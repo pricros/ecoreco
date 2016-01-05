@@ -22,12 +22,13 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+                
         // create init pointer image
         let pointerImage = UIImage(named: "pointer.png") as UIImage!
         layer = CALayer()
         let speedMeterStartX = (self.view.frame.width - imgViewSpeedMeter.frame.width)/2
-        let speedMeterStartY = imgViewSpeedMeter.frame.origin.y + imgViewSpeedMeter.frame.height/2 - 35/2
-        layer?.frame = CGRectMake(speedMeterStartX,speedMeterStartY,imgViewSpeedMeter.frame.width,35)
+        let speedMeterStartY = imgViewSpeedMeter.frame.origin.y + imgViewSpeedMeter.frame.height/2 - 29/2
+        layer?.frame = CGRectMake(speedMeterStartX,speedMeterStartY,imgViewSpeedMeter.frame.width,29)
         
         print("x: \(speedMeterStartX)")
         print("x: \(speedMeterStartY)")
