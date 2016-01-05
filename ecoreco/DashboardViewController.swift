@@ -6,7 +6,7 @@
 import UIKit
 import QuartzCore
 
-class DashboardViewController: UIViewController, UIScrollViewDelegate {
+class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManagerDelegate {
 
     @IBOutlet weak var imgViewSetting: UIImageView!
     @IBOutlet weak var imgViewPower: UIImageView!
@@ -19,10 +19,61 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var layer:CALayer?
     var testSpeedArray:[Int] = [0,0,1,1,3,3,5,5,10,14,16,19,20,23,22,15,9]
+    var bDemoStart:Bool = false
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        appDelegate.nrfManager.delegate = self
+ 
+        //set view bgcolor
+        self.view.backgroundColor = UIColor(
+            red: 0.33,
+            green: 0.33,
+            blue: 0.33,
+            alpha: 0.4)
+        
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        //add tpa action to [Setting]
+        let tapGestureRecognizerSetting = UITapGestureRecognizer(target: self, action:Selector("tappedSetting"))
+        imgViewSetting.userInteractionEnabled = true
+        imgViewSetting.addGestureRecognizer(tapGestureRecognizerSetting)
+
+        
+        //add tpa action to [Power]
+        let tapGestureRecognizerPower = UITapGestureRecognizer(target: self, action:Selector("tappedPower"))
+        imgViewPower.userInteractionEnabled = true
+        imgViewPower.addGestureRecognizer(tapGestureRecognizerPower)
+
+        
+        //add tpa action to [Profile]
+        let tapGestureRecognizerProfile = UITapGestureRecognizer(target: self, action:Selector("tappedProfile"))
+        imgViewProfile.userInteractionEnabled = true
+        imgViewProfile.addGestureRecognizer(tapGestureRecognizerProfile)
+
+        //add tpa action to [Navi]
+        let tapGestureRecognizerNavi = UITapGestureRecognizer(target: self, action:Selector("tappedNavi"))
+        imgViewNavi.userInteractionEnabled = true
+        imgViewNavi.addGestureRecognizer(tapGestureRecognizerNavi)
+        
+        
+        
+        //scroll view
+        let scrollingView = modeButtonsView()
+        scrollViewMode.addSubview(scrollingView)
+        scrollViewMode.contentSize = scrollingView.frame.size
+        scrollViewMode.scrollEnabled = true
+        scrollViewMode.showsHorizontalScrollIndicator = true
+        scrollViewMode.indicatorStyle = .Default
+        
+    }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-                
+        
+        if !bDemoStart {
+        
         // create init pointer image
         let pointerImage = UIImage(named: "pointer.png") as UIImage!
         layer = CALayer()
@@ -68,54 +119,9 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate {
                 }
             }
         }
-        
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
- 
-        //set view bgcolor
-        self.view.backgroundColor = UIColor(
-            red: 0.33,
-            green: 0.33,
-            blue: 0.33,
-            alpha: 0.4)
-        
-        
-        
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        
-        //add tpa action to [Setting]
-        let tapGestureRecognizerSetting = UITapGestureRecognizer(target: self, action:Selector("tappedSetting"))
-        imgViewSetting.userInteractionEnabled = true
-        imgViewSetting.addGestureRecognizer(tapGestureRecognizerSetting)
-
-        
-        //add tpa action to [Power]
-        let tapGestureRecognizerPower = UITapGestureRecognizer(target: self, action:Selector("tappedPower"))
-        imgViewPower.userInteractionEnabled = true
-        imgViewPower.addGestureRecognizer(tapGestureRecognizerPower)
-
-        
-        //add tpa action to [Profile]
-        let tapGestureRecognizerProfile = UITapGestureRecognizer(target: self, action:Selector("tappedProfile"))
-        imgViewProfile.userInteractionEnabled = true
-        imgViewProfile.addGestureRecognizer(tapGestureRecognizerProfile)
-
-        //add tpa action to [Navi]
-        let tapGestureRecognizerNavi = UITapGestureRecognizer(target: self, action:Selector("tappedNavi"))
-        imgViewNavi.userInteractionEnabled = true
-        imgViewNavi.addGestureRecognizer(tapGestureRecognizerNavi)
-        
-        
-        
-        //scroll view
-        let scrollingView = modeButtonsView()
-        scrollViewMode.addSubview(scrollingView)
-        scrollViewMode.contentSize = scrollingView.frame.size
-        scrollViewMode.scrollEnabled = true
-        scrollViewMode.showsHorizontalScrollIndicator = true
-        scrollViewMode.indicatorStyle = .Default
+            
+            bDemoStart = true
+        }
         
     }
     
@@ -262,8 +268,10 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate {
     }
     
     
-    
-    
+    func nrfReceivedData(nrfManager:NRFManager, data:NSData?, string:String?) {
+        print(string)
+        
+    }
     
 
 }
