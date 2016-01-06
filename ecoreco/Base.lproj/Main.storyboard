@@ -300,22 +300,26 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHy-bF-hf0">
-                                <rect key="frame" x="538" y="36" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lineTop.png" translatesAutoresizingMaskIntoConstraints="NO" id="ClJ-hL-cWt">
                                 <rect key="frame" x="0.0" y="20" width="600" height="15"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="versionNo" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHy-bF-hf0">
+                                <rect key="frame" x="527" y="571" width="53" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="82S-zr-iYb"/>
+                                    <constraint firstAttribute="width" constant="53" id="daH-sc-COC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="z34-L8-CD3" firstAttribute="top" secondItem="RQ5-c7-fbQ" secondAttribute="bottom" id="6Su-Ul-Bxv"/>
-                            <constraint firstItem="z34-L8-CD3" firstAttribute="top" secondItem="QHy-bF-hf0" secondAttribute="top" id="79j-lq-QYs"/>
                             <constraint firstItem="ClJ-hL-cWt" firstAttribute="leading" secondItem="PnR-gd-BVW" secondAttribute="leading" id="7ib-Qo-0Wl"/>
                             <constraint firstAttribute="trailing" secondItem="ClJ-hL-cWt" secondAttribute="trailing" id="9pk-Kq-8uu"/>
+                            <constraint firstItem="QHy-bF-hf0" firstAttribute="trailing" secondItem="PnR-gd-BVW" secondAttribute="trailingMargin" id="CS5-p4-pmB"/>
                             <constraint firstItem="UTr-hU-ewj" firstAttribute="top" secondItem="RQ5-c7-fbQ" secondAttribute="bottom" constant="16" id="CXd-Eh-pWv"/>
                             <constraint firstItem="UTr-hU-ewj" firstAttribute="top" secondItem="RQ5-c7-fbQ" secondAttribute="bottom" constant="16" id="Deh-o8-4ew"/>
                             <constraint firstItem="ClJ-hL-cWt" firstAttribute="trailing" secondItem="z34-L8-CD3" secondAttribute="trailing" id="GAl-6a-hud"/>
@@ -328,10 +332,10 @@
                             <constraint firstItem="UTr-hU-ewj" firstAttribute="leading" secondItem="PnR-gd-BVW" secondAttribute="leadingMargin" id="RX5-U5-ZLX"/>
                             <constraint firstItem="UTr-hU-ewj" firstAttribute="leading" secondItem="PnR-gd-BVW" secondAttribute="leadingMargin" id="Rsr-By-iYd"/>
                             <constraint firstItem="ClJ-hL-cWt" firstAttribute="leading" secondItem="z34-L8-CD3" secondAttribute="leading" id="Ruq-ES-V4d"/>
+                            <constraint firstItem="hyE-cH-vp0" firstAttribute="top" secondItem="QHy-bF-hf0" secondAttribute="bottom" constant="8" symbolic="YES" id="WHk-3u-NIB"/>
                             <constraint firstItem="UTr-hU-ewj" firstAttribute="leading" secondItem="PnR-gd-BVW" secondAttribute="leadingMargin" id="XiY-ho-yI6"/>
                             <constraint firstItem="z34-L8-CD3" firstAttribute="top" secondItem="UTr-hU-ewj" secondAttribute="top" id="Z3r-6X-v1T"/>
                             <constraint firstItem="QHy-bF-hf0" firstAttribute="top" secondItem="UTr-hU-ewj" secondAttribute="top" id="ZdA-Sm-8Dk"/>
-                            <constraint firstItem="QHy-bF-hf0" firstAttribute="trailing" secondItem="PnR-gd-BVW" secondAttribute="trailingMargin" id="a0k-Nf-lXg"/>
                             <constraint firstItem="hyE-cH-vp0" firstAttribute="top" secondItem="UTr-hU-ewj" secondAttribute="bottom" constant="470" id="cMd-cu-DMi"/>
                             <constraint firstItem="ClJ-hL-cWt" firstAttribute="top" secondItem="RQ5-c7-fbQ" secondAttribute="bottom" id="jFB-6x-Nv0"/>
                             <constraint firstItem="z34-L8-CD3" firstAttribute="top" secondItem="UTr-hU-ewj" secondAttribute="bottom" constant="-86" id="o75-fy-kLR"/>
@@ -349,7 +353,6 @@
                                 <exclude reference="Qj8-YU-hEA"/>
                                 <exclude reference="Rsr-By-iYd"/>
                                 <exclude reference="XiY-ho-yI6"/>
-                                <exclude reference="ZdA-Sm-8Dk"/>
                                 <exclude reference="HiP-fi-ktZ"/>
                                 <exclude reference="JMq-xN-2In"/>
                                 <exclude reference="Pj2-wd-dhF"/>
@@ -357,6 +360,7 @@
                                 <exclude reference="rWN-fF-Cf8"/>
                                 <exclude reference="wXT-7P-kbr"/>
                                 <exclude reference="zmJ-d6-ovy"/>
+                                <exclude reference="ZdA-Sm-8Dk"/>
                             </mask>
                         </variation>
                     </view>
