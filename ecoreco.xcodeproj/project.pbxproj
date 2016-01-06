@@ -60,6 +60,7 @@
 		18EEF0F81C2BF06F0065AFE7 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEF0F71C2BF06F0065AFE7 /* DashboardViewController.swift */; };
 		3C0B71581C34BDD700123C07 /* lineMiddle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0B71571C34BDD700123C07 /* lineMiddle.png */; };
 		3C0B715A1C34BDDF00123C07 /* speedMeter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0B71591C34BDDF00123C07 /* speedMeter.png */; };
+		3C460A4E1C3CAFE100FB6EB6 /* mapPoint.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C460A4D1C3CAFE100FB6EB6 /* mapPoint.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +140,7 @@
 		18EEF0F71C2BF06F0065AFE7 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		3C0B71571C34BDD700123C07 /* lineMiddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lineMiddle.png; path = images/lineMiddle.png; sourceTree = "<group>"; };
 		3C0B71591C34BDDF00123C07 /* speedMeter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = speedMeter.png; path = images/speedMeter.png; sourceTree = "<group>"; };
+		3C460A4D1C3CAFE100FB6EB6 /* mapPoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mapPoint.png; path = images/mapPoint.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 		187B92F91C27B35F00DA3BDF /* images */ = {
 			isa = PBXGroup;
 			children = (
+				3C460A4D1C3CAFE100FB6EB6 /* mapPoint.png */,
 				1876A5C41C3B4CEB0016EBCA /* pointer.png */,
 				1876A5BC1C3616E30016EBCA /* icon_120_120.png */,
 				1876A5BD1C3616E40016EBCA /* icon_180_180.png */,
@@ -379,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1876A5811C3238E60016EBCA /* digit_8.png in Resources */,
+				3C460A4E1C3CAFE100FB6EB6 /* mapPoint.png in Resources */,
 				187B92D21C26716600DA3BDF /* LaunchScreen.storyboard in Resources */,
 				1876A5731C322EC00016EBCA /* digit_1.png in Resources */,
 				1876A5861C3238E60016EBCA /* digit_3.png in Resources */,
