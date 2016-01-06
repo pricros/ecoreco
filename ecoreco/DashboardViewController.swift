@@ -18,7 +18,7 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManage
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var layer:CALayer?
-    var testSpeedArray:[Int] = [0,0,1,1,2,3,3,4,5,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,19,20,20,19,20,19,20,19,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0]
+    var testSpeedArray:[Int] = [0,1,2,3,3,4,5,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,20,20,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0]
     var bDemoThreadStart:Bool = false
     var bDemoEnable:Bool = false
     
