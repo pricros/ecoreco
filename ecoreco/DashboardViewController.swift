@@ -19,7 +19,8 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManage
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var layer:CALayer?
     var testSpeedArray:[Int] = [0,0,1,1,3,3,5,5,10,14,16,19,20,23,22,15,9]
-    var bDemoStart:Bool = false
+    var bDemoThreadStart:Bool = false
+    var bDemoEnable:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +58,11 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManage
         imgViewNavi.userInteractionEnabled = true
         imgViewNavi.addGestureRecognizer(tapGestureRecognizerNavi)
         
+        //add tpa action to [lableSpeed]
+        let tapGestureRecognizerSpeed = UITapGestureRecognizer(target: self, action:Selector("tappedSpeed"))
+        labelSpeed.userInteractionEnabled = true
+        labelSpeed.addGestureRecognizer(tapGestureRecognizerSpeed)
+        
         
         
         //scroll view
@@ -72,7 +78,7 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManage
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        if !bDemoStart {
+        if !bDemoThreadStart {
         
         // create init pointer image
         let pointerImage = UIImage(named: "pointer.png") as UIImage!
@@ -101,26 +107,31 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManage
             while true {
                 usleep(200000)
                 
-                speed = self.testSpeedArray[i]
-                i++
-                if i == (self.testSpeedArray.endIndex - 1) {
-                    i = 0
+                if (self.bDemoEnable){
+                    speed = self.testSpeedArray[i]
+                    i++
+                    if i == (self.testSpeedArray.endIndex - 1) {
+                        i = 0
+                    }
+                }else{
+                    speed = 0
                 }
                 
-                
-                //speed = random()%25
-                deg = self.speedToDegree(speed)
-                rad = deg / 180.0 * Float(M_PI)
-                rotation = CGAffineTransformMakeRotation(CGFloat(rad))
-                
-                dispatch_async(dispatch_get_main_queue()){
-                    self.layer?.setAffineTransform(rotation)
-                    self.labelSpeed.text = "\(speed)"
-                }
+                    
+                    //speed = random()%25
+                    deg = self.speedToDegree(speed)
+                    rad = deg / 180.0 * Float(M_PI)
+                    rotation = CGAffineTransformMakeRotation(CGFloat(rad))
+                    
+                    dispatch_async(dispatch_get_main_queue()){
+                        self.layer?.setAffineTransform(rotation)
+                        self.labelSpeed.text = "\(speed)"
+                    }
+
             }
         }
             
-            bDemoStart = true
+            bDemoThreadStart = true
         }
         
     }
@@ -165,6 +176,9 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManage
        // self.navigationController?.pushViewController(self.storyboard?.instantiateViewControllerWithIdentifier("MapView") as! MapViewController, animated: true)
     }
     
+    func tappedSpeed(){
+        self.bDemoEnable = !self.bDemoEnable
+    }
     
     
     
