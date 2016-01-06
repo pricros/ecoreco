@@ -18,7 +18,7 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManage
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var layer:CALayer?
-    var testSpeedArray:[Int] = [0,0,1,1,3,3,5,5,10,14,16,19,20,23,22,15,9]
+    var testSpeedArray:[Int] = [0,0,1,1,3,3,5,5,10,14,16,19,20,22,23,22,23,22,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0]
     var bDemoThreadStart:Bool = false
     var bDemoEnable:Bool = false
     
@@ -73,6 +73,8 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManage
         scrollViewMode.showsHorizontalScrollIndicator = true
         scrollViewMode.indicatorStyle = .Default
         
+        self.labelSpeed.text = "0"
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -86,25 +88,17 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManage
         let speedMeterStartX = (self.view.frame.width - imgViewSpeedMeter.frame.width)/2
         let speedMeterStartY = imgViewSpeedMeter.frame.origin.y + imgViewSpeedMeter.frame.height/2 - 29/2
         layer?.frame = CGRectMake(speedMeterStartX,speedMeterStartY,imgViewSpeedMeter.frame.width,29)
-        
-        print("x: \(speedMeterStartX)")
-        print("x: \(speedMeterStartY)")
-        print("w: \(imgViewSpeedMeter.bounds.width)")
-        
         layer?.contents = pointerImage.CGImage as? AnyObject
         self.view.layer.addSublayer(layer!)
         
         // prepare to rotate the pointer image
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-        var deg:Float = 1
-        var rad:Float = deg / 180.0 * Float(M_PI)
-        var rotation:CGAffineTransform = CGAffineTransformMakeRotation(CGFloat(rad))
+        var rotation:CGAffineTransform?
         var speed:Int = 0
-        
         
         dispatch_async(dispatch_get_global_queue(priority, 0)){
             var i:Int = 0
-            while true {
+            while false {
                 usleep(200000)
                 
                 if (self.bDemoEnable){
@@ -116,17 +110,13 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManage
                 }else{
                     speed = 0
                 }
-                
                     
-                    //speed = random()%25
-                    deg = self.speedToDegree(speed)
-                    rad = deg / 180.0 * Float(M_PI)
-                    rotation = CGAffineTransformMakeRotation(CGFloat(rad))
-                    
-                    dispatch_async(dispatch_get_main_queue()){
-                        self.layer?.setAffineTransform(rotation)
-                        self.labelSpeed.text = "\(speed)"
-                    }
+                //speed = random()%25
+                rotation = self.speedToRotation(speed)!
+                dispatch_async(dispatch_get_main_queue()){
+                    self.layer?.setAffineTransform(rotation!)
+                    self.labelSpeed.text = "\(speed)"
+                }
 
             }
         }
@@ -141,6 +131,17 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManage
         degree = Float(speed)/25 * 180
         return degree
     }
+    
+    func speedToRotation(speed:Int)->CGAffineTransform?{
+        var degree:Float = 0
+        var rad:Float = 0
+        var rotation:CGAffineTransform?
+        degree = Float(speed)/25 * 180
+        rad = degree/180.0 * Float(M_PI)
+        rotation = CGAffineTransformMakeRotation(CGFloat(rad))
+        return rotation
+    }
+
 
     func tappedSetting(){
         self.performSegueWithIdentifier("segueDashToSetting", sender: nil)
@@ -178,6 +179,26 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManage
     
     func tappedSpeed(){
         self.bDemoEnable = !self.bDemoEnable
+        
+        var rotation:CGAffineTransform?
+        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+
+        dispatch_async(dispatch_get_global_queue(priority, 0)){
+            for speed in self.testSpeedArray{
+                usleep(200000)
+                
+            
+            //speed = random()%25
+                rotation = self.speedToRotation(speed)
+                
+                dispatch_async(dispatch_get_main_queue()){
+                self.layer?.setAffineTransform(rotation!)
+                self.labelSpeed.text = "\(speed)"
+                }
+            }
+            
+        }
+
     }
     
     
