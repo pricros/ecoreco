@@ -10,19 +10,26 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
-    let locationManager = CLLocationManager()
+
+class CustomPointAnnotation: MKPointAnnotation {
+    var imageName: String!
+}
+
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView! {
         didSet{
-            mapView.mapType = .Standard
-            mapView.delegate = self
+            self.mapView.mapType = .Standard
+            self.mapView.delegate = self
+            self.mapView.showsUserLocation = false //to hide the blue dot
         }
     }
     
-    
     @IBOutlet weak var imgViewDashBoard: UIImageView!
+    
+    let locationManager = CLLocationManager()
+    
     
     
     override func viewDidLoad() {
@@ -37,29 +44,47 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-
+        
         //show location
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.requestWhenInUseAuthorization()
         //self.locationManager.requestAlwaysAuthorization()
         self.locationManager.startUpdatingLocation()
-        self.mapView.showsUserLocation = true
-        
         
         //add tpa action to imageView
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action:Selector("tappedImage"))
         imgViewDashBoard.userInteractionEnabled = true
         imgViewDashBoard.addGestureRecognizer(tapGestureRecognizer)
     }
-
+    
+    
+    override func viewDidDisappear(animated: Bool) {
+        print("remove mapVIew")
+        self.mapView.showsUserLocation = false
+        self.mapView.delegate = nil
+        self.locationManager.stopUpdatingLocation()
+        self.locationManager.delegate = nil
+        self.mapView.removeFromSuperview()
+    }
+    
+    
+    
     
     func tappedImage(){
-        print("back to dash-board")
+        print("back to dashboard")
         self.navigationController?.popViewControllerAnimated(true)
     }
     
-
+    
+    
+    override func didReceiveMemoryWarning(){
+        super.didReceiveMemoryWarning()
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error:NSError) {
+        print("Errors: " + error.localizedDescription)
+    }
     
     func locationManager(manager:CLLocationManager, didUpdateLocations locations:[CLLocation]) {
         
@@ -71,68 +96,46 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         self.mapView.setRegion(region, animated: true)
         
-        //self.locationManager.stopUpdatingLocation()
+        
+        // Add an annotation on Map View (pin)
+        let currPoint = CustomPointAnnotation()
+        currPoint.coordinate = location!.coordinate
+        currPoint.imageName = "mapPoint.png"
+        currPoint.title = "Your current location"
+        currPoint.subtitle = "go live your adventure!"
+        self.mapView.addAnnotation(currPoint)
+        
+        //stop updating location to save battery life
+        //locationManager.stopUpdatingLocation()
         
     }
     
     
-    func locationManager(manager: CLLocationManager, didFailWithError error:NSError) {
-        print("Errors: " + error.localizedDescription)
+    
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        if !(annotation is CustomPointAnnotation) {
+            return nil
+        }
+        
+        let reuseId = "test"
+        
+        var anView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
+        if anView == nil {
+            anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            anView!.canShowCallout = true
+        }
+        else {
+            anView!.annotation = annotation
+        }
+        
+        //Set annotation-specific properties **AFTER**
+        //the view is dequeued or created...
+        
+        let cpa = annotation as! CustomPointAnnotation
+        anView!.image = UIImage(named:cpa.imageName)
+        
+        return anView
     }
-    
-    
-    override func viewDidDisappear(animated: Bool) {
-        print("remove mapVIew")
-        self.mapView.showsUserLocation = false
-        self.locationManager.stopUpdatingLocation()
-        self.locationManager.delegate = nil
-        self.mapView.removeFromSuperview()
-        self.mapView.delegate = nil
-    }
-    
-    
-//    @IBOutlet weak var toolBar: UIToolbar!
-//    func configureToolBar(){
-//        self.toolBar.barStyle = .BlackTranslucent
-//        self.toolBar.translucent = true
-//        self.toolBar.tintColor = UIColor.blueColor()
-//    }
-//    
-//    @IBOutlet weak var buttonBattery: UIBarButtonItem! {
-//        didSet{
-//            buttonBattery.title = "Battery"
-//            buttonBattery.target = self
-//            buttonBattery.action = nil
-//        }
-//    }
-//    
-//    @IBOutlet weak var buttonRangeEst: UIBarButtonItem! {
-//        didSet{
-//            buttonRangeEst.title = "RangeEst."
-//            buttonRangeEst.target = self
-//            buttonRangeEst.action = nil
-//        }
-//    }
-//
-//    @IBOutlet weak var buttonTrip: UIBarButtonItem! {
-//        didSet{
-//            buttonTrip.title = "Trip"
-//            buttonTrip.target = self
-//            buttonTrip.action = nil
-//        }
-//    }
-//    
-//    @IBOutlet weak var buttonSpeed: UIBarButtonItem! {
-//        didSet{
-//            buttonSpeed.image = UIImage(contentsOfFile:"img_mapBottomRightBg")
-//            buttonSpeed.target = self
-//            buttonSpeed.action = nil
-//        }
-//    }
-//
-//    
- 
-    
     
     
 }
