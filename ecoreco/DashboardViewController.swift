@@ -18,9 +18,11 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManage
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var layer:CALayer?
-    var testSpeedArray:[Int] = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,20,20,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0]
     var bDemoThreadStart:Bool = false
     var bDemoEnable:Bool = false
+    
+    let testSpeedArray:[Int] = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,20,20,20,20,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0]
+    let SLEEPINTERVAL:UInt32 = 50000 //micro second
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,46 +82,54 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManage
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        if !bDemoThreadStart {
-        
-        // create init pointer image
-        let pointerImage = UIImage(named: "pointer.png") as UIImage!
-        layer = CALayer()
-        let speedMeterStartX = (self.view.frame.width - imgViewSpeedMeter.frame.width)/2
-        let speedMeterStartY = imgViewSpeedMeter.frame.origin.y + imgViewSpeedMeter.frame.height/2 - 29/2
-        layer?.frame = CGRectMake(speedMeterStartX,speedMeterStartY,imgViewSpeedMeter.frame.width,29)
-        layer?.contents = pointerImage.CGImage as? AnyObject
-        self.view.layer.addSublayer(layer!)
-        
-        // prepare to rotate the pointer image
-        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-        var rotation:CGAffineTransform?
-        var speed:Int = 0
-        
-        dispatch_async(dispatch_get_global_queue(priority, 0)){
-            var i:Int = 0
-            while false {
-                usleep(200000)
-                
-                if (self.bDemoEnable){
-                    speed = self.testSpeedArray[i]
-                    i++
-                    if i == (self.testSpeedArray.endIndex - 1) {
-                        i = 0
-                    }
-                }else{
-                    speed = 0
-                }
+        if !bDemoThreadStart
+        {
+            
+            // create init pointer image
+            let pointerImage = UIImage(named: "pointer.png") as UIImage!
+            layer = CALayer()
+            let speedMeterStartX = (self.view.frame.width - imgViewSpeedMeter.frame.width)/2
+            let speedMeterStartY = imgViewSpeedMeter.frame.origin.y + imgViewSpeedMeter.frame.height/2 - 29/2
+            layer?.frame = CGRectMake(speedMeterStartX,speedMeterStartY,imgViewSpeedMeter.frame.width,29)
+            layer?.contents = pointerImage.CGImage as? AnyObject
+            self.view.layer.addSublayer(layer!)
+            
+            // prepare to rotate the pointer image
+            let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+            var rotation:CGAffineTransform?
+            var speed:Int = 0
+            
+            dispatch_async(dispatch_get_global_queue(priority, 0))
+            {
+                var i:Int = 0
+                while false
+                {
+                    usleep(self.SLEEPINTERVAL)
                     
-                //speed = random()%25
-                rotation = self.speedToRotation(speed)!
-                dispatch_async(dispatch_get_main_queue()){
-                    self.layer?.setAffineTransform(rotation!)
-                    self.labelSpeed.text = "\(speed)"
+                    if (self.bDemoEnable)
+                    {
+                        speed = self.testSpeedArray[i]
+                        i++
+                        if i == (self.testSpeedArray.endIndex - 1)
+                        {
+                            i = 0
+                        }
+                    }
+                    else
+                    {
+                        speed = 0
+                    }
+                        
+                    //speed = random()%25
+                    rotation = self.speedToRotation(speed)!
+                    dispatch_async(dispatch_get_main_queue())
+                    {
+                        self.layer?.setAffineTransform(rotation!)
+                        self.labelSpeed.text = "\(speed)"
+                    }
                 }
-
+                
             }
-        }
             
             bDemoThreadStart = true
         }
@@ -183,20 +193,24 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManage
         var rotation:CGAffineTransform?
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
 
-        dispatch_async(dispatch_get_global_queue(priority, 0)){
-            for speed in self.testSpeedArray{
-                usleep(200000)
+            dispatch_async(dispatch_get_global_queue(priority, 0))
+            {
+                self.bDemoThreadStart = true
+                for speed in self.testSpeedArray
+                {
+                    usleep(self.SLEEPINTERVAL)
+                    
                 
-            
-            //speed = random()%25
-                rotation = self.speedToRotation(speed)
-                
-                dispatch_async(dispatch_get_main_queue()){
-                self.layer?.setAffineTransform(rotation!)
-                self.labelSpeed.text = "\(speed)"
+                //speed = random()%25
+                    rotation = self.speedToRotation(speed)
+                    
+                    dispatch_async(dispatch_get_main_queue())
+                    {
+                        self.layer?.setAffineTransform(rotation!)
+                        self.labelSpeed.text = "\(speed)"
+                    }
                 }
-            }
-            
+        
         }
 
     }
