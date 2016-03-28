@@ -5,6 +5,7 @@
 
 import UIKit
 import QuartzCore
+import TLSphinx
 
 class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManagerDelegate {
 
@@ -177,8 +178,9 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManage
     }
     
     func tappedProfile(){
-        print("go to profilt")
-        appDelegate.sendData("1")
+        print("test voice recog")
+        //appDelegate.sendData("1")
+        testAVAudioRecorder()
     }
     
     func tappedNavi(){
@@ -320,6 +322,52 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManage
     func nrfReceivedData(nrfManager:NRFManager, data:NSData?, string:String?) {
         print(string)
         
+    }
+    
+    func getModelPath() -> String? {
+        let path:String? = NSBundle(forClass: AppDelegate.self).pathForResource("en-us", ofType: nil)
+
+        return path
+    }
+    
+    func testAVAudioRecorder() {
+        
+        if let modelPath = getModelPath() {
+            
+            let hmm = (modelPath as NSString).stringByAppendingPathComponent("en-us")
+            let lm = (modelPath as NSString).stringByAppendingPathComponent("en-us.lm.dmp")
+            let dict = (modelPath as NSString).stringByAppendingPathComponent("cmudict-en-us.dict")
+            
+            if let config = Config(args: ("-hmm", hmm), ("-lm", lm), ("-dict", dict)) {
+                
+                config.showDebugInfo = true
+                
+                if let decoder = Decoder(config:config) {
+                    decoder.startDecodingSpeech {
+                        
+                        if let hyp: Hypotesis = $0 {
+                            print("dbg:decode resource:\(hyp)")
+                        } else {
+                            print("dbg:can't decode any speech")// Can't decode any speech because an error
+                        }
+                    }
+                    
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(5.0 * Double(NSEC_PER_SEC))) , dispatch_get_main_queue(), { () -> Void in
+                        decoder.stopDecodingSpeech()
+                        print("dbg:stop decode")
+                    })
+                    
+                }
+                
+            } else {
+                print("dbg:Can't run test without a valid config")
+            }
+            
+        } else {
+            print("dbg:Can't access pocketsphinx model. Bundle root: \(NSBundle.mainBundle())")
+        }
+        
+        print("dbg:end voice recog")
     }
     
 

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+import TLSphinx
 
 class ViewController: UIViewController {
     
@@ -71,6 +73,7 @@ class ViewController: UIViewController {
         appDelegate.nrfManager.connect()
         
     }
+
 
 }
 

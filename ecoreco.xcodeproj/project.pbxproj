@@ -54,6 +54,7 @@
 		187B92DD1C26716600DA3BDF /* ecorecoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B92DC1C26716600DA3BDF /* ecorecoTests.swift */; };
 		187B92E81C26716600DA3BDF /* ecorecoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B92E71C26716600DA3BDF /* ecorecoUITests.swift */; };
 		187B93081C27FAAD00DA3BDF /* dash1.png in Resources */ = {isa = PBXBuildFile; fileRef = 187B93031C27FAAD00DA3BDF /* dash1.png */; };
+		1892B7891C765EA300168DCA /* en-us in Resources */ = {isa = PBXBuildFile; fileRef = 1892B7881C765EA300168DCA /* en-us */; };
 		18B781831C2935FE00AF0C07 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B781821C2935FE00AF0C07 /* SettingViewController.swift */; };
 		18EEF0BA1C2A3C380065AFE7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEF0B91C2A3C380065AFE7 /* MapViewController.swift */; };
 		18EEF0C81C2AFEB40065AFE7 /* NRFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEF0C71C2AFEB40065AFE7 /* NRFManager.swift */; };
@@ -78,7 +79,34 @@
 			remoteGlobalIDString = 187B92C31C26716500DA3BDF;
 			remoteInfo = ecoreco;
 		};
+		F930A16C1CA92E2200CB35FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F930A1671CA92E2200CB35FB /* TLSphinx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9B5187AF1B18E1E80000E78D;
+			remoteInfo = TLSphinx;
+		};
+		F930A16E1CA92E2200CB35FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F930A1671CA92E2200CB35FB /* TLSphinx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9B5187BA1B18E1E80000E78D;
+			remoteInfo = TLSphinxTests;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1892B7791C76394300168DCA /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1876A54E1C30D6CB0016EBCA /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = header.png; path = images/header.png; sourceTree = "<group>"; };
@@ -134,6 +162,7 @@
 		187B92E71C26716600DA3BDF /* ecorecoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ecorecoUITests.swift; sourceTree = "<group>"; };
 		187B92E91C26716600DA3BDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		187B93031C27FAAD00DA3BDF /* dash1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dash1.png; path = images/dash1.png; sourceTree = "<group>"; };
+		1892B7881C765EA300168DCA /* en-us */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "en-us"; sourceTree = "<group>"; };
 		18B781821C2935FE00AF0C07 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		18EEF0B91C2A3C380065AFE7 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		18EEF0C71C2AFEB40065AFE7 /* NRFManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRFManager.swift; sourceTree = "<group>"; };
@@ -141,6 +170,7 @@
 		3C0B71571C34BDD700123C07 /* lineMiddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lineMiddle.png; path = images/lineMiddle.png; sourceTree = "<group>"; };
 		3C0B71591C34BDDF00123C07 /* speedMeter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = speedMeter.png; path = images/speedMeter.png; sourceTree = "<group>"; };
 		3C460A4D1C3CAFE100FB6EB6 /* mapPoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mapPoint.png; path = images/mapPoint.png; sourceTree = "<group>"; };
+		F930A1671CA92E2200CB35FB /* TLSphinx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TLSphinx.xcodeproj; path = "../../TLSphinx-master/TLSphinx.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +201,7 @@
 		187B92BB1C26716500DA3BDF = {
 			isa = PBXGroup;
 			children = (
+				F930A1671CA92E2200CB35FB /* TLSphinx.xcodeproj */,
 				187B92F91C27B35F00DA3BDF /* images */,
 				187B92C61C26716500DA3BDF /* ecoreco */,
 				187B92DB1C26716600DA3BDF /* ecorecoTests */,
@@ -202,6 +233,7 @@
 				187B92D01C26716600DA3BDF /* LaunchScreen.storyboard */,
 				187B92D31C26716600DA3BDF /* Info.plist */,
 				18B781821C2935FE00AF0C07 /* SettingViewController.swift */,
+				1892B7881C765EA300168DCA /* en-us */,
 			);
 			path = ecoreco;
 			sourceTree = "<group>";
@@ -209,6 +241,7 @@
 		187B92DB1C26716600DA3BDF /* ecorecoTests */ = {
 			isa = PBXGroup;
 			children = (
+				1892B7431C75DC9F00168DCA /* Supporting Files */,
 				187B92DC1C26716600DA3BDF /* ecorecoTests.swift */,
 				187B92DE1C26716600DA3BDF /* Info.plist */,
 			);
@@ -274,6 +307,23 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		1892B7431C75DC9F00168DCA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Supporting Files";
+			path = ../ecorecoUITests;
+			sourceTree = "<group>";
+		};
+		F930A1681CA92E2200CB35FB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F930A16D1CA92E2200CB35FB /* TLSphinx.framework */,
+				F930A16F1CA92E2200CB35FB /* TLSphinxTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -284,6 +334,7 @@
 				187B92C01C26716500DA3BDF /* Sources */,
 				187B92C11C26716500DA3BDF /* Frameworks */,
 				187B92C21C26716500DA3BDF /* Resources */,
+				1892B7791C76394300168DCA /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -342,7 +393,7 @@
 				TargetAttributes = {
 					187B92C31C26716500DA3BDF = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 7SVTM2A28W;
+						DevelopmentTeam = 3TCWNJDF99;
 					};
 					187B92D71C26716600DA3BDF = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -367,6 +418,12 @@
 			mainGroup = 187B92BB1C26716500DA3BDF;
 			productRefGroup = 187B92C51C26716500DA3BDF /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F930A1681CA92E2200CB35FB /* Products */;
+					ProjectRef = F930A1671CA92E2200CB35FB /* TLSphinx.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				187B92C31C26716500DA3BDF /* ecoreco */,
@@ -375,6 +432,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		F930A16D1CA92E2200CB35FB /* TLSphinx.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = TLSphinx.framework;
+			remoteRef = F930A16C1CA92E2200CB35FB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F930A16F1CA92E2200CB35FB /* TLSphinxTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = TLSphinxTests.xctest;
+			remoteRef = F930A16E1CA92E2200CB35FB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		187B92C21C26716500DA3BDF /* Resources */ = {
@@ -419,6 +493,7 @@
 				1876A5AE1C3265430016EBCA /* modeEcoOff.png in Resources */,
 				1876A5A71C3265430016EBCA /* infoBattery.png in Resources */,
 				1876A5B21C3265430016EBCA /* modeEkickExtendOff.png in Resources */,
+				1892B7891C765EA300168DCA /* en-us in Resources */,
 				1876A5B51C3265430016EBCA /* modeRideOn.png in Resources */,
 				3C0B715A1C34BDDF00123C07 /* speedMeter.png in Resources */,
 				1876A5801C3238E60016EBCA /* digit_9.png in Resources */,
@@ -598,9 +673,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ecoreco",
+				);
+				HEADER_SEARCH_PATHS = "$(HOME)/GoogleDrive/Developer/TLSphinx-master/Sphinx/include/**";
 				INFOPLIST_FILE = ecoreco/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(HOME)/GoogleDrive/Developer/TLSphinx-master/Sphinx/lib/sphinxbase/**",
+					"$(HOME)/GoogleDrive/Developer/TLSphinx-master/Sphinx/lib/pocketsphinx/**",
+				);
+				New_Setting = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeez.jacky.ecoreco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -613,9 +699,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ecoreco",
+				);
+				HEADER_SEARCH_PATHS = "$(HOME)/GoogleDrive/Developer/TLSphinx-master/Sphinx/include/**";
 				INFOPLIST_FILE = ecoreco/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(HOME)/GoogleDrive/Developer/TLSphinx-master/Sphinx/lib/sphinxbase/**",
+					"$(HOME)/GoogleDrive/Developer/TLSphinx-master/Sphinx/lib/pocketsphinx/**",
+				);
+				New_Setting = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeez.jacky.ecoreco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
