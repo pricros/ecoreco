@@ -61,6 +61,7 @@
 		3C0B71581C34BDD700123C07 /* lineMiddle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0B71571C34BDD700123C07 /* lineMiddle.png */; };
 		3C0B715A1C34BDDF00123C07 /* speedMeter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0B71591C34BDDF00123C07 /* speedMeter.png */; };
 		3C460A4E1C3CAFE100FB6EB6 /* mapPoint.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C460A4D1C3CAFE100FB6EB6 /* mapPoint.png */; };
+		F9F981E41CD63F4B00DD9878 /* AVCamPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F981E31CD63F4B00DD9878 /* AVCamPreviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,7 @@
 		3C0B71571C34BDD700123C07 /* lineMiddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lineMiddle.png; path = images/lineMiddle.png; sourceTree = "<group>"; };
 		3C0B71591C34BDDF00123C07 /* speedMeter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = speedMeter.png; path = images/speedMeter.png; sourceTree = "<group>"; };
 		3C460A4D1C3CAFE100FB6EB6 /* mapPoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mapPoint.png; path = images/mapPoint.png; sourceTree = "<group>"; };
+		F9F981E31CD63F4B00DD9878 /* AVCamPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVCamPreviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,11 +194,10 @@
 		187B92C61C26716500DA3BDF /* ecoreco */ = {
 			isa = PBXGroup;
 			children = (
-				18EEF0F71C2BF06F0065AFE7 /* DashboardViewController.swift */,
+				F9F981E61CD722B800DD9878 /* Controller */,
+				F9F981E51CD63F6300DD9878 /* Cam */,
 				18EEF0C71C2AFEB40065AFE7 /* NRFManager.swift */,
-				18EEF0B91C2A3C380065AFE7 /* MapViewController.swift */,
 				187B92C71C26716500DA3BDF /* AppDelegate.swift */,
-				187B92C91C26716500DA3BDF /* ViewController.swift */,
 				187B92CB1C26716600DA3BDF /* Main.storyboard */,
 				187B92CE1C26716600DA3BDF /* Assets.xcassets */,
 				187B92D01C26716600DA3BDF /* LaunchScreen.storyboard */,
@@ -274,6 +275,24 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		F9F981E51CD63F6300DD9878 /* Cam */ = {
+			isa = PBXGroup;
+			children = (
+				F9F981E31CD63F4B00DD9878 /* AVCamPreviewView.swift */,
+			);
+			name = Cam;
+			sourceTree = "<group>";
+		};
+		F9F981E61CD722B800DD9878 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				18EEF0B91C2A3C380065AFE7 /* MapViewController.swift */,
+				187B92C91C26716500DA3BDF /* ViewController.swift */,
+				18EEF0F71C2BF06F0065AFE7 /* DashboardViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -342,7 +361,7 @@
 				TargetAttributes = {
 					187B92C31C26716500DA3BDF = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 7SVTM2A28W;
+						DevelopmentTeam = 3TCWNJDF99;
 					};
 					187B92D71C26716600DA3BDF = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -456,6 +475,7 @@
 				187B92C81C26716500DA3BDF /* AppDelegate.swift in Sources */,
 				18EEF0BA1C2A3C380065AFE7 /* MapViewController.swift in Sources */,
 				18EEF0C81C2AFEB40065AFE7 /* NRFManager.swift in Sources */,
+				F9F981E41CD63F4B00DD9878 /* AVCamPreviewView.swift in Sources */,
 				18B781831C2935FE00AF0C07 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

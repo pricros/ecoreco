@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -538,6 +538,55 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oaU-OX-nPV" customClass="AVCamPreviewView" customModule="ecoreco" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfp-Bg-cM5">
+                                        <rect key="frame" x="8" y="339" width="64" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Record">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="toggleMovieRecord:" destination="Fy1-Ct-fMk" eventType="touchUpInside" id="MuK-O8-bhM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DcR-EN-QGK">
+                                        <rect key="frame" x="277" y="339" width="47" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="47" id="HEY-g4-Hb4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Snap">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="snapStillImage:" destination="Fy1-Ct-fMk" eventType="touchUpInside" id="FXb-Gv-3sH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPv-em-fr1">
+                                        <rect key="frame" x="522" y="339" width="70" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Camera">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="changeCamera:" destination="Fy1-Ct-fMk" eventType="touchUpInside" id="MM4-UM-ucS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="DcR-EN-QGK" firstAttribute="top" secondItem="oaU-OX-nPV" secondAttribute="top" constant="339" id="PIR-EF-hRg"/>
+                                    <constraint firstAttribute="trailing" secondItem="jPv-em-fr1" secondAttribute="trailing" constant="8" id="aJ5-Ce-bZ4"/>
+                                    <constraint firstItem="DcR-EN-QGK" firstAttribute="leading" secondItem="lfp-Bg-cM5" secondAttribute="trailing" constant="20" id="gyA-6V-Kvb"/>
+                                    <constraint firstItem="DcR-EN-QGK" firstAttribute="baseline" secondItem="jPv-em-fr1" secondAttribute="baseline" id="iLy-Js-AMR"/>
+                                    <constraint firstItem="DcR-EN-QGK" firstAttribute="centerX" secondItem="oaU-OX-nPV" secondAttribute="centerX" id="izl-33-GtP"/>
+                                    <constraint firstItem="lfp-Bg-cM5" firstAttribute="baseline" secondItem="DcR-EN-QGK" secondAttribute="baseline" id="j1U-JR-PGe"/>
+                                    <constraint firstItem="lfp-Bg-cM5" firstAttribute="leading" secondItem="oaU-OX-nPV" secondAttribute="leading" constant="8" id="nfe-hM-Rbi"/>
+                                    <constraint firstItem="jPv-em-fr1" firstAttribute="leading" secondItem="DcR-EN-QGK" secondAttribute="trailing" constant="53" id="wpA-D7-AgT"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <constraints>
                             <constraint firstItem="PEJ-M0-wJ1" firstAttribute="leading" secondItem="bqf-CL-svE" secondAttribute="trailing" constant="8" symbolic="YES" id="1dW-Mr-i2o"/>
@@ -548,6 +597,7 @@
                             <constraint firstItem="W6q-aP-fbL" firstAttribute="top" secondItem="71u-Fg-RJL" secondAttribute="bottom" constant="17" id="9Zt-2X-FwU"/>
                             <constraint firstItem="bqf-CL-svE" firstAttribute="bottom" secondItem="PEJ-M0-wJ1" secondAttribute="bottom" id="Ck6-Bm-RCZ"/>
                             <constraint firstItem="pnC-yZ-j82" firstAttribute="top" secondItem="9gA-Ek-2pd" secondAttribute="bottom" constant="71" id="Cq6-Oc-U3n"/>
+                            <constraint firstItem="oaU-OX-nPV" firstAttribute="top" secondItem="fOL-L3-by1" secondAttribute="top" id="DDO-np-wix"/>
                             <constraint firstItem="Bsi-JO-ldK" firstAttribute="leading" secondItem="71u-Fg-RJL" secondAttribute="trailing" constant="8" symbolic="YES" id="Dge-6B-fYd"/>
                             <constraint firstItem="9gA-Ek-2pd" firstAttribute="leading" secondItem="Na3-Wb-4BU" secondAttribute="leading" id="DmE-2B-3gB"/>
                             <constraint firstItem="9gA-Ek-2pd" firstAttribute="top" secondItem="W6q-aP-fbL" secondAttribute="bottom" constant="22" id="E6J-sf-vWM"/>
@@ -576,23 +626,30 @@
                             <constraint firstItem="eb6-Nc-FB9" firstAttribute="centerX" secondItem="W6q-aP-fbL" secondAttribute="centerX" id="dZ5-mj-XDP"/>
                             <constraint firstItem="NqL-gw-6v7" firstAttribute="top" secondItem="HyR-Vj-CnV" secondAttribute="bottom" constant="8" symbolic="YES" id="eDZ-Uu-188"/>
                             <constraint firstItem="NqL-gw-6v7" firstAttribute="top" secondItem="pnC-yZ-j82" secondAttribute="bottom" constant="1" id="gGy-bq-WcV"/>
+                            <constraint firstItem="oaU-OX-nPV" firstAttribute="leading" secondItem="9gA-Ek-2pd" secondAttribute="leading" id="hHn-ea-D3i"/>
                             <constraint firstItem="71u-Fg-RJL" firstAttribute="top" secondItem="Bsi-JO-ldK" secondAttribute="top" id="kYY-uA-aop"/>
                             <constraint firstItem="j1I-19-Cqr" firstAttribute="leading" secondItem="fOL-L3-by1" secondAttribute="leadingMargin" id="n1c-Kl-wif"/>
                             <constraint firstItem="HyR-Vj-CnV" firstAttribute="top" secondItem="W6q-aP-fbL" secondAttribute="bottom" constant="37" id="pE3-us-6ym"/>
                             <constraint firstItem="HyR-Vj-CnV" firstAttribute="trailing" secondItem="pnC-yZ-j82" secondAttribute="trailing" id="rn4-Dv-fmz"/>
+                            <constraint firstItem="oaU-OX-nPV" firstAttribute="bottom" secondItem="Vo4-om-LiC" secondAttribute="top" id="sHx-54-bcQ"/>
+                            <constraint firstItem="oaU-OX-nPV" firstAttribute="trailing" secondItem="9gA-Ek-2pd" secondAttribute="trailing" id="wXM-Cc-7WR"/>
                             <constraint firstItem="PEJ-M0-wJ1" firstAttribute="centerY" secondItem="NqL-gw-6v7" secondAttribute="centerY" id="wyE-DJ-JeX"/>
                             <constraint firstItem="9gA-Ek-2pd" firstAttribute="leading" secondItem="HyR-Vj-CnV" secondAttribute="leading" id="zuz-7v-bzX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="reE-S2-1bX"/>
                     <connections>
+                        <outlet property="cameraButton" destination="jPv-em-fr1" id="MLI-Wq-n9H"/>
                         <outlet property="imgViewNavi" destination="NqL-gw-6v7" id="vG7-Vh-HB0"/>
                         <outlet property="imgViewPower" destination="71u-Fg-RJL" id="Fwj-iI-Vau"/>
                         <outlet property="imgViewProfile" destination="3Dw-VJ-0ZV" id="cIg-sa-fuB"/>
                         <outlet property="imgViewSetting" destination="j1I-19-Cqr" id="vs9-aR-kw2"/>
                         <outlet property="imgViewSpeedMeter" destination="W6q-aP-fbL" id="xLI-Vu-OyW"/>
                         <outlet property="labelSpeed" destination="eb6-Nc-FB9" id="lYs-r9-BGq"/>
+                        <outlet property="previewView" destination="oaU-OX-nPV" id="MDm-ha-XHV"/>
+                        <outlet property="recordButton" destination="lfp-Bg-cM5" id="Jz2-hv-sNV"/>
                         <outlet property="scrollViewMode" destination="HyR-Vj-CnV" id="931-Au-JE4"/>
+                        <outlet property="snapButton" destination="DcR-EN-QGK" id="0gz-ez-39y"/>
                         <segue destination="TT6-ou-MM9" kind="show" identifier="segueDashToMap" id="giZ-QP-kgy"/>
                         <segue destination="gdk-A0-4cy" kind="show" identifier="segueDashToSetting" id="FT4-ja-zaY"/>
                     </connections>
