@@ -386,6 +386,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oaU-OX-nPV" customClass="AVCamPreviewView" customModule="ecoreco" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lineTop.png" translatesAutoresizingMaskIntoConstraints="NO" id="Na3-Wb-4BU">
                                 <rect key="frame" x="0.0" y="20" width="600" height="15"/>
                                 <constraints>
@@ -456,7 +460,7 @@
                                     <constraint firstAttribute="height" constant="16" id="1vS-At-i8a"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speedMeter.png" translatesAutoresizingMaskIntoConstraints="NO" id="W6q-aP-fbL">
+                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speedMeter.png" translatesAutoresizingMaskIntoConstraints="NO" id="W6q-aP-fbL">
                                 <rect key="frame" x="160" y="126" width="280" height="280"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="W6q-aP-fbL" secondAttribute="height" multiplier="1:1" id="39t-Tj-RRg"/>
@@ -538,55 +542,39 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oaU-OX-nPV" customClass="AVCamPreviewView" customModule="ecoreco" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfp-Bg-cM5">
-                                        <rect key="frame" x="8" y="339" width="64" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Record">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="toggleMovieRecord:" destination="Fy1-Ct-fMk" eventType="touchUpInside" id="MuK-O8-bhM"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DcR-EN-QGK">
-                                        <rect key="frame" x="277" y="339" width="47" height="36"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="47" id="HEY-g4-Hb4"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Snap">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="snapStillImage:" destination="Fy1-Ct-fMk" eventType="touchUpInside" id="FXb-Gv-3sH"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPv-em-fr1">
-                                        <rect key="frame" x="522" y="339" width="70" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Camera">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="changeCamera:" destination="Fy1-Ct-fMk" eventType="touchUpInside" id="MM4-UM-ucS"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfp-Bg-cM5">
+                                <rect key="frame" x="94" y="10" width="64" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Record">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleMovieRecord:" destination="Fy1-Ct-fMk" eventType="touchUpInside" id="MuK-O8-bhM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DcR-EN-QGK">
+                                <rect key="frame" x="179" y="10" width="47" height="36"/>
                                 <constraints>
-                                    <constraint firstItem="DcR-EN-QGK" firstAttribute="top" secondItem="oaU-OX-nPV" secondAttribute="top" constant="339" id="PIR-EF-hRg"/>
-                                    <constraint firstAttribute="trailing" secondItem="jPv-em-fr1" secondAttribute="trailing" constant="8" id="aJ5-Ce-bZ4"/>
-                                    <constraint firstItem="DcR-EN-QGK" firstAttribute="leading" secondItem="lfp-Bg-cM5" secondAttribute="trailing" constant="20" id="gyA-6V-Kvb"/>
-                                    <constraint firstItem="DcR-EN-QGK" firstAttribute="baseline" secondItem="jPv-em-fr1" secondAttribute="baseline" id="iLy-Js-AMR"/>
-                                    <constraint firstItem="DcR-EN-QGK" firstAttribute="centerX" secondItem="oaU-OX-nPV" secondAttribute="centerX" id="izl-33-GtP"/>
-                                    <constraint firstItem="lfp-Bg-cM5" firstAttribute="baseline" secondItem="DcR-EN-QGK" secondAttribute="baseline" id="j1U-JR-PGe"/>
-                                    <constraint firstItem="lfp-Bg-cM5" firstAttribute="leading" secondItem="oaU-OX-nPV" secondAttribute="leading" constant="8" id="nfe-hM-Rbi"/>
-                                    <constraint firstItem="jPv-em-fr1" firstAttribute="leading" secondItem="DcR-EN-QGK" secondAttribute="trailing" constant="53" id="wpA-D7-AgT"/>
+                                    <constraint firstAttribute="width" constant="47" id="UHy-Ex-Paf"/>
                                 </constraints>
-                            </view>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Snap">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="snapStillImage:" destination="Fy1-Ct-fMk" eventType="touchUpInside" id="FXb-Gv-3sH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPv-em-fr1">
+                                <rect key="frame" x="247" y="10" width="70" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Camera">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeCamera:" destination="Fy1-Ct-fMk" eventType="touchUpInside" id="MM4-UM-ucS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="PEJ-M0-wJ1" firstAttribute="leading" secondItem="bqf-CL-svE" secondAttribute="trailing" constant="8" symbolic="YES" id="1dW-Mr-i2o"/>
@@ -601,6 +589,7 @@
                             <constraint firstItem="Bsi-JO-ldK" firstAttribute="leading" secondItem="71u-Fg-RJL" secondAttribute="trailing" constant="8" symbolic="YES" id="Dge-6B-fYd"/>
                             <constraint firstItem="9gA-Ek-2pd" firstAttribute="leading" secondItem="Na3-Wb-4BU" secondAttribute="leading" id="DmE-2B-3gB"/>
                             <constraint firstItem="9gA-Ek-2pd" firstAttribute="top" secondItem="W6q-aP-fbL" secondAttribute="bottom" constant="22" id="E6J-sf-vWM"/>
+                            <constraint firstItem="lfp-Bg-cM5" firstAttribute="leading" secondItem="j1I-19-Cqr" secondAttribute="trailing" constant="8" symbolic="YES" id="GxA-LL-F4a"/>
                             <constraint firstItem="bqf-CL-svE" firstAttribute="bottom" secondItem="kht-Ek-zkB" secondAttribute="bottom" id="Ijx-7W-l8k"/>
                             <constraint firstItem="pnC-yZ-j82" firstAttribute="leading" secondItem="HyR-Vj-CnV" secondAttribute="leading" id="JyB-96-ZjY"/>
                             <constraint firstItem="71u-Fg-RJL" firstAttribute="bottom" secondItem="j1I-19-Cqr" secondAttribute="bottom" id="KQb-Hg-LkP"/>
@@ -630,8 +619,13 @@
                             <constraint firstItem="71u-Fg-RJL" firstAttribute="top" secondItem="Bsi-JO-ldK" secondAttribute="top" id="kYY-uA-aop"/>
                             <constraint firstItem="j1I-19-Cqr" firstAttribute="leading" secondItem="fOL-L3-by1" secondAttribute="leadingMargin" id="n1c-Kl-wif"/>
                             <constraint firstItem="HyR-Vj-CnV" firstAttribute="top" secondItem="W6q-aP-fbL" secondAttribute="bottom" constant="37" id="pE3-us-6ym"/>
+                            <constraint firstItem="lfp-Bg-cM5" firstAttribute="baseline" secondItem="DcR-EN-QGK" secondAttribute="baseline" id="qGe-O8-dfI"/>
+                            <constraint firstItem="DcR-EN-QGK" firstAttribute="baseline" secondItem="jPv-em-fr1" secondAttribute="baseline" id="qhB-dL-EM9"/>
+                            <constraint firstItem="lfp-Bg-cM5" firstAttribute="centerY" secondItem="Na3-Wb-4BU" secondAttribute="centerY" id="rEj-sl-2wD"/>
                             <constraint firstItem="HyR-Vj-CnV" firstAttribute="trailing" secondItem="pnC-yZ-j82" secondAttribute="trailing" id="rn4-Dv-fmz"/>
+                            <constraint firstItem="DcR-EN-QGK" firstAttribute="leading" secondItem="lfp-Bg-cM5" secondAttribute="trailing" constant="21" id="sCe-Vg-TNy"/>
                             <constraint firstItem="oaU-OX-nPV" firstAttribute="bottom" secondItem="Vo4-om-LiC" secondAttribute="top" id="sHx-54-bcQ"/>
+                            <constraint firstItem="jPv-em-fr1" firstAttribute="leading" secondItem="DcR-EN-QGK" secondAttribute="trailing" constant="21" id="uZo-GY-q14"/>
                             <constraint firstItem="oaU-OX-nPV" firstAttribute="trailing" secondItem="9gA-Ek-2pd" secondAttribute="trailing" id="wXM-Cc-7WR"/>
                             <constraint firstItem="PEJ-M0-wJ1" firstAttribute="centerY" secondItem="NqL-gw-6v7" secondAttribute="centerY" id="wyE-DJ-JeX"/>
                             <constraint firstItem="9gA-Ek-2pd" firstAttribute="leading" secondItem="HyR-Vj-CnV" secondAttribute="leading" id="zuz-7v-bzX"/>
