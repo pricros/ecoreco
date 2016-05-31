@@ -16,7 +16,7 @@ class CustomPointAnnotation: MKPointAnnotation {
     var imageName: String!
 }
 
-class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class MapViewController: CommonViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView! {
         didSet{

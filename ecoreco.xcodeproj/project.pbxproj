@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181F4FAA1CFD887200B13E77 /* Scooter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 181F4FA81CFD887200B13E77 /* Scooter.xcdatamodeld */; };
+		181F4FAC1CFD88D100B13E77 /* ScooterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F4FAB1CFD88D100B13E77 /* ScooterModel.swift */; };
+		181F4FAE1CFDBDC100B13E77 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F4FAD1CFDBDC100B13E77 /* CommonViewController.swift */; };
 		1876A54F1C30D6CB0016EBCA /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A54E1C30D6CB0016EBCA /* header.png */; };
 		1876A5511C30DB400016EBCA /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5501C30DB400016EBCA /* settings.png */; };
 		1876A5711C311C890016EBCA /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5701C311C890016EBCA /* back.png */; };
@@ -81,6 +84,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		181F4FA91CFD887200B13E77 /* Scooter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Scooter.xcdatamodel; sourceTree = "<group>"; };
+		181F4FAB1CFD88D100B13E77 /* ScooterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScooterModel.swift; sourceTree = "<group>"; };
+		181F4FAD1CFDBDC100B13E77 /* CommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
 		1876A54E1C30D6CB0016EBCA /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = header.png; path = images/header.png; sourceTree = "<group>"; };
 		1876A5501C30DB400016EBCA /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = images/settings.png; sourceTree = "<group>"; };
 		1876A5701C311C890016EBCA /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = images/back.png; sourceTree = "<group>"; };
@@ -168,6 +174,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1863F3981CF4160F00B21266 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				18B781821C2935FE00AF0C07 /* SettingViewController.swift */,
+				18EEF0F71C2BF06F0065AFE7 /* DashboardViewController.swift */,
+				18EEF0B91C2A3C380065AFE7 /* MapViewController.swift */,
+				187B92C91C26716500DA3BDF /* ViewController.swift */,
+				181F4FAD1CFDBDC100B13E77 /* CommonViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		1863F3991CF4161D00B21266 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18EEF0C71C2AFEB40065AFE7 /* NRFManager.swift */,
+				181F4FA81CFD887200B13E77 /* Scooter.xcdatamodeld */,
+				181F4FAB1CFD88D100B13E77 /* ScooterModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		187B92BB1C26716500DA3BDF = {
 			isa = PBXGroup;
 			children = (
@@ -192,16 +220,13 @@
 		187B92C61C26716500DA3BDF /* ecoreco */ = {
 			isa = PBXGroup;
 			children = (
-				18EEF0F71C2BF06F0065AFE7 /* DashboardViewController.swift */,
-				18EEF0C71C2AFEB40065AFE7 /* NRFManager.swift */,
-				18EEF0B91C2A3C380065AFE7 /* MapViewController.swift */,
+				1863F3991CF4161D00B21266 /* Model */,
+				1863F3981CF4160F00B21266 /* Controller */,
 				187B92C71C26716500DA3BDF /* AppDelegate.swift */,
-				187B92C91C26716500DA3BDF /* ViewController.swift */,
 				187B92CB1C26716600DA3BDF /* Main.storyboard */,
 				187B92CE1C26716600DA3BDF /* Assets.xcassets */,
 				187B92D01C26716600DA3BDF /* LaunchScreen.storyboard */,
 				187B92D31C26716600DA3BDF /* Info.plist */,
-				18B781821C2935FE00AF0C07 /* SettingViewController.swift */,
 			);
 			path = ecoreco;
 			sourceTree = "<group>";
@@ -342,7 +367,7 @@
 				TargetAttributes = {
 					187B92C31C26716500DA3BDF = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 7SVTM2A28W;
+						DevelopmentTeam = 3TCWNJDF99;
 					};
 					187B92D71C26716600DA3BDF = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -451,10 +476,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181F4FAE1CFDBDC100B13E77 /* CommonViewController.swift in Sources */,
 				187B92CA1C26716500DA3BDF /* ViewController.swift in Sources */,
+				181F4FAA1CFD887200B13E77 /* Scooter.xcdatamodeld in Sources */,
 				18EEF0F81C2BF06F0065AFE7 /* DashboardViewController.swift in Sources */,
 				187B92C81C26716500DA3BDF /* AppDelegate.swift in Sources */,
 				18EEF0BA1C2A3C380065AFE7 /* MapViewController.swift in Sources */,
+				181F4FAC1CFD88D100B13E77 /* ScooterModel.swift in Sources */,
 				18EEF0C81C2AFEB40065AFE7 /* NRFManager.swift in Sources */,
 				18B781831C2935FE00AF0C07 /* SettingViewController.swift in Sources */,
 			);
@@ -710,6 +738,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		181F4FA81CFD887200B13E77 /* Scooter.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				181F4FA91CFD887200B13E77 /* Scooter.xcdatamodel */,
+			);
+			currentVersion = 181F4FA91CFD887200B13E77 /* Scooter.xcdatamodel */;
+			path = Scooter.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 187B92BC1C26716500DA3BDF /* Project object */;
 }
