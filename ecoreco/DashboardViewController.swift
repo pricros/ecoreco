@@ -6,7 +6,7 @@
 import UIKit
 import QuartzCore
 
-class DashboardViewController: CommonViewController, UIScrollViewDelegate, ScooterModelProtocol {
+class DashboardViewController: CommonViewController, UIScrollViewDelegate, ScooterModelRunProtocol {
 
     @IBOutlet weak var imgViewSetting: UIImageView!
     @IBOutlet weak var imgViewPower: UIImageView!
@@ -261,19 +261,19 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate, Scoot
         
         switch(sender.tag){
             case 0: //boost
-                scooter.sendData("M0")
+                scooter.setMode(.Boost)
                 break
             case 1:
-                scooter.sendData("M1")
+                scooter.setMode(.Ride)
                 break
             case 2:
-                scooter.sendData("M2")
+                scooter.setMode(.Ekick_extend)
                 break
             case 3:
-                scooter.sendData("M3")
+                scooter.setMode(.Ekick_amplified)
                 break
             case 4:
-                scooter.sendData("M4")
+                scooter.setMode(.ECO)
                 break
             default:break
         }
@@ -322,6 +322,10 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate, Scoot
     }
     
     func onSpeedReceived(speed: Int) {
+        
+    }
+    
+    func onFallDetected() {
         
     }
 
