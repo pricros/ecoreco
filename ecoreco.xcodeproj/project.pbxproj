@@ -61,6 +61,10 @@
 		3C0B71581C34BDD700123C07 /* lineMiddle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0B71571C34BDD700123C07 /* lineMiddle.png */; };
 		3C0B715A1C34BDDF00123C07 /* speedMeter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0B71591C34BDDF00123C07 /* speedMeter.png */; };
 		3C460A4E1C3CAFE100FB6EB6 /* mapPoint.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C460A4D1C3CAFE100FB6EB6 /* mapPoint.png */; };
+		3CEAC1EF1D0133A700F29628 /* FallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEAC1EE1D0133A700F29628 /* FallViewController.swift */; };
+		3CEAC1F11D01352D00F29628 /* FALL-DETECT_0000_FALL-DETECTED.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F01D01352C00F29628 /* FALL-DETECT_0000_FALL-DETECTED.png */; };
+		3CEAC1F41D01353C00F29628 /* FALL-DETECT_0001_TEL.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F21D01353C00F29628 /* FALL-DETECT_0001_TEL.png */; };
+		3CEAC1F51D01353C00F29628 /* FALL-DETECT_0002_RESET.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F31D01353C00F29628 /* FALL-DETECT_0002_RESET.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +145,10 @@
 		3C0B71571C34BDD700123C07 /* lineMiddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lineMiddle.png; path = images/lineMiddle.png; sourceTree = "<group>"; };
 		3C0B71591C34BDDF00123C07 /* speedMeter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = speedMeter.png; path = images/speedMeter.png; sourceTree = "<group>"; };
 		3C460A4D1C3CAFE100FB6EB6 /* mapPoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mapPoint.png; path = images/mapPoint.png; sourceTree = "<group>"; };
+		3CEAC1EE1D0133A700F29628 /* FallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FallViewController.swift; sourceTree = "<group>"; };
+		3CEAC1F01D01352C00F29628 /* FALL-DETECT_0000_FALL-DETECTED.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "FALL-DETECT_0000_FALL-DETECTED.png"; path = "images/FALL-DETECT_0000_FALL-DETECTED.png"; sourceTree = "<group>"; };
+		3CEAC1F21D01353C00F29628 /* FALL-DETECT_0001_TEL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "FALL-DETECT_0001_TEL.png"; path = "images/FALL-DETECT_0001_TEL.png"; sourceTree = "<group>"; };
+		3CEAC1F31D01353C00F29628 /* FALL-DETECT_0002_RESET.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "FALL-DETECT_0002_RESET.png"; path = "images/FALL-DETECT_0002_RESET.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +200,7 @@
 		187B92C61C26716500DA3BDF /* ecoreco */ = {
 			isa = PBXGroup;
 			children = (
+				3CEAC1EE1D0133A700F29628 /* FallViewController.swift */,
 				18EEF0F71C2BF06F0065AFE7 /* DashboardViewController.swift */,
 				18EEF0C71C2AFEB40065AFE7 /* NRFManager.swift */,
 				18EEF0B91C2A3C380065AFE7 /* MapViewController.swift */,
@@ -227,6 +236,9 @@
 		187B92F91C27B35F00DA3BDF /* images */ = {
 			isa = PBXGroup;
 			children = (
+				3CEAC1F21D01353C00F29628 /* FALL-DETECT_0001_TEL.png */,
+				3CEAC1F31D01353C00F29628 /* FALL-DETECT_0002_RESET.png */,
+				3CEAC1F01D01352C00F29628 /* FALL-DETECT_0000_FALL-DETECTED.png */,
 				3C460A4D1C3CAFE100FB6EB6 /* mapPoint.png */,
 				1876A5C41C3B4CEB0016EBCA /* pointer.png */,
 				1876A5BC1C3616E30016EBCA /* icon_120_120.png */,
@@ -396,6 +408,7 @@
 				1876A5A01C3265430016EBCA /* iconBattery.png in Resources */,
 				1876A5AD1C3265430016EBCA /* modeBoostOn.png in Resources */,
 				1876A57E1C3238E60016EBCA /* digit_clear.png in Resources */,
+				3CEAC1F11D01352D00F29628 /* FALL-DETECT_0000_FALL-DETECTED.png in Resources */,
 				1876A5C51C3B4CEB0016EBCA /* pointer.png in Resources */,
 				1876A5511C30DB400016EBCA /* settings.png in Resources */,
 				1876A5BE1C3616E40016EBCA /* icon_120_120.png in Resources */,
@@ -416,6 +429,7 @@
 				1876A5B41C3265430016EBCA /* modeRideOff.png in Resources */,
 				1876A5AB1C3265430016EBCA /* lineTop.png in Resources */,
 				1876A5A81C3265430016EBCA /* infoRangeEst.png in Resources */,
+				3CEAC1F41D01353C00F29628 /* FALL-DETECT_0001_TEL.png in Resources */,
 				1876A5AE1C3265430016EBCA /* modeEcoOff.png in Resources */,
 				1876A5A71C3265430016EBCA /* infoBattery.png in Resources */,
 				1876A5B21C3265430016EBCA /* modeEkickExtendOff.png in Resources */,
@@ -423,6 +437,7 @@
 				3C0B715A1C34BDDF00123C07 /* speedMeter.png in Resources */,
 				1876A5801C3238E60016EBCA /* digit_9.png in Resources */,
 				187B92CD1C26716600DA3BDF /* Main.storyboard in Resources */,
+				3CEAC1F51D01353C00F29628 /* FALL-DETECT_0002_RESET.png in Resources */,
 				1876A57F1C3238E60016EBCA /* digit_0.png in Resources */,
 				1876A5841C3238E60016EBCA /* digit_5.png in Resources */,
 				187B93081C27FAAD00DA3BDF /* dash1.png in Resources */,
@@ -453,6 +468,7 @@
 			files = (
 				187B92CA1C26716500DA3BDF /* ViewController.swift in Sources */,
 				18EEF0F81C2BF06F0065AFE7 /* DashboardViewController.swift in Sources */,
+				3CEAC1EF1D0133A700F29628 /* FallViewController.swift in Sources */,
 				187B92C81C26716500DA3BDF /* AppDelegate.swift in Sources */,
 				18EEF0BA1C2A3C380065AFE7 /* MapViewController.swift in Sources */,
 				18EEF0C81C2AFEB40065AFE7 /* NRFManager.swift in Sources */,
