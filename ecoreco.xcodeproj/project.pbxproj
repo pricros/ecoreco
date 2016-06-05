@@ -192,8 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				18B781821C2935FE00AF0C07 /* SettingViewController.swift */,
-				18EEF0F71C2BF06F0065AFE7 /* DashboardViewController.swift */,
-				18EEF0B91C2A3C380065AFE7 /* MapViewController.swift */,
 				187B92C91C26716500DA3BDF /* ViewController.swift */,
 				181F4FAD1CFDBDC100B13E77 /* CommonViewController.swift */,
 			);
@@ -203,7 +201,6 @@
 		1863F3991CF4161D00B21266 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				18EEF0C71C2AFEB40065AFE7 /* NRFManager.swift */,
 				181F4FA81CFD887200B13E77 /* Scooter.xcdatamodeld */,
 				181F4FAB1CFD88D100B13E77 /* ScooterModel.swift */,
 			);

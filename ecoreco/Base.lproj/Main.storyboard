@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -460,8 +460,11 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speedMeter.png" translatesAutoresizingMaskIntoConstraints="NO" id="W6q-aP-fbL">
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speedMeter.png" translatesAutoresizingMaskIntoConstraints="NO" id="W6q-aP-fbL">
                                 <rect key="frame" x="160" y="126" width="280" height="280"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="W6q-aP-fbL" secondAttribute="height" multiplier="1:1" id="BmR-P7-reA"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <constraints>
@@ -501,6 +504,11 @@
                             <constraint firstItem="Na3-Wb-4BU" firstAttribute="top" secondItem="fOL-L3-by1" secondAttribute="top" id="pFe-ua-bV4"/>
                             <constraint firstItem="9gA-Ek-2pd" firstAttribute="leading" secondItem="HyR-Vj-CnV" secondAttribute="leading" id="zIT-aF-Tb2"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="3Hl-Ak-xGN"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="reE-S2-1bX"/>
                     <connections>
@@ -813,6 +821,6 @@
         <image name="lineTop.png" width="1080" height="33"/>
         <image name="lock-_0036_board-1.png" width="1080" height="77"/>
         <image name="lock-_0037_board2.png" width="1080" height="578"/>
-        <image name="speedMeter.png" width="1081" height="1080"/>
+        <image name="speedMeter.png" width="1010" height="989"/>
     </resources>
 </document>
