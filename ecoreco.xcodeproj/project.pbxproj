@@ -68,6 +68,9 @@
 		3CEAC1F11D01352D00F29628 /* FALL-DETECT_0000_FALL-DETECTED.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F01D01352C00F29628 /* FALL-DETECT_0000_FALL-DETECTED.png */; };
 		3CEAC1F41D01353C00F29628 /* FALL-DETECT_0001_TEL.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F21D01353C00F29628 /* FALL-DETECT_0001_TEL.png */; };
 		3CEAC1F51D01353C00F29628 /* FALL-DETECT_0002_RESET.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F31D01353C00F29628 /* FALL-DETECT_0002_RESET.png */; };
+		3CEAC1F81D04015400F29628 /* lock-_0036_board-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F61D04015400F29628 /* lock-_0036_board-1.png */; };
+		3CEAC1F91D04015400F29628 /* lock-_0037_board2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F71D04015400F29628 /* lock-_0037_board2.png */; };
+		3CEAC2051D0407B900F29628 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC2041D0407B900F29628 /* info.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +158,9 @@
 		3CEAC1F01D01352C00F29628 /* FALL-DETECT_0000_FALL-DETECTED.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "FALL-DETECT_0000_FALL-DETECTED.png"; path = "images/FALL-DETECT_0000_FALL-DETECTED.png"; sourceTree = "<group>"; };
 		3CEAC1F21D01353C00F29628 /* FALL-DETECT_0001_TEL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "FALL-DETECT_0001_TEL.png"; path = "images/FALL-DETECT_0001_TEL.png"; sourceTree = "<group>"; };
 		3CEAC1F31D01353C00F29628 /* FALL-DETECT_0002_RESET.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "FALL-DETECT_0002_RESET.png"; path = "images/FALL-DETECT_0002_RESET.png"; sourceTree = "<group>"; };
+		3CEAC1F61D04015400F29628 /* lock-_0036_board-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lock-_0036_board-1.png"; path = "images/lock-_0036_board-1.png"; sourceTree = "<group>"; };
+		3CEAC1F71D04015400F29628 /* lock-_0037_board2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lock-_0037_board2.png"; path = "images/lock-_0037_board2.png"; sourceTree = "<group>"; };
+		3CEAC2041D0407B900F29628 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = info.png; path = images/info.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +270,9 @@
 		187B92F91C27B35F00DA3BDF /* images */ = {
 			isa = PBXGroup;
 			children = (
+				3CEAC2041D0407B900F29628 /* info.png */,
+				3CEAC1F61D04015400F29628 /* lock-_0036_board-1.png */,
+				3CEAC1F71D04015400F29628 /* lock-_0037_board2.png */,
 				3CEAC1F21D01353C00F29628 /* FALL-DETECT_0001_TEL.png */,
 				3CEAC1F31D01353C00F29628 /* FALL-DETECT_0002_RESET.png */,
 				3CEAC1F01D01352C00F29628 /* FALL-DETECT_0000_FALL-DETECTED.png */,
@@ -425,12 +434,14 @@
 				3C460A4E1C3CAFE100FB6EB6 /* mapPoint.png in Resources */,
 				187B92D21C26716600DA3BDF /* LaunchScreen.storyboard in Resources */,
 				1876A5731C322EC00016EBCA /* digit_1.png in Resources */,
+				3CEAC1F81D04015400F29628 /* lock-_0036_board-1.png in Resources */,
 				1876A5861C3238E60016EBCA /* digit_3.png in Resources */,
 				1876A5A41C3265430016EBCA /* iconProfile.png in Resources */,
 				1876A5831C3238E60016EBCA /* digit_6.png in Resources */,
 				1876A5AF1C3265430016EBCA /* modeEcoOn.png in Resources */,
 				1876A5AA1C3265430016EBCA /* lineBottom.png in Resources */,
 				1876A5A61C3265430016EBCA /* iconSpeed.png in Resources */,
+				3CEAC2051D0407B900F29628 /* info.png in Resources */,
 				1876A5821C3238E60016EBCA /* digit_7.png in Resources */,
 				3C0B71581C34BDD700123C07 /* lineMiddle.png in Resources */,
 				1876A5A01C3265430016EBCA /* iconBattery.png in Resources */,
@@ -453,6 +464,7 @@
 				1876A5B01C3265430016EBCA /* modeEkickAmplifiedOff.png in Resources */,
 				1876A5A51C3265430016EBCA /* iconSetting.png in Resources */,
 				1876A5BF1C3616E40016EBCA /* icon_180_180.png in Resources */,
+				3CEAC1F91D04015400F29628 /* lock-_0037_board2.png in Resources */,
 				1876A5AC1C3265430016EBCA /* modeBoostOff.png in Resources */,
 				1876A5B41C3265430016EBCA /* modeRideOff.png in Resources */,
 				1876A5AB1C3265430016EBCA /* lineTop.png in Resources */,
