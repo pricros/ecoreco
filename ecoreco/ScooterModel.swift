@@ -16,14 +16,15 @@ public enum ScooterRunMode:String {
 }
 
 public enum OdoTripType:String {
-    case TotalDistanceTraveledinMiles = "ODO1M"
-    case TotalDistanceTraveledinKM	= "ODO1K"
-    case TurnOnDistanceinMiles 		= "ODO2M"
-    case TurnOnDistanceinKM 		= "ODO2K"
-    case TripmeterADistanceinMiles	= "ODO3M"
-    case TripmeterADistanceinKM	= "ODO3K"
-    case TripmeterBDistanceinMiles	= "ODO4M"
-    case TripmeterBDistanceinKM	= "ODO4K"
+    case TotalDistanceTraveled = "1"
+    case TurnOnDistance		= "2"
+    case TripMeterADistance	= "3"
+    case TripMeterBDistance	= "4"
+}
+
+public enum UnitType:String {
+    case KM = "K"
+    case Miles = "M"
 }
 
 
@@ -56,16 +57,16 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     
     static let sharedInstance = ScooterModel()
     
-    let MODE:String = "MODE"
+    let MODE:String = "MOD"
     let MPH:String = "MPH"
-    let KMPH:String = "KMPH"
-    let ODO:String = "ODO"
-    let ODORES:String = "ODORES"
-    let REMM:String = "REMM"
-    let FALL:String = "FALL"
-    let LOCK:String = "LOCK1"
-    let UNLOCK:String = "LOCK0"
-    let BATT:String = "BATT"
+    let KMPH:String = "KMP"
+    let ODO:String = "OD"
+    let ODORES:String = "ODR"
+    let ESTIMATE:String = "RM"
+    let FALL:String = "FAL"
+    let LOCK:String = "LCK1"
+    let UNLOCK:String = "LCK0"
+    let BATT:String = "BAT"
     
     override init(){
         super.init()
@@ -114,12 +115,13 @@ class ScooterModel:NSObject, NRFManagerDelegate{
         self.nrfManager.disconnect()
     }
     
-    func getTrip(odoType:OdoTripType)->Bool{
-        sendData(odoType.rawValue)
+    func getTrip(tripType:OdoTripType, unitType:UnitType)->Bool{
+        sendData(tripType.rawValue+unitType.rawValue)
         return true
     }
     
     func resetTrip(odoType:OdoTripType)->Bool{
+        sendData(ODORES+odoType.rawValue)
         return true
     }
     
@@ -135,7 +137,8 @@ class ScooterModel:NSObject, NRFManagerDelegate{
         return true
     }
     
-    func getEstimateDistance()->Int{
+    func getEstimateDistance(unitType:UnitType)->Int{
+        sendData(ESTIMATE+unitType.rawValue)
         return 0
     }
     
@@ -179,8 +182,8 @@ class ScooterModel:NSObject, NRFManagerDelegate{
                     self.getSpeed()
                     
                     self.getBatteryInfo()
-                    self.getTrip(OdoTripType.TotalDistanceTraveledinKM)
-                    self.getEstimateDistance()
+                    self.getTrip(OdoTripType.TotalDistanceTraveled,unitType:UnitType.KM)
+                    self.getEstimateDistance(UnitType.KM)
                     usleep(30000)
 
                 }
