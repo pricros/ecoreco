@@ -76,7 +76,7 @@ public class NRFManager:NSObject, CBCentralManagerDelegate, UARTPeripheralDelega
 
 
     
-    
+
     
 
     public class var sharedInstance : NRFManager {
@@ -200,6 +200,7 @@ extension NRFManager {
                 //respond to powered on
                 log("\(__FILE__) \(__LINE__) \nPowered on!")
                 if (autoConnect) {
+                    log("\(__FILE__) \(__LINE__) \n AutoConnect!")
                     connect()
                 }
                 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: CommonViewController {
     
     @IBOutlet weak var headerImage: UIImageView!
 
@@ -25,8 +25,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageClear: UIButton!
     
     var digitImages:[UIButton] = [UIButton]()
-    
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +66,7 @@ class ViewController: UIViewController {
         
         let digit = sender.currentTitle
         print("digit=\(digit)")
-        appDelegate.nrfManager.connect()
+        scooter.connect()
         
     }
 

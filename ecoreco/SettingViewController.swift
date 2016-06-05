@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingViewController: UIViewController {
+class SettingViewController: CommonViewController {
     
     @IBOutlet weak var imgBack: UIImageView!
     

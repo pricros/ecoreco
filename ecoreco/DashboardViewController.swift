@@ -6,7 +6,7 @@
 import UIKit
 import QuartzCore
 
-class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManagerDelegate {
+class DashboardViewController: CommonViewController, UIScrollViewDelegate, ScooterModelRunProtocol {
 
     @IBOutlet weak var imgViewSetting: UIImageView!
     @IBOutlet weak var imgViewPower: UIImageView!
@@ -16,7 +16,6 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManage
     @IBOutlet weak var imgViewSpeedMeter: UIImageView!
     @IBOutlet weak var scrollViewMode: UIScrollView!
     
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var layer:CALayer?
     var bDemoThreadStart:Bool = false
     var bDemoEnable:Bool = false
@@ -26,7 +25,7 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManage
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        appDelegate.nrfManager.delegate = self
+        scooter.delegate = self
  
         //set view bgcolor
         self.view.backgroundColor = UIColor(
@@ -170,12 +169,12 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManage
         print("power off")
         
         if (isPowerOn == true) {
-            appDelegate.sendData("L1")
+            scooter.sendData("L1")
             self.imgViewPower.image = imgPowerOff
             isPowerOn = false
             clearAll()
         }else{
-            appDelegate.sendData("L0")
+            scooter.sendData("L0")
             self.imgViewPower.image = imgPowerOn
             isPowerOn = true
         }
@@ -183,7 +182,7 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManage
     
     func tappedProfile(){
         print("go to profilt")
-        appDelegate.sendData("1")
+        scooter.disconnect()
     }
     
     func tappedNavi(){
@@ -267,19 +266,16 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManage
         
         switch(sender.tag){
             case 0: //boost
-                appDelegate.sendData("M0")
+                scooter.setMode(.Ride_1_1)
                 break
             case 1:
-                appDelegate.sendData("M1")
+                scooter.setMode(.Ride)
                 break
             case 2:
-                appDelegate.sendData("M2")
+                scooter.setMode(.Ekick_extend)
                 break
             case 3:
-                appDelegate.sendData("M3")
-                break
-            case 4:
-                appDelegate.sendData("M4")
+                scooter.setMode(.Ekick_amplified)
                 break
             default:break
         }
@@ -327,6 +323,13 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManage
         
     }
     
+    func onSpeedReceived(speed: Int) {
+        
+    }
+    
+    func onFallDetected() {
+        
+    }
 
 }
 
