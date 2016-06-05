@@ -30,9 +30,9 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManage
  
         //set view bgcolor
         self.view.backgroundColor = UIColor(
-            red: 0.33,
-            green: 0.33,
-            blue: 0.33,
+            red: 240/255,
+            green: 240/255,
+            blue: 240/255,
             alpha: 0.4)
         
         
@@ -225,22 +225,22 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManage
     let imagesModeOn = [
         UIImage(named: "modeBoostOn.png") as UIImage!,
         UIImage(named: "modeRideOn.png") as UIImage!,
-        UIImage(named: "modeEkickExtendOn.png") as UIImage!,
-        UIImage(named: "modeEkickAmplifiedOn.png") as UIImage!,
-        UIImage(named: "modeEcoOn.png") as UIImage!
+        UIImage(named: "modeEkickExtendOn.png") as UIImage!
+        //UIImage(named: "modeEkickAmplifiedOn.png") as UIImage!,
+        //UIImage(named: "modeEcoOn.png") as UIImage!
     ]
     let imagesModeOff = [
         UIImage(named: "modeBoostOff.png") as UIImage!,
         UIImage(named: "modeRideOff.png") as UIImage!,
-        UIImage(named: "modeEkickExtendOff.png") as UIImage!,
-        UIImage(named: "modeEkickAmplifiedOff.png") as UIImage!,
-        UIImage(named: "modeEcoOff.png") as UIImage!
+        UIImage(named: "modeEkickExtendOff.png") as UIImage!
+        //UIImage(named: "modeEkickAmplifiedOff.png") as UIImage!,
+        //UIImage(named: "modeEcoOff.png") as UIImage!
     ]
     var modeButtons = [
         UIButton(type: .Custom) as UIButton!,
         UIButton(type: .Custom) as UIButton!,
-        UIButton(type: .Custom) as UIButton!,
-        UIButton(type: .Custom) as UIButton!,
+        //UIButton(type: .Custom) as UIButton!,
+        //UIButton(type: .Custom) as UIButton!,
         UIButton(type: .Custom) as UIButton!
     ]
 
@@ -289,13 +289,13 @@ class DashboardViewController: UIViewController, UIScrollViewDelegate, NRFManage
     func modeButtonsView() -> UIView {
  
         let buttonView = UIView()
-        buttonView.backgroundColor = UIColor.blackColor()
+        //buttonView.backgroundColor = UIColor.blackColor()
         buttonView.frame.origin = CGPointMake(0,0)
         
         let padding = CGSizeMake(10, 10)
-        let buttonSize = CGSizeMake(75.0,52.0)//same with image size
+        let buttonSize = CGSizeMake(116.0,52.0)//same with image size
         buttonView.frame.size.width = (buttonSize.width + padding.width) * CGFloat(imagesModeOff.count)
-        buttonView.frame.size.height = 72
+        buttonView.frame.size.height = 52
         
         var buttonPosition = CGPointMake(padding.width * 0.5, padding.height)
         let buttonIncrement = buttonSize.width + padding.width
