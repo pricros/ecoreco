@@ -37,16 +37,20 @@ public enum ScooterStatus {
 protocol ScooterModelRunProtocol:class{
     func onSpeedReceived(speed:Int)
     func onFallDetected()
-    
 }
 
 protocol ScooterModelLockProtocol:class{
     func onScooterMoved()
-    
+}
+
+protocol ScooterModelProfileProtocol:class{
+    func onTripDataReceived(type:OdoTripType,value:Int)
+    func onEstimateDistanceReceived(value:Int)
 }
 
 class ScooterModel:NSObject, NRFManagerDelegate{
-    weak var delegate: ScooterModelRunProtocol!
+    weak var runDelegate: ScooterModelRunProtocol!
+    weak var lockDelegate: ScooterModelLockProtocol!
     private var nrfManager:NRFManager!
     private var status:ScooterStatus?
     
@@ -75,6 +79,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
             onData: {
                 (data:NSData?, string:String?)->() in
                 self.log("\(__FILE__) \(__LINE__) \nC: ⬇ Received data - String: \(string) - Data: \(data)")
+                // parsing data and call relative delegate method
             },
             autoConnect: false
         )
@@ -94,9 +99,10 @@ class ScooterModel:NSObject, NRFManagerDelegate{
         log("\(__FILE__) \(__LINE__) \n⬆ Sent string: \(string) - Result: \(result)")
     }
     
-    func setMode(scooterMode:ScooterRunMode)
+    func setMode(scooterMode:ScooterRunMode)->Bool
     {
         sendData(MODE+scooterMode.rawValue)
+        return true
     }
     
     func connect(){
@@ -108,9 +114,9 @@ class ScooterModel:NSObject, NRFManagerDelegate{
         self.nrfManager.disconnect()
     }
     
-    func getTrip(odoType:OdoTripType)->Int{
-        
-        return 0
+    func getTrip(odoType:OdoTripType)->Bool{
+        sendData(odoType.rawValue)
+        return true
     }
     
     func resetTrip(odoType:OdoTripType)->Bool{
@@ -163,16 +169,28 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     }
     
     func enterStandby()->Bool{
-        self.status = .Standby
-        // start a thread to get/monitor all the dashboard data including speedmeter, battery,trip, odo, est meter
-        backgroundThread(background:{
-            
-        },
-                         completion:{
-                            
-        })
-        // start a thread to get fall status
-        return true
+        if(self.status == .Standby){
+            return false
+        }else{
+            self.status = .Standby
+            // start a thread to get/monitor all the dashboard data including speedmeter, battery,trip, odo, est meter
+            backgroundThread(background:{
+                while(true){
+                    self.getSpeed()
+                    
+                    self.getBatteryInfo()
+                    self.getTrip(OdoTripType.TotalDistanceTraveledinKM)
+                    self.getEstimateDistance()
+                    usleep(30000)
+
+                }
+                },
+                             completion:{
+                                
+            })
+            // start a thread to get fall status
+            return true
+        }
     }
     
     func exitStandby()->Bool{

@@ -25,7 +25,7 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate, Scoot
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scooter.delegate = self
+        scooter.runDelegate = self
  
         //set view bgcolor
         self.view.backgroundColor = UIColor(
