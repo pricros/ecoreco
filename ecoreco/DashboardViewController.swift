@@ -29,10 +29,10 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate, Scoot
  
         //set view bgcolor
         self.view.backgroundColor = UIColor(
-            red: 240/255,
-            green: 240/255,
-            blue: 240/255,
-            alpha: 0.4)
+            red: 250/255,
+            green: 250/255,
+            blue: 250/255,
+            alpha: 1.0)
         
         
         self.navigationController?.setNavigationBarHidden(true, animated: true)
