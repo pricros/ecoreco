@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -465,7 +465,7 @@
                                     <constraint firstAttribute="width" constant="56" id="LFO-Oo-Hne"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eb6-Nc-FB9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eb6-Nc-FB9">
                                 <rect key="frame" x="225" y="191" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="MYw-yR-FTX"/>
@@ -487,12 +487,24 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speedMeter.png" translatesAutoresizingMaskIntoConstraints="NO" id="W6q-aP-fbL">
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedMeter.png" translatesAutoresizingMaskIntoConstraints="NO" id="W6q-aP-fbL">
                                 <rect key="frame" x="160" y="126" width="280" height="280"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="W6q-aP-fbL" secondAttribute="height" multiplier="1:1" id="f7c-iy-lQy"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ibO-3v-nCz" customClass="CounterView" customModule="ecoreco" customModuleProvider="target">
+                                <rect key="frame" x="152" y="119" width="295" height="293"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="speed">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="counterColor">
+                                        <color key="value" red="0.46274509803921571" green="0.57647058823529407" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="infoBattery.png" translatesAutoresizingMaskIntoConstraints="NO" id="ksx-sr-hTA">
                                 <rect key="frame" x="20" y="523" width="82" height="52"/>
                                 <constraints>
@@ -517,8 +529,10 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="Bsi-JO-ldK" firstAttribute="top" secondItem="Na3-Wb-4BU" secondAttribute="bottom" constant="20" id="09V-XN-BQU"/>
+                            <constraint firstItem="ibO-3v-nCz" firstAttribute="height" secondItem="W6q-aP-fbL" secondAttribute="height" id="1hM-Id-4wR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NqL-gw-6v7" secondAttribute="trailing" constant="12" id="3BU-Gf-iDl"/>
                             <constraint firstItem="NqL-gw-6v7" firstAttribute="leading" secondItem="W6q-aP-fbL" secondAttribute="trailing" constant="97" id="3Hl-Ak-xGN"/>
+                            <constraint firstItem="ibO-3v-nCz" firstAttribute="width" secondItem="W6q-aP-fbL" secondAttribute="width" id="3Ja-eb-Rpw"/>
                             <constraint firstItem="m5a-Ip-goD" firstAttribute="top" secondItem="HyR-Vj-CnV" secondAttribute="bottom" constant="3" id="3zJ-S3-czn"/>
                             <constraint firstItem="9gA-Ek-2pd" firstAttribute="leading" secondItem="m5a-Ip-goD" secondAttribute="leading" id="6T7-SS-lDR"/>
                             <constraint firstAttribute="bottom" secondItem="NqL-gw-6v7" secondAttribute="bottom" constant="180" id="8p7-ql-A7l"/>
@@ -535,8 +549,10 @@
                             <constraint firstItem="ksx-sr-hTA" firstAttribute="bottom" secondItem="uVB-9y-Xn0" secondAttribute="bottom" id="PBm-nd-hcT"/>
                             <constraint firstItem="71u-Fg-RJL" firstAttribute="centerY" secondItem="Bsi-JO-ldK" secondAttribute="centerY" id="Q8I-rH-yNO"/>
                             <constraint firstItem="9gA-Ek-2pd" firstAttribute="trailing" secondItem="HyR-Vj-CnV" secondAttribute="trailing" id="QUS-sV-OsC"/>
+                            <constraint firstItem="9gA-Ek-2pd" firstAttribute="top" secondItem="ibO-3v-nCz" secondAttribute="bottom" constant="26" id="Qgu-Zm-zSw"/>
                             <constraint firstAttribute="trailing" secondItem="Na3-Wb-4BU" secondAttribute="trailing" id="U2v-Ee-DJ9"/>
                             <constraint firstItem="Pcf-67-P4w" firstAttribute="bottom" secondItem="TdE-aE-bdb" secondAttribute="bottom" id="UJD-PU-q5b"/>
+                            <constraint firstItem="ibO-3v-nCz" firstAttribute="centerX" secondItem="eb6-Nc-FB9" secondAttribute="centerX" id="V4l-HW-jjz"/>
                             <constraint firstItem="Bsi-JO-ldK" firstAttribute="leading" secondItem="71u-Fg-RJL" secondAttribute="trailing" constant="9" id="VYF-Vu-Y4y"/>
                             <constraint firstItem="ksx-sr-hTA" firstAttribute="leading" secondItem="j1I-19-Cqr" secondAttribute="leading" id="WEy-Q2-eES"/>
                             <constraint firstItem="3Dw-VJ-0ZV" firstAttribute="centerX" secondItem="NqL-gw-6v7" secondAttribute="centerX" id="XS2-3h-buR"/>
@@ -554,6 +570,7 @@
                             <constraint firstItem="TdE-aE-bdb" firstAttribute="trailing" secondItem="3Dw-VJ-0ZV" secondAttribute="trailing" id="eqZ-5p-bVD"/>
                             <constraint firstItem="HyR-Vj-CnV" firstAttribute="leading" secondItem="m5a-Ip-goD" secondAttribute="leading" id="etK-xi-LsU"/>
                             <constraint firstItem="HyR-Vj-CnV" firstAttribute="top" secondItem="NqL-gw-6v7" secondAttribute="bottom" constant="26" id="fpC-Ip-4mE"/>
+                            <constraint firstItem="NqL-gw-6v7" firstAttribute="leading" secondItem="ibO-3v-nCz" secondAttribute="trailing" constant="90" id="hFu-m8-ees"/>
                             <constraint firstItem="Na3-Wb-4BU" firstAttribute="leading" secondItem="fOL-L3-by1" secondAttribute="leading" id="iTU-NX-zss"/>
                             <constraint firstItem="ksx-sr-hTA" firstAttribute="top" secondItem="uVB-9y-Xn0" secondAttribute="top" id="kjV-6K-ahk"/>
                             <constraint firstItem="NqL-gw-6v7" firstAttribute="leading" secondItem="W6q-aP-fbL" secondAttribute="trailing" constant="97" id="lgu-Qh-gI0"/>
@@ -561,6 +578,7 @@
                             <constraint firstItem="uVB-9y-Xn0" firstAttribute="leading" secondItem="ksx-sr-hTA" secondAttribute="trailing" constant="3" id="pDs-6N-5rj"/>
                             <constraint firstItem="Pcf-67-P4w" firstAttribute="top" secondItem="TdE-aE-bdb" secondAttribute="top" id="sTZ-Mo-ED1"/>
                             <constraint firstItem="uVB-9y-Xn0" firstAttribute="top" secondItem="Pcf-67-P4w" secondAttribute="top" id="slZ-AF-OZe"/>
+                            <constraint firstItem="ibO-3v-nCz" firstAttribute="centerY" secondItem="W6q-aP-fbL" secondAttribute="centerY" id="uVP-LB-cfP"/>
                             <constraint firstItem="9gA-Ek-2pd" firstAttribute="top" secondItem="NqL-gw-6v7" secondAttribute="bottom" constant="18" id="via-gT-gZQ"/>
                             <constraint firstItem="3Dw-VJ-0ZV" firstAttribute="trailing" secondItem="fOL-L3-by1" secondAttribute="trailingMargin" id="weU-fp-75i"/>
                             <constraint firstItem="j1I-19-Cqr" firstAttribute="bottom" secondItem="71u-Fg-RJL" secondAttribute="bottom" id="yGu-07-P7a"/>
@@ -573,6 +591,7 @@
                                 <exclude reference="kjV-6K-ahk"/>
                                 <exclude reference="bI0-o5-UsS"/>
                                 <exclude reference="3Hl-Ak-xGN"/>
+                                <exclude reference="hFu-m8-ees"/>
                                 <exclude reference="lgu-Qh-gI0"/>
                                 <exclude reference="cPt-Du-BqA"/>
                             </mask>
@@ -580,6 +599,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="reE-S2-1bX"/>
                     <connections>
+                        <outlet property="counterView" destination="ibO-3v-nCz" id="gEC-dY-0Bh"/>
                         <outlet property="imgViewNavi" destination="NqL-gw-6v7" id="vG7-Vh-HB0"/>
                         <outlet property="imgViewPower" destination="71u-Fg-RJL" id="Fwj-iI-Vau"/>
                         <outlet property="imgViewProfile" destination="3Dw-VJ-0ZV" id="cIg-sa-fuB"/>

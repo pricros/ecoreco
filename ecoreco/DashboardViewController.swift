@@ -14,6 +14,7 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate, Scoot
     @IBOutlet weak var imgViewNavi: UIImageView!
     @IBOutlet weak var labelSpeed: UILabel!
     @IBOutlet weak var imgViewSpeedMeter: UIImageView!
+    @IBOutlet weak var counterView: CounterView!
     @IBOutlet weak var scrollViewMode: UIScrollView!
     
     var layer:CALayer?
@@ -90,6 +91,7 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate, Scoot
         layer?.frame = CGRectMake(speedMeterStartX,speedMeterStartY,imgViewSpeedMeter.frame.width,29)
         layer?.contents = pointerImage.CGImage as? AnyObject
         self.view.layer.addSublayer(layer!)
+        self.view.sendSubviewToBack(counterView)
         
     }
     
@@ -170,6 +172,8 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate, Scoot
                 {
                     self.layer?.setAffineTransform(rotation!)
                     self.labelSpeed.text = "\(speed)"
+                    self.counterView.speed = speed
+                    self.counterView.setNeedsDisplay()
                 }
             }
         }
