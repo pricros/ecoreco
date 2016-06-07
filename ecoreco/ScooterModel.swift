@@ -64,9 +64,9 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     let ODORES:String = "ODR"
     let ESTIMATE:String = "RM"
     let FALL:String = "FAL"
-    let LOCK:String = "LCK1"
-    let UNLOCK:String = "LCK0"
+    let LOCK:String = "LCK"
     let BATT:String = "BAT"
+    let VER:String = "VER"
     
     override init(){
         super.init()
@@ -81,6 +81,31 @@ class ScooterModel:NSObject, NRFManagerDelegate{
                 (data:NSData?, string:String?)->() in
                 self.log("\(__FILE__) \(__LINE__) \nC: ⬇ Received data - String: \(string) - Data: \(data)")
                 // parsing data and call relative delegate method
+                if let rtnString = string {
+                    let rtnCmd = (rtnString as NSString).substringToIndex(3)
+                    
+                    switch rtnCmd {
+           
+                    case self.MODE :
+                        break
+                    case self.MPH:
+                        let speed:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,3)))!
+                        self.runDelegate.onSpeedReceived(speed)
+//                    case KMPH:
+//                    case ODO+UnitType.KM:
+//                    case ODO+UnitType.Miles:
+//                    case ODORES:
+//                    case ESTIMATE+UnitType.Miles:
+//                    case ESTIMATE+UnitType.KM:
+//                    //case FALL:
+//                    case LOCK:
+//                    case BATT:
+//                    case VER:
+                    default:
+                        break
+                    }
+                    
+                }
             },
             autoConnect: false
         )
@@ -116,7 +141,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     }
     
     func getTrip(tripType:OdoTripType, unitType:UnitType)->Bool{
-        sendData(tripType.rawValue+unitType.rawValue)
+        sendData(ODO+unitType.rawValue+tripType.rawValue)
         return true
     }
     
@@ -127,13 +152,13 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     
     func lock()->Bool{
         //send command to lock scooter
-        sendData(LOCK)
+        sendData(LOCK+"1")
         //start a thread to detect thief
         return true
     }
     
     func unlock()->Bool{
-        sendData(UNLOCK)
+        sendData(LOCK+"0")
         return true
     }
     
@@ -159,16 +184,17 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     }
     
     func getVersion()->String?{
+        sendData(VER)
         return nil
     }
     
-    func getBatteryInfo()->Int{
-        return 0
+    func getBatteryInfo()->Bool{
+        return true
     }
     
-    func getSpeed()->Int{
+    func getSpeed()->Bool{
         sendData(MPH)
-        return 0
+        return true
     }
     
     func enterStandby()->Bool{
@@ -178,13 +204,17 @@ class ScooterModel:NSObject, NRFManagerDelegate{
             self.status = .Standby
             // start a thread to get/monitor all the dashboard data including speedmeter, battery,trip, odo, est meter
             backgroundThread(background:{
-                while(true){
+                while(self.status == .Standby){
                     self.getSpeed()
-                    
+                    usleep(1000000)
                     self.getBatteryInfo()
+                    usleep(1000000)
                     self.getTrip(OdoTripType.TotalDistanceTraveled,unitType:UnitType.KM)
+                    usleep(1000000)
                     self.getEstimateDistance(UnitType.KM)
-                    usleep(30000)
+                    usleep(1000000)
+                    self.getVersion()
+                    usleep(1000000)
 
                 }
                 },

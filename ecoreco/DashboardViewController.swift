@@ -75,63 +75,21 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate, Scoot
         scrollViewMode.indicatorStyle = .Default
         
         self.labelSpeed.text = "0"
+        scooter.enterStandby()
         
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        if !bDemoThreadStart
-        {
-            
-            // create init pointer image
-            let pointerImage = UIImage(named: "pointer.png") as UIImage!
-            layer = CALayer()
-            let speedMeterStartX = (self.view.frame.width - imgViewSpeedMeter.frame.width)/2
-            let speedMeterStartY = imgViewSpeedMeter.frame.origin.y + imgViewSpeedMeter.frame.height/2 - 29/2
-            layer?.frame = CGRectMake(speedMeterStartX,speedMeterStartY,imgViewSpeedMeter.frame.width,29)
-            layer?.contents = pointerImage.CGImage as? AnyObject
-            self.view.layer.addSublayer(layer!)
-            
-            // prepare to rotate the pointer image
-            let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-            var rotation:CGAffineTransform?
-            var speed:Int = 0
-            
-            dispatch_async(dispatch_get_global_queue(priority, 0))
-            {
-                var i:Int = 0
-                while false
-                {
-                    usleep(self.SLEEPINTERVAL)
-                    
-                    if (self.bDemoEnable)
-                    {
-                        speed = self.testSpeedArray[i]
-                        i++
-                        if i == (self.testSpeedArray.endIndex - 1)
-                        {
-                            i = 0
-                        }
-                    }
-                    else
-                    {
-                        speed = 0
-                    }
-                        
-                    //speed = random()%25
-                    rotation = self.speedToRotation(speed)!
-                    dispatch_async(dispatch_get_main_queue())
-                    {
-                        self.layer?.setAffineTransform(rotation!)
-                        self.labelSpeed.text = "\(speed)"
-                    }
-                }
-                
-            }
-            
-            bDemoThreadStart = true
-        }
+        // create init pointer image
+        let pointerImage = UIImage(named: "pointer.png") as UIImage!
+        layer = CALayer()
+        let speedMeterStartX = (self.view.frame.width - imgViewSpeedMeter.frame.width)/2
+        let speedMeterStartY = imgViewSpeedMeter.frame.origin.y + imgViewSpeedMeter.frame.height/2 - 29/2
+        layer?.frame = CGRectMake(speedMeterStartX,speedMeterStartY,imgViewSpeedMeter.frame.width,29)
+        layer?.contents = pointerImage.CGImage as? AnyObject
+        self.view.layer.addSublayer(layer!)
         
     }
     
@@ -197,27 +155,27 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate, Scoot
         var rotation:CGAffineTransform?
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
 
-            dispatch_async(dispatch_get_global_queue(priority, 0))
+        dispatch_async(dispatch_get_global_queue(priority, 0))
+        {
+            self.bDemoThreadStart = true
+            for speed in self.testSpeedArray
             {
-                self.bDemoThreadStart = true
-                for speed in self.testSpeedArray
-                {
-                    usleep(self.SLEEPINTERVAL)
-                    
+                usleep(self.SLEEPINTERVAL)
                 
-                //speed = random()%25
-                    rotation = self.speedToRotation(speed)
-                    
-                    dispatch_async(dispatch_get_main_queue())
-                    {
-                        self.layer?.setAffineTransform(rotation!)
-                        self.labelSpeed.text = "\(speed)"
-                    }
+            
+            //speed = random()%25
+                rotation = self.speedToRotation(speed)
+                
+                dispatch_async(dispatch_get_main_queue())
+                {
+                    self.layer?.setAffineTransform(rotation!)
+                    self.labelSpeed.text = "\(speed)"
                 }
-        
+            }
         }
 
     }
+    
     
     
     
@@ -324,6 +282,21 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate, Scoot
     }
     
     func onSpeedReceived(speed: Int) {
+        
+        var rotation:CGAffineTransform?
+        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+        
+        dispatch_async(dispatch_get_global_queue(priority, 0))
+        {
+            
+                rotation = self.speedToRotation(speed)
+                
+                dispatch_async(dispatch_get_main_queue())
+                {
+                    self.layer?.setAffineTransform(rotation!)
+                    self.labelSpeed.text = "\(speed)"
+                }
+        }
         
     }
     
