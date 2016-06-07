@@ -10,6 +10,7 @@
 		181F4FAA1CFD887200B13E77 /* Scooter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 181F4FA81CFD887200B13E77 /* Scooter.xcdatamodeld */; };
 		181F4FAC1CFD88D100B13E77 /* ScooterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F4FAB1CFD88D100B13E77 /* ScooterModel.swift */; };
 		181F4FAE1CFDBDC100B13E77 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F4FAD1CFDBDC100B13E77 /* CommonViewController.swift */; };
+		183E661A1D06C41C00E1A4E9 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E66191D06C41C00E1A4E9 /* CounterView.swift */; };
 		1876A54F1C30D6CB0016EBCA /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A54E1C30D6CB0016EBCA /* header.png */; };
 		1876A5511C30DB400016EBCA /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5501C30DB400016EBCA /* settings.png */; };
 		1876A5711C311C890016EBCA /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5701C311C890016EBCA /* back.png */; };
@@ -94,6 +95,7 @@
 		181F4FA91CFD887200B13E77 /* Scooter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Scooter.xcdatamodel; sourceTree = "<group>"; };
 		181F4FAB1CFD88D100B13E77 /* ScooterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScooterModel.swift; sourceTree = "<group>"; };
 		181F4FAD1CFDBDC100B13E77 /* CommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
+		183E66191D06C41C00E1A4E9 /* CounterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		1876A54E1C30D6CB0016EBCA /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = header.png; path = images/header.png; sourceTree = "<group>"; };
 		1876A5501C30DB400016EBCA /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = images/settings.png; sourceTree = "<group>"; };
 		1876A5701C311C890016EBCA /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = images/back.png; sourceTree = "<group>"; };
@@ -188,6 +190,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		183E66181D06C3C400E1A4E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				183E66191D06C41C00E1A4E9 /* CounterView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		1863F3981CF4160F00B21266 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +241,7 @@
 		187B92C61C26716500DA3BDF /* ecoreco */ = {
 			isa = PBXGroup;
 			children = (
+				183E66181D06C3C400E1A4E9 /* View */,
 				3CEAC1EE1D0133A700F29628 /* FallViewController.swift */,
 				18EEF0F71C2BF06F0065AFE7 /* DashboardViewController.swift */,
 				18EEF0C71C2AFEB40065AFE7 /* NRFManager.swift */,
@@ -509,6 +520,7 @@
 				18EEF0F81C2BF06F0065AFE7 /* DashboardViewController.swift in Sources */,
 				3CEAC1EF1D0133A700F29628 /* FallViewController.swift in Sources */,
 				187B92C81C26716500DA3BDF /* AppDelegate.swift in Sources */,
+				183E661A1D06C41C00E1A4E9 /* CounterView.swift in Sources */,
 				18EEF0BA1C2A3C380065AFE7 /* MapViewController.swift in Sources */,
 				181F4FAC1CFD88D100B13E77 /* ScooterModel.swift in Sources */,
 				18EEF0C81C2AFEB40065AFE7 /* NRFManager.swift in Sources */,
