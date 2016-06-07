@@ -173,7 +173,6 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate, Scoot
                     self.layer?.setAffineTransform(rotation!)
                     self.labelSpeed.text = "\(speed)"
                     self.counterView.speed = speed
-                    self.counterView.setNeedsDisplay()
                 }
             }
         }
@@ -299,6 +298,7 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate, Scoot
                 {
                     self.layer?.setAffineTransform(rotation!)
                     self.labelSpeed.text = "\(speed)"
+                    self.counterView.speed = speed
                 }
         }
         
