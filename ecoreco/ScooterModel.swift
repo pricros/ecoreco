@@ -67,6 +67,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     let LOCK:String = "LCK"
     let BATT:String = "BAT"
     let VER:String = "VER"
+    let ASK:String = "?"
     
     override init(){
         super.init()
@@ -141,7 +142,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     }
     
     func getTrip(tripType:OdoTripType, unitType:UnitType)->Bool{
-        sendData(ODO+unitType.rawValue+tripType.rawValue)
+        sendData(ODO+unitType.rawValue+tripType.rawValue+ASK)
         return true
     }
     
@@ -163,7 +164,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     }
     
     func getEstimateDistance(unitType:UnitType)->Int{
-        sendData(ESTIMATE+unitType.rawValue)
+        sendData(ESTIMATE+unitType.rawValue+ASK)
         return 0
     }
     
@@ -184,7 +185,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     }
     
     func getVersion()->String?{
-        sendData(VER)
+        sendData(VER+ASK)
         return nil
     }
     
@@ -193,7 +194,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     }
     
     func getSpeed()->Bool{
-        sendData(MPH)
+        sendData(MPH+ASK)
         return true
     }
     
