@@ -14,6 +14,7 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate, Scoot
     @IBOutlet weak var imgViewNavi: UIImageView!
     @IBOutlet weak var labelSpeed: UILabel!
     @IBOutlet weak var imgViewSpeedMeter: UIImageView!
+    @IBOutlet weak var counterView: CounterView!
     @IBOutlet weak var scrollViewMode: UIScrollView!
     
     var layer:CALayer?
@@ -81,6 +82,7 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate, Scoot
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        self.view.sendSubviewToBack(counterView)
         if !bDemoThreadStart
         {
             
@@ -118,7 +120,7 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate, Scoot
                     {
                         speed = 0
                     }
-                        
+                    
                     //speed = random()%25
                     rotation = self.speedToRotation(speed)!
                     dispatch_async(dispatch_get_main_queue())
@@ -212,6 +214,8 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate, Scoot
                     {
                         self.layer?.setAffineTransform(rotation!)
                         self.labelSpeed.text = "\(speed)"
+                        self.counterView.speed = speed
+                        self.counterView.setNeedsDisplay()
                     }
                 }
         
