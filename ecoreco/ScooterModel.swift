@@ -92,15 +92,19 @@ class ScooterModel:NSObject, NRFManagerDelegate{
                     case self.MPH:
                         let speed:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,3)))!
                         self.runDelegate.onSpeedReceived(speed)
+                        break
 //                    case KMPH:
-//                    case ODO+UnitType.KM:
-//                    case ODO+UnitType.Miles:
+                    case self.ODO+UnitType.KM.rawValue:
+                        break
+                   // case ODO+UnitType.Miles:
 //                    case ODORES:
 //                    case ESTIMATE+UnitType.Miles:
 //                    case ESTIMATE+UnitType.KM:
 //                    //case FALL:
 //                    case LOCK:
-//                    case BATT:
+                    case self.BATT:
+                        var batt:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,3)))!
+                        break
 //                    case VER:
                     default:
                         break
@@ -215,7 +219,6 @@ class ScooterModel:NSObject, NRFManagerDelegate{
                     self.getEstimateDistance(UnitType.KM)
                     usleep(1000000)
                     self.getVersion()
-                    usleep(1000000)
 
                 }
                 },
