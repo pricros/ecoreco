@@ -6,7 +6,7 @@
 import UIKit
 import QuartzCore
 
-class DashboardViewController: CommonViewController, UIScrollViewDelegate, ScooterModelRunProtocol {
+class DashboardViewController: CommonViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var imgViewSetting: UIImageView!
     @IBOutlet weak var imgViewPower: UIImageView!
@@ -26,7 +26,6 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate, Scoot
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scooter.runDelegate = self
  
         //set view bgcolor
         self.view.backgroundColor = UIColor(
@@ -78,6 +77,7 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate, Scoot
         self.labelSpeed.text = "0"
         scooter.enterStandby()
         
+        scooter.speed.didChange.addHandler(self, handler: DashboardViewController.speedDidChange)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -284,7 +284,7 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate, Scoot
         
     }
     
-    func onSpeedReceived(speed: Int) {
+    func speedDidChange(oldSpeed:Int, newSpeed:Int) {
         
         var rotation:CGAffineTransform?
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
@@ -292,13 +292,13 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate, Scoot
         dispatch_async(dispatch_get_global_queue(priority, 0))
         {
             
-                rotation = self.speedToRotation(speed)
+                rotation = self.speedToRotation(newSpeed)
                 
                 dispatch_async(dispatch_get_main_queue())
                 {
                     self.layer?.setAffineTransform(rotation!)
-                    self.labelSpeed.text = "\(speed)"
-                    self.counterView.speed = speed
+                    self.labelSpeed.text = "\(newSpeed)"
+                    self.counterView.speed = newSpeed
                 }
         }
         

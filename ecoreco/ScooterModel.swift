@@ -57,6 +57,19 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     
     static let sharedInstance = ScooterModel()
     
+    let speed = Observable<Int>(0)
+    let mode = Observable<Int>(0)
+    let odk1 = Observable<Int>(0)
+    let odk2 = Observable<Int>(0)
+    let odk3 = Observable<Int>(0)
+    let odk4 = Observable<Int>(0)
+    let odk5 = Observable<Int>(0)
+    let rmm = Observable<Int>(0)
+    let lockStatus = Observable<Int>(0)
+    let falStatus = Observable<Int>(0)
+    let bat = Observable<Int>(0)
+    
+    
     let MODE:String = "MOD"
     let MPH:String = "MPH"
     let KMPH:String = "KMP"
@@ -88,10 +101,12 @@ class ScooterModel:NSObject, NRFManagerDelegate{
                     switch rtnCmd {
            
                     case self.MODE :
+                        let mode:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,1)))!
+                        self.mode.set(mode)
                         break
                     case self.MPH:
                         let speed:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,3)))!
-                        self.runDelegate.onSpeedReceived(speed)
+                        self.speed.set(speed)
                         break
 //                    case KMPH:
                     case self.ODO+UnitType.KM.rawValue:
@@ -104,6 +119,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
 //                    case LOCK:
                     case self.BATT:
                         var batt:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,3)))!
+                        self.bat.set(batt)
                         break
 //                    case VER:
                     default:
