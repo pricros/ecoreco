@@ -16,6 +16,11 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
     @IBOutlet weak var imgViewSpeedMeter: UIImageView!
     @IBOutlet weak var counterView: CounterView!
     @IBOutlet weak var scrollViewMode: UIScrollView!
+    @IBOutlet weak var labelInfoBattery: UILabel!
+    @IBOutlet weak var labelInfoEstimateRange: UILabel!
+    @IBOutlet weak var labelInfoTrip: UILabel!
+    @IBOutlet weak var labelInfoOdo: UILabel!
+    @IBOutlet weak var labelHeaderBattery: UILabel!
     
     var layer:CALayer?
     var bDemoThreadStart:Bool = false
@@ -78,6 +83,8 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         scooter.enterStandby()
         
         scooter.speed.didChange.addHandler(self, handler: DashboardViewController.speedDidChange)
+        
+        scooter.bat.didChange.addHandler(self, handler: DashboardViewController.batteryDidChange)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -304,8 +311,11 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         
     }
     
-    func onFallDetected() {
-        
+    func batteryDidChange(oldValue:Int, newValue:Int) {
+        dispatch_async(dispatch_get_main_queue()) {
+            self.labelInfoBattery.text = "\(newValue)"
+            self.labelHeaderBattery.text = "\(newValue)%"
+        }
     }
 
 }

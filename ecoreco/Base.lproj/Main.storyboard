@@ -674,6 +674,11 @@
                         <outlet property="imgViewProfile" destination="3Dw-VJ-0ZV" id="cIg-sa-fuB"/>
                         <outlet property="imgViewSetting" destination="j1I-19-Cqr" id="vs9-aR-kw2"/>
                         <outlet property="imgViewSpeedMeter" destination="W6q-aP-fbL" id="xLI-Vu-OyW"/>
+                        <outlet property="labelHeaderBattery" destination="7m9-y6-dCF" id="Ml3-pg-jC1"/>
+                        <outlet property="labelInfoBattery" destination="VfO-T7-9wK" id="TD2-o2-3So"/>
+                        <outlet property="labelInfoEstimateRange" destination="5eu-DP-w2M" id="bW6-e6-MZb"/>
+                        <outlet property="labelInfoOdo" destination="yLD-EQ-Fnz" id="P4c-lF-SP2"/>
+                        <outlet property="labelInfoTrip" destination="LC3-Rv-hse" id="j2U-bg-IDx"/>
                         <outlet property="labelSpeed" destination="eb6-Nc-FB9" id="lYs-r9-BGq"/>
                         <outlet property="scrollViewMode" destination="HyR-Vj-CnV" id="931-Au-JE4"/>
                         <segue destination="TT6-ou-MM9" kind="show" identifier="segueDashToMap" id="giZ-QP-kgy"/>

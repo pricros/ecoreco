@@ -225,16 +225,18 @@ class ScooterModel:NSObject, NRFManagerDelegate{
             self.status = .Standby
             // start a thread to get/monitor all the dashboard data including speedmeter, battery,trip, odo, est meter
             backgroundThread(background:{
+
                 while(self.status == .Standby){
                     self.getSpeed()
-                    usleep(1000000)
+                    usleep(100000)
                     self.getBatteryInfo()
-                    usleep(1000000)
+                    usleep(100000)
                     self.getTrip(OdoTripType.TotalDistanceTraveled,unitType:UnitType.KM)
-                    usleep(1000000)
+                    usleep(100000)
                     self.getEstimateDistance(UnitType.KM)
-                    usleep(1000000)
+                    usleep(100000)
                     self.getVersion()
+                    
 
                 }
                 },
