@@ -12,6 +12,7 @@
 		181F4FAE1CFDBDC100B13E77 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F4FAD1CFDBDC100B13E77 /* CommonViewController.swift */; };
 		183E661A1D06C41C00E1A4E9 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E66191D06C41C00E1A4E9 /* CounterView.swift */; };
 		183E661C1D09E5BF00E1A4E9 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E661B1D09E5BE00E1A4E9 /* Event.swift */; };
+		183E661E1D0A831C00E1A4E9 /* cruiseOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 183E661D1D0A831C00E1A4E9 /* cruiseOff.png */; };
 		1876A54F1C30D6CB0016EBCA /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A54E1C30D6CB0016EBCA /* header.png */; };
 		1876A5511C30DB400016EBCA /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5501C30DB400016EBCA /* settings.png */; };
 		1876A5711C311C890016EBCA /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5701C311C890016EBCA /* back.png */; };
@@ -98,6 +99,7 @@
 		181F4FAD1CFDBDC100B13E77 /* CommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
 		183E66191D06C41C00E1A4E9 /* CounterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		183E661B1D09E5BE00E1A4E9 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		183E661D1D0A831C00E1A4E9 /* cruiseOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cruiseOff.png; path = images/cruiseOff.png; sourceTree = "<group>"; };
 		1876A54E1C30D6CB0016EBCA /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = header.png; path = images/header.png; sourceTree = "<group>"; };
 		1876A5501C30DB400016EBCA /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = images/settings.png; sourceTree = "<group>"; };
 		1876A5701C311C890016EBCA /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = images/back.png; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 				1876A5BC1C3616E30016EBCA /* icon_120_120.png */,
 				1876A5BD1C3616E40016EBCA /* icon_180_180.png */,
 				3C0B71591C34BDDF00123C07 /* speedMeter.png */,
+				183E661D1D0A831C00E1A4E9 /* cruiseOff.png */,
 				3C0B71571C34BDD700123C07 /* lineMiddle.png */,
 				1876A5891C3265430016EBCA /* iconBattery.png */,
 				1876A58A1C3265430016EBCA /* iconNavi.png */,
@@ -473,6 +476,7 @@
 				3CEAC2071D05007E00F29628 /* infoMeter.png in Resources */,
 				1876A5851C3238E60016EBCA /* digit_4.png in Resources */,
 				1876A5B01C3265430016EBCA /* modeEkickAmplifiedOff.png in Resources */,
+				183E661E1D0A831C00E1A4E9 /* cruiseOff.png in Resources */,
 				1876A5A51C3265430016EBCA /* iconSetting.png in Resources */,
 				1876A5BF1C3616E40016EBCA /* icon_180_180.png in Resources */,
 				3CEAC1F91D04015400F29628 /* lock-_0037_board2.png in Resources */,

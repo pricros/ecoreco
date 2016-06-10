@@ -559,6 +559,13 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cruiseOff.png" translatesAutoresizingMaskIntoConstraints="NO" id="y1q-OZ-ED8">
+                                <rect key="frame" x="262" y="345" width="77" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="CHE-9z-oqP"/>
+                                    <constraint firstAttribute="width" constant="77" id="klA-EB-Oq1"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Bsi-JO-ldK" firstAttribute="top" secondItem="Na3-Wb-4BU" secondAttribute="bottom" constant="20" id="09V-XN-BQU"/>
@@ -575,6 +582,7 @@
                             <constraint firstItem="W6q-aP-fbL" firstAttribute="centerY" secondItem="eb6-Nc-FB9" secondAttribute="centerY" id="96m-q9-flG"/>
                             <constraint firstItem="LC3-Rv-hse" firstAttribute="centerX" secondItem="Pcf-67-P4w" secondAttribute="centerX" id="9RP-TH-y05"/>
                             <constraint firstItem="HyR-Vj-CnV" firstAttribute="trailing" secondItem="Na3-Wb-4BU" secondAttribute="trailing" id="9zM-2F-a4p"/>
+                            <constraint firstItem="y1q-OZ-ED8" firstAttribute="centerX" secondItem="fOL-L3-by1" secondAttribute="centerX" constant="4" id="AKP-RK-j9F"/>
                             <constraint firstItem="5eu-DP-w2M" firstAttribute="centerX" secondItem="uVB-9y-Xn0" secondAttribute="centerX" id="AQh-fE-FO4"/>
                             <constraint firstItem="W6q-aP-fbL" firstAttribute="top" secondItem="71u-Fg-RJL" secondAttribute="bottom" constant="38" id="AuZ-sB-CvY"/>
                             <constraint firstItem="ibO-3v-nCz" firstAttribute="top" secondItem="7m9-y6-dCF" secondAttribute="bottom" constant="49" id="B1Q-hC-b7c"/>
@@ -606,6 +614,7 @@
                             <constraint firstItem="71u-Fg-RJL" firstAttribute="bottom" secondItem="3Dw-VJ-0ZV" secondAttribute="bottom" id="Ynm-0v-lSg"/>
                             <constraint firstItem="Pcf-67-P4w" firstAttribute="leading" secondItem="5eu-DP-w2M" secondAttribute="trailing" constant="22" id="ZBj-Ai-wh7"/>
                             <constraint firstAttribute="bottomMargin" secondItem="9gA-Ek-2pd" secondAttribute="bottom" constant="-10" id="ZJ5-KZ-Zop"/>
+                            <constraint firstItem="y1q-OZ-ED8" firstAttribute="centerX" secondItem="eb6-Nc-FB9" secondAttribute="centerX" id="aVT-LJ-v5n"/>
                             <constraint firstItem="uVB-9y-Xn0" firstAttribute="leading" secondItem="ksx-sr-hTA" secondAttribute="trailing" constant="1" id="bI0-o5-UsS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yLD-EQ-Fnz" secondAttribute="trailing" constant="14" id="bIj-S3-zMm"/>
                             <constraint firstItem="71u-Fg-RJL" firstAttribute="top" secondItem="3Dw-VJ-0ZV" secondAttribute="top" id="bKG-R8-oS1"/>
@@ -616,6 +625,7 @@
                             <constraint firstItem="TdE-aE-bdb" firstAttribute="trailing" secondItem="3Dw-VJ-0ZV" secondAttribute="trailing" id="eqZ-5p-bVD"/>
                             <constraint firstItem="HyR-Vj-CnV" firstAttribute="leading" secondItem="m5a-Ip-goD" secondAttribute="leading" id="etK-xi-LsU"/>
                             <constraint firstItem="7m9-y6-dCF" firstAttribute="top" secondItem="Bsi-JO-ldK" secondAttribute="top" constant="1" id="fBj-sx-DOB"/>
+                            <constraint firstItem="y1q-OZ-ED8" firstAttribute="bottom" secondItem="eb6-Nc-FB9" secondAttribute="bottom" constant="20" id="fVQ-5N-YwC"/>
                             <constraint firstItem="7m9-y6-dCF" firstAttribute="centerX" secondItem="Bsi-JO-ldK" secondAttribute="centerX" constant="-2" id="fdP-jJ-3my"/>
                             <constraint firstItem="HyR-Vj-CnV" firstAttribute="top" secondItem="NqL-gw-6v7" secondAttribute="bottom" constant="26" id="fpC-Ip-4mE"/>
                             <constraint firstItem="LC3-Rv-hse" firstAttribute="firstBaseline" secondItem="VfO-T7-9wK" secondAttribute="baseline" id="hDe-ZX-7yI"/>
@@ -645,6 +655,7 @@
                             <mask key="constraints">
                                 <exclude reference="B1Q-hC-b7c"/>
                                 <exclude reference="7f5-hl-m6M"/>
+                                <exclude reference="AKP-RK-j9F"/>
                                 <exclude reference="PBm-nd-hcT"/>
                                 <exclude reference="kjV-6K-ahk"/>
                                 <exclude reference="M4z-pK-R6G"/>
@@ -1027,6 +1038,7 @@
         <image name="FALL-DETECT_0001_TEL.png" width="406" height="128"/>
         <image name="FALL-DETECT_0002_RESET.png" width="406" height="128"/>
         <image name="back.png" width="835" height="835"/>
+        <image name="cruiseOff.png" width="214" height="47"/>
         <image name="header.png" width="1077" height="1211"/>
         <image name="iconBattery.png" width="132" height="51"/>
         <image name="iconNavi.png" width="78" height="103"/>
