@@ -80,7 +80,6 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         scrollViewMode.indicatorStyle = .Default
         
         self.labelSpeed.text = "0"
-        scooter.enterStandby()
         scooter.speed.didChange.addHandler(self, handler: DashboardViewController.speedDidChange)
         scooter.bat.didChange.addHandler(self, handler: DashboardViewController.batteryDidChange)
         scooter.falStatus.didChange.addHandler(self, handler: DashboardViewController.falStatusDidChange)
@@ -100,6 +99,7 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         layer?.contents = pointerImage.CGImage as? AnyObject
         self.view.layer.addSublayer(layer!)
         self.view.sendSubviewToBack(counterView)
+        scooter.enterStandby()
         
     }
     
