@@ -59,10 +59,10 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     
     let speed = Observable<Int>(0)
     let mode = Observable<Int>(0)
-    let odk1 = Observable<Int>(0)
-    let odk2 = Observable<Int>(0)
-    let odk3 = Observable<Int>(0)
-    let odk4 = Observable<Int>(0)
+    let odkTotal = Observable<Int>(0)
+    let odkTurnOn = Observable<Int>(0)
+    let odkA = Observable<Int>(0)
+    let odkB = Observable<Int>(0)
     let odk5 = Observable<Int>(0)
     let rmm = Observable<Int>(0)
     let lockStatus = Observable<Int>(0)
@@ -112,17 +112,43 @@ class ScooterModel:NSObject, NRFManagerDelegate{
                         break
 //                    case KMPH:
                     case self.ODO+UnitType.KM.rawValue:
+                        let odoType:String = (rtnString as NSString).substringWithRange(NSMakeRange(3,1))
+                        let odoDistance:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(4,5)))!
+
+                        switch odoType {
+                        case OdoTripType.TotalDistanceTraveled.rawValue:
+                            self.odkTotal.set(odoDistance)
+                            break
+                        case OdoTripType.TripMeterADistance.rawValue:
+                            self.odkA.set(odoDistance)
+                            break
+                        case OdoTripType.TripMeterBDistance.rawValue:
+                            self.odkB.set(odoDistance)
+                            break
+                        case OdoTripType.TurnOnDistance.rawValue:
+                            self.odkTurnOn.set(odoDistance)
+                            break
+                        default:
+                            break
+                            
+                        }
+                        
                         break
                    // case ODO+UnitType.Miles:
 //                    case ODORES:
 //                    case ESTIMATE+UnitType.Miles:
-//                    case ESTIMATE+UnitType.KM:
+                    case self.ESTIMATE+UnitType.KM.rawValue:
+                        let rmm:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,3)))!
+                        self.rmm.set(rmm)
+                        break
                     case self.FALL:
                         let fallStatus:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,1)))!
                         self.falStatus.set(fallStatus)
+                        break
                     case self.LOCK:
                         let lockStatus:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,1)))!
                         self.lockStatus.set(lockStatus)
+                        break
                     case self.BATT:
                         var batt:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,3)))!
                         self.bat.set(batt)
@@ -240,13 +266,21 @@ class ScooterModel:NSObject, NRFManagerDelegate{
                 while(self.status == .Standby){
                     self.getSpeed()
                     usleep(self.SLEEPINTERVAL)
+
                     self.getBatteryInfo()
                     usleep(self.SLEEPINTERVAL)
+                    
                     self.getTrip(OdoTripType.TotalDistanceTraveled,unitType:UnitType.KM)
                     usleep(self.SLEEPINTERVAL)
+                    
+                    self.getTrip(OdoTripType.TripMeterADistance,unitType:UnitType.KM)
+                    usleep(self.SLEEPINTERVAL)
+                    
                     self.getEstimateDistance(UnitType.KM)
                     usleep(self.SLEEPINTERVAL)
+                    
                     self.getFallStatus()
+                    usleep(self.SLEEPINTERVAL)
 
                 }
                 },

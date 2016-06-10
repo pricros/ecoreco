@@ -84,6 +84,9 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         scooter.bat.didChange.addHandler(self, handler: DashboardViewController.batteryDidChange)
         scooter.falStatus.didChange.addHandler(self, handler: DashboardViewController.falStatusDidChange)
         scooter.lockStatus.didChange.addHandler(self, handler: DashboardViewController.lockStatusDidChange)
+        scooter.odkTotal.didChange.addHandler(self, handler: DashboardViewController.odkTotalDidChange)
+        scooter.odkA.didChange.addHandler(self, handler: DashboardViewController.odkADidChange)
+        scooter.rmm.didChange.addHandler(self, handler: DashboardViewController.rmmDidChange)
 
     }
     
@@ -300,10 +303,31 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         }
     }
     
+    func odkADidChange(oldValue:Int, newValue:Int) {
+        dispatch_async(dispatch_get_main_queue()) {
+            self.labelInfoTrip.text = "\(newValue)"
+        }
+    }
+
+    func odkTotalDidChange(oldValue:Int, newValue:Int) {
+        dispatch_async(dispatch_get_main_queue()) {
+            self.labelInfoOdo.text = "\(newValue)"
+        }
+    }
+
+    func rmmDidChange(oldValue:Int, newValue:Int) {
+        dispatch_async(dispatch_get_main_queue()) {
+            self.labelInfoEstimateRange.text = "\(newValue)"
+        }
+    }
+
+    
     func falStatusDidChange(oldValue:Int, newValue:Int) {
-        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("FallView") as! FallViewController
-        vc.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
-        self.presentViewController(vc, animated: true, completion: nil)
+        if (newValue == 1){
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("FallView") as! FallViewController
+            vc.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
     }
     
     func lockStatusDidChange(oldValue:Int, newValue:Int) {
