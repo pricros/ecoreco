@@ -683,11 +683,12 @@
                         <outlet property="scrollViewMode" destination="HyR-Vj-CnV" id="931-Au-JE4"/>
                         <segue destination="TT6-ou-MM9" kind="show" identifier="segueDashToMap" id="giZ-QP-kgy"/>
                         <segue destination="gdk-A0-4cy" kind="show" identifier="segueDashToSetting" id="FT4-ja-zaY"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueDashToLock" id="mmy-eO-tQb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gxM-hf-wOv" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1268" y="-81"/>
+            <point key="canvasLocation" x="179" y="-95"/>
         </scene>
         <!--Fall View Controller-->
         <scene sceneID="lOF-cW-odl">
@@ -1018,7 +1019,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5a2-yC-4Q8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="214" y="9"/>
+            <point key="canvasLocation" x="150" y="771"/>
         </scene>
     </scenes>
     <resources>

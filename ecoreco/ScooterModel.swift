@@ -115,8 +115,12 @@ class ScooterModel:NSObject, NRFManagerDelegate{
 //                    case ODORES:
 //                    case ESTIMATE+UnitType.Miles:
 //                    case ESTIMATE+UnitType.KM:
-//                    //case FALL:
-//                    case LOCK:
+                    case self.FALL:
+                        let fallStatus:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,1)))!
+                        self.falStatus.set(fallStatus)
+                    case self.LOCK:
+                        let lockStatus:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,1)))!
+                        self.lockStatus.set(lockStatus)
                     case self.BATT:
                         var batt:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,3)))!
                         self.bat.set(batt)
@@ -218,6 +222,11 @@ class ScooterModel:NSObject, NRFManagerDelegate{
         return true
     }
     
+    func getFallStatus()->Bool{
+        sendData(FALL+ASK)
+        return true
+    }
+    
     func enterStandby()->Bool{
         if(self.status == .Standby){
             return false
@@ -235,8 +244,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
                     usleep(100000)
                     self.getEstimateDistance(UnitType.KM)
                     usleep(100000)
-                    self.getVersion()
-                    
+                    self.getFallStatus()
 
                 }
                 },

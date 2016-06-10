@@ -81,10 +81,11 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         
         self.labelSpeed.text = "0"
         scooter.enterStandby()
-        
         scooter.speed.didChange.addHandler(self, handler: DashboardViewController.speedDidChange)
-        
         scooter.bat.didChange.addHandler(self, handler: DashboardViewController.batteryDidChange)
+        scooter.falStatus.didChange.addHandler(self, handler: DashboardViewController.falStatusDidChange)
+        scooter.lockStatus.didChange.addHandler(self, handler: DashboardViewController.lockStatusDidChange)
+
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -159,31 +160,12 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
     }
     
     func tappedSpeed(){
-        self.bDemoEnable = !self.bDemoEnable
-        
-        var rotation:CGAffineTransform?
-        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-
-        dispatch_async(dispatch_get_global_queue(priority, 0))
-        {
-            self.bDemoThreadStart = true
-            for speed in self.testSpeedArray
-            {
-                usleep(self.SLEEPINTERVAL)
-                
-            
-            //speed = random()%25
-                rotation = self.speedToRotation(speed)
-                
-                dispatch_async(dispatch_get_main_queue())
-                {
-                    self.layer?.setAffineTransform(rotation!)
-                    self.labelSpeed.text = "\(speed)"
-                    self.counterView.speed = speed
-                }
-            }
-        }
-
+        scooter.lock()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        scooter.exitStandby()
     }
     
     
@@ -317,6 +299,19 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
             self.labelHeaderBattery.text = "\(newValue)%"
         }
     }
+    
+    func falStatusDidChange(oldValue:Int, newValue:Int) {
+        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("FallView") as! FallViewController
+        vc.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
+    
+    func lockStatusDidChange(oldValue:Int, newValue:Int) {
+        if (newValue == 1){
+            self.performSegueWithIdentifier("segueDashToLock", sender: nil)
+        }
+    }
+
 
 }
 
