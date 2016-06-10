@@ -82,6 +82,8 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     let VER:String = "VER"
     let ASK:String = "?"
     
+    let SLEEPINTERVAL:UInt32 = 50000 //micro second
+    
     override init(){
         super.init()
         nrfManager = NRFManager(
@@ -237,13 +239,13 @@ class ScooterModel:NSObject, NRFManagerDelegate{
 
                 while(self.status == .Standby){
                     self.getSpeed()
-                    usleep(100000)
+                    usleep(self.SLEEPINTERVAL)
                     self.getBatteryInfo()
-                    usleep(100000)
+                    usleep(self.SLEEPINTERVAL)
                     self.getTrip(OdoTripType.TotalDistanceTraveled,unitType:UnitType.KM)
-                    usleep(100000)
+                    usleep(self.SLEEPINTERVAL)
                     self.getEstimateDistance(UnitType.KM)
-                    usleep(100000)
+                    usleep(self.SLEEPINTERVAL)
                     self.getFallStatus()
 
                 }
