@@ -131,12 +131,8 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
 
     func tappedSetting(){
 
-        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("FallView") as! FallViewController
-        vc.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
-        self.presentViewController(vc, animated: true, completion: nil)
-
-        //self.performSegueWithIdentifier("segueDashToSetting", sender: nil)
-        // self.navigationController?.pushViewController(self.storyboard?.instantiateViewControllerWithIdentifier("SettingView") as! SettingViewController, animated: true)
+        self.performSegueWithIdentifier("segueDashToSetting", sender: nil)
+        //self.navigationController?.pushViewController(self.storyboard?.instantiateViewControllerWithIdentifier("SettingView") as! SettingViewController, animated: true)
     }
     
     var isPowerOn = true
