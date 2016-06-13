@@ -93,12 +93,21 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        
+        let sizeRect = UIScreen.mainScreen().applicationFrame
+        let width    = sizeRect.size.width
+        
         // create init pointer image
         let pointerImage = UIImage(named: "pointer.png") as UIImage!
+        let pointerWidth   = pointerImage.size.width/1920 * sizeRect.size.width
+        let pointerHeight   = pointerImage.size.height/1920 * sizeRect.size.height
+        
+        let newSize:CGSize = CGSize(width: imgViewSpeedMeter.frame.width, height: pointerImage.size.width/imgViewSpeedMeter.frame.width*pointerImage.size.height )
         layer = CALayer()
-        let speedMeterStartX = (self.view.frame.width - imgViewSpeedMeter.frame.width)/2
-        let speedMeterStartY = imgViewSpeedMeter.frame.origin.y + imgViewSpeedMeter.frame.height/2 - 29/2
-        layer?.frame = CGRectMake(speedMeterStartX,speedMeterStartY,imgViewSpeedMeter.frame.width,29)
+        let speedMeterStartX = imgViewSpeedMeter.frame.origin.x
+        
+        let speedMeterStartY = imgViewSpeedMeter.frame.origin.y + imgViewSpeedMeter.frame.height/2 - pointerHeight/2
+        layer?.frame = CGRectMake(speedMeterStartX,speedMeterStartY, imgViewSpeedMeter.frame.width , pointerHeight)
         layer?.contents = pointerImage.CGImage as? AnyObject
         self.view.layer.addSublayer(layer!)
         self.view.sendSubviewToBack(counterView)
