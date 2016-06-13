@@ -69,12 +69,16 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         labelSpeed.userInteractionEnabled = true
         labelSpeed.addGestureRecognizer(tapGestureRecognizerSpeed)
         
+        let font = UIFont(name: (self.labelSpeed.font?.familyName)!, size:150)
+        labelSpeed.font = font
         
         
         //scroll view
         let scrollingView = modeButtonsView()
         scrollViewMode.addSubview(scrollingView)
-        scrollViewMode.contentSize = scrollingView.frame.size
+        let size:CGSize = CGSize(width: UIScreen.mainScreen().applicationFrame.size.width, height: UIScreen.mainScreen().applicationFrame
+.size.height/8)
+        scrollViewMode.contentSize = size
         scrollViewMode.scrollEnabled = true
         scrollViewMode.showsHorizontalScrollIndicator = true
         scrollViewMode.indicatorStyle = .Default
@@ -92,20 +96,15 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        
+
         let sizeRect = UIScreen.mainScreen().applicationFrame
-        let width    = sizeRect.size.width
         
         // create init pointer image
         let pointerImage = UIImage(named: "pointer.png") as UIImage!
         let pointerWidth   = pointerImage.size.width/1920 * sizeRect.size.width
         let pointerHeight   = pointerImage.size.height/1920 * sizeRect.size.height
-        
-        let newSize:CGSize = CGSize(width: imgViewSpeedMeter.frame.width, height: pointerImage.size.width/imgViewSpeedMeter.frame.width*pointerImage.size.height )
         layer = CALayer()
         let speedMeterStartX = imgViewSpeedMeter.frame.origin.x
-        
         let speedMeterStartY = imgViewSpeedMeter.frame.origin.y + imgViewSpeedMeter.frame.height/2 - pointerHeight/2
         layer?.frame = CGRectMake(speedMeterStartX,speedMeterStartY, imgViewSpeedMeter.frame.width , pointerHeight)
         layer?.contents = pointerImage.CGImage as? AnyObject
@@ -251,9 +250,12 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         buttonView.frame.origin = CGPointMake(0,0)
         
         let padding = CGSizeMake(10, 10)
-        let buttonSize = CGSizeMake(116.0,52.0)//same with image size
+        let buttonSize = CGSizeMake(UIScreen.mainScreen().applicationFrame
+            .size.width/3.3,UIScreen.mainScreen().applicationFrame
+            .size.height/8)//same with image size
         buttonView.frame.size.width = (buttonSize.width + padding.width) * CGFloat(imagesModeOff.count)
-        buttonView.frame.size.height = 52
+        buttonView.frame.size.height = UIScreen.mainScreen().applicationFrame
+            .size.height/8
         
         var buttonPosition = CGPointMake(padding.width * 0.5, padding.height)
         let buttonIncrement = buttonSize.width + padding.width
