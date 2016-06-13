@@ -29,6 +29,7 @@ public enum UnitType:String {
 
 
 public enum ScooterStatus {
+    case Connected
     case Standby
     case Fall
     case None
@@ -89,9 +90,11 @@ class ScooterModel:NSObject, NRFManagerDelegate{
         nrfManager = NRFManager(
             onConnect: {
                 self.log("\(__FILE__) \(__LINE__) \nC: ★ Connected")
+                self.status = ScooterStatus.Connected
             },
             onDisconnect: {
                 self.log("\(__FILE__) \(__LINE__) \nC: ★ Disconnected")
+                self.status = ScooterStatus.None
             },
             onData: {
                 (data:NSData?, string:String?)->() in
@@ -215,9 +218,9 @@ class ScooterModel:NSObject, NRFManagerDelegate{
         return true
     }
     
-    func getEstimateDistance(unitType:UnitType)->Int{
+    func getEstimateDistance(unitType:UnitType)->Bool{
         sendData(ESTIMATE+unitType.rawValue+ASK)
-        return 0
+        return true
     }
     
     func enableCruise()->Bool{
@@ -232,16 +235,17 @@ class ScooterModel:NSObject, NRFManagerDelegate{
         return true
     }
     
-    func getSettings()->NSObject?{
-        return nil
+    func getSettings()->Bool{
+        return true
     }
     
-    func getVersion()->String?{
+    func getVersion()->Bool{
         sendData(VER+ASK)
-        return nil
+        return true
     }
     
     func getBatteryInfo()->Bool{
+        sendData(BATT+ASK)
         return true
     }
     
@@ -258,7 +262,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     func enterStandby()->Bool{
         if(self.status == .Standby){
             return false
-        }else{
+        }else if (self.status == .Connected){
             self.status = .Standby
             // start a thread to get/monitor all the dashboard data including speedmeter, battery,trip, odo, est meter
             backgroundThread(background:{
@@ -289,7 +293,10 @@ class ScooterModel:NSObject, NRFManagerDelegate{
             })
             // start a thread to get fall status
             return true
+        } else {
+            self.log("\(__FILE__) \(__LINE__) \n not connected")
         }
+        return false
     }
     
     func exitStandby()->Bool{
