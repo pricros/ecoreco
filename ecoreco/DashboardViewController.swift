@@ -76,9 +76,7 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         //scroll view
         let scrollingView = modeButtonsView()
         scrollViewMode.addSubview(scrollingView)
-        let size:CGSize = CGSize(width: UIScreen.mainScreen().applicationFrame.size.width, height: UIScreen.mainScreen().applicationFrame
-.size.height/8)
-        scrollViewMode.contentSize = size
+        scrollViewMode.contentSize = scrollingView.frame.size
         scrollViewMode.scrollEnabled = true
         scrollViewMode.showsHorizontalScrollIndicator = true
         scrollViewMode.indicatorStyle = .Default
@@ -185,22 +183,22 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
     let imagesModeOn = [
         UIImage(named: "modeBoostOn.png") as UIImage!,
         UIImage(named: "modeRideOn.png") as UIImage!,
-        UIImage(named: "modeEkickExtendOn.png") as UIImage!
-        //UIImage(named: "modeEkickAmplifiedOn.png") as UIImage!,
-        //UIImage(named: "modeEcoOn.png") as UIImage!
+        UIImage(named: "modeEkickExtendOn.png") as UIImage!,
+        UIImage(named: "modeEkickAmplifiedOn.png") as UIImage!,
+        UIImage(named: "modeEcoOn.png") as UIImage!
     ]
     let imagesModeOff = [
         UIImage(named: "modeBoostOff.png") as UIImage!,
         UIImage(named: "modeRideOff.png") as UIImage!,
-        UIImage(named: "modeEkickExtendOff.png") as UIImage!
-        //UIImage(named: "modeEkickAmplifiedOff.png") as UIImage!,
-        //UIImage(named: "modeEcoOff.png") as UIImage!
+        UIImage(named: "modeEkickExtendOff.png") as UIImage!,
+        UIImage(named: "modeEkickAmplifiedOff.png") as UIImage!,
+        UIImage(named: "modeEcoOff.png") as UIImage!
     ]
     var modeButtons = [
         UIButton(type: .Custom) as UIButton!,
         UIButton(type: .Custom) as UIButton!,
-        //UIButton(type: .Custom) as UIButton!,
-        //UIButton(type: .Custom) as UIButton!,
+        UIButton(type: .Custom) as UIButton!,
+        UIButton(type: .Custom) as UIButton!,
         UIButton(type: .Custom) as UIButton!
     ]
 
@@ -237,6 +235,8 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
                 break
             case 3:
                 scooter.setMode(.Ekick_amplified)
+            case 4:
+                scooter.setMode(.ECO)
                 break
             default:break
         }

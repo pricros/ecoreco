@@ -386,13 +386,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock-_0036_board-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Na3-Wb-4BU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="lock-_0036_board-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Na3-Wb-4BU">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="RVi-cL-Ahb"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconPowerOn.png" translatesAutoresizingMaskIntoConstraints="NO" id="71u-Fg-RJL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="iconPowerOn.png" translatesAutoresizingMaskIntoConstraints="NO" id="71u-Fg-RJL">
                                 <rect key="frame" x="272" y="32" width="56" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="56" id="yGf-an-ndH"/>
@@ -404,7 +404,7 @@
                                     <constraint firstAttribute="width" constant="56" id="S4A-Cl-wQw"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconBattery.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bsi-JO-ldK">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="iconBattery.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bsi-JO-ldK">
                                 <rect key="frame" x="337" y="48" width="46" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="2Bz-wW-K91"/>
@@ -438,7 +438,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lineBottom.png" translatesAutoresizingMaskIntoConstraints="NO" id="m5a-Ip-goD">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="lineBottom.png" translatesAutoresizingMaskIntoConstraints="NO" id="m5a-Ip-goD">
                                 <rect key="frame" x="0.0" y="513" width="600" height="8"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="VRN-re-ZWm"/>

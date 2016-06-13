@@ -13,6 +13,8 @@ public enum ScooterRunMode:String {
     case Ride = "2"
     case Ekick_extend = "3"
     case Ekick_amplified = "4"
+    case ECO = "5"
+
 }
 
 public enum OdoTripType:String {
@@ -83,14 +85,13 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     let VER:String = "VER"
     let ASK:String = "?"
     
-    let SLEEPINTERVAL:UInt32 = 50000 //micro second
+    let SLEEPINTERVAL_SECOND:UInt32 = 1000000 //micro second
     
     override init(){
         super.init()
         nrfManager = NRFManager(
             onConnect: {
                 self.log("\(__FILE__) \(__LINE__) \nC: ★ Connected")
-                self.status = ScooterStatus.Connected
             },
             onDisconnect: {
                 self.log("\(__FILE__) \(__LINE__) \nC: ★ Disconnected")
@@ -262,30 +263,40 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     func enterStandby()->Bool{
         if(self.status == .Standby){
             return false
-        }else if (self.status == .Connected){
+        }else {
             self.status = .Standby
             // start a thread to get/monitor all the dashboard data including speedmeter, battery,trip, odo, est meter
             backgroundThread(background:{
 
                 while(self.status == .Standby){
                     self.getSpeed()
-                    usleep(self.SLEEPINTERVAL)
+                    usleep(self.SLEEPINTERVAL_SECOND/2)
 
+                }
+                },
+                             completion:{
+                                
+            })
+            
+            backgroundThread(background:{
+                
+                while(self.status == .Standby){
+                    
                     self.getBatteryInfo()
-                    usleep(self.SLEEPINTERVAL)
+                    usleep(self.SLEEPINTERVAL_SECOND)
                     
                     self.getTrip(OdoTripType.TotalDistanceTraveled,unitType:UnitType.KM)
-                    usleep(self.SLEEPINTERVAL)
+                    usleep(self.SLEEPINTERVAL_SECOND)
                     
                     self.getTrip(OdoTripType.TripMeterADistance,unitType:UnitType.KM)
-                    usleep(self.SLEEPINTERVAL)
+                    usleep(self.SLEEPINTERVAL_SECOND)
                     
                     self.getEstimateDistance(UnitType.KM)
-                    usleep(self.SLEEPINTERVAL)
+                    usleep(self.SLEEPINTERVAL_SECOND)
                     
                     self.getFallStatus()
-                    usleep(self.SLEEPINTERVAL)
-
+                    usleep(self.SLEEPINTERVAL_SECOND)
+                    
                 }
                 },
                              completion:{
@@ -293,8 +304,6 @@ class ScooterModel:NSObject, NRFManagerDelegate{
             })
             // start a thread to get fall status
             return true
-        } else {
-            self.log("\(__FILE__) \(__LINE__) \n not connected")
         }
         return false
     }
