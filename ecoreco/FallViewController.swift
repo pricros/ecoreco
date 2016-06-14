@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FallViewController: UIViewController {
+class FallViewController: CommonViewController {
     
     @IBOutlet weak var labelCount: UILabel!
     @IBOutlet weak var imgCall: UIImageView!
@@ -71,6 +71,7 @@ class FallViewController: UIViewController {
     }
     
     func tappedBack(){
+        self.scooter.resetFallStatus()
         self.callTimer!.invalidate()
         self.callTimer = nil
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -107,6 +108,11 @@ class FallViewController: UIViewController {
                 //tappedBack()
             }
         }
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        callTimer = .None
     }
     
     

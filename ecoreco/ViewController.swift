@@ -67,6 +67,7 @@ class ViewController: CommonViewController {
         let digit = sender.currentTitle
         print("digit=\(digit)")
         scooter.connect()
+        scooter.unlock()
         
     }
 

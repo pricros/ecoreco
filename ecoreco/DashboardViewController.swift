@@ -81,7 +81,14 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         scrollViewMode.showsHorizontalScrollIndicator = true
         scrollViewMode.indicatorStyle = .Default
         
+        //init dashboard info
         self.labelSpeed.text = "0"
+        self.labelInfoEstimateRange.text = "\(scooter.rmm.get())"
+        self.labelInfoOdo.text = "\(scooter.odkTotal.get())"
+        self.labelInfoTrip.text = "\(scooter.odkA.get())"
+        self.labelInfoBattery.text = "\(scooter.bat.get())"
+        self.labelHeaderBattery.text = "\(scooter.bat.get())"
+
         scooter.speed.didChange.addHandler(self, handler: DashboardViewController.speedDidChange)
         scooter.bat.didChange.addHandler(self, handler: DashboardViewController.batteryDidChange)
         scooter.falStatus.didChange.addHandler(self, handler: DashboardViewController.falStatusDidChange)
@@ -89,7 +96,6 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         scooter.odkTotal.didChange.addHandler(self, handler: DashboardViewController.odkTotalDidChange)
         scooter.odkA.didChange.addHandler(self, handler: DashboardViewController.odkADidChange)
         scooter.rmm.didChange.addHandler(self, handler: DashboardViewController.rmmDidChange)
-
     }
     
     override func viewDidAppear(animated: Bool) {

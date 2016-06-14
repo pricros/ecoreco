@@ -80,7 +80,9 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     let ODORES:String = "ODR"
     let ESTIMATE:String = "RM"
     let FALL:String = "FAL"
+    let FALLRST:String = "FALR"
     let LOCK:String = "LCK"
+    let ALM:String = "LCK"
     let BATT:String = "BAT"
     let VER:String = "VER"
     let ASK:String = "?"
@@ -92,6 +94,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
         nrfManager = NRFManager(
             onConnect: {
                 self.log("\(__FILE__) \(__LINE__) \nC: ★ Connected")
+                self.getDashboardInfo()
             },
             onDisconnect: {
                 self.log("\(__FILE__) \(__LINE__) \nC: ★ Disconnected")
@@ -146,8 +149,18 @@ class ScooterModel:NSObject, NRFManagerDelegate{
                         self.rmm.set(rmm)
                         break
                     case self.FALL:
-                        let fallStatus:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,1)))!
-                        self.falStatus.set(fallStatus)
+                        let rtn:String = (rtnString as NSString).substringWithRange(NSMakeRange(3,1))
+
+                        switch rtn {
+                            case "R":
+                                self.falStatus.set(0)
+                                break
+                            default:
+                                let fallStatus:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,1)))!
+                                self.falStatus.set(fallStatus)
+                            
+                        }
+     
                         break
                     case self.LOCK:
                         let lockStatus:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,1)))!
@@ -260,6 +273,32 @@ class ScooterModel:NSObject, NRFManagerDelegate{
         return true
     }
     
+    func resetFallStatus()->Bool{
+        sendData(FALLRST)
+        return true
+    }
+    
+    func getDashboardInfo()->Bool{
+        
+        backgroundThread(background:{
+            
+                self.getBatteryInfo()
+                usleep(self.SLEEPINTERVAL_SECOND*1)
+                self.getTrip(OdoTripType.TotalDistanceTraveled,unitType:UnitType.KM)
+                usleep(self.SLEEPINTERVAL_SECOND*1)
+                self.getTrip(OdoTripType.TripMeterADistance,unitType:UnitType.KM)
+                usleep(self.SLEEPINTERVAL_SECOND*1)
+                self.getEstimateDistance(UnitType.KM)
+                usleep(self.SLEEPINTERVAL_SECOND*1)
+            },
+                         completion:{
+                            
+        })
+        
+        return true
+    }
+
+    
     func enterStandby()->Bool{
         if(self.status == .Standby){
             return false
@@ -279,29 +318,31 @@ class ScooterModel:NSObject, NRFManagerDelegate{
             })
             
             backgroundThread(background:{
-                
                 while(self.status == .Standby){
-                    
                     self.getBatteryInfo()
-                    usleep(self.SLEEPINTERVAL_SECOND)
-                    
+                    usleep(self.SLEEPINTERVAL_SECOND*10)
                     self.getTrip(OdoTripType.TotalDistanceTraveled,unitType:UnitType.KM)
-                    usleep(self.SLEEPINTERVAL_SECOND)
-                    
+                    usleep(self.SLEEPINTERVAL_SECOND*10)
                     self.getTrip(OdoTripType.TripMeterADistance,unitType:UnitType.KM)
-                    usleep(self.SLEEPINTERVAL_SECOND)
-                    
+                    usleep(self.SLEEPINTERVAL_SECOND*10)
                     self.getEstimateDistance(UnitType.KM)
-                    usleep(self.SLEEPINTERVAL_SECOND)
-                    
-                    self.getFallStatus()
-                    usleep(self.SLEEPINTERVAL_SECOND)
-                    
+                    usleep(self.SLEEPINTERVAL_SECOND*10)
                 }
                 },
                              completion:{
                                 
             })
+            
+            backgroundThread(background:{
+                while(self.status == .Standby){
+                    self.getFallStatus()
+                    usleep(self.SLEEPINTERVAL_SECOND*3)
+                }
+                },
+                             completion:{
+                                
+            })
+
             // start a thread to get fall status
             return true
         }
