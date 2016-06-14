@@ -71,7 +71,8 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     let lockStatus = Observable<Int>(0)
     let falStatus = Observable<Int>(0)
     let bat = Observable<Int>(0)
-    
+    let alrStatus = Observable<Int>(0)
+
     
     let MODE:String = "MOD"
     let MPH:String = "MPH"
@@ -83,6 +84,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     let FALLRST:String = "FAR"
     let LOCK:String = "LCK"
     let ALR:String = "ALR"
+    let ARR:String = "ARR"
     let BATT:String = "BAT"
     let VER:String = "VER"
     let ASK:String = "?"
@@ -198,7 +200,6 @@ class ScooterModel:NSObject, NRFManagerDelegate{
         self.nrfManager.connect()
     }
     
-    
     func disconnect(){
         self.nrfManager.disconnect()
     }
@@ -269,6 +270,20 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     func resetFallStatus()->Bool{
         sendData(FALLRST)
         return true
+    }
+    
+    func getAlarmStatus()->Bool{
+        sendData(ALR+ASK)
+        return true
+    }
+    
+    func resetAlarmStatus()->Bool{
+        sendData(ARR)
+        return true
+    }
+    
+    func getStatus()->ScooterStatus?{
+        return self.status
     }
     
     func getDashboardInfo()->Bool{
@@ -343,7 +358,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     }
     
     func exitStandby()->Bool{
-        self.status = nil
+        self.status = .Connected
         return true
     }
     

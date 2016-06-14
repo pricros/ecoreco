@@ -54,6 +54,23 @@ class ViewController: CommonViewController {
             digitImages[index].setTitle("", forState: .Normal)
         }
 
+        scooter.alrStatus.didChange.addHandler(self, handler: ViewController.alarmStatusDidChange)
+        
+        if (scooter.getStatus() == .Connected){
+            let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+            dispatch_async(dispatch_get_global_queue(priority, 0))
+            {
+
+                while(self.scooter.getStatus() == .Connected){
+                    self.scooter.getAlarmStatus()
+                    usleep(1000000)
+                }
+
+            dispatch_async(dispatch_get_main_queue()) {
+            }
+            }
+
+        }
         
     }
 
@@ -70,6 +87,38 @@ class ViewController: CommonViewController {
         scooter.unlock()
         
     }
+    
+    func alarmStatusDidChange(oldValue:Int, newValue:Int) {
+        if (scooter.getStatus() == .Connected){
+            if (newValue == 1){
+                let myAlert = UIAlertController(title: "Thief Detected!",
+                                                message:"Watch your scooter!", preferredStyle: .Alert)
+                let okAction = UIAlertAction(title: "Fine", style: .Default,
+                                             handler:{
+                                                (action:UIAlertAction)->() in
+                                                print("fine")
+                                                self.dismissViewControllerAnimated(true, completion: nil)
+                })
+                
+                let cancelAction = UIAlertAction(title: "So So", style: .Default,
+                                             handler:{
+                                                (action:UIAlertAction)->() in
+                                                print("soso")
+                                                self.dismissViewControllerAnimated(true, completion: nil)
+                })
+                
+                myAlert.addAction(okAction)
+                myAlert.addAction(cancelAction)
+                
+                self.presentViewController(myAlert, animated: true, completion: nil)
+            }
+            else
+            {
+                
+            }
+        }
+    }
+
 
 }
 
