@@ -80,9 +80,9 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     let ODORES:String = "ODR"
     let ESTIMATE:String = "RM"
     let FALL:String = "FAL"
-    let FALLRST:String = "FALR"
+    let FALLRST:String = "FAR"
     let LOCK:String = "LCK"
-    let ALM:String = "LCK"
+    let ALR:String = "ALR"
     let BATT:String = "BAT"
     let VER:String = "VER"
     let ASK:String = "?"
@@ -148,19 +148,12 @@ class ScooterModel:NSObject, NRFManagerDelegate{
                         let rmm:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,3)))!
                         self.rmm.set(rmm)
                         break
+                    case self.FALLRST:
+                        self.falStatus.set(0)
+                        break
                     case self.FALL:
-                        let rtn:String = (rtnString as NSString).substringWithRange(NSMakeRange(3,1))
-
-                        switch rtn {
-                            case "R":
-                                self.falStatus.set(0)
-                                break
-                            default:
-                                let fallStatus:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,1)))!
-                                self.falStatus.set(fallStatus)
-                            
-                        }
-     
+                        let fallStatus:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,1)))!
+                        self.falStatus.set(fallStatus)
                         break
                     case self.LOCK:
                         let lockStatus:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,1)))!
