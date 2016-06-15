@@ -115,7 +115,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
                     case self.MODE :
                         let mode:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,1)))!
                         self.mode.set(mode)
-                        self.mode.iNeedAck = 0
+                        self.mode.setNeedAck(false)
                         break
                     case self.MPH:
                         let speed:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,3)))!
@@ -152,8 +152,13 @@ class ScooterModel:NSObject, NRFManagerDelegate{
                         let rmm:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,3)))!
                         self.rmm.set(rmm)
                         break
+                    case self.ARR:
+                        self.alrStatus.set(0)
+                        self.alrStatus.setNeedAck(false)
+                        break
                     case self.FALLRST:
                         self.falStatus.set(0)
+                        self.falStatus.setNeedAck(false)
                         break
                     case self.FALL:
                         let fallStatus:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,1)))!
@@ -162,6 +167,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
                     case self.LOCK:
                         let lockStatus:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,1)))!
                         self.lockStatus.set(lockStatus)
+                        self.lockStatus.setNeedAck(false)
                         break
                     case self.BATT:
                         var batt:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,3)))!
@@ -197,16 +203,16 @@ class ScooterModel:NSObject, NRFManagerDelegate{
         backgroundThread(background:{
             for _ in 1...5 {
                 self.sendData(self.MODE+scooterMode.rawValue)
-                self.mode.iNeedAck += 1
+                self.mode.setNeedAck(true)
                 usleep(3000000)
-                if (self.mode.iNeedAck <= 0 ){
+                if (!self.mode.isNeedAck()){
                     break
                 }
             }
             },
                          completion:{
         })
-                return true
+        return true
     }
     
     func connect(){
@@ -229,13 +235,37 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     
     func lock()->Bool{
         //send command to lock scooter
-        sendData(LOCK+"1")
-        //start a thread to detect thief
+                backgroundThread(background:{
+            for _ in 1...5 {
+                self.sendData(self.LOCK+"1")
+                self.lockStatus.setNeedAck(true)
+                usleep(3000000)
+                if (!self.lockStatus.isNeedAck()){
+                    break
+                }
+            }
+            },
+                         completion:{
+        })
         return true
+
+        //start a thread to detect thief
+        
     }
     
     func unlock()->Bool{
-        sendData(LOCK+"0")
+        backgroundThread(background:{
+            for _ in 1...5 {
+                self.sendData(self.LOCK+"0")
+                self.lockStatus.setNeedAck(true)
+                usleep(3000000)
+                if (!self.lockStatus.isNeedAck()){
+                    break
+                }
+            }
+            },
+                         completion:{
+        })
         return true
     }
     
@@ -281,7 +311,18 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     }
     
     func resetFallStatus()->Bool{
-        sendData(FALLRST)
+        backgroundThread(background:{
+            for _ in 1...5 {
+                self.sendData(self.FALLRST)
+                self.falStatus.setNeedAck(true)
+                usleep(3000000)
+                if (!self.falStatus.isNeedAck()){
+                    break
+                }
+            }
+            },
+                         completion:{
+        })
         return true
     }
     
@@ -291,12 +332,31 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     }
     
     func resetAlarmStatus()->Bool{
-        sendData(ARR)
+
+        backgroundThread(background:{
+            for _ in 1...5 {
+                self.sendData(self.ARR)
+                self.alrStatus.setNeedAck(true)
+                usleep(3000000)
+                if (!self.alrStatus.isNeedAck()){
+                    break
+                }
+            }
+            },
+                         completion:{
+        })
+        return true
+
         return true
     }
     
     func getStatus()->ScooterStatus?{
         return self.status
+    }
+    
+    func setStatus(aStatus:ScooterStatus)->Bool{
+        self.status = aStatus
+        return true
     }
     
     func getDashboardInfo()->Bool{

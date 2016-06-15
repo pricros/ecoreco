@@ -75,11 +75,11 @@ class Observable<T> {
     
     let didChange = Event<(T, T)>()
     private var value: T
-    var iNeedAck:Int
+    private var bNeedAck:Bool
     
     init(_ initialValue: T) {
         value = initialValue
-        iNeedAck = 0
+        bNeedAck = false
     }
     
     func set(newValue: T) {
@@ -90,5 +90,13 @@ class Observable<T> {
     
     func get() -> T {
         return value
+    }
+    
+    func setNeedAck(aNeedAck:Bool){
+        bNeedAck = aNeedAck
+    }
+    
+    func isNeedAck() -> Bool{
+        return bNeedAck
     }
 }
