@@ -110,11 +110,6 @@ class FallViewController: CommonViewController {
         }
     }
     
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-        callTimer = .None
-    }
-    
     
 }
 
