@@ -317,6 +317,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
                 self.falStatus.setNeedAck(true)
                 usleep(3000000)
                 if (!self.falStatus.isNeedAck()){
+                    self.enterStandby()
                     break
                 }
             }

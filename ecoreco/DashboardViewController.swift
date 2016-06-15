@@ -336,7 +336,9 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
 
     
     func falStatusDidChange(oldValue:Int, newValue:Int) {
-        if (newValue != oldValue && newValue == 1){
+        if (newValue == 1 && scooter.getStatus() != ScooterStatus.Fall){
+          
+            scooter.setStatus(ScooterStatus.Fall)
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("FallView") as! FallViewController
             vc.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
             self.presentViewController(vc, animated: true, completion: nil)
