@@ -172,6 +172,8 @@ class ScooterModel:NSObject, NRFManagerDelegate{
                     case self.BATT:
                         var batt:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,3)))!
                         self.bat.set(batt)
+                        self.bat.setNeedAck(false)
+
                         break
 //                    case VER:
                     default:
@@ -297,7 +299,21 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     
     func getBatteryInfo()->Bool{
         sendData(BATT+ASK)
+        backgroundThread(background:{
+            for _ in 1...5 {
+                self.sendData(self.BATT+self.ASK)
+                self.bat.setNeedAck(true)
+                usleep(3000000)
+                if (!self.bat.isNeedAck()){
+                    self.enterStandby()
+                    break
+                }
+            }
+            },
+                         completion:{
+        })
         return true
+ 
     }
     
     func getSpeed()->Bool{
