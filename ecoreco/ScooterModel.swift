@@ -72,6 +72,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     let falStatus = Observable<Int>(0)
     let bat = Observable<Int>(0)
     let alrStatus = Observable<Int>(0)
+    
 
     
     let MODE:String = "MOD"
@@ -114,6 +115,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
                     case self.MODE :
                         let mode:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,1)))!
                         self.mode.set(mode)
+                        self.mode.iNeedAck = 0
                         break
                     case self.MPH:
                         let speed:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,3)))!
@@ -192,8 +194,19 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     
     func setMode(scooterMode:ScooterRunMode)->Bool
     {
-        sendData(MODE+scooterMode.rawValue)
-        return true
+        backgroundThread(background:{
+            for _ in 1...5 {
+                self.sendData(self.MODE+scooterMode.rawValue)
+                self.mode.iNeedAck += 1
+                usleep(3000000)
+                if (self.mode.iNeedAck <= 0 ){
+                    break
+                }
+            }
+            },
+                         completion:{
+        })
+                return true
     }
     
     func connect(){
@@ -360,6 +373,10 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     func exitStandby()->Bool{
         self.status = .Connected
         return true
+    }
+    
+    func sendCommandWithRetry(){
+        
     }
     
     func backgroundThread(delay: Double = 0.0, background: (() -> Void)? = nil, completion:(() -> Void)?){

@@ -75,9 +75,11 @@ class Observable<T> {
     
     let didChange = Event<(T, T)>()
     private var value: T
+    var iNeedAck:Int
     
     init(_ initialValue: T) {
         value = initialValue
+        iNeedAck = 0
     }
     
     func set(newValue: T) {
