@@ -90,7 +90,9 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     let VER:String = "VER"
     let ASK:String = "?"
     
-    let SLEEPINTERVAL_SECOND:UInt32 = 1000000 //micro second
+    let RETRYTIME:Int = 5
+    
+    let ONE_SECOND:UInt32 = 1000000 //micro second
     
     override init(){
         super.init()
@@ -203,10 +205,10 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     func setMode(scooterMode:ScooterRunMode)->Bool
     {
         backgroundThread(background:{
-            for _ in 1...5 {
+            for _ in 1...self.RETRYTIME {
                 self.sendData(self.MODE+scooterMode.rawValue)
                 self.mode.setNeedAck(true)
-                usleep(3000000)
+                usleep(self.ONE_SECOND*3)
                 if (!self.mode.isNeedAck()){
                     break
                 }
@@ -238,10 +240,10 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     func lock()->Bool{
         //send command to lock scooter
                 backgroundThread(background:{
-            for _ in 1...5 {
+            for _ in 1...self.RETRYTIME {
                 self.sendData(self.LOCK+"1")
                 self.lockStatus.setNeedAck(true)
-                usleep(3000000)
+                usleep(self.ONE_SECOND*3)
                 if (!self.lockStatus.isNeedAck()){
                     break
                 }
@@ -257,10 +259,10 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     
     func unlock()->Bool{
         backgroundThread(background:{
-            for _ in 1...5 {
+            for _ in 1...self.RETRYTIME {
                 self.sendData(self.LOCK+"0")
                 self.lockStatus.setNeedAck(true)
-                usleep(3000000)
+                usleep(self.ONE_SECOND*3)
                 if (!self.lockStatus.isNeedAck()){
                     break
                 }
@@ -300,10 +302,10 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     func getBatteryInfo()->Bool{
         sendData(BATT+ASK)
         backgroundThread(background:{
-            for _ in 1...5 {
+            for _ in 1...self.RETRYTIME {
                 self.sendData(self.BATT+self.ASK)
                 self.bat.setNeedAck(true)
-                usleep(3000000)
+                usleep(self.ONE_SECOND*3)
                 if (!self.bat.isNeedAck()){
                     self.enterStandby()
                     break
@@ -328,10 +330,10 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     
     func resetFallStatus()->Bool{
         backgroundThread(background:{
-            for _ in 1...5 {
+            for _ in 1...self.RETRYTIME {
                 self.sendData(self.FALLRST)
                 self.falStatus.setNeedAck(true)
-                usleep(3000000)
+                usleep(self.ONE_SECOND*3)
                 if (!self.falStatus.isNeedAck()){
                     self.enterStandby()
                     break
@@ -351,10 +353,10 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     func resetAlarmStatus()->Bool{
 
         backgroundThread(background:{
-            for _ in 1...5 {
+            for _ in 1...self.RETRYTIME {
                 self.sendData(self.ARR)
                 self.alrStatus.setNeedAck(true)
-                usleep(3000000)
+                usleep(self.ONE_SECOND*3)
                 if (!self.alrStatus.isNeedAck()){
                     break
                 }
@@ -362,8 +364,6 @@ class ScooterModel:NSObject, NRFManagerDelegate{
             },
                          completion:{
         })
-        return true
-
         return true
     }
     
@@ -381,13 +381,13 @@ class ScooterModel:NSObject, NRFManagerDelegate{
         backgroundThread(background:{
             
                 self.getBatteryInfo()
-                usleep(self.SLEEPINTERVAL_SECOND*1)
+                usleep(self.ONE_SECOND*1)
                 self.getTrip(OdoTripType.TotalDistanceTraveled,unitType:UnitType.KM)
-                usleep(self.SLEEPINTERVAL_SECOND*1)
+                usleep(self.ONE_SECOND*1)
                 self.getTrip(OdoTripType.TripMeterADistance,unitType:UnitType.KM)
-                usleep(self.SLEEPINTERVAL_SECOND*1)
+                usleep(self.ONE_SECOND*1)
                 self.getEstimateDistance(UnitType.KM)
-                usleep(self.SLEEPINTERVAL_SECOND*1)
+                usleep(self.ONE_SECOND*1)
             },
                          completion:{
                             
@@ -407,7 +407,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
 
                 while(self.status == .Standby){
                     self.getSpeed()
-                    usleep(self.SLEEPINTERVAL_SECOND/2)
+                    usleep(self.ONE_SECOND/2)
 
                 }
                 },
@@ -418,13 +418,13 @@ class ScooterModel:NSObject, NRFManagerDelegate{
             backgroundThread(background:{
                 while(self.status == .Standby){
                     self.getBatteryInfo()
-                    usleep(self.SLEEPINTERVAL_SECOND*10)
+                    usleep(self.ONE_SECOND*10)
                     self.getTrip(OdoTripType.TotalDistanceTraveled,unitType:UnitType.KM)
-                    usleep(self.SLEEPINTERVAL_SECOND*10)
+                    usleep(self.ONE_SECOND*10)
                     self.getTrip(OdoTripType.TripMeterADistance,unitType:UnitType.KM)
-                    usleep(self.SLEEPINTERVAL_SECOND*10)
+                    usleep(self.ONE_SECOND*10)
                     self.getEstimateDistance(UnitType.KM)
-                    usleep(self.SLEEPINTERVAL_SECOND*10)
+                    usleep(self.ONE_SECOND*10)
                 }
                 },
                              completion:{
@@ -434,7 +434,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
             backgroundThread(background:{
                 while(self.status == .Standby){
                     self.getFallStatus()
-                    usleep(self.SLEEPINTERVAL_SECOND*3)
+                    usleep(self.ONE_SECOND*3)
                 }
                 },
                              completion:{
