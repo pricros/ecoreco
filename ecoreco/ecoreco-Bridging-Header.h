@@ -10,5 +10,6 @@
 #define ecoreco_Bridging_Header_h
 
 #import "ShareActionView.h"
+#import "WKFRadarView.h"
 
 #endif /* ecoreco_Bridging_Header_h */

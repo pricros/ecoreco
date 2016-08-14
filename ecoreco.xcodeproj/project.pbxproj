@@ -76,6 +76,10 @@
 		3CEAC2071D05007E00F29628 /* infoMeter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC2061D05007E00F29628 /* infoMeter.png */; };
 		8492C5A81D60CF970021D2FC /* ShareActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8492C5A61D60CF970021D2FC /* ShareActionView.m */; };
 		8492C5A91D60CF970021D2FC /* sns_icon_24.png in Resources */ = {isa = PBXBuildFile; fileRef = 8492C5A71D60CF970021D2FC /* sns_icon_24.png */; };
+		8492C5AB1D60D2CD0021D2FC /* PairViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492C5AA1D60D2CD0021D2FC /* PairViewController.swift */; };
+		8492C5B31D60D4810021D2FC /* default_portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8492C5AF1D60D4810021D2FC /* default_portrait@2x.png */; };
+		8492C5B41D60D4810021D2FC /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8492C5B01D60D4810021D2FC /* logo.png */; };
+		8492C5B51D60D4810021D2FC /* WKFRadarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8492C5B21D60D4810021D2FC /* WKFRadarView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +177,11 @@
 		8492C5A51D60CF970021D2FC /* ShareActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareActionView.h; sourceTree = "<group>"; };
 		8492C5A61D60CF970021D2FC /* ShareActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareActionView.m; sourceTree = "<group>"; };
 		8492C5A71D60CF970021D2FC /* sns_icon_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sns_icon_24.png; sourceTree = "<group>"; };
+		8492C5AA1D60D2CD0021D2FC /* PairViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairViewController.swift; sourceTree = "<group>"; };
+		8492C5AF1D60D4810021D2FC /* default_portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "default_portrait@2x.png"; path = "WKFRadarView/default_portrait@2x.png"; sourceTree = "<group>"; };
+		8492C5B01D60D4810021D2FC /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = WKFRadarView/logo.png; sourceTree = "<group>"; };
+		8492C5B11D60D4810021D2FC /* WKFRadarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKFRadarView.h; path = WKFRadarView/WKFRadarView.h; sourceTree = "<group>"; };
+		8492C5B21D60D4810021D2FC /* WKFRadarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKFRadarView.m; path = WKFRadarView/WKFRadarView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +223,7 @@
 				18B781821C2935FE00AF0C07 /* SettingViewController.swift */,
 				187B92C91C26716500DA3BDF /* ViewController.swift */,
 				181F4FAD1CFDBDC100B13E77 /* CommonViewController.swift */,
+				8492C5AA1D60D2CD0021D2FC /* PairViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -231,8 +241,8 @@
 		187B92BB1C26716500DA3BDF = {
 			isa = PBXGroup;
 			children = (
-				187B92F91C27B35F00DA3BDF /* images */,
 				187B92C61C26716500DA3BDF /* ecoreco */,
+				187B92F91C27B35F00DA3BDF /* images */,
 				187B92DB1C26716600DA3BDF /* ecorecoTests */,
 				187B92E61C26716600DA3BDF /* ecorecoUITests */,
 				187B92C51C26716500DA3BDF /* Products */,
@@ -252,6 +262,7 @@
 		187B92C61C26716500DA3BDF /* ecoreco */ = {
 			isa = PBXGroup;
 			children = (
+				8492C5AE1D60D46A0021D2FC /* WKFRadarView */,
 				8492C5A41D60CF860021D2FC /* ShareActionView */,
 				183E66181D06C3C400E1A4E9 /* View */,
 				3CEAC1EE1D0133A700F29628 /* FallViewController.swift */,
@@ -353,6 +364,17 @@
 				8492C5A71D60CF970021D2FC /* sns_icon_24.png */,
 			);
 			name = ShareActionView;
+			sourceTree = "<group>";
+		};
+		8492C5AE1D60D46A0021D2FC /* WKFRadarView */ = {
+			isa = PBXGroup;
+			children = (
+				8492C5AF1D60D4810021D2FC /* default_portrait@2x.png */,
+				8492C5B01D60D4810021D2FC /* logo.png */,
+				8492C5B11D60D4810021D2FC /* WKFRadarView.h */,
+				8492C5B21D60D4810021D2FC /* WKFRadarView.m */,
+			);
+			name = WKFRadarView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,6 +488,7 @@
 				3C460A4E1C3CAFE100FB6EB6 /* mapPoint.png in Resources */,
 				187B92D21C26716600DA3BDF /* LaunchScreen.storyboard in Resources */,
 				1876A5731C322EC00016EBCA /* digit_1.png in Resources */,
+				8492C5B41D60D4810021D2FC /* logo.png in Resources */,
 				3CEAC1F81D04015400F29628 /* lock-_0036_board-1.png in Resources */,
 				1876A5861C3238E60016EBCA /* digit_3.png in Resources */,
 				1876A5A41C3265430016EBCA /* iconProfile.png in Resources */,
@@ -513,6 +536,7 @@
 				187B92CD1C26716600DA3BDF /* Main.storyboard in Resources */,
 				3CEAC1F51D01353C00F29628 /* FALL-DETECT_0002_RESET.png in Resources */,
 				1876A57F1C3238E60016EBCA /* digit_0.png in Resources */,
+				8492C5B31D60D4810021D2FC /* default_portrait@2x.png in Resources */,
 				1876A5841C3238E60016EBCA /* digit_5.png in Resources */,
 				187B93081C27FAAD00DA3BDF /* dash1.png in Resources */,
 				1876A5B11C3265430016EBCA /* modeEkickAmplifiedOn.png in Resources */,
@@ -543,7 +567,9 @@
 				181F4FAE1CFDBDC100B13E77 /* CommonViewController.swift in Sources */,
 				187B92CA1C26716500DA3BDF /* ViewController.swift in Sources */,
 				181F4FAA1CFD887200B13E77 /* Scooter.xcdatamodeld in Sources */,
+				8492C5B51D60D4810021D2FC /* WKFRadarView.m in Sources */,
 				18EEF0F81C2BF06F0065AFE7 /* DashboardViewController.swift in Sources */,
+				8492C5AB1D60D2CD0021D2FC /* PairViewController.swift in Sources */,
 				183E661C1D09E5BF00E1A4E9 /* Event.swift in Sources */,
 				3CEAC1EF1D0133A700F29628 /* FallViewController.swift in Sources */,
 				187B92C81C26716500DA3BDF /* AppDelegate.swift in Sources */,
