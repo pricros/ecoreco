@@ -74,6 +74,8 @@
 		3CEAC1F81D04015400F29628 /* lock-_0036_board-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F61D04015400F29628 /* lock-_0036_board-1.png */; };
 		3CEAC1F91D04015400F29628 /* lock-_0037_board2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F71D04015400F29628 /* lock-_0037_board2.png */; };
 		3CEAC2071D05007E00F29628 /* infoMeter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC2061D05007E00F29628 /* infoMeter.png */; };
+		8492C5A81D60CF970021D2FC /* ShareActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8492C5A61D60CF970021D2FC /* ShareActionView.m */; };
+		8492C5A91D60CF970021D2FC /* sns_icon_24.png in Resources */ = {isa = PBXBuildFile; fileRef = 8492C5A71D60CF970021D2FC /* sns_icon_24.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +169,10 @@
 		3CEAC1F61D04015400F29628 /* lock-_0036_board-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lock-_0036_board-1.png"; path = "images/lock-_0036_board-1.png"; sourceTree = "<group>"; };
 		3CEAC1F71D04015400F29628 /* lock-_0037_board2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lock-_0037_board2.png"; path = "images/lock-_0037_board2.png"; sourceTree = "<group>"; };
 		3CEAC2061D05007E00F29628 /* infoMeter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = infoMeter.png; path = images/infoMeter.png; sourceTree = "<group>"; };
+		8492C59D1D5D616A0021D2FC /* ecoreco-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ecoreco-Bridging-Header.h"; sourceTree = "<group>"; };
+		8492C5A51D60CF970021D2FC /* ShareActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareActionView.h; sourceTree = "<group>"; };
+		8492C5A61D60CF970021D2FC /* ShareActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareActionView.m; sourceTree = "<group>"; };
+		8492C5A71D60CF970021D2FC /* sns_icon_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sns_icon_24.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +252,7 @@
 		187B92C61C26716500DA3BDF /* ecoreco */ = {
 			isa = PBXGroup;
 			children = (
+				8492C5A41D60CF860021D2FC /* ShareActionView */,
 				183E66181D06C3C400E1A4E9 /* View */,
 				3CEAC1EE1D0133A700F29628 /* FallViewController.swift */,
 				18EEF0F71C2BF06F0065AFE7 /* DashboardViewController.swift */,
@@ -258,6 +265,7 @@
 				187B92CE1C26716600DA3BDF /* Assets.xcassets */,
 				187B92D01C26716600DA3BDF /* LaunchScreen.storyboard */,
 				187B92D31C26716600DA3BDF /* Info.plist */,
+				8492C59D1D5D616A0021D2FC /* ecoreco-Bridging-Header.h */,
 			);
 			path = ecoreco;
 			sourceTree = "<group>";
@@ -335,6 +343,16 @@
 				187B93031C27FAAD00DA3BDF /* dash1.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		8492C5A41D60CF860021D2FC /* ShareActionView */ = {
+			isa = PBXGroup;
+			children = (
+				8492C5A51D60CF970021D2FC /* ShareActionView.h */,
+				8492C5A61D60CF970021D2FC /* ShareActionView.m */,
+				8492C5A71D60CF970021D2FC /* sns_icon_24.png */,
+			);
+			name = ShareActionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,6 +471,7 @@
 				1876A5A41C3265430016EBCA /* iconProfile.png in Resources */,
 				1876A5831C3238E60016EBCA /* digit_6.png in Resources */,
 				1876A5AF1C3265430016EBCA /* modeEcoOn.png in Resources */,
+				8492C5A91D60CF970021D2FC /* sns_icon_24.png in Resources */,
 				1876A5AA1C3265430016EBCA /* lineBottom.png in Resources */,
 				1876A5A61C3265430016EBCA /* iconSpeed.png in Resources */,
 				1876A5821C3238E60016EBCA /* digit_7.png in Resources */,
@@ -531,6 +550,7 @@
 				183E661A1D06C41C00E1A4E9 /* CounterView.swift in Sources */,
 				18EEF0BA1C2A3C380065AFE7 /* MapViewController.swift in Sources */,
 				181F4FAC1CFD88D100B13E77 /* ScooterModel.swift in Sources */,
+				8492C5A81D60CF970021D2FC /* ShareActionView.m in Sources */,
 				18EEF0C81C2AFEB40065AFE7 /* NRFManager.swift in Sources */,
 				18B781831C2935FE00AF0C07 /* SettingViewController.swift in Sources */,
 			);
@@ -677,9 +697,10 @@
 				INFOPLIST_FILE = ecoreco/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jeez.jacky.ecoreco;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeez.jacky;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/admin/GoogleDrive/Developer/Ecoreco/ecoreco/ecoreco/ecoreco-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -692,9 +713,10 @@
 				INFOPLIST_FILE = ecoreco/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jeez.jacky.ecoreco;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeez.jacky;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/admin/GoogleDrive/Developer/Ecoreco/ecoreco/ecoreco/ecoreco-Bridging-Header.h";
 			};
 			name = Release;
 		};
