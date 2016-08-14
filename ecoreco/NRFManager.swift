@@ -104,14 +104,14 @@ extension NRFManager {
     
     private func scanForPeripheral()
     {
-        let connectedPeripherals = bluetoothManager.retrieveConnectedPeripheralsWithServices([UARTPeripheral.uartServiceUUID()])
+        let connectedPeripherals = bluetoothManager.retrieveConnectedPeripheralsWithServices([UARTPeripheral.uartServiceUUID()]) // @todo: add services UUID
 
         if connectedPeripherals.count > 0 {
             log("\(__FILE__) \(__LINE__) \nAlready connected ...")
             connectPeripheral(connectedPeripherals[0] as CBPeripheral)
         } else {
             log("\(__FILE__) \(__LINE__) \nScan for Peripherials")
-            bluetoothManager.scanForPeripheralsWithServices([UARTPeripheral.uartServiceUUID()], options: [CBCentralManagerScanOptionAllowDuplicatesKey:false])
+            bluetoothManager.scanForPeripheralsWithServices([UARTPeripheral.uartServiceUUID()], options: [CBCentralManagerScanOptionAllowDuplicatesKey:false])  //@todo: add services UUID
         }
     }
     
@@ -120,7 +120,7 @@ extension NRFManager {
         
         bluetoothManager.cancelPeripheralConnection(peripheral)
         
-        currentPeripheral = UARTPeripheral(peripheral: peripheral, delegate: self)
+        currentPeripheral = UARTPeripheral(peripheral: peripheral, delegate: self)//@todo: review if need add Peripheral except UARTPeripheral
         
         bluetoothManager.connectPeripheral(peripheral, options: [CBConnectPeripheralOptionNotifyOnDisconnectionKey:false])
     }
@@ -373,6 +373,7 @@ extension UARTPeripheral {
         
         log("\(__FILE__) \(__LINE__) \nStart service discovery: \(peripheral.name)")
         peripheral.discoverServices([UARTPeripheral.uartServiceUUID(), UARTPeripheral.deviceInformationServiceUUID()])
+
     }
     
     private func writeString(string:String)
@@ -471,22 +472,42 @@ extension UARTPeripheral {
     class func uartServiceUUID() -> CBUUID {
         return CBUUID(string:"6e400001-b5a3-f393-e0a9-e50e24dcca9e")
     }
-    
+
     class func txCharacteristicsUUID() -> CBUUID {
         return CBUUID(string:"6e400002-b5a3-f393-e0a9-e50e24dcca9e")
     }
-    
     class func rxCharacteristicsUUID() -> CBUUID {
         return CBUUID(string:"6e400003-b5a3-f393-e0a9-e50e24dcca9e")
     }
-    
+
     class func deviceInformationServiceUUID() -> CBUUID{
         return CBUUID(string:"180A")
     }
-    
+
     class func hardwareRevisionStringUUID() -> CBUUID{
         return CBUUID(string:"2A27")
     }
+
+    class func proximityImmediateAlertServiceUUID() -> CBUUID{
+        return CBUUID(string:"00001802-0000-1000-8000-00805F9B34FB")
+    }
+
+    class func proximityLinkLossServiceUUID() -> CBUUID{
+        return CBUUID(string:"00001803-0000-1000-8000-00805F9B34FB")
+    }
+
+    class func proximityAlertLevelCharacteristicUUID() -> CBUUID{
+        return CBUUID(string:"00002A06-0000-1000-8000-00805F9B34FB")
+    }
+
+    class func batteryServiceUUID() -> CBUUID{
+        return CBUUID(string:"0000180F-0000-1000-8000-00805F9B34FB")
+    }
+
+    class func batteryLevelCharacteristicUUID() -> CBUUID{
+        return CBUUID(string:"00002A19-0000-1000-8000-00805F9B34FB")
+    }
+
 }
 
 // MARK: UARTPeripheralDelegate Definition

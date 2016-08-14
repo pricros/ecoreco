@@ -38,23 +38,7 @@ public enum ScooterStatus {
 }
 
 
-protocol ScooterModelRunProtocol:class{
-    func onSpeedReceived(speed:Int)
-    func onFallDetected()
-}
-
-protocol ScooterModelLockProtocol:class{
-    func onScooterMoved()
-}
-
-protocol ScooterModelProfileProtocol:class{
-    func onTripDataReceived(type:OdoTripType,value:Int)
-    func onEstimateDistanceReceived(value:Int)
-}
-
 class ScooterModel:NSObject, NRFManagerDelegate{
-    weak var runDelegate: ScooterModelRunProtocol!
-    weak var lockDelegate: ScooterModelLockProtocol!
     private var nrfManager:NRFManager!
     private var status:ScooterStatus?
     
