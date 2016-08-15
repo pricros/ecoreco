@@ -137,6 +137,8 @@
     prButton.layer.cornerRadius = 20;
     prButton.layer.masksToBounds = YES;
     
+    [prButton addTarget:self.inputViewController action:@selector(tapIcon) forControlEvents:UIControlEventTouchUpInside];
+
     do {
         CGPoint point = [self generateCenterPointInRadar];
         prButton.center = CGPointMake(point.x, point.y);
@@ -152,6 +154,7 @@
         [items removeObject:view];
     }
 }
+
 
 -(BOOL)itemFrameIntersectsInOtherItem:(CGRect)frame
 {

@@ -24,6 +24,10 @@ class PairViewController: CommonViewController {
         NSTimer.scheduledTimerWithTimeInterval(1, target: radarView, selector:Selector("addOrReplaceItem"), userInfo: nil, repeats: true)
         
     }
+    
+    func tapIcon(){
+         self.performSegueWithIdentifier("seguePairToLock", sender: nil)
+    }
 
 
 }
