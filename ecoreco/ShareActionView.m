@@ -62,7 +62,7 @@
 - (void)createShareAcitonViewWithFrame:(CGRect)frame WithSourceArray:(NSArray *)arr WithIconArray:(NSArray *)iconArray
 {
     UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, 30)];
-    titleLabel.text = @"分享";
+    titleLabel.text = @"Settings";
     titleLabel.backgroundColor = RGBCOLOR(242, 245, 247);
     titleLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:titleLabel];

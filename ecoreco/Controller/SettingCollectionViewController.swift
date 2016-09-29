@@ -8,9 +8,16 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "cell"
 
 class SettingCollectionViewController: UICollectionViewController {
+
+    let TAG_CELL_IMAGE:Int = 100
+    let TAG_CELL_LABEL:Int = 200
+
+    var labelArray = ["RIDE","SECURITY","SAFETY","BLUETOOTH","MAINTENANCE","SHOP"]
+
+    var imageArray = ["sns_icon_24","sns_icon_24","sns_icon_24","sns_icon_24","sns_icon_24","sns_icon_24"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,20 +50,37 @@ class SettingCollectionViewController: UICollectionViewController {
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return 6
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
-    
+
+        var label:UILabel? = cell.contentView.viewWithTag(TAG_CELL_LABEL) as? UILabel
         // Configure the cell
-    
+        var imageView:UIImageView? = cell.contentView.viewWithTag(TAG_CELL_IMAGE) as? UIImageView
+
+        if (label == nil){
+            label = UILabel(frame: CGRect(x:29, y:71, width: 84, height: 21))
+            label!.tag = TAG_CELL_LABEL
+            cell.contentView.addSubview(label!)
+        }
+
+        if (imageView == nil){
+            imageView = UIImageView(frame: CGRectMake(20, 10, 60, 60));
+            imageView!.tag = TAG_CELL_IMAGE
+            cell.contentView.addSubview(imageView!)
+        }
+
+        imageView?.image = UIImage(named: imageArray[indexPath.row])
+
+        label!.text = labelArray[indexPath.row]
         return cell
     }
 

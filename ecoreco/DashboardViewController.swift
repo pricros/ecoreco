@@ -137,16 +137,16 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate, Share
     var actionView:ShareActionView?
 
     func tappedSetting(){
-        self.createActionView().actionViewShow()
-        //self.performSegueWithIdentifier("segueDashToSetting", sender: nil)
+        //self.createActionView().actionViewShow()
+        self.performSegueWithIdentifier("segueDashToSetting", sender: nil)
         //self.navigationController?.pushViewController(self.storyboard?.instantiateViewControllerWithIdentifier("SettingView") as! SettingViewController, animated: true)
     }
     
-    func createActionView()->ShareActionView{
-        actionView = ShareActionView.init(frame: CGRectMake(0,UIScreen.mainScreen().bounds.size.height, UIScreen.mainScreen().bounds.size.width,0), withSourceArray: ["RIDE","SECURITY","SAFETY","INVITE","BLUETOOTH","MAINTENANCE","SHOP","PARTNER","CAMERA"], withIconArray: ["sns_icon_24","sns_icon_24","sns_icon_24","sns_icon_24","sns_icon_24","sns_icon_24","sns_icon_24","sns_icon_24","sns_icon_24"])
-        actionView!.delegate = self
-        return actionView!
-    }
+//    func createActionView()->ShareActionView{
+//        actionView = ShareActionView.init(frame: CGRectMake(0,UIScreen.mainScreen().bounds.size.height, UIScreen.mainScreen().bounds.size.width,0), withSourceArray: ["RIDE","SECURITY","SAFETY","INVITE","BLUETOOTH","MAINTENANCE","SHOP","PARTNER","CAMERA"], withIconArray: ["sns_icon_24","sns_icon_24","sns_icon_24","sns_icon_24","sns_icon_24","sns_icon_24","sns_icon_24","sns_icon_24","sns_icon_24"])
+//        actionView!.delegate = self
+//        return actionView!
+//    }
 
     func shareToPlatWithIndex(index:NSInteger){
 
