@@ -15,9 +15,9 @@ class SettingCollectionViewController: UICollectionViewController {
     let TAG_CELL_IMAGE:Int = 100
     let TAG_CELL_LABEL:Int = 200
 
-    var labelArray = ["RIDE","SECURITY","SAFETY","BLUETOOTH","MAINTENANCE","SHOP"]
+    var labelArray = ["TRIP","RIDE","BLUETOOTH","SAFETY","SCOOTER INFO","SHOP"]
 
-    var imageArray = ["sns_icon_24","sns_icon_24","sns_icon_24","sns_icon_24","sns_icon_24","sns_icon_24"]
+    var imageArray = ["trip-w@3","ride-w@3","bluetooth-w@3","safety-w@3","restcombo-w@3","shop-w@3"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +58,12 @@ class SettingCollectionViewController: UICollectionViewController {
         // #warning Incomplete implementation, return the number of items
         return 6
     }
+    
+    func collectionView(collectionView : UICollectionView,layout collectionViewLayout:UICollectionViewLayout,sizeForItemAtIndexPath indexPath:NSIndexPath) -> CGSize
+    {
+        var cellSize:CGSize = CGSizeMake(self.view.frame.width/3, self.view.frame.width/3)
+        return cellSize
+    }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
@@ -66,24 +72,50 @@ class SettingCollectionViewController: UICollectionViewController {
         // Configure the cell
         var imageView:UIImageView? = cell.contentView.viewWithTag(TAG_CELL_IMAGE) as? UIImageView
 
-        if (label == nil){
-            label = UILabel(frame: CGRect(x:29, y:71, width: 84, height: 21))
-            label!.tag = TAG_CELL_LABEL
-            cell.contentView.addSubview(label!)
-        }
-
         if (imageView == nil){
-            imageView = UIImageView(frame: CGRectMake(20, 10, 60, 60));
+            imageView = UIImageView(frame: CGRectMake(20, 10, self.view.frame.width/4, view.frame.width/4));
             imageView!.tag = TAG_CELL_IMAGE
             cell.contentView.addSubview(imageView!)
         }
+        
+        if (label == nil){
+            label = UILabel(frame: CGRect(x:0, y:self.view.frame.width/4+5, width: self.view.frame.width/3, height: 21))
+            label!.tag = TAG_CELL_LABEL
+            label!.textColor = UIColor.whiteColor()
+            label!.textAlignment = NSTextAlignment.Center
+            label!.font = UIFont(name:"VDS_New", size:10.0)
+            cell.contentView.addSubview(label!)
+            //add constrains for the label to align center
+            let xConstraint = NSLayoutConstraint(item: label!, attribute: .CenterX,
+                                                 relatedBy: .Equal, toItem: imageView,
+                                                 attribute: .CenterX, multiplier: 1.0,
+                                                 constant: 0)
+
+            cell.addConstraint(xConstraint)
+        }
+
 
         imageView?.image = UIImage(named: imageArray[indexPath.row])
 
         label!.text = labelArray[indexPath.row]
         return cell
     }
+    
+    let sectionInsets = UIEdgeInsets(top:10, left: 0, bottom: 10, right: 0)
 
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets{
+        return sectionInsets
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat{
+        return 10
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat
+    {
+        return 0
+    }
+    
     // MARK: UICollectionViewDelegate
 
     /*
