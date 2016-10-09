@@ -27,7 +27,17 @@ class SettingCollectionViewController: UICollectionViewController {
 
         // Register cell classes
         self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
+        
+// show font family name
+//        for fontFamilyName in UIFont.familyNames() {
+//            print("-- \(fontFamilyName) --")
+//            
+//            for fontName in UIFont.fontNamesForFamilyName(fontFamilyName as String) {
+//                print(fontName)
+//            }
+//            
+//            print(" ")
+//        }
         // Do any additional setup after loading the view.
     }
 
@@ -83,7 +93,7 @@ class SettingCollectionViewController: UICollectionViewController {
             label!.tag = TAG_CELL_LABEL
             label!.textColor = UIColor.whiteColor()
             label!.textAlignment = NSTextAlignment.Center
-            label!.font = UIFont(name:"VDS_New", size:10.0)
+            label!.font = UIFont(name:"VDS", size:20.0)
             cell.contentView.addSubview(label!)
             //add constrains for the label to align center
             let xConstraint = NSLayoutConstraint(item: label!, attribute: .CenterX,

@@ -100,6 +100,9 @@
 		84E61C1D1DAA7C9600A83B30 /* iconDiagnose-g.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E61C1A1DAA7C9600A83B30 /* iconDiagnose-g.png */; };
 		84E61C1E1DAA7C9600A83B30 /* iconDiagnose-gr.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E61C1B1DAA7C9600A83B30 /* iconDiagnose-gr.png */; };
 		84E61C1F1DAA7C9600A83B30 /* iconDiagnose-o.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E61C1C1DAA7C9600A83B30 /* iconDiagnose-o.png */; };
+		84E61C271DAAA4F500A83B30 /* VDS_Bold_New.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84E61C241DAAA4F500A83B30 /* VDS_Bold_New.ttf */; };
+		84E61C281DAAA4F500A83B30 /* VDS_New.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84E61C251DAAA4F500A83B30 /* VDS_New.ttf */; };
+		84E61C291DAAA4F500A83B30 /* VDS_Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84E61C261DAAA4F500A83B30 /* VDS_Thin.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -222,9 +225,9 @@
 		84E61C1A1DAA7C9600A83B30 /* iconDiagnose-g.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconDiagnose-g.png"; path = "images/iconDiagnose-g.png"; sourceTree = "<group>"; };
 		84E61C1B1DAA7C9600A83B30 /* iconDiagnose-gr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconDiagnose-gr.png"; path = "images/iconDiagnose-gr.png"; sourceTree = "<group>"; };
 		84E61C1C1DAA7C9600A83B30 /* iconDiagnose-o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconDiagnose-o.png"; path = "images/iconDiagnose-o.png"; sourceTree = "<group>"; };
-		84E61C211DAA9E3600A83B30 /* VDS_Bold_New.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = VDS_Bold_New.ttf; path = Fonts/VDS_Bold_New.ttf; sourceTree = "<group>"; };
-		84E61C221DAA9E3600A83B30 /* VDS_New.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = VDS_New.ttf; path = Fonts/VDS_New.ttf; sourceTree = "<group>"; };
-		84E61C231DAA9E3600A83B30 /* VDS_Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = VDS_Thin.ttf; path = Fonts/VDS_Thin.ttf; sourceTree = "<group>"; };
+		84E61C241DAAA4F500A83B30 /* VDS_Bold_New.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = VDS_Bold_New.ttf; path = Fonts/VDS_Bold_New.ttf; sourceTree = "<group>"; };
+		84E61C251DAAA4F500A83B30 /* VDS_New.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = VDS_New.ttf; path = Fonts/VDS_New.ttf; sourceTree = "<group>"; };
+		84E61C261DAAA4F500A83B30 /* VDS_Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = VDS_Thin.ttf; path = Fonts/VDS_Thin.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -452,9 +455,9 @@
 		84E61C201DAA9DDF00A83B30 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				84E61C211DAA9E3600A83B30 /* VDS_Bold_New.ttf */,
-				84E61C221DAA9E3600A83B30 /* VDS_New.ttf */,
-				84E61C231DAA9E3600A83B30 /* VDS_Thin.ttf */,
+				84E61C241DAAA4F500A83B30 /* VDS_Bold_New.ttf */,
+				84E61C251DAAA4F500A83B30 /* VDS_New.ttf */,
+				84E61C261DAAA4F500A83B30 /* VDS_Thin.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				1876A5731C322EC00016EBCA /* digit_1.png in Resources */,
 				8492C5B41D60D4810021D2FC /* logo.png in Resources */,
 				3CEAC1F81D04015400F29628 /* lock-_0036_board-1.png in Resources */,
+				84E61C291DAAA4F500A83B30 /* VDS_Thin.ttf in Resources */,
 				1876A5861C3238E60016EBCA /* digit_3.png in Resources */,
 				1876A5A41C3265430016EBCA /* iconProfile.png in Resources */,
 				1876A5831C3238E60016EBCA /* digit_6.png in Resources */,
@@ -631,7 +635,9 @@
 				84C364821D9CEF3C00AD4773 /* security-w@3.png in Resources */,
 				1876A5801C3238E60016EBCA /* digit_9.png in Resources */,
 				187B92CD1C26716600DA3BDF /* Main.storyboard in Resources */,
+				84E61C281DAAA4F500A83B30 /* VDS_New.ttf in Resources */,
 				3CEAC1F51D01353C00F29628 /* FALL-DETECT_0002_RESET.png in Resources */,
+				84E61C271DAAA4F500A83B30 /* VDS_Bold_New.ttf in Resources */,
 				84E61C1F1DAA7C9600A83B30 /* iconDiagnose-o.png in Resources */,
 				84C3648A1D9CEF3C00AD4773 /* trip-w@3.png in Resources */,
 				1876A57F1C3238E60016EBCA /* digit_0.png in Resources */,
