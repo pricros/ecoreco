@@ -32,6 +32,24 @@
             <point key="canvasLocation" x="-383" y="-877"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="TqE-N9-zXt">
+            <objects>
+                <viewController id="oU6-fX-kN7" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lOe-i6-yLn"/>
+                        <viewControllerLayoutGuide type="bottom" id="itu-GW-IO7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JNu-Zx-4jK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m8J-es-YZ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="398" y="-872"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ecoreco" customModuleProvider="target" sceneMemberID="viewController">
@@ -292,7 +310,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-545" y="0.0"/>
+            <point key="canvasLocation" x="-705" y="-16"/>
         </scene>
         <!--Collection View Controller-->
         <scene sceneID="hbh-yD-BBT">
@@ -1294,6 +1312,6 @@
         <image name="speedMeter.png" width="1010" height="989"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RTZ-Ib-hRh"/>
+        <segue reference="mmy-eO-tQb"/>
     </inferredMetricsTieBreakers>
 </document>

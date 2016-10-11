@@ -74,14 +74,8 @@
 		3CEAC1F81D04015400F29628 /* lock-_0036_board-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F61D04015400F29628 /* lock-_0036_board-1.png */; };
 		3CEAC1F91D04015400F29628 /* lock-_0037_board2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F71D04015400F29628 /* lock-_0037_board2.png */; };
 		3CEAC2071D05007E00F29628 /* infoMeter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC2061D05007E00F29628 /* infoMeter.png */; };
-		8420B90F1D6517A7009BA82A /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420B90E1D6517A7009BA82A /* SettingCell.swift */; };
 		8420B9131D651CA5009BA82A /* SettingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420B9121D651CA5009BA82A /* SettingCollectionViewController.swift */; };
-		8492C5A81D60CF970021D2FC /* ShareActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8492C5A61D60CF970021D2FC /* ShareActionView.m */; };
-		8492C5A91D60CF970021D2FC /* sns_icon_24.png in Resources */ = {isa = PBXBuildFile; fileRef = 8492C5A71D60CF970021D2FC /* sns_icon_24.png */; };
 		8492C5AB1D60D2CD0021D2FC /* PairViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492C5AA1D60D2CD0021D2FC /* PairViewController.swift */; };
-		8492C5B31D60D4810021D2FC /* default_portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8492C5AF1D60D4810021D2FC /* default_portrait@2x.png */; };
-		8492C5B41D60D4810021D2FC /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8492C5B01D60D4810021D2FC /* logo.png */; };
-		8492C5B51D60D4810021D2FC /* WKFRadarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8492C5B21D60D4810021D2FC /* WKFRadarView.m */; };
 		84C3647F1D9CEF3C00AD4773 /* shop-g@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C364731D9CEF3C00AD4773 /* shop-g@3.png */; };
 		84C364801D9CEF3C00AD4773 /* shop-w@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C364741D9CEF3C00AD4773 /* shop-w@3.png */; };
 		84C364811D9CEF3C00AD4773 /* security-g@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C364751D9CEF3C00AD4773 /* security-g@3.png */; };
@@ -196,17 +190,8 @@
 		3CEAC1F61D04015400F29628 /* lock-_0036_board-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lock-_0036_board-1.png"; path = "images/lock-_0036_board-1.png"; sourceTree = "<group>"; };
 		3CEAC1F71D04015400F29628 /* lock-_0037_board2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lock-_0037_board2.png"; path = "images/lock-_0037_board2.png"; sourceTree = "<group>"; };
 		3CEAC2061D05007E00F29628 /* infoMeter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = infoMeter.png; path = images/infoMeter.png; sourceTree = "<group>"; };
-		8420B90E1D6517A7009BA82A /* SettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		8420B9121D651CA5009BA82A /* SettingCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingCollectionViewController.swift; path = Controller/SettingCollectionViewController.swift; sourceTree = "<group>"; };
-		8492C59D1D5D616A0021D2FC /* ecoreco-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ecoreco-Bridging-Header.h"; sourceTree = "<group>"; };
-		8492C5A51D60CF970021D2FC /* ShareActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareActionView.h; sourceTree = "<group>"; };
-		8492C5A61D60CF970021D2FC /* ShareActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareActionView.m; sourceTree = "<group>"; };
-		8492C5A71D60CF970021D2FC /* sns_icon_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sns_icon_24.png; sourceTree = "<group>"; };
 		8492C5AA1D60D2CD0021D2FC /* PairViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairViewController.swift; sourceTree = "<group>"; };
-		8492C5AF1D60D4810021D2FC /* default_portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "default_portrait@2x.png"; path = "WKFRadarView/default_portrait@2x.png"; sourceTree = "<group>"; };
-		8492C5B01D60D4810021D2FC /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = WKFRadarView/logo.png; sourceTree = "<group>"; };
-		8492C5B11D60D4810021D2FC /* WKFRadarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKFRadarView.h; path = WKFRadarView/WKFRadarView.h; sourceTree = "<group>"; };
-		8492C5B21D60D4810021D2FC /* WKFRadarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKFRadarView.m; path = WKFRadarView/WKFRadarView.m; sourceTree = "<group>"; };
 		84C364731D9CEF3C00AD4773 /* shop-g@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shop-g@3.png"; path = "images/shop-g@3.png"; sourceTree = "<group>"; };
 		84C364741D9CEF3C00AD4773 /* shop-w@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shop-w@3.png"; path = "images/shop-w@3.png"; sourceTree = "<group>"; };
 		84C364751D9CEF3C00AD4773 /* security-g@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "security-g@3.png"; path = "images/security-g@3.png"; sourceTree = "<group>"; };
@@ -311,8 +296,6 @@
 			children = (
 				84E61C201DAA9DDF00A83B30 /* Fonts */,
 				8420B90D1D65175C009BA82A /* Cell */,
-				8492C5AE1D60D46A0021D2FC /* WKFRadarView */,
-				8492C5A41D60CF860021D2FC /* ShareActionView */,
 				183E66181D06C3C400E1A4E9 /* View */,
 				3CEAC1EE1D0133A700F29628 /* FallViewController.swift */,
 				18EEF0F71C2BF06F0065AFE7 /* DashboardViewController.swift */,
@@ -325,7 +308,6 @@
 				187B92CE1C26716600DA3BDF /* Assets.xcassets */,
 				187B92D01C26716600DA3BDF /* LaunchScreen.storyboard */,
 				187B92D31C26716600DA3BDF /* Info.plist */,
-				8492C59D1D5D616A0021D2FC /* ecoreco-Bridging-Header.h */,
 			);
 			path = ecoreco;
 			sourceTree = "<group>";
@@ -426,30 +408,8 @@
 		8420B90D1D65175C009BA82A /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				8420B90E1D6517A7009BA82A /* SettingCell.swift */,
 			);
 			name = Cell;
-			sourceTree = "<group>";
-		};
-		8492C5A41D60CF860021D2FC /* ShareActionView */ = {
-			isa = PBXGroup;
-			children = (
-				8492C5A51D60CF970021D2FC /* ShareActionView.h */,
-				8492C5A61D60CF970021D2FC /* ShareActionView.m */,
-				8492C5A71D60CF970021D2FC /* sns_icon_24.png */,
-			);
-			name = ShareActionView;
-			sourceTree = "<group>";
-		};
-		8492C5AE1D60D46A0021D2FC /* WKFRadarView */ = {
-			isa = PBXGroup;
-			children = (
-				8492C5AF1D60D4810021D2FC /* default_portrait@2x.png */,
-				8492C5B01D60D4810021D2FC /* logo.png */,
-				8492C5B11D60D4810021D2FC /* WKFRadarView.h */,
-				8492C5B21D60D4810021D2FC /* WKFRadarView.m */,
-			);
-			name = WKFRadarView;
 			sourceTree = "<group>";
 		};
 		84E61C201DAA9DDF00A83B30 /* Fonts */ = {
@@ -575,14 +535,12 @@
 				187B92D21C26716600DA3BDF /* LaunchScreen.storyboard in Resources */,
 				84C364891D9CEF3C00AD4773 /* trip-g@3.png in Resources */,
 				1876A5731C322EC00016EBCA /* digit_1.png in Resources */,
-				8492C5B41D60D4810021D2FC /* logo.png in Resources */,
 				3CEAC1F81D04015400F29628 /* lock-_0036_board-1.png in Resources */,
 				84E61C291DAAA4F500A83B30 /* VDS_Thin.ttf in Resources */,
 				1876A5861C3238E60016EBCA /* digit_3.png in Resources */,
 				1876A5A41C3265430016EBCA /* iconProfile.png in Resources */,
 				1876A5831C3238E60016EBCA /* digit_6.png in Resources */,
 				1876A5AF1C3265430016EBCA /* modeEcoOn.png in Resources */,
-				8492C5A91D60CF970021D2FC /* sns_icon_24.png in Resources */,
 				1876A5AA1C3265430016EBCA /* lineBottom.png in Resources */,
 				1876A5A61C3265430016EBCA /* iconSpeed.png in Resources */,
 				1876A5821C3238E60016EBCA /* digit_7.png in Resources */,
@@ -641,7 +599,6 @@
 				84E61C1F1DAA7C9600A83B30 /* iconDiagnose-o.png in Resources */,
 				84C3648A1D9CEF3C00AD4773 /* trip-w@3.png in Resources */,
 				1876A57F1C3238E60016EBCA /* digit_0.png in Resources */,
-				8492C5B31D60D4810021D2FC /* default_portrait@2x.png in Resources */,
 				1876A5841C3238E60016EBCA /* digit_5.png in Resources */,
 				187B93081C27FAAD00DA3BDF /* dash1.png in Resources */,
 				84C3647F1D9CEF3C00AD4773 /* shop-g@3.png in Resources */,
@@ -673,17 +630,14 @@
 				181F4FAE1CFDBDC100B13E77 /* CommonViewController.swift in Sources */,
 				187B92CA1C26716500DA3BDF /* ViewController.swift in Sources */,
 				181F4FAA1CFD887200B13E77 /* Scooter.xcdatamodeld in Sources */,
-				8492C5B51D60D4810021D2FC /* WKFRadarView.m in Sources */,
 				18EEF0F81C2BF06F0065AFE7 /* DashboardViewController.swift in Sources */,
 				8492C5AB1D60D2CD0021D2FC /* PairViewController.swift in Sources */,
 				183E661C1D09E5BF00E1A4E9 /* Event.swift in Sources */,
 				3CEAC1EF1D0133A700F29628 /* FallViewController.swift in Sources */,
 				187B92C81C26716500DA3BDF /* AppDelegate.swift in Sources */,
 				183E661A1D06C41C00E1A4E9 /* CounterView.swift in Sources */,
-				8420B90F1D6517A7009BA82A /* SettingCell.swift in Sources */,
 				18EEF0BA1C2A3C380065AFE7 /* MapViewController.swift in Sources */,
 				181F4FAC1CFD88D100B13E77 /* ScooterModel.swift in Sources */,
-				8492C5A81D60CF970021D2FC /* ShareActionView.m in Sources */,
 				18EEF0C81C2AFEB40065AFE7 /* NRFManager.swift in Sources */,
 				18B781831C2935FE00AF0C07 /* SettingViewController.swift in Sources */,
 				8420B9131D651CA5009BA82A /* SettingCollectionViewController.swift in Sources */,
@@ -834,7 +788,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeez.jacky;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/admin/GoogleDrive/Developer/Ecoreco/ecoreco/ecoreco/ecoreco-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
 		};
@@ -850,7 +804,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeez.jacky;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/admin/GoogleDrive/Developer/Ecoreco/ecoreco/ecoreco/ecoreco-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
