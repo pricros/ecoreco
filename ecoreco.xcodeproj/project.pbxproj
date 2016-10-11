@@ -75,6 +75,7 @@
 		3CEAC1F91D04015400F29628 /* lock-_0037_board2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F71D04015400F29628 /* lock-_0037_board2.png */; };
 		3CEAC2071D05007E00F29628 /* infoMeter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC2061D05007E00F29628 /* infoMeter.png */; };
 		8420B9131D651CA5009BA82A /* SettingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420B9121D651CA5009BA82A /* SettingCollectionViewController.swift */; };
+		842DCFD91DACCE7000A71A8E /* settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842DCFD81DACCE7000A71A8E /* settings.storyboard */; };
 		8492C5AB1D60D2CD0021D2FC /* PairViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492C5AA1D60D2CD0021D2FC /* PairViewController.swift */; };
 		84C3647F1D9CEF3C00AD4773 /* shop-g@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C364731D9CEF3C00AD4773 /* shop-g@3.png */; };
 		84C364801D9CEF3C00AD4773 /* shop-w@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C364741D9CEF3C00AD4773 /* shop-w@3.png */; };
@@ -191,6 +192,7 @@
 		3CEAC1F71D04015400F29628 /* lock-_0037_board2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lock-_0037_board2.png"; path = "images/lock-_0037_board2.png"; sourceTree = "<group>"; };
 		3CEAC2061D05007E00F29628 /* infoMeter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = infoMeter.png; path = images/infoMeter.png; sourceTree = "<group>"; };
 		8420B9121D651CA5009BA82A /* SettingCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingCollectionViewController.swift; path = Controller/SettingCollectionViewController.swift; sourceTree = "<group>"; };
+		842DCFD81DACCE7000A71A8E /* settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = settings.storyboard; sourceTree = "<group>"; };
 		8492C5AA1D60D2CD0021D2FC /* PairViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairViewController.swift; sourceTree = "<group>"; };
 		84C364731D9CEF3C00AD4773 /* shop-g@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shop-g@3.png"; path = "images/shop-g@3.png"; sourceTree = "<group>"; };
 		84C364741D9CEF3C00AD4773 /* shop-w@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shop-w@3.png"; path = "images/shop-w@3.png"; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 				1863F3981CF4160F00B21266 /* Controller */,
 				187B92C71C26716500DA3BDF /* AppDelegate.swift */,
 				187B92CB1C26716600DA3BDF /* Main.storyboard */,
+				842DCFD81DACCE7000A71A8E /* settings.storyboard */,
 				187B92CE1C26716600DA3BDF /* Assets.xcassets */,
 				187B92D01C26716600DA3BDF /* LaunchScreen.storyboard */,
 				187B92D31C26716600DA3BDF /* Info.plist */,
@@ -593,6 +596,7 @@
 				84C364821D9CEF3C00AD4773 /* security-w@3.png in Resources */,
 				1876A5801C3238E60016EBCA /* digit_9.png in Resources */,
 				187B92CD1C26716600DA3BDF /* Main.storyboard in Resources */,
+				842DCFD91DACCE7000A71A8E /* settings.storyboard in Resources */,
 				84E61C281DAAA4F500A83B30 /* VDS_New.ttf in Resources */,
 				3CEAC1F51D01353C00F29628 /* FALL-DETECT_0002_RESET.png in Resources */,
 				84E61C271DAAA4F500A83B30 /* VDS_Bold_New.ttf in Resources */,
