@@ -2,7 +2,7 @@
 //  SearchTableViewCell.swift
 //  ecoreco
 //
-//  Created by admin on 2016/10/11.
+//  Created by admin on 2016/10/13.
 //  Copyright © 2016年 apple. All rights reserved.
 //
 
@@ -10,8 +10,6 @@ import UIKit
 
 class SearchTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var lableName: UILabel!
-    @IBOutlet weak var bgImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
