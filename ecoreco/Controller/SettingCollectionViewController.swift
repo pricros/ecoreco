@@ -10,7 +10,16 @@ import UIKit
 
 private let reuseIdentifier = "cell"
 
-class SettingCollectionViewController: UICollectionViewController {
+
+//add by eva
+class MyTapGestureRecognizer: UITapGestureRecognizer {
+    var index: Int?
+}
+
+
+class SettingCollectionViewController:
+
+    UICollectionViewController {
 
     let TAG_CELL_IMAGE:Int = 100
     let TAG_CELL_LABEL:Int = 200
@@ -108,6 +117,16 @@ class SettingCollectionViewController: UICollectionViewController {
         imageView?.image = UIImage(named: imageArray[indexPath.row])
 
         label!.text = labelArray[indexPath.row]
+        
+        
+        //add by eva
+        imageView?.userInteractionEnabled = true
+        let tapGestureRecognizer = MyTapGestureRecognizer(target: self, action: "tappedSettings:")
+        tapGestureRecognizer.index = indexPath.row
+        imageView?.addGestureRecognizer(tapGestureRecognizer)
+
+        
+        
         return cell
     }
     
@@ -156,5 +175,37 @@ class SettingCollectionViewController: UICollectionViewController {
     
     }
     */
+    
+    
+    
+    //add by eva
+    func tappedSettings(gestureRecognizer: MyTapGestureRecognizer)
+    {
+        print(gestureRecognizer.index)
+        
+        switch (Int(gestureRecognizer.index!)) {
+        case 0://trip
+            self.parentViewController!.performSegueWithIdentifier("segueToTrip", sender: nil)
+            break
+        case 1://ride
+            self.parentViewController!.performSegueWithIdentifier("segueToRide", sender: nil)
+            break
+        case 2://blue tooth
+            //self.parentViewController!.performSegueWithIdentifier("segueToBlueTooth", sender: nil)
+            break
+        case 3://safety
+            self.parentViewController!.performSegueWithIdentifier("segueToSafety", sender: nil)
+            break
+        case 4://security info
+            self.parentViewController!.performSegueWithIdentifier("segueToScooterInfo", sender: nil)
+            break
+        case 5://shop (website)
+            //self.parentViewController!.performSegueWithIdentifier("segueToShop", sender: nil)
+            break
+        default:
+            break
+        }
+    }
+    
 
 }
