@@ -200,7 +200,7 @@ class SettingCollectionViewController:
             self.parentViewController!.performSegueWithIdentifier("segueToScooterInfo", sender: nil)
             break
         case 5://shop (website)
-            //self.parentViewController!.performSegueWithIdentifier("segueToShop", sender: nil)
+            self.parentViewController!.performSegueWithIdentifier("segueToShop", sender: nil)
             break
         default:
             break

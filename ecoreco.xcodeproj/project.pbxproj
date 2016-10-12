@@ -74,6 +74,7 @@
 		3CB16A791DADCB01004C3191 /* SecurityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB16A731DADCB01004C3191 /* SecurityViewController.swift */; };
 		3CB16A7A1DADCB01004C3191 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB16A741DADCB01004C3191 /* TripViewController.swift */; };
 		3CB16A7B1DADCB01004C3191 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB16A751DADCB01004C3191 /* UserProfileViewController.swift */; };
+		3CB16A7D1DADFDE9004C3191 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB16A7C1DADFDE9004C3191 /* ShopViewController.swift */; };
 		3CEAC1EF1D0133A700F29628 /* FallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEAC1EE1D0133A700F29628 /* FallViewController.swift */; };
 		3CEAC1F11D01352D00F29628 /* FALL-DETECT_0000_FALL-DETECTED.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F01D01352C00F29628 /* FALL-DETECT_0000_FALL-DETECTED.png */; };
 		3CEAC1F41D01353C00F29628 /* FALL-DETECT_0001_TEL.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F21D01353C00F29628 /* FALL-DETECT_0001_TEL.png */; };
@@ -198,6 +199,7 @@
 		3CB16A731DADCB01004C3191 /* SecurityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityViewController.swift; sourceTree = "<group>"; };
 		3CB16A741DADCB01004C3191 /* TripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		3CB16A751DADCB01004C3191 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		3CB16A7C1DADFDE9004C3191 /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		3CEAC1EE1D0133A700F29628 /* FallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FallViewController.swift; sourceTree = "<group>"; };
 		3CEAC1F01D01352C00F29628 /* FALL-DETECT_0000_FALL-DETECTED.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "FALL-DETECT_0000_FALL-DETECTED.png"; path = "images/FALL-DETECT_0000_FALL-DETECTED.png"; sourceTree = "<group>"; };
 		3CEAC1F21D01353C00F29628 /* FALL-DETECT_0001_TEL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "FALL-DETECT_0001_TEL.png"; path = "images/FALL-DETECT_0001_TEL.png"; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 		1863F3981CF4160F00B21266 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3CB16A7C1DADFDE9004C3191 /* ShopViewController.swift */,
 				3CB16A701DADCB01004C3191 /* EditScooterComboViewController.swift */,
 				3CB16A711DADCB01004C3191 /* SafetyViewController.swift */,
 				3CB16A721DADCB01004C3191 /* ScooterInfoViewController.swift */,
@@ -654,6 +657,7 @@
 			files = (
 				181F4FAE1CFDBDC100B13E77 /* CommonViewController.swift in Sources */,
 				3CB16A7A1DADCB01004C3191 /* TripViewController.swift in Sources */,
+				3CB16A7D1DADFDE9004C3191 /* ShopViewController.swift in Sources */,
 				187B92CA1C26716500DA3BDF /* ViewController.swift in Sources */,
 				181F4FAA1CFD887200B13E77 /* Scooter.xcdatamodeld in Sources */,
 				3CB16A771DADCB01004C3191 /* SafetyViewController.swift in Sources */,
