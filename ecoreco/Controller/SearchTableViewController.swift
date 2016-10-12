@@ -8,7 +8,12 @@
 
 import UIKit
 
-class SearchTableViewController: UIViewController {
+class SearchTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var name = ["A---", "B---", "C---"]
+    var images = [UIImage(named: "lineMiddle"), UIImage(named: "lineMiddle"), UIImage(named: "lineMiddle")]
+    
+    @IBOutlet var searchTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +26,18 @@ class SearchTableViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = self.searchTableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! SearchTableViewCell
+        
+        cell.bgImageView.image = images[indexPath.row]
+        cell.labelName.text = name[indexPath.row]
+        
+        return cell
+    }
 
     /*
     // MARK: - Navigation

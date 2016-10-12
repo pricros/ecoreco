@@ -80,9 +80,8 @@
 		842DCFDD1DACF5E800A71A8E /* RadarCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFDC1DACF5E800A71A8E /* RadarCanvas.swift */; };
 		842DCFE01DAD142A00A71A8E /* r-g.png in Resources */ = {isa = PBXBuildFile; fileRef = 842DCFDE1DAD142A00A71A8E /* r-g.png */; };
 		842DCFE11DAD142A00A71A8E /* r.png in Resources */ = {isa = PBXBuildFile; fileRef = 842DCFDF1DAD142A00A71A8E /* r.png */; };
-		842DCFE31DAD18DB00A71A8E /* SearchTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842DCFE21DAD18DB00A71A8E /* SearchTableCell.xib */; };
-		842DCFE71DAD1AB700A71A8E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFE61DAD1AB700A71A8E /* SearchTableViewCell.swift */; };
-		842DCFE91DAD1CB600A71A8E /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFE81DAD1CB600A71A8E /* SearchTableViewController.swift */; };
+		842DCFEB1DAE9D6C00A71A8E /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFEA1DAE9D6C00A71A8E /* SearchTableViewController.swift */; };
+		842DCFED1DAE9F3000A71A8E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFEC1DAE9F3000A71A8E /* SearchTableViewCell.swift */; };
 		8492C5AB1D60D2CD0021D2FC /* PairViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492C5AA1D60D2CD0021D2FC /* PairViewController.swift */; };
 		84C3647F1D9CEF3C00AD4773 /* shop-g@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C364731D9CEF3C00AD4773 /* shop-g@3.png */; };
 		84C364801D9CEF3C00AD4773 /* shop-w@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C364741D9CEF3C00AD4773 /* shop-w@3.png */; };
@@ -204,9 +203,8 @@
 		842DCFDC1DACF5E800A71A8E /* RadarCanvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarCanvas.swift; sourceTree = "<group>"; };
 		842DCFDE1DAD142A00A71A8E /* r-g.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "r-g.png"; path = "images/r-g.png"; sourceTree = "<group>"; };
 		842DCFDF1DAD142A00A71A8E /* r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = r.png; path = images/r.png; sourceTree = "<group>"; };
-		842DCFE21DAD18DB00A71A8E /* SearchTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchTableCell.xib; path = ecoreco/Cell/SearchTableCell.xib; sourceTree = "<group>"; };
-		842DCFE61DAD1AB700A71A8E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTableViewCell.swift; path = Cell/SearchTableViewCell.swift; sourceTree = "<group>"; };
-		842DCFE81DAD1CB600A71A8E /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTableViewController.swift; path = Controller/SearchTableViewController.swift; sourceTree = "<group>"; };
+		842DCFEA1DAE9D6C00A71A8E /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTableViewController.swift; path = Controller/SearchTableViewController.swift; sourceTree = "<group>"; };
+		842DCFEC1DAE9F3000A71A8E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTableViewCell.swift; path = Cell/SearchTableViewCell.swift; sourceTree = "<group>"; };
 		8492C5AA1D60D2CD0021D2FC /* PairViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairViewController.swift; sourceTree = "<group>"; };
 		84C364731D9CEF3C00AD4773 /* shop-g@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shop-g@3.png"; path = "images/shop-g@3.png"; sourceTree = "<group>"; };
 		84C364741D9CEF3C00AD4773 /* shop-w@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shop-w@3.png"; path = "images/shop-w@3.png"; sourceTree = "<group>"; };
@@ -273,7 +271,7 @@
 				181F4FAD1CFDBDC100B13E77 /* CommonViewController.swift */,
 				8492C5AA1D60D2CD0021D2FC /* PairViewController.swift */,
 				8420B9121D651CA5009BA82A /* SettingCollectionViewController.swift */,
-				842DCFE81DAD1CB600A71A8E /* SearchTableViewController.swift */,
+				842DCFEA1DAE9D6C00A71A8E /* SearchTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -291,7 +289,6 @@
 		187B92BB1C26716500DA3BDF = {
 			isa = PBXGroup;
 			children = (
-				842DCFE21DAD18DB00A71A8E /* SearchTableCell.xib */,
 				187B92C61C26716500DA3BDF /* ecoreco */,
 				187B92F91C27B35F00DA3BDF /* images */,
 				187B92DB1C26716600DA3BDF /* ecorecoTests */,
@@ -431,7 +428,7 @@
 		8420B90D1D65175C009BA82A /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				842DCFE61DAD1AB700A71A8E /* SearchTableViewCell.swift */,
+				842DCFEC1DAE9F3000A71A8E /* SearchTableViewCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -595,7 +592,6 @@
 				84C364811D9CEF3C00AD4773 /* security-g@3.png in Resources */,
 				1876A5B01C3265430016EBCA /* modeEkickAmplifiedOff.png in Resources */,
 				84C364851D9CEF3C00AD4773 /* bluetooth-g@3.png in Resources */,
-				842DCFE31DAD18DB00A71A8E /* SearchTableCell.xib in Resources */,
 				183E661E1D0A831C00E1A4E9 /* cruiseOff.png in Resources */,
 				1876A5A51C3265430016EBCA /* iconSetting.png in Resources */,
 				84C364901DA2B01E00AD4773 /* restcombo-w@3.png in Resources */,
@@ -663,14 +659,14 @@
 				842DCFDD1DACF5E800A71A8E /* RadarCanvas.swift in Sources */,
 				8492C5AB1D60D2CD0021D2FC /* PairViewController.swift in Sources */,
 				183E661C1D09E5BF00E1A4E9 /* Event.swift in Sources */,
+				842DCFEB1DAE9D6C00A71A8E /* SearchTableViewController.swift in Sources */,
 				3CEAC1EF1D0133A700F29628 /* FallViewController.swift in Sources */,
 				187B92C81C26716500DA3BDF /* AppDelegate.swift in Sources */,
 				183E661A1D06C41C00E1A4E9 /* CounterView.swift in Sources */,
+				842DCFED1DAE9F3000A71A8E /* SearchTableViewCell.swift in Sources */,
 				18EEF0BA1C2A3C380065AFE7 /* MapViewController.swift in Sources */,
 				181F4FAC1CFD88D100B13E77 /* ScooterModel.swift in Sources */,
 				18EEF0C81C2AFEB40065AFE7 /* NRFManager.swift in Sources */,
-				842DCFE71DAD1AB700A71A8E /* SearchTableViewCell.swift in Sources */,
-				842DCFE91DAD1CB600A71A8E /* SearchTableViewController.swift in Sources */,
 				18B781831C2935FE00AF0C07 /* SettingViewController.swift in Sources */,
 				8420B9131D651CA5009BA82A /* SettingCollectionViewController.swift in Sources */,
 			);
