@@ -8,7 +8,16 @@
 
 import UIKit
 
+@IBDesignable
 class ResetComboViewController: CommonViewController {
 
+    @IBOutlet weak var btnLeft: UIButton!
     
+    override func viewDidAppear(animated: Bool) {
+        
+    }
+    
+    @IBAction func addLeft(sender: UIButton) {
+   
+    }
 }
