@@ -36,8 +36,9 @@ class SearchTableViewController: CommonViewController, UITableViewDataSource, UI
        // cell.buttonDeviceListItem.setBackgroundImage(UIImage(named: "bgDevice"), forState: .Normal)
         cell.buttonDeviceListItem.setTitleColor(ColorUtil.hexStringToUIColor("0x8d8d8d"), forState: UIControlState.Normal)
         cell.buttonDeviceListItem.setTitleColor(ColorUtil.hexStringToUIColor("0x91aa00"), forState: UIControlState.Highlighted)
-        cell.buttonDeviceListItem.setTitleColor(ColorUtil.hexStringToUIColor("0x91aa00"), forState:UIControlState.Focused)
+        cell.buttonDeviceListItem.setTitleColor(ColorUtil.hexStringToUIColor("0x91aa00"), forState:UIControlState.Selected)
         cell.buttonDeviceListItem.setTitle(name[indexPath.row], forState: .Normal)
+        cell.buttonDeviceListItem.setTitle(name[indexPath.row], forState: .Highlighted)
         cell.buttonDeviceListItem.addTarget(self, action:  "deviceClicked:", forControlEvents: .TouchUpInside)
        
         
@@ -45,14 +46,14 @@ class SearchTableViewController: CommonViewController, UITableViewDataSource, UI
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        var cell = self.searchTableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! SearchTableViewCell
-        cell.buttonDeviceListItem.sendActionsForControlEvents(.TouchUpInside)
-    }
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+//        var cell = self.searchTableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! SearchTableViewCell
+//        cell.buttonDeviceListItem.sendActionsForControlEvents(.TouchUpInside)
+//    }
     
     
     func deviceClicked(sender:UIButton){
-        print("item \(sender.titleLabel?.text) selected")
+        NSLog("item \(sender.titleLabel?.text) selected")
         scooter.connect()
       //  self.performSegueWithIdentifier("seguePairToDash", sender: nil)
     }
