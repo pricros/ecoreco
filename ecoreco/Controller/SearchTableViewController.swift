@@ -34,10 +34,11 @@ class SearchTableViewController: CommonViewController, UITableViewDataSource, UI
         var cell = self.searchTableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! SearchTableViewCell
         cell.buttonDeviceListItem.userInteractionEnabled = true
        // cell.buttonDeviceListItem.setBackgroundImage(UIImage(named: "bgDevice"), forState: .Normal)
-        cell.buttonDeviceListItem.setTitleColor(ColorUtil.hexStringToUIColor("0x8d8d8d"), forState: .Normal)
-        cell.buttonDeviceListItem.setTitleColor(ColorUtil.hexStringToUIColor("0x91aa00"), forState: .Highlighted)
-            cell.buttonDeviceListItem.setTitleColor(ColorUtil.hexStringToUIColor("0x91aa00"), forState: .Focused)
+        cell.buttonDeviceListItem.setTitleColor(ColorUtil.hexStringToUIColor("0x8d8d8d"), forState: UIControlState.Normal)
+        cell.buttonDeviceListItem.setTitleColor(ColorUtil.hexStringToUIColor("0x91aa00"), forState: UIControlState.Highlighted)
+        cell.buttonDeviceListItem.setTitleColor(ColorUtil.hexStringToUIColor("0x91aa00"), forState:UIControlState.Focused)
         cell.buttonDeviceListItem.setTitle(name[indexPath.row], forState: .Normal)
+        cell.buttonDeviceListItem.addTarget(self, action:  "deviceClicked:", forControlEvents: .TouchUpInside)
        
         
         
@@ -45,13 +46,15 @@ class SearchTableViewController: CommonViewController, UITableViewDataSource, UI
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        deviceClicked(indexPath.row.bigEndian)
+        var cell = self.searchTableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! SearchTableViewCell
+        cell.buttonDeviceListItem.sendActionsForControlEvents(.TouchUpInside)
     }
     
     
-    func deviceClicked(deviceIndex: Int){
-        print("item \(deviceIndex) selected")
+    func deviceClicked(sender:UIButton){
+        print("item \(sender.titleLabel?.text) selected")
         scooter.connect()
+      //  self.performSegueWithIdentifier("seguePairToDash", sender: nil)
     }
     /*
     // MARK: - Navigation
