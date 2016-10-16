@@ -11,9 +11,9 @@ import Foundation
 
 class PairViewController: CommonViewController {
     @IBOutlet weak var labelSearch: UILabel!
-    
     @IBOutlet weak var radarView: UIView!
-    
+    @IBOutlet weak var radarEcorecoIcon: RadarEcorecoIcon!
+
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -22,8 +22,14 @@ class PairViewController: CommonViewController {
         labelSearch!.font = UIFont(name:"VDS", size:20.0)
         labelSearch.text = "Searching"
         labelSearch.backgroundColor = UIColor.whiteColor()
-   
-        
+
+        var radarEcorecoIconx : RadarEcorecoIcon?
+
+        //do search BLE device number x
+
+        //draw x ecoreco items
+
+
     }
     
     func tapIcon(){

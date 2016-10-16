@@ -8,10 +8,10 @@
 
 import UIKit
 
-class SearchTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SearchTableViewController: CommonViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var name = ["A---", "B---", "C---"]
-    var images = [UIImage(named: "lineMiddle"), UIImage(named: "lineMiddle"), UIImage(named: "lineMiddle")]
+    var name = ["A-ID:", "B-ID:", "C-ID:"]
+    var images = [UIImage(named: "bgDevice"), UIImage(named: "bgDevice"), UIImage(named: "bgDevice")]
     
     @IBOutlet var searchTableView: UITableView!
 
@@ -32,13 +32,27 @@ class SearchTableViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = self.searchTableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! SearchTableViewCell
+        cell.buttonDeviceListItem.userInteractionEnabled = true
+       // cell.buttonDeviceListItem.setBackgroundImage(UIImage(named: "bgDevice"), forState: .Normal)
+        cell.buttonDeviceListItem.setTitleColor(ColorUtil.hexStringToUIColor("0x8d8d8d"), forState: .Normal)
+        cell.buttonDeviceListItem.setTitleColor(ColorUtil.hexStringToUIColor("0x91aa00"), forState: .Highlighted)
+            cell.buttonDeviceListItem.setTitleColor(ColorUtil.hexStringToUIColor("0x91aa00"), forState: .Focused)
+        cell.buttonDeviceListItem.setTitle(name[indexPath.row], forState: .Normal)
+       
         
-        cell.bgImageView.image = images[indexPath.row]
-        cell.labelName.text = name[indexPath.row]
         
         return cell
     }
-
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        deviceClicked(indexPath.row.bigEndian)
+    }
+    
+    
+    func deviceClicked(deviceIndex: Int){
+        print("item \(deviceIndex) selected")
+        scooter.connect()
+    }
     /*
     // MARK: - Navigation
 

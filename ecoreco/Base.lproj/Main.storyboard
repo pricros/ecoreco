@@ -9,6 +9,12 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="VDS_New.ttf">
+            <string>VDS</string>
+            <string>VDS</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Pair View Controller-->
         <scene sceneID="4rI-1z-tac">
@@ -28,7 +34,7 @@
                                     <constraint firstAttribute="height" constant="28" id="Tue-ux-HGs"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Ecorecologo.png" translatesAutoresizingMaskIntoConstraints="NO" id="6jG-5w-RCw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Ecorecologo" translatesAutoresizingMaskIntoConstraints="NO" id="6jG-5w-RCw">
                                 <rect key="frame" x="180" y="42" width="240" height="41"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HF2-1b-s9v">
@@ -39,36 +45,77 @@
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1GR-gK-5Gq" customClass="RadarCanvas" customModule="ecoreco" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="104" width="600" height="206"/>
+                                <rect key="frame" x="-10" y="112" width="600" height="206"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LSM-uL-bcx" customClass="RadarEcorecoIcon" customModule="ecoreco" customModuleProvider="target">
+                                        <rect key="frame" x="240" y="13" width="70" height="79"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vMW-ws-4fZ">
+                                                <rect key="frame" x="8" y="26" width="54" height="45"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UE-A9-tTd">
+                                                <rect key="frame" x="14" y="-3" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HpR-8Q-st4">
                                 <rect key="frame" x="245" y="289" width="110" height="21"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="J4A-Sc-KJc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="16"/>
+                                <color key="textColor" red="0.55294117647058827" green="0.55294117647058827" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="standby-divider" translatesAutoresizingMaskIntoConstraints="NO" id="cja-c0-IF4">
+                                <rect key="frame" x="0.0" y="317" width="600" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="Nr4-h1-2v3"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Nr4-h1-2v3"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="HpR-8Q-st4" firstAttribute="width" secondItem="1GR-gK-5Gq" secondAttribute="width" id="1gb-yM-SQj"/>
+                            <constraint firstItem="HF2-1b-s9v" firstAttribute="centerX" secondItem="4pg-xV-Gt9" secondAttribute="centerX" id="4zj-FQ-sSc"/>
                             <constraint firstItem="apV-hw-1rx" firstAttribute="width" secondItem="4pg-xV-Gt9" secondAttribute="width" id="BYY-2w-6gK"/>
                             <constraint firstItem="1GR-gK-5Gq" firstAttribute="width" secondItem="4pg-xV-Gt9" secondAttribute="width" id="D7Y-xl-Usl"/>
+                            <constraint firstItem="HF2-1b-s9v" firstAttribute="top" secondItem="HpR-8Q-st4" secondAttribute="bottom" constant="45" id="Dj6-N2-b2X"/>
+                            <constraint firstItem="cja-c0-IF4" firstAttribute="width" secondItem="1GR-gK-5Gq" secondAttribute="width" id="DrD-kE-B0c"/>
                             <constraint firstItem="1GR-gK-5Gq" firstAttribute="centerX" secondItem="4pg-xV-Gt9" secondAttribute="centerX" id="Dud-H4-QdO"/>
                             <constraint firstItem="6jG-5w-RCw" firstAttribute="height" secondItem="4pg-xV-Gt9" secondAttribute="height" multiplier="0.07" id="ESz-88-r82"/>
                             <constraint firstItem="6jG-5w-RCw" firstAttribute="width" secondItem="4pg-xV-Gt9" secondAttribute="width" multiplier="0.7" id="HtZ-cd-cM2"/>
                             <constraint firstAttribute="trailing" secondItem="apV-hw-1rx" secondAttribute="trailing" id="KmK-ng-vNf"/>
+                            <constraint firstItem="HF2-1b-s9v" firstAttribute="top" secondItem="cja-c0-IF4" secondAttribute="bottom" id="LSD-b4-QBj"/>
+                            <constraint firstItem="cja-c0-IF4" firstAttribute="trailing" secondItem="HF2-1b-s9v" secondAttribute="trailing" id="MCo-lr-JzC"/>
+                            <constraint firstItem="cja-c0-IF4" firstAttribute="top" secondItem="HpR-8Q-st4" secondAttribute="bottom" constant="7" id="MJq-DZ-J5v"/>
                             <constraint firstItem="apV-hw-1rx" firstAttribute="leading" secondItem="4pg-xV-Gt9" secondAttribute="leading" id="Mmz-wI-CCO"/>
                             <constraint firstItem="6jG-5w-RCw" firstAttribute="top" secondItem="apV-hw-1rx" secondAttribute="bottom" constant="13" id="OV4-ZB-RGC"/>
-                            <constraint firstItem="HpR-8Q-st4" firstAttribute="bottom" secondItem="1GR-gK-5Gq" secondAttribute="bottom" id="PgC-ZH-gKb"/>
+                            <constraint firstItem="cja-c0-IF4" firstAttribute="centerX" secondItem="4pg-xV-Gt9" secondAttribute="centerX" id="SD1-OO-pDA"/>
                             <constraint firstItem="1GR-gK-5Gq" firstAttribute="width" secondItem="4pg-xV-Gt9" secondAttribute="width" id="WCy-N4-3a1"/>
+                            <constraint firstItem="HpR-8Q-st4" firstAttribute="bottom" secondItem="1GR-gK-5Gq" secondAttribute="bottom" id="Wxr-QD-RAB"/>
                             <constraint firstItem="apV-hw-1rx" firstAttribute="top" secondItem="4pg-xV-Gt9" secondAttribute="top" id="YQm-Af-8V3"/>
-                            <constraint firstItem="HpR-8Q-st4" firstAttribute="centerX" secondItem="1GR-gK-5Gq" secondAttribute="centerX" id="aDP-66-yeT"/>
+                            <constraint firstItem="cja-c0-IF4" firstAttribute="leading" secondItem="HF2-1b-s9v" secondAttribute="leading" id="YiV-8b-2uS"/>
+                            <constraint firstAttribute="bottom" secondItem="cja-c0-IF4" secondAttribute="bottom" constant="245" id="bwj-oe-yWw"/>
+                            <constraint firstItem="cja-c0-IF4" firstAttribute="height" secondItem="HF2-1b-s9v" secondAttribute="height" multiplier="0.08" id="cNo-aZ-NIl"/>
                             <constraint firstItem="HF2-1b-s9v" firstAttribute="bottom" secondItem="2iA-nE-JPO" secondAttribute="top" id="g9r-6f-J0P"/>
                             <constraint firstItem="apV-hw-1rx" firstAttribute="height" secondItem="4pg-xV-Gt9" secondAttribute="height" id="h66-yp-kp5"/>
-                            <constraint firstItem="HpR-8Q-st4" firstAttribute="width" secondItem="1GR-gK-5Gq" secondAttribute="width" multiplier="0.25" id="kiv-fZ-WYL"/>
+                            <constraint firstItem="cja-c0-IF4" firstAttribute="width" secondItem="4pg-xV-Gt9" secondAttribute="width" id="j1Z-ug-Osv"/>
                             <constraint firstItem="HF2-1b-s9v" firstAttribute="top" secondItem="4pg-xV-Gt9" secondAttribute="top" constant="355" id="mUi-dz-dak"/>
+                            <constraint firstItem="HpR-8Q-st4" firstAttribute="centerX" secondItem="6jG-5w-RCw" secondAttribute="centerX" id="nGd-75-mXg"/>
                             <constraint firstItem="HF2-1b-s9v" firstAttribute="height" secondItem="4pg-xV-Gt9" secondAttribute="height" multiplier="0.3" id="o7J-8t-fsi"/>
                             <constraint firstItem="HF2-1b-s9v" firstAttribute="leading" secondItem="apV-hw-1rx" secondAttribute="leading" id="oXS-6a-gZ8"/>
                             <constraint firstItem="6jG-5w-RCw" firstAttribute="top" secondItem="apV-hw-1rx" secondAttribute="bottom" constant="13" id="qk1-Uh-4fc"/>
@@ -76,6 +123,7 @@
                             <constraint firstItem="6jG-5w-RCw" firstAttribute="centerX" secondItem="apV-hw-1rx" secondAttribute="centerX" id="uDk-kD-dlS"/>
                             <constraint firstItem="1GR-gK-5Gq" firstAttribute="top" secondItem="6jG-5w-RCw" secondAttribute="bottom" constant="21" id="uSQ-Ih-t1e"/>
                             <constraint firstItem="1GR-gK-5Gq" firstAttribute="height" secondItem="4pg-xV-Gt9" secondAttribute="height" multiplier="0.5" id="vPe-5e-mV8"/>
+                            <constraint firstItem="HpR-8Q-st4" firstAttribute="centerY" secondItem="4pg-xV-Gt9" secondAttribute="centerY" id="wtk-CL-4ds"/>
                             <constraint firstItem="2iA-nE-JPO" firstAttribute="top" secondItem="apV-hw-1rx" secondAttribute="bottom" constant="571" id="zV8-LW-eSU"/>
                         </constraints>
                         <variation key="default">
@@ -83,14 +131,22 @@
                                 <exclude reference="h66-yp-kp5"/>
                                 <exclude reference="D7Y-xl-Usl"/>
                                 <exclude reference="OV4-ZB-RGC"/>
+                                <exclude reference="DrD-kE-B0c"/>
+                                <exclude reference="MCo-lr-JzC"/>
+                                <exclude reference="MJq-DZ-J5v"/>
+                                <exclude reference="YiV-8b-2uS"/>
+                                <exclude reference="bwj-oe-yWw"/>
+                                <exclude reference="Dj6-N2-b2X"/>
                                 <exclude reference="mUi-dz-dak"/>
                                 <exclude reference="1gb-yM-SQj"/>
+                                <exclude reference="wtk-CL-4ds"/>
                                 <exclude reference="zV8-LW-eSU"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="labelSearch" destination="HpR-8Q-st4" id="7nE-mZ-ufC"/>
+                        <outlet property="radarEcorecoIcon" destination="LSM-uL-bcx" id="mXp-rn-5o5"/>
                         <outlet property="radarView" destination="1GR-gK-5Gq" id="lHp-wp-djr"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="seguePairToLock" id="RTZ-Ib-hRh"/>
                     </connections>
@@ -360,7 +416,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-705" y="-16"/>
+            <point key="canvasLocation" x="-695" y="24"/>
         </scene>
         <!--Collection View Controller-->
         <scene sceneID="hbh-yD-BBT">
@@ -1093,11 +1149,10 @@
         <scene sceneID="gTE-hl-dML">
             <objects>
                 <tableViewController id="5o4-jZ-DNL" customClass="SearchTableViewController" customModule="ecoreco" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="B1Z-NF-Fda">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="B1Z-NF-Fda">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="245"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="sectionIndexBackgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Tfz-EK-0Nb" customClass="SearchTableViewCell" customModule="ecoreco" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
@@ -1106,29 +1161,29 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rFv-Bv-ony">
-                                            <rect key="frame" x="8" y="0.0" width="584" height="36"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GjU-KS-11h">
-                                            <rect key="frame" x="8" y="11" width="584" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXc-Ow-f6a">
+                                            <rect key="frame" x="264" y="8" width="153" height="28"/>
+                                            <color key="backgroundColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="16"/>
+                                            <state key="normal" title="Button"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="rFv-Bv-ony" firstAttribute="leading" secondItem="fCm-Ok-2T1" secondAttribute="leadingMargin" id="2bE-we-xGO"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="rFv-Bv-ony" secondAttribute="bottom" constant="-0.5" id="8U6-kO-jVV"/>
-                                        <constraint firstItem="rFv-Bv-ony" firstAttribute="leading" secondItem="GjU-KS-11h" secondAttribute="leading" id="SSm-Xs-dl5"/>
-                                        <constraint firstItem="GjU-KS-11h" firstAttribute="centerY" secondItem="fCm-Ok-2T1" secondAttribute="centerY" id="Wc5-xL-8Vo"/>
-                                        <constraint firstItem="rFv-Bv-ony" firstAttribute="trailing" secondItem="fCm-Ok-2T1" secondAttribute="trailingMargin" id="X8a-oG-gA2"/>
-                                        <constraint firstItem="rFv-Bv-ony" firstAttribute="trailing" secondItem="GjU-KS-11h" secondAttribute="trailing" id="p1G-Bc-Df1"/>
-                                        <constraint firstItem="rFv-Bv-ony" firstAttribute="top" secondItem="fCm-Ok-2T1" secondAttribute="top" id="pc2-hp-WPd"/>
+                                        <constraint firstItem="wXc-Ow-f6a" firstAttribute="centerY" secondItem="fCm-Ok-2T1" secondAttribute="centerY" id="CAs-I1-8Kc"/>
+                                        <constraint firstItem="wXc-Ow-f6a" firstAttribute="height" secondItem="fCm-Ok-2T1" secondAttribute="height" multiplier="0.7" id="OI0-iu-moc"/>
+                                        <constraint firstItem="wXc-Ow-f6a" firstAttribute="centerX" secondItem="fCm-Ok-2T1" secondAttribute="centerX" id="TrA-UT-2fx"/>
+                                        <constraint firstItem="wXc-Ow-f6a" firstAttribute="width" secondItem="fCm-Ok-2T1" secondAttribute="width" multiplier="0.5" id="xbO-yI-GZS"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES"/>
+                                </accessibility>
                                 <connections>
-                                    <outlet property="bgImageView" destination="rFv-Bv-ony" id="ZKV-x4-job"/>
-                                    <outlet property="labelName" destination="GjU-KS-11h" id="bSw-M3-fWn"/>
+                                    <outlet property="buttonDeviceListItem" destination="wXc-Ow-f6a" id="jRC-hk-bci"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1147,7 +1202,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Ecorecologo.png" width="935" height="163"/>
+        <image name="Ecorecologo" width="311" height="54"/>
         <image name="FALL-DETECT_0000_FALL-DETECTED.png" width="647" height="583"/>
         <image name="FALL-DETECT_0001_TEL.png" width="406" height="128"/>
         <image name="FALL-DETECT_0002_RESET.png" width="406" height="128"/>
@@ -1168,6 +1223,7 @@
         <image name="lock-_0036_board-1.png" width="1080" height="77"/>
         <image name="lock-_0037_board2.png" width="1080" height="578"/>
         <image name="speedMeter.png" width="1051" height="991"/>
+        <image name="standby-divider" width="375" height="10"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="RTZ-Ib-hRh"/>

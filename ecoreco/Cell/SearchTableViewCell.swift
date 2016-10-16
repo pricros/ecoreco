@@ -10,8 +10,8 @@ import UIKit
 
 class SearchTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var labelName: UILabel!
-    @IBOutlet weak var bgImageView: UIImageView!
+    @IBOutlet weak var buttonDeviceListItem: UIButton!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
