@@ -38,7 +38,6 @@
 		1876A5A81C3265430016EBCA /* infoRangeEst.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5911C3265430016EBCA /* infoRangeEst.png */; };
 		1876A5A91C3265430016EBCA /* infoTrip.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5921C3265430016EBCA /* infoTrip.png */; };
 		1876A5AA1C3265430016EBCA /* lineBottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5931C3265430016EBCA /* lineBottom.png */; };
-		1876A5AB1C3265430016EBCA /* lineTop.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5941C3265430016EBCA /* lineTop.png */; };
 		1876A5AC1C3265430016EBCA /* modeBoostOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5951C3265430016EBCA /* modeBoostOff.png */; };
 		1876A5AD1C3265430016EBCA /* modeBoostOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5961C3265430016EBCA /* modeBoostOn.png */; };
 		1876A5AE1C3265430016EBCA /* modeEcoOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5971C3265430016EBCA /* modeEcoOff.png */; };
@@ -81,6 +80,7 @@
 		842DCFED1DAE9F3000A71A8E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFEC1DAE9F3000A71A8E /* SearchTableViewCell.swift */; };
 		842DCFEF1DAEAAE200A71A8E /* RadarEcorecoIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFEE1DAEAAE200A71A8E /* RadarEcorecoIcon.swift */; };
 		842DCFF61DB3395600A71A8E /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFF51DB3395600A71A8E /* ColorUtil.swift */; };
+		842DCFFA1DB3976900A71A8E /* ResetComboViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFF91DB3976900A71A8E /* ResetComboViewController.swift */; };
 		8492C5AB1D60D2CD0021D2FC /* PairViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492C5AA1D60D2CD0021D2FC /* PairViewController.swift */; };
 		84C3647F1D9CEF3C00AD4773 /* shop-g@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C364731D9CEF3C00AD4773 /* shop-g@3.png */; };
 		84C364801D9CEF3C00AD4773 /* shop-w@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C364741D9CEF3C00AD4773 /* shop-w@3.png */; };
@@ -154,7 +154,6 @@
 		1876A5911C3265430016EBCA /* infoRangeEst.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = infoRangeEst.png; path = images/infoRangeEst.png; sourceTree = "<group>"; };
 		1876A5921C3265430016EBCA /* infoTrip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = infoTrip.png; path = images/infoTrip.png; sourceTree = "<group>"; };
 		1876A5931C3265430016EBCA /* lineBottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lineBottom.png; path = images/lineBottom.png; sourceTree = "<group>"; };
-		1876A5941C3265430016EBCA /* lineTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lineTop.png; path = images/lineTop.png; sourceTree = "<group>"; };
 		1876A5951C3265430016EBCA /* modeBoostOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = modeBoostOff.png; path = images/modeBoostOff.png; sourceTree = "<group>"; };
 		1876A5961C3265430016EBCA /* modeBoostOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = modeBoostOn.png; path = images/modeBoostOn.png; sourceTree = "<group>"; };
 		1876A5971C3265430016EBCA /* modeEcoOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = modeEcoOff.png; path = images/modeEcoOff.png; sourceTree = "<group>"; };
@@ -203,6 +202,8 @@
 		842DCFEC1DAE9F3000A71A8E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTableViewCell.swift; path = Cell/SearchTableViewCell.swift; sourceTree = "<group>"; };
 		842DCFEE1DAEAAE200A71A8E /* RadarEcorecoIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadarEcorecoIcon.swift; path = View/RadarEcorecoIcon.swift; sourceTree = "<group>"; };
 		842DCFF51DB3395600A71A8E /* ColorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
+		842DCFF81DB396B800A71A8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		842DCFF91DB3976900A71A8E /* ResetComboViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResetComboViewController.swift; path = Controller/ResetComboViewController.swift; sourceTree = "<group>"; };
 		8492C5AA1D60D2CD0021D2FC /* PairViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairViewController.swift; sourceTree = "<group>"; };
 		84C364731D9CEF3C00AD4773 /* shop-g@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shop-g@3.png"; path = "images/shop-g@3.png"; sourceTree = "<group>"; };
 		84C364741D9CEF3C00AD4773 /* shop-w@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shop-w@3.png"; path = "images/shop-w@3.png"; sourceTree = "<group>"; };
@@ -271,6 +272,7 @@
 				8492C5AA1D60D2CD0021D2FC /* PairViewController.swift */,
 				8420B9121D651CA5009BA82A /* SettingCollectionViewController.swift */,
 				842DCFEA1DAE9D6C00A71A8E /* SearchTableViewController.swift */,
+				842DCFF91DB3976900A71A8E /* ResetComboViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -392,7 +394,6 @@
 				1876A5911C3265430016EBCA /* infoRangeEst.png */,
 				1876A5921C3265430016EBCA /* infoTrip.png */,
 				1876A5931C3265430016EBCA /* lineBottom.png */,
-				1876A5941C3265430016EBCA /* lineTop.png */,
 				1876A5951C3265430016EBCA /* modeBoostOff.png */,
 				1876A5961C3265430016EBCA /* modeBoostOn.png */,
 				1876A5971C3265430016EBCA /* modeEcoOff.png */,
@@ -605,7 +606,6 @@
 				1876A5AC1C3265430016EBCA /* modeBoostOff.png in Resources */,
 				1876A5B41C3265430016EBCA /* modeRideOff.png in Resources */,
 				84C364801D9CEF3C00AD4773 /* shop-w@3.png in Resources */,
-				1876A5AB1C3265430016EBCA /* lineTop.png in Resources */,
 				1876A5A81C3265430016EBCA /* infoRangeEst.png in Resources */,
 				3CEAC1F41D01353C00F29628 /* FALL-DETECT_0001_TEL.png in Resources */,
 				1876A5AE1C3265430016EBCA /* modeEcoOff.png in Resources */,
@@ -657,6 +657,7 @@
 				181F4FAE1CFDBDC100B13E77 /* CommonViewController.swift in Sources */,
 				187B92CA1C26716500DA3BDF /* ViewController.swift in Sources */,
 				181F4FAA1CFD887200B13E77 /* Scooter.xcdatamodeld in Sources */,
+				842DCFFA1DB3976900A71A8E /* ResetComboViewController.swift in Sources */,
 				18EEF0F81C2BF06F0065AFE7 /* DashboardViewController.swift in Sources */,
 				842DCFDD1DACF5E800A71A8E /* RadarCanvas.swift in Sources */,
 				8492C5AB1D60D2CD0021D2FC /* PairViewController.swift in Sources */,
@@ -712,6 +713,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				187B92CC1C26716600DA3BDF /* Base */,
+				842DCFF81DB396B800A71A8E /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
