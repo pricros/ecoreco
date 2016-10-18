@@ -87,19 +87,19 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         //set lable size, font, color
         
         btnBattery.setTitle("0", forState: UIControlState.Normal)
-        btnBattery.setTitleColor(ColorUtil.LABEL_INACTIVE_COLOR, forState: .Normal)
+        btnBattery.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         btnBattery.titleLabel!.font = ColorUtil.FONT_VDS_R1
         
         btnEstimateRange.setTitle("0", forState: UIControlState.Normal)
-        btnEstimateRange.setTitleColor(ColorUtil.LABEL_INACTIVE_COLOR, forState: .Normal)
+        btnEstimateRange.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         btnEstimateRange.titleLabel!.font = ColorUtil.FONT_VDS_R1
         
         btnTrip.setTitle("0", forState: UIControlState.Normal)
-        btnTrip.setTitleColor(ColorUtil.LABEL_INACTIVE_COLOR, forState: .Normal)
+        btnTrip.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         btnTrip.titleLabel!.font = ColorUtil.FONT_VDS_R1
         
         btnOdo.setTitle("0", forState: UIControlState.Normal)
-        btnOdo.setTitleColor(ColorUtil.LABEL_INACTIVE_COLOR, forState: .Normal)
+        btnOdo.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         btnOdo.titleLabel!.font = ColorUtil.FONT_VDS_R1
         
         labelDeviceName.text = "My Scooter"
