@@ -38,7 +38,6 @@
 		1876A5A81C3265430016EBCA /* infoRangeEst.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5911C3265430016EBCA /* infoRangeEst.png */; };
 		1876A5A91C3265430016EBCA /* infoTrip.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5921C3265430016EBCA /* infoTrip.png */; };
 		1876A5AA1C3265430016EBCA /* lineBottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5931C3265430016EBCA /* lineBottom.png */; };
-		1876A5AB1C3265430016EBCA /* lineTop.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5941C3265430016EBCA /* lineTop.png */; };
 		1876A5AC1C3265430016EBCA /* modeBoostOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5951C3265430016EBCA /* modeBoostOff.png */; };
 		1876A5AD1C3265430016EBCA /* modeBoostOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5961C3265430016EBCA /* modeBoostOn.png */; };
 		1876A5AE1C3265430016EBCA /* modeEcoOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5971C3265430016EBCA /* modeEcoOff.png */; };
@@ -84,6 +83,13 @@
 		3CEAC2071D05007E00F29628 /* infoMeter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC2061D05007E00F29628 /* infoMeter.png */; };
 		8420B9131D651CA5009BA82A /* SettingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420B9121D651CA5009BA82A /* SettingCollectionViewController.swift */; };
 		842DCFD91DACCE7000A71A8E /* settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842DCFD81DACCE7000A71A8E /* settings.storyboard */; };
+		842DCFDD1DACF5E800A71A8E /* RadarCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFDC1DACF5E800A71A8E /* RadarCanvas.swift */; };
+		842DCFEB1DAE9D6C00A71A8E /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFEA1DAE9D6C00A71A8E /* SearchTableViewController.swift */; };
+		842DCFED1DAE9F3000A71A8E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFEC1DAE9F3000A71A8E /* SearchTableViewCell.swift */; };
+		842DCFEF1DAEAAE200A71A8E /* RadarEcorecoIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFEE1DAEAAE200A71A8E /* RadarEcorecoIcon.swift */; };
+		842DCFF61DB3395600A71A8E /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFF51DB3395600A71A8E /* ColorUtil.swift */; };
+		842DCFFA1DB3976900A71A8E /* ResetComboViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFF91DB3976900A71A8E /* ResetComboViewController.swift */; };
+		842DCFFC1DB5D42400A71A8E /* SetDeviceNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFFB1DB5D42300A71A8E /* SetDeviceNameViewController.swift */; };
 		8492C5AB1D60D2CD0021D2FC /* PairViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492C5AA1D60D2CD0021D2FC /* PairViewController.swift */; };
 		84C3647F1D9CEF3C00AD4773 /* shop-g@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C364731D9CEF3C00AD4773 /* shop-g@3.png */; };
 		84C364801D9CEF3C00AD4773 /* shop-w@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C364741D9CEF3C00AD4773 /* shop-w@3.png */; };
@@ -157,7 +163,6 @@
 		1876A5911C3265430016EBCA /* infoRangeEst.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = infoRangeEst.png; path = images/infoRangeEst.png; sourceTree = "<group>"; };
 		1876A5921C3265430016EBCA /* infoTrip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = infoTrip.png; path = images/infoTrip.png; sourceTree = "<group>"; };
 		1876A5931C3265430016EBCA /* lineBottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lineBottom.png; path = images/lineBottom.png; sourceTree = "<group>"; };
-		1876A5941C3265430016EBCA /* lineTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lineTop.png; path = images/lineTop.png; sourceTree = "<group>"; };
 		1876A5951C3265430016EBCA /* modeBoostOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = modeBoostOff.png; path = images/modeBoostOff.png; sourceTree = "<group>"; };
 		1876A5961C3265430016EBCA /* modeBoostOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = modeBoostOn.png; path = images/modeBoostOn.png; sourceTree = "<group>"; };
 		1876A5971C3265430016EBCA /* modeEcoOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = modeEcoOff.png; path = images/modeEcoOff.png; sourceTree = "<group>"; };
@@ -209,6 +214,14 @@
 		3CEAC2061D05007E00F29628 /* infoMeter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = infoMeter.png; path = images/infoMeter.png; sourceTree = "<group>"; };
 		8420B9121D651CA5009BA82A /* SettingCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingCollectionViewController.swift; path = Controller/SettingCollectionViewController.swift; sourceTree = "<group>"; };
 		842DCFD81DACCE7000A71A8E /* settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = settings.storyboard; sourceTree = "<group>"; };
+		842DCFDC1DACF5E800A71A8E /* RadarCanvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarCanvas.swift; sourceTree = "<group>"; };
+		842DCFEA1DAE9D6C00A71A8E /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTableViewController.swift; path = Controller/SearchTableViewController.swift; sourceTree = "<group>"; };
+		842DCFEC1DAE9F3000A71A8E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTableViewCell.swift; path = Cell/SearchTableViewCell.swift; sourceTree = "<group>"; };
+		842DCFEE1DAEAAE200A71A8E /* RadarEcorecoIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadarEcorecoIcon.swift; path = View/RadarEcorecoIcon.swift; sourceTree = "<group>"; };
+		842DCFF51DB3395600A71A8E /* ColorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
+		842DCFF81DB396B800A71A8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		842DCFF91DB3976900A71A8E /* ResetComboViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResetComboViewController.swift; path = Controller/ResetComboViewController.swift; sourceTree = "<group>"; };
+		842DCFFB1DB5D42300A71A8E /* SetDeviceNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetDeviceNameViewController.swift; path = Controller/SetDeviceNameViewController.swift; sourceTree = "<group>"; };
 		8492C5AA1D60D2CD0021D2FC /* PairViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairViewController.swift; sourceTree = "<group>"; };
 		84C364731D9CEF3C00AD4773 /* shop-g@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shop-g@3.png"; path = "images/shop-g@3.png"; sourceTree = "<group>"; };
 		84C364741D9CEF3C00AD4773 /* shop-w@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shop-w@3.png"; path = "images/shop-w@3.png"; sourceTree = "<group>"; };
@@ -261,7 +274,9 @@
 		183E66181D06C3C400E1A4E9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				842DCFDC1DACF5E800A71A8E /* RadarCanvas.swift */,
 				183E66191D06C41C00E1A4E9 /* CounterView.swift */,
+				842DCFEE1DAEAAE200A71A8E /* RadarEcorecoIcon.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -282,6 +297,9 @@
 				181F4FAD1CFDBDC100B13E77 /* CommonViewController.swift */,
 				8492C5AA1D60D2CD0021D2FC /* PairViewController.swift */,
 				8420B9121D651CA5009BA82A /* SettingCollectionViewController.swift */,
+				842DCFEA1DAE9D6C00A71A8E /* SearchTableViewController.swift */,
+				842DCFF91DB3976900A71A8E /* ResetComboViewController.swift */,
+				842DCFFB1DB5D42300A71A8E /* SetDeviceNameViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -320,6 +338,7 @@
 		187B92C61C26716500DA3BDF /* ecoreco */ = {
 			isa = PBXGroup;
 			children = (
+				842DCFF41DB3392900A71A8E /* Util */,
 				84E61C201DAA9DDF00A83B30 /* Fonts */,
 				8420B90D1D65175C009BA82A /* Cell */,
 				183E66181D06C3C400E1A4E9 /* View */,
@@ -402,7 +421,6 @@
 				1876A5911C3265430016EBCA /* infoRangeEst.png */,
 				1876A5921C3265430016EBCA /* infoTrip.png */,
 				1876A5931C3265430016EBCA /* lineBottom.png */,
-				1876A5941C3265430016EBCA /* lineTop.png */,
 				1876A5951C3265430016EBCA /* modeBoostOff.png */,
 				1876A5961C3265430016EBCA /* modeBoostOn.png */,
 				1876A5971C3265430016EBCA /* modeEcoOff.png */,
@@ -435,8 +453,17 @@
 		8420B90D1D65175C009BA82A /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				842DCFEC1DAE9F3000A71A8E /* SearchTableViewCell.swift */,
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		842DCFF41DB3392900A71A8E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				842DCFF51DB3395600A71A8E /* ColorUtil.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		84E61C201DAA9DDF00A83B30 /* Fonts */ = {
@@ -606,7 +633,6 @@
 				1876A5AC1C3265430016EBCA /* modeBoostOff.png in Resources */,
 				1876A5B41C3265430016EBCA /* modeRideOff.png in Resources */,
 				84C364801D9CEF3C00AD4773 /* shop-w@3.png in Resources */,
-				1876A5AB1C3265430016EBCA /* lineTop.png in Resources */,
 				1876A5A81C3265430016EBCA /* infoRangeEst.png in Resources */,
 				3CEAC1F41D01353C00F29628 /* FALL-DETECT_0001_TEL.png in Resources */,
 				1876A5AE1C3265430016EBCA /* modeEcoOff.png in Resources */,
@@ -664,12 +690,19 @@
 				3CB16A781DADCB01004C3191 /* ScooterInfoViewController.swift in Sources */,
 				3CB16A791DADCB01004C3191 /* SecurityViewController.swift in Sources */,
 				3CB16A761DADCB01004C3191 /* EditScooterComboViewController.swift in Sources */,
+				842DCFFA1DB3976900A71A8E /* ResetComboViewController.swift in Sources */,
 				18EEF0F81C2BF06F0065AFE7 /* DashboardViewController.swift in Sources */,
+				842DCFDD1DACF5E800A71A8E /* RadarCanvas.swift in Sources */,
 				8492C5AB1D60D2CD0021D2FC /* PairViewController.swift in Sources */,
+				842DCFF61DB3395600A71A8E /* ColorUtil.swift in Sources */,
 				183E661C1D09E5BF00E1A4E9 /* Event.swift in Sources */,
+				842DCFEB1DAE9D6C00A71A8E /* SearchTableViewController.swift in Sources */,
+				842DCFEF1DAEAAE200A71A8E /* RadarEcorecoIcon.swift in Sources */,
+				842DCFFC1DB5D42400A71A8E /* SetDeviceNameViewController.swift in Sources */,
 				3CEAC1EF1D0133A700F29628 /* FallViewController.swift in Sources */,
 				187B92C81C26716500DA3BDF /* AppDelegate.swift in Sources */,
 				183E661A1D06C41C00E1A4E9 /* CounterView.swift in Sources */,
+				842DCFED1DAE9F3000A71A8E /* SearchTableViewCell.swift in Sources */,
 				18EEF0BA1C2A3C380065AFE7 /* MapViewController.swift in Sources */,
 				181F4FAC1CFD88D100B13E77 /* ScooterModel.swift in Sources */,
 				3CB16A7B1DADCB01004C3191 /* UserProfileViewController.swift in Sources */,
@@ -716,6 +749,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				187B92CC1C26716600DA3BDF /* Base */,
+				842DCFF81DB396B800A71A8E /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
