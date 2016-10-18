@@ -17,7 +17,13 @@ class ResetComboViewController: CommonViewController {
         
     }
     
+    @IBOutlet weak var btnConfirm: UIButton!
     @IBAction func addLeft(sender: UIButton) {
    
     }
+    
+    @IBAction func confirm(sender: UIButton) {
+        self.performSegueWithIdentifier("segueRstCmbToSetName", sender: nil)
+    }
+    
 }

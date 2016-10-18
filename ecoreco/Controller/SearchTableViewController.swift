@@ -55,7 +55,7 @@ class SearchTableViewController: CommonViewController, UITableViewDataSource, UI
     func deviceClicked(sender:UIButton){
         NSLog("item \(sender.titleLabel?.text) selected")
         scooter.connect()
-      //  self.performSegueWithIdentifier("seguePairToDash", sender: nil)
+        self.performSegueWithIdentifier("seguePairToRstCmb", sender: nil)
     }
     /*
     // MARK: - Navigation
