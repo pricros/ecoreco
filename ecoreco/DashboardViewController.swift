@@ -17,11 +17,12 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
     @IBOutlet weak var imgViewSpeedMeter: UIImageView!
     @IBOutlet weak var counterView: CounterView!
     @IBOutlet weak var scrollViewMode: UIScrollView!
-    @IBOutlet weak var labelInfoBattery: UILabel!
-    @IBOutlet weak var labelInfoEstimateRange: UILabel!
-    @IBOutlet weak var labelInfoTrip: UILabel!
-    @IBOutlet weak var labelInfoOdo: UILabel!
+
 //    @IBOutlet weak var labelHeaderBattery: UILabel!
+    @IBOutlet weak var btnBattery: UIButton!
+    @IBOutlet weak var btnEstimateRange: UIButton!
+    @IBOutlet weak var btnTrip: UIButton!
+    @IBOutlet weak var btnOdo: UIButton!
     @IBOutlet weak var labelDeviceName: UILabel!
     
     var layer:CALayer?
@@ -85,19 +86,23 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         
         //set lable size, font, color
         
-    
-        labelInfoBattery.textColor = ColorUtil.LABEL_INACTIVE_COLOR
-        labelInfoBattery.font = ColorUtil.FONT_VDS_R1
+        btnBattery.setTitle("0", forState: UIControlState.Normal)
+        btnBattery.setTitleColor(ColorUtil.LABEL_INACTIVE_COLOR, forState: .Normal)
+        btnBattery.titleLabel!.font = ColorUtil.FONT_VDS_R1
         
-        labelInfoEstimateRange.textColor = ColorUtil.LABEL_INACTIVE_COLOR
-        labelInfoEstimateRange.font = ColorUtil.FONT_VDS_R1
+        btnEstimateRange.setTitle("0", forState: UIControlState.Normal)
+        btnEstimateRange.setTitleColor(ColorUtil.LABEL_INACTIVE_COLOR, forState: .Normal)
+        btnEstimateRange.titleLabel!.font = ColorUtil.FONT_VDS_R1
         
-        labelInfoTrip.textColor = ColorUtil.LABEL_INACTIVE_COLOR
-        labelInfoTrip.font = ColorUtil.FONT_VDS_R1
-
-        labelInfoOdo.textColor = ColorUtil.LABEL_INACTIVE_COLOR
-        labelInfoOdo.font = ColorUtil.FONT_VDS_R1
-
+        btnTrip.setTitle("0", forState: UIControlState.Normal)
+        btnTrip.setTitleColor(ColorUtil.LABEL_INACTIVE_COLOR, forState: .Normal)
+        btnTrip.titleLabel!.font = ColorUtil.FONT_VDS_R1
+        
+        btnOdo.setTitle("0", forState: UIControlState.Normal)
+        btnOdo.setTitleColor(ColorUtil.LABEL_INACTIVE_COLOR, forState: .Normal)
+        btnOdo.titleLabel!.font = ColorUtil.FONT_VDS_R1
+        
+        labelDeviceName.text = "My Scooter"
         labelDeviceName.textColor = ColorUtil.LABEL_INACTIVE_COLOR
         labelDeviceName.font = ColorUtil.FONT_VDS_T4
         
@@ -105,10 +110,10 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         
         //init dashboard info
         self.labelSpeed.text = "0"
-        self.labelInfoEstimateRange.text = "\(scooter.rmm.get())"
-        self.labelInfoOdo.text = "\(scooter.odkTotal.get())"
-        self.labelInfoTrip.text = "\(scooter.odkA.get())"
-        self.labelInfoBattery.text = "\(scooter.bat.get())"
+        self.btnEstimateRange.titleLabel!.text = "\(scooter.rmm.get())"
+        self.btnOdo.titleLabel!.text = "\(scooter.odkTotal.get())"
+        self.btnTrip.titleLabel!.text = "\(scooter.odkA.get())"
+        self.btnBattery.titleLabel!.text = "\(scooter.bat.get())"
  //       self.labelHeaderBattery.text = "\(scooter.bat.get())"
 
         scooter.speed.didChange.addHandler(self, handler: DashboardViewController.speedDidChange)
@@ -328,28 +333,28 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         
     }
     
-//    func batteryDidChange(oldValue:Int, newValue:Int) {
-//        dispatch_async(dispatch_get_main_queue()) {
-//            self.labelInfoBattery.text = "\(newValue)"
-//            self.labelHeaderBattery.text = "\(newValue)%"
-//        }
-//    }
+    func batteryDidChange(oldValue:Int, newValue:Int) {
+        dispatch_async(dispatch_get_main_queue()) {
+            self.btnBattery.titleLabel?.text = "\(newValue)"
+            //self.labelHeaderBattery.text = "\(newValue)%"
+        }
+    }
     
     func odkADidChange(oldValue:Int, newValue:Int) {
         dispatch_async(dispatch_get_main_queue()) {
-            self.labelInfoTrip.text = "\(newValue)"
+            self.btnTrip.titleLabel?.text = "\(newValue)"
         }
     }
 
     func odkTotalDidChange(oldValue:Int, newValue:Int) {
         dispatch_async(dispatch_get_main_queue()) {
-            self.labelInfoOdo.text = "\(newValue)"
+            self.btnOdo.titleLabel?.text = "\(newValue)"
         }
     }
 
     func rmmDidChange(oldValue:Int, newValue:Int) {
         dispatch_async(dispatch_get_main_queue()) {
-            self.labelInfoEstimateRange.text = "\(newValue)"
+            self.btnEstimateRange.titleLabel?.text = "\(newValue)"
         }
     }
 
