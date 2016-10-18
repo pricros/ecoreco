@@ -6,7 +6,7 @@
 //  Copyright © 2016年 apple. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
 class DiagnoseViewController: CommonViewController {
 
