@@ -186,7 +186,8 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
     }
     
     func tappedProfile(){
-        print("go to profilt")
+        print("go to diagnose")
+        self.performSegueWithIdentifier("segueDashToDiagnose", sender: nil)
         scooter.disconnect()
     }
     
