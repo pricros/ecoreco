@@ -107,6 +107,7 @@
 		84C3648F1DA2B01E00AD4773 /* restcombo-g@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C3648D1DA2B01E00AD4773 /* restcombo-g@3.png */; };
 		84C364901DA2B01E00AD4773 /* restcombo-w@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C3648E1DA2B01E00AD4773 /* restcombo-w@3.png */; };
 		84D588F21DB6B5E000063BD6 /* DiagnoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D588F11DB6B5DF00063BD6 /* DiagnoseViewController.swift */; };
+		84D588F41DBC6AAE00063BD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D588F31DBC6AAE00063BD6 /* LaunchScreen.storyboard */; };
 		84E61C1D1DAA7C9600A83B30 /* iconDiagnose-g.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E61C1A1DAA7C9600A83B30 /* iconDiagnose-g.png */; };
 		84E61C1E1DAA7C9600A83B30 /* iconDiagnose-gr.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E61C1B1DAA7C9600A83B30 /* iconDiagnose-gr.png */; };
 		84E61C1F1DAA7C9600A83B30 /* iconDiagnose-o.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E61C1C1DAA7C9600A83B30 /* iconDiagnose-o.png */; };
@@ -240,6 +241,7 @@
 		84C3648D1DA2B01E00AD4773 /* restcombo-g@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "restcombo-g@3.png"; path = "images/restcombo-g@3.png"; sourceTree = "<group>"; };
 		84C3648E1DA2B01E00AD4773 /* restcombo-w@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "restcombo-w@3.png"; path = "images/restcombo-w@3.png"; sourceTree = "<group>"; };
 		84D588F11DB6B5DF00063BD6 /* DiagnoseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiagnoseViewController.swift; path = Controller/DiagnoseViewController.swift; sourceTree = "<group>"; };
+		84D588F31DBC6AAE00063BD6 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84E61C1A1DAA7C9600A83B30 /* iconDiagnose-g.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconDiagnose-g.png"; path = "images/iconDiagnose-g.png"; sourceTree = "<group>"; };
 		84E61C1B1DAA7C9600A83B30 /* iconDiagnose-gr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconDiagnose-gr.png"; path = "images/iconDiagnose-gr.png"; sourceTree = "<group>"; };
 		84E61C1C1DAA7C9600A83B30 /* iconDiagnose-o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconDiagnose-o.png"; path = "images/iconDiagnose-o.png"; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 		187B92BB1C26716500DA3BDF = {
 			isa = PBXGroup;
 			children = (
+				84D588F31DBC6AAE00063BD6 /* LaunchScreen.storyboard */,
 				187B92C61C26716500DA3BDF /* ecoreco */,
 				187B92F91C27B35F00DA3BDF /* images */,
 				187B92DB1C26716600DA3BDF /* ecorecoTests */,
@@ -619,6 +622,7 @@
 				1876A54F1C30D6CB0016EBCA /* header.png in Resources */,
 				1876A5A31C3265430016EBCA /* iconPowerOn.png in Resources */,
 				1876A5A11C3265430016EBCA /* iconNavi.png in Resources */,
+				84D588F41DBC6AAE00063BD6 /* LaunchScreen.storyboard in Resources */,
 				187B92CF1C26716600DA3BDF /* Assets.xcassets in Resources */,
 				1876A5B31C3265430016EBCA /* modeEkickExtendOn.png in Resources */,
 				3CEAC2071D05007E00F29628 /* infoMeter.png in Resources */,
