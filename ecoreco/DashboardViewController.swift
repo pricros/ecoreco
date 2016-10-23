@@ -13,6 +13,7 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
     @IBOutlet weak var imgViewProfile: UIImageView!
 //    @IBOutlet weak var imgViewNavi: UIImageView!
 
+
     @IBOutlet weak var labelSpeed: UILabel!
     @IBOutlet weak var imgViewSpeedMeter: UIImageView!
     @IBOutlet weak var counterView: CounterView!
@@ -25,6 +26,7 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
     @IBOutlet weak var btnOdo: UIButton!
     @IBOutlet weak var labelDeviceName: UILabel!
     
+    @IBOutlet weak var btnLock: UIButton!
     var layer:CALayer?
     var bDemoThreadStart:Bool = false
     var bDemoEnable:Bool = false
@@ -68,9 +70,9 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
 //        imgViewNavi.addGestureRecognizer(tapGestureRecognizerNavi)
         
         //add tpa action to [lableSpeed]
-        let tapGestureRecognizerSpeed = UITapGestureRecognizer(target: self, action:Selector("tappedSpeed"))
-        labelSpeed.userInteractionEnabled = true
-        labelSpeed.addGestureRecognizer(tapGestureRecognizerSpeed)
+ //       let tapGestureRecognizerSpeed = UITapGestureRecognizer(target: self, action:Selector("tappedSpeed"))
+//        labelSpeed.userInteractionEnabled = true
+//        labelSpeed.addGestureRecognizer(tapGestureRecognizerSpeed)
         
         let font = UIFont(name: (self.labelSpeed.font?.familyName)!, size:150)
         labelSpeed.font = font
@@ -86,19 +88,19 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         
         //set lable size, font, color
         
-        btnBattery.setTitle("0", forState: UIControlState.Normal)
+        btnBattery.setTitle("\(scooter.bat.get())", forState: UIControlState.Normal)
         btnBattery.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         btnBattery.titleLabel!.font = ColorUtil.FONT_VDS_R1
         
-        btnEstimateRange.setTitle("0", forState: UIControlState.Normal)
+        btnEstimateRange.setTitle("\(scooter.rmm.get())", forState: UIControlState.Normal)
         btnEstimateRange.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         btnEstimateRange.titleLabel!.font = ColorUtil.FONT_VDS_R1
         
-        btnTrip.setTitle("0", forState: UIControlState.Normal)
+        btnTrip.setTitle("\(scooter.odkA.get())", forState: UIControlState.Normal)
         btnTrip.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         btnTrip.titleLabel!.font = ColorUtil.FONT_VDS_R1
         
-        btnOdo.setTitle("0", forState: UIControlState.Normal)
+        btnOdo.setTitle("\(scooter.odkTotal.get())", forState: UIControlState.Normal)
         btnOdo.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         btnOdo.titleLabel!.font = ColorUtil.FONT_VDS_R1
         
@@ -108,16 +110,9 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         
 
         
-        //init dashboard info
-        self.labelSpeed.text = "0"
-        self.btnEstimateRange.titleLabel!.text = "\(scooter.rmm.get())"
-        self.btnOdo.titleLabel!.text = "\(scooter.odkTotal.get())"
-        self.btnTrip.titleLabel!.text = "\(scooter.odkA.get())"
-        self.btnBattery.titleLabel!.text = "\(scooter.bat.get())"
- //       self.labelHeaderBattery.text = "\(scooter.bat.get())"
-
+      
         scooter.speed.didChange.addHandler(self, handler: DashboardViewController.speedDidChange)
-//        scooter.bat.didChange.addHandler(self, handler: DashboardViewController.batteryDidChange)
+        scooter.bat.didChange.addHandler(self, handler: DashboardViewController.batteryDidChange)
         scooter.falStatus.didChange.addHandler(self, handler: DashboardViewController.falStatusDidChange)
         scooter.lockStatus.didChange.addHandler(self, handler: DashboardViewController.lockStatusDidChange)
         scooter.odkTotal.didChange.addHandler(self, handler: DashboardViewController.odkTotalDidChange)
@@ -185,10 +180,15 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
 //        }
     }
     
+
+    @IBAction func lockUnlock(sender: UIButton) {
+        
+    }
+    
+    
     func tappedProfile(){
         print("go to diagnose")
         self.performSegueWithIdentifier("segueDashToDiagnose", sender: nil)
-        scooter.disconnect()
     }
     
     func tappedNavi(){
@@ -336,26 +336,26 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
     
     func batteryDidChange(oldValue:Int, newValue:Int) {
         dispatch_async(dispatch_get_main_queue()) {
-            self.btnBattery.titleLabel?.text = "\(newValue)"
+            self.btnBattery.setTitle("\(newValue)",forState: UIControlState.Normal)
             //self.labelHeaderBattery.text = "\(newValue)%"
         }
     }
     
     func odkADidChange(oldValue:Int, newValue:Int) {
         dispatch_async(dispatch_get_main_queue()) {
-            self.btnTrip.titleLabel?.text = "\(newValue)"
+            self.btnTrip.setTitle("\(newValue)",forState: UIControlState.Normal)
         }
     }
 
     func odkTotalDidChange(oldValue:Int, newValue:Int) {
         dispatch_async(dispatch_get_main_queue()) {
-            self.btnOdo.titleLabel?.text = "\(newValue)"
+            self.btnOdo.setTitle("\(newValue)",forState: UIControlState.Normal)
         }
     }
 
     func rmmDidChange(oldValue:Int, newValue:Int) {
         dispatch_async(dispatch_get_main_queue()) {
-            self.btnEstimateRange.titleLabel?.text = "\(newValue)"
+            self.btnEstimateRange.setTitle( "\(newValue)",forState: UIControlState.Normal)
         }
     }
 
@@ -372,8 +372,11 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
     
     func lockStatusDidChange(oldValue:Int, newValue:Int) {
         if (newValue == 1){
-            self.performSegueWithIdentifier("segueDashToLock", sender: nil)
+            btnLock.setImage(UIImage(named: "unlock"), forState: UIControlState.Normal)
+        } else {
+            btnLock.setImage(UIImage(named: "lock"), forState: UIControlState.Normal)
         }
+        
     }
 
 
