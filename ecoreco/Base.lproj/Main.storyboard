@@ -1927,7 +1927,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="reset-combo" translatesAutoresizingMaskIntoConstraints="NO" id="Zk4-s0-O8Z">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="reset-combo" translatesAutoresizingMaskIntoConstraints="NO" id="Zk4-s0-O8Z">
                                 <rect key="frame" x="73" y="50" width="455" height="88"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="88" id="6UC-FO-Jge"/>
@@ -2786,7 +2786,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Ecorecologo" translatesAutoresizingMaskIntoConstraints="NO" id="DH7-pg-xNe">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Ecorecologo" translatesAutoresizingMaskIntoConstraints="NO" id="DH7-pg-xNe">
                                 <rect key="frame" x="73" y="50" width="455" height="88"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="415-Fg-I3o"/>
@@ -2810,7 +2810,7 @@
                                         <exclude reference="415-Fg-I3o"/>
                                         <exclude reference="FSu-6i-mUy"/>
                                         <exclude reference="WS5-fQ-w8I"/>
-                                        <include reference="XUS-tT-AhO"/>
+                                        <exclude reference="XUS-tT-AhO"/>
                                     </mask>
                                 </variation>
                             </imageView>
@@ -2822,8 +2822,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="101" y="271" width="200" height="21"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="rn2-IM-fga"/>
                                     </mask>
@@ -2959,8 +2958,7 @@
                                         <exclude reference="w1a-RL-g6j"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="101" y="311" width="200" height="21"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="1qC-J7-f6k"/>
                                         <exclude reference="w1a-RL-g6j"/>
