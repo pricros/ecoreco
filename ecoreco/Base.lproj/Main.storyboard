@@ -1043,30 +1043,45 @@
                                         <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="16"/>
                                         <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="68" y="19" width="16" height="19"/>
+                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Battery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nwy-mw-piF">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                         <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="13"/>
                                         <color key="textColor" red="0.56862745100000001" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="27" y="53" width="42" height="16"/>
+                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Range Est." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfA-Q2-ylR">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                         <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="13"/>
                                         <color key="textColor" red="0.56862745100000001" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="112" y="53" width="63" height="16"/>
+                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkc-kJ-9By">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                         <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="13"/>
                                         <color key="textColor" red="0.56862745100000001" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="230" y="53" width="21" height="16"/>
+                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Odometer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9t-yz-52t">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                         <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="13"/>
                                         <color key="textColor" red="0.56862745100000001" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="315" y="53" width="59" height="16"/>
+                                        </variation>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWH-LI-whB">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -1693,6 +1708,9 @@
                                 <rect key="frame" x="198" y="342" width="46" height="30"/>
                                 <state key="normal" image="uncheck-rstCmb"/>
                                 <state key="highlighted" backgroundImage="checked-rstCmb"/>
+                                <connections>
+                                    <action selector="showPassword:" destination="zIA-vB-bXm" eventType="touchUpInside" id="e1O-n0-tRq"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="divider-green" translatesAutoresizingMaskIntoConstraints="NO" id="oKr-bm-7kL">
                                 <rect key="frame" x="0.0" y="380" width="600" height="21"/>
@@ -1779,7 +1797,6 @@
                                                 </variation>
                                                 <connections>
                                                     <action selector="addDown:" destination="zIA-vB-bXm" eventType="touchUpInside" id="Frl-fg-d4A"/>
-                                                    <action selector="addLeft:" destination="zIA-vB-bXm" eventType="touchUpInside" id="TRc-Lg-qcH"/>
                                                 </connections>
                                             </button>
                                         </subviews>
