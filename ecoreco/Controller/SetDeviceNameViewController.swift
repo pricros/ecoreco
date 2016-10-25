@@ -8,10 +8,23 @@
 
 import UIKit
 
-class SetDeviceNameViewController: CommonViewController {
+class SetDeviceNameViewController: CommonViewController, UITextFieldDelegate {
+    
+    @IBOutlet weak var txtDeviceName: UITextField!
+    
+    override func viewDidLoad() {
+        txtDeviceName.delegate = self
+    }
 
     @IBAction func confirmToNextPage(sender: UIButton) {
         self.performSegueWithIdentifier("segueSetNameToDash", sender: nil)
     }
+    
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
 
 }

@@ -55,9 +55,6 @@ class ResetComboViewController: CommonViewController, UITextFieldDelegate {
 
         
     }
-    @IBAction func confirm(sender: UIButton) {
-        self.performSegueWithIdentifier("segueRstCmbToSetName", sender: nil)
-    }
     
     func addTextToCurrentTextField(unicode:String){
         if (currentTextField != nil){
@@ -114,6 +111,8 @@ class ResetComboViewController: CommonViewController, UITextFieldDelegate {
     
     @IBAction func sendComboCommand(sender: UIButton) {
          //@todo: send the combo to target
+        self.performSegueWithIdentifier("segueRstCmbToSetName", sender: nil)
+        
     }
 
     override func didReceiveMemoryWarning() {
