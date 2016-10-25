@@ -9,19 +9,24 @@ import QuartzCore
 class DashboardViewController: CommonViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var imgViewSetting: UIImageView!
-    @IBOutlet weak var imgViewPower: UIImageView!
+//    @IBOutlet weak var imgViewPower: UIImageView!
     @IBOutlet weak var imgViewProfile: UIImageView!
-    @IBOutlet weak var imgViewNavi: UIImageView!
+//    @IBOutlet weak var imgViewNavi: UIImageView!
+
+
     @IBOutlet weak var labelSpeed: UILabel!
     @IBOutlet weak var imgViewSpeedMeter: UIImageView!
     @IBOutlet weak var counterView: CounterView!
     @IBOutlet weak var scrollViewMode: UIScrollView!
-    @IBOutlet weak var labelInfoBattery: UILabel!
-    @IBOutlet weak var labelInfoEstimateRange: UILabel!
-    @IBOutlet weak var labelInfoTrip: UILabel!
-    @IBOutlet weak var labelInfoOdo: UILabel!
-    @IBOutlet weak var labelHeaderBattery: UILabel!
+
+//    @IBOutlet weak var labelHeaderBattery: UILabel!
+    @IBOutlet weak var btnBattery: UIButton!
+    @IBOutlet weak var btnEstimateRange: UIButton!
+    @IBOutlet weak var btnTrip: UIButton!
+    @IBOutlet weak var btnOdo: UIButton!
+    @IBOutlet weak var labelDeviceName: UILabel!
     
+    @IBOutlet weak var btnLock: UIButton!
     var layer:CALayer?
     var bDemoThreadStart:Bool = false
     var bDemoEnable:Bool = false
@@ -48,10 +53,10 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         imgViewSetting.addGestureRecognizer(tapGestureRecognizerSetting)
 
         
-        //add tpa action to [Power]
-        let tapGestureRecognizerPower = UITapGestureRecognizer(target: self, action:Selector("tappedPower"))
-        imgViewPower.userInteractionEnabled = true
-        imgViewPower.addGestureRecognizer(tapGestureRecognizerPower)
+//        //add tpa action to [Power]
+//        let tapGestureRecognizerPower = UITapGestureRecognizer(target: self, action:Selector("tappedPower"))
+//        imgViewPower.userInteractionEnabled = true
+//        imgViewPower.addGestureRecognizer(tapGestureRecognizerPower)
 
         
         //add tpa action to [Profile]
@@ -59,15 +64,15 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         imgViewProfile.userInteractionEnabled = true
         imgViewProfile.addGestureRecognizer(tapGestureRecognizerProfile)
 
-        //add tpa action to [Navi]
-        let tapGestureRecognizerNavi = UITapGestureRecognizer(target: self, action:Selector("tappedNavi"))
-        imgViewNavi.userInteractionEnabled = true
-        imgViewNavi.addGestureRecognizer(tapGestureRecognizerNavi)
+//        //add tpa action to [Navi]
+//        let tapGestureRecognizerNavi = UITapGestureRecognizer(target: self, action:Selector("tappedNavi"))
+//        imgViewNavi.userInteractionEnabled = true
+//        imgViewNavi.addGestureRecognizer(tapGestureRecognizerNavi)
         
         //add tpa action to [lableSpeed]
-        let tapGestureRecognizerSpeed = UITapGestureRecognizer(target: self, action:Selector("tappedSpeed"))
-        labelSpeed.userInteractionEnabled = true
-        labelSpeed.addGestureRecognizer(tapGestureRecognizerSpeed)
+ //       let tapGestureRecognizerSpeed = UITapGestureRecognizer(target: self, action:Selector("tappedSpeed"))
+//        labelSpeed.userInteractionEnabled = true
+//        labelSpeed.addGestureRecognizer(tapGestureRecognizerSpeed)
         
         let font = UIFont(name: (self.labelSpeed.font?.familyName)!, size:150)
         labelSpeed.font = font
@@ -81,14 +86,31 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         scrollViewMode.showsHorizontalScrollIndicator = true
         scrollViewMode.indicatorStyle = .Default
         
-        //init dashboard info
-        self.labelSpeed.text = "0"
-        self.labelInfoEstimateRange.text = "\(scooter.rmm.get())"
-        self.labelInfoOdo.text = "\(scooter.odkTotal.get())"
-        self.labelInfoTrip.text = "\(scooter.odkA.get())"
-        self.labelInfoBattery.text = "\(scooter.bat.get())"
-        self.labelHeaderBattery.text = "\(scooter.bat.get())"
+        //set lable size, font, color
+        
+        btnBattery.setTitle("\(scooter.bat.get())", forState: UIControlState.Normal)
+        btnBattery.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        btnBattery.titleLabel!.font = ColorUtil.FONT_VDS_R1
+        
+        btnEstimateRange.setTitle("\(scooter.rmm.get())", forState: UIControlState.Normal)
+        btnEstimateRange.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        btnEstimateRange.titleLabel!.font = ColorUtil.FONT_VDS_R1
+        
+        btnTrip.setTitle("\(scooter.odkA.get())", forState: UIControlState.Normal)
+        btnTrip.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        btnTrip.titleLabel!.font = ColorUtil.FONT_VDS_R1
+        
+        btnOdo.setTitle("\(scooter.odkTotal.get())", forState: UIControlState.Normal)
+        btnOdo.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        btnOdo.titleLabel!.font = ColorUtil.FONT_VDS_R1
+        
+        labelDeviceName.text = "My Scooter"
+        labelDeviceName.textColor = ColorUtil.LABEL_INACTIVE_COLOR
+        labelDeviceName.font = ColorUtil.FONT_VDS_T4
+        
 
+        
+      
         scooter.speed.didChange.addHandler(self, handler: DashboardViewController.speedDidChange)
         scooter.bat.didChange.addHandler(self, handler: DashboardViewController.batteryDidChange)
         scooter.falStatus.didChange.addHandler(self, handler: DashboardViewController.falStatusDidChange)
@@ -112,8 +134,8 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         let speedMeterStartY = imgViewSpeedMeter.frame.origin.y + imgViewSpeedMeter.frame.height/2 - pointerHeight/2
         layer?.frame = CGRectMake(speedMeterStartX,speedMeterStartY, imgViewSpeedMeter.frame.width , pointerHeight)
         layer?.contents = pointerImage.CGImage as? AnyObject
-        self.view.layer.addSublayer(layer!)
-        self.view.sendSubviewToBack(counterView)
+        self.imgViewSpeedMeter.layer.addSublayer(layer!)
+        self.imgViewSpeedMeter.sendSubviewToBack(counterView)
         scooter.enterStandby()
         
     }
@@ -146,21 +168,27 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
     func tappedPower(){
         print("power off")
         
-        if (isPowerOn == true) {
-            scooter.sendData("L1")
-            self.imgViewPower.image = imgPowerOff
-            isPowerOn = false
-            clearAll()
-        }else{
-            scooter.sendData("L0")
-            self.imgViewPower.image = imgPowerOn
-            isPowerOn = true
-        }
+//        if (isPowerOn == true) {
+//            scooter.sendData("L1")
+//            self.imgViewPower.image = imgPowerOff
+//            isPowerOn = false
+//            clearAll()
+//        }else{
+//            scooter.sendData("L0")
+//            self.imgViewPower.image = imgPowerOn
+//            isPowerOn = true
+//        }
     }
     
+
+    @IBAction func lockUnlock(sender: UIButton) {
+        
+    }
+    
+    
     func tappedProfile(){
-        print("go to profilt")
-        scooter.disconnect()
+        print("go to diagnose")
+        self.performSegueWithIdentifier("segueDashToDiagnose", sender: nil)
     }
     
     func tappedNavi(){
@@ -308,26 +336,26 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
     
     func batteryDidChange(oldValue:Int, newValue:Int) {
         dispatch_async(dispatch_get_main_queue()) {
-            self.labelInfoBattery.text = "\(newValue)"
-            self.labelHeaderBattery.text = "\(newValue)%"
+            self.btnBattery.setTitle("\(newValue)",forState: UIControlState.Normal)
+            //self.labelHeaderBattery.text = "\(newValue)%"
         }
     }
     
     func odkADidChange(oldValue:Int, newValue:Int) {
         dispatch_async(dispatch_get_main_queue()) {
-            self.labelInfoTrip.text = "\(newValue)"
+            self.btnTrip.setTitle("\(newValue)",forState: UIControlState.Normal)
         }
     }
 
     func odkTotalDidChange(oldValue:Int, newValue:Int) {
         dispatch_async(dispatch_get_main_queue()) {
-            self.labelInfoOdo.text = "\(newValue)"
+            self.btnOdo.setTitle("\(newValue)",forState: UIControlState.Normal)
         }
     }
 
     func rmmDidChange(oldValue:Int, newValue:Int) {
         dispatch_async(dispatch_get_main_queue()) {
-            self.labelInfoEstimateRange.text = "\(newValue)"
+            self.btnEstimateRange.setTitle( "\(newValue)",forState: UIControlState.Normal)
         }
     }
 
@@ -344,8 +372,11 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
     
     func lockStatusDidChange(oldValue:Int, newValue:Int) {
         if (newValue == 1){
-            self.performSegueWithIdentifier("segueDashToLock", sender: nil)
+            btnLock.setImage(UIImage(named: "unlock"), forState: UIControlState.Normal)
+        } else {
+            btnLock.setImage(UIImage(named: "lock"), forState: UIControlState.Normal)
         }
+        
     }
 
 
