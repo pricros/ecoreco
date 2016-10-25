@@ -1924,6 +1924,9 @@
                                         <exclude reference="rkU-Yd-NaR"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="clearText:" destination="zIA-vB-bXm" eventType="touchUpInside" id="LYa-Pm-ycK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZS-gF-4Ro">
                                 <rect key="frame" x="401" y="570" width="199" height="30"/>
@@ -1933,7 +1936,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="confirm:" destination="zIA-vB-bXm" eventType="touchUpInside" id="pbf-Iq-ybT"/>
+                                    <action selector="sendComboCommand:" destination="zIA-vB-bXm" eventType="touchUpInside" id="sgh-Mu-Xi8"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="你的Scooter已成功認證" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xo2-O3-dPg">
@@ -1990,6 +1993,9 @@
                                 <state key="normal" title="消去">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="backSpace:" destination="zIA-vB-bXm" eventType="touchUpInside" id="Udj-yd-THW"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="顯示密碼" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fa3-GI-i9Z">
                                 <rect key="frame" x="252" y="346" width="76" height="21"/>

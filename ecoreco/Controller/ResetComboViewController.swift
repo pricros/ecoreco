@@ -11,9 +11,10 @@ import UIKit
 @IBDesignable
 class ResetComboViewController: CommonViewController, UITextFieldDelegate {
     
-    var password1:Int32?
-    var password2:Int32?
+    var password1:String?
+    var password2:String?
     var bShowPassword:Bool?
+    let kMaxLength = 6
 
     @IBOutlet weak var btnLeft: UIButton!
     
@@ -26,8 +27,8 @@ class ResetComboViewController: CommonViewController, UITextFieldDelegate {
         txtPassword.delegate = self
         txtPasswordConfirm.delegate = self
         bShowPassword = false
-        txtPassword.secureTextEntry = false
-        txtPasswordConfirm.secureTextEntry = false
+        txtPassword.secureTextEntry = true
+        txtPasswordConfirm.secureTextEntry = true
     }
     
     @IBOutlet weak var txtPassword: UITextField!
@@ -59,8 +60,12 @@ class ResetComboViewController: CommonViewController, UITextFieldDelegate {
     }
     
     func addTextToCurrentTextField(unicode:String){
-        currentTextField?.text = (currentTextField?.text)!+unicode
-        
+        if (currentTextField != nil){
+            let currentCharacterCount = (currentTextField?.text)!.characters.count ?? 0
+            if (currentCharacterCount < kMaxLength){
+                currentTextField?.text = (currentTextField?.text)!+unicode
+            }
+        }
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -68,12 +73,7 @@ class ResetComboViewController: CommonViewController, UITextFieldDelegate {
         return true
     }
     
-//    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-//        txtPassword.resignFirstResponder()
-//        txtPasswordConfirm.resignFirstResponder()
-//        self.view.endEditing(true)
-//    }
-//    
+
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         textField.resignFirstResponder();
         
@@ -97,16 +97,25 @@ class ResetComboViewController: CommonViewController, UITextFieldDelegate {
         }
 
     }
-//    func textFieldDidEndEditing(textField: UITextField) {
-//        textField.borderStyle = UITextBorderStyle.None
-//        // Additional code here
-//    }
-//
-//    
-//    func textFieldDidBeginEditing(textField: UITextField) {
-//        currentTextField = textField
-//    }
+
+    @IBAction func clearText(sender: UIButton) {
+        txtPassword.text = ""
+        txtPasswordConfirm.text = ""
+        password1 = ""
+        password2 = ""
+        
+    }
     
+    @IBAction func backSpace(sender: UIButton) {
+        let currentCharacterCount = (currentTextField?.text)!.characters.count ?? 0
+        //currentTextField!.text = currentTextField!.text?.substringToIndex(Index)
+    
+    }
+    
+    @IBAction func sendComboCommand(sender: UIButton) {
+         //@todo: send the combo to target
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
