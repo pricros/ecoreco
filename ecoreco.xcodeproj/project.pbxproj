@@ -221,9 +221,9 @@
 		842DCFEC1DAE9F3000A71A8E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTableViewCell.swift; path = Cell/SearchTableViewCell.swift; sourceTree = "<group>"; };
 		842DCFEE1DAEAAE200A71A8E /* RadarEcorecoIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadarEcorecoIcon.swift; path = View/RadarEcorecoIcon.swift; sourceTree = "<group>"; };
 		842DCFF51DB3395600A71A8E /* ColorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
-		842DCFF81DB396B800A71A8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		842DCFF91DB3976900A71A8E /* ResetComboViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResetComboViewController.swift; path = Controller/ResetComboViewController.swift; sourceTree = "<group>"; };
 		842DCFFB1DB5D42300A71A8E /* SetDeviceNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetDeviceNameViewController.swift; path = Controller/SetDeviceNameViewController.swift; sourceTree = "<group>"; };
+		845D944F1DC028B40065C79D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		8492C5AA1D60D2CD0021D2FC /* PairViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairViewController.swift; sourceTree = "<group>"; };
 		84C364731D9CEF3C00AD4773 /* shop-g@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shop-g@3.png"; path = "images/shop-g@3.png"; sourceTree = "<group>"; };
 		84C364741D9CEF3C00AD4773 /* shop-w@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shop-w@3.png"; path = "images/shop-w@3.png"; sourceTree = "<group>"; };
@@ -765,7 +765,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				187B92CC1C26716600DA3BDF /* Base */,
-				842DCFF81DB396B800A71A8E /* en */,
+				845D944F1DC028B40065C79D /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
