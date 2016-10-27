@@ -12,31 +12,12 @@
 		181F4FAE1CFDBDC100B13E77 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F4FAD1CFDBDC100B13E77 /* CommonViewController.swift */; };
 		183E661A1D06C41C00E1A4E9 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E66191D06C41C00E1A4E9 /* CounterView.swift */; };
 		183E661C1D09E5BF00E1A4E9 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E661B1D09E5BE00E1A4E9 /* Event.swift */; };
-		183E661E1D0A831C00E1A4E9 /* cruiseOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 183E661D1D0A831C00E1A4E9 /* cruiseOff.png */; };
-		1876A54F1C30D6CB0016EBCA /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A54E1C30D6CB0016EBCA /* header.png */; };
-		1876A5511C30DB400016EBCA /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5501C30DB400016EBCA /* settings.png */; };
 		1876A5711C311C890016EBCA /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5701C311C890016EBCA /* back.png */; };
-		1876A5731C322EC00016EBCA /* digit_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5721C322EC00016EBCA /* digit_1.png */; };
-		1876A57E1C3238E60016EBCA /* digit_clear.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5741C3238E60016EBCA /* digit_clear.png */; };
-		1876A57F1C3238E60016EBCA /* digit_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5751C3238E60016EBCA /* digit_0.png */; };
-		1876A5801C3238E60016EBCA /* digit_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5761C3238E60016EBCA /* digit_9.png */; };
-		1876A5811C3238E60016EBCA /* digit_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5771C3238E60016EBCA /* digit_8.png */; };
-		1876A5821C3238E60016EBCA /* digit_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5781C3238E60016EBCA /* digit_7.png */; };
-		1876A5831C3238E60016EBCA /* digit_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5791C3238E60016EBCA /* digit_6.png */; };
-		1876A5841C3238E60016EBCA /* digit_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A57A1C3238E60016EBCA /* digit_5.png */; };
-		1876A5851C3238E60016EBCA /* digit_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A57B1C3238E60016EBCA /* digit_4.png */; };
-		1876A5861C3238E60016EBCA /* digit_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A57C1C3238E60016EBCA /* digit_3.png */; };
-		1876A5871C3238E60016EBCA /* digit_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A57D1C3238E60016EBCA /* digit_2.png */; };
 		1876A5A01C3265430016EBCA /* iconBattery.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5891C3265430016EBCA /* iconBattery.png */; };
 		1876A5A11C3265430016EBCA /* iconNavi.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A58A1C3265430016EBCA /* iconNavi.png */; };
-		1876A5A21C3265430016EBCA /* iconPowerOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A58B1C3265430016EBCA /* iconPowerOff.png */; };
-		1876A5A31C3265430016EBCA /* iconPowerOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A58C1C3265430016EBCA /* iconPowerOn.png */; };
 		1876A5A41C3265430016EBCA /* iconProfile.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A58D1C3265430016EBCA /* iconProfile.png */; };
 		1876A5A51C3265430016EBCA /* iconSetting.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A58E1C3265430016EBCA /* iconSetting.png */; };
 		1876A5A61C3265430016EBCA /* iconSpeed.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A58F1C3265430016EBCA /* iconSpeed.png */; };
-		1876A5A71C3265430016EBCA /* infoBattery.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5901C3265430016EBCA /* infoBattery.png */; };
-		1876A5A81C3265430016EBCA /* infoRangeEst.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5911C3265430016EBCA /* infoRangeEst.png */; };
-		1876A5A91C3265430016EBCA /* infoTrip.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5921C3265430016EBCA /* infoTrip.png */; };
 		1876A5AA1C3265430016EBCA /* lineBottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5931C3265430016EBCA /* lineBottom.png */; };
 		1876A5AC1C3265430016EBCA /* modeBoostOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5951C3265430016EBCA /* modeBoostOff.png */; };
 		1876A5AD1C3265430016EBCA /* modeBoostOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5961C3265430016EBCA /* modeBoostOn.png */; };
@@ -58,13 +39,10 @@
 		187B92D21C26716600DA3BDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187B92D01C26716600DA3BDF /* LaunchScreen.storyboard */; };
 		187B92DD1C26716600DA3BDF /* ecorecoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B92DC1C26716600DA3BDF /* ecorecoTests.swift */; };
 		187B92E81C26716600DA3BDF /* ecorecoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B92E71C26716600DA3BDF /* ecorecoUITests.swift */; };
-		187B93081C27FAAD00DA3BDF /* dash1.png in Resources */ = {isa = PBXBuildFile; fileRef = 187B93031C27FAAD00DA3BDF /* dash1.png */; };
 		18B781831C2935FE00AF0C07 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B781821C2935FE00AF0C07 /* SettingViewController.swift */; };
 		18EEF0BA1C2A3C380065AFE7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEF0B91C2A3C380065AFE7 /* MapViewController.swift */; };
 		18EEF0C81C2AFEB40065AFE7 /* NRFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEF0C71C2AFEB40065AFE7 /* NRFManager.swift */; };
 		18EEF0F81C2BF06F0065AFE7 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEF0F71C2BF06F0065AFE7 /* DashboardViewController.swift */; };
-		3C0B71581C34BDD700123C07 /* lineMiddle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0B71571C34BDD700123C07 /* lineMiddle.png */; };
-		3C0B715A1C34BDDF00123C07 /* speedMeter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0B71591C34BDDF00123C07 /* speedMeter.png */; };
 		3C460A4E1C3CAFE100FB6EB6 /* mapPoint.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C460A4D1C3CAFE100FB6EB6 /* mapPoint.png */; };
 		3CB16A6F1DADC990004C3191 /* RideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB16A6E1DADC990004C3191 /* RideViewController.swift */; };
 		3CB16A761DADCB01004C3191 /* EditScooterComboViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB16A701DADCB01004C3191 /* EditScooterComboViewController.swift */; };
@@ -80,7 +58,6 @@
 		3CEAC1F51D01353C00F29628 /* FALL-DETECT_0002_RESET.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F31D01353C00F29628 /* FALL-DETECT_0002_RESET.png */; };
 		3CEAC1F81D04015400F29628 /* lock-_0036_board-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F61D04015400F29628 /* lock-_0036_board-1.png */; };
 		3CEAC1F91D04015400F29628 /* lock-_0037_board2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F71D04015400F29628 /* lock-_0037_board2.png */; };
-		3CEAC2071D05007E00F29628 /* infoMeter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC2061D05007E00F29628 /* infoMeter.png */; };
 		8420B9131D651CA5009BA82A /* SettingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420B9121D651CA5009BA82A /* SettingCollectionViewController.swift */; };
 		842DCFD91DACCE7000A71A8E /* settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842DCFD81DACCE7000A71A8E /* settings.storyboard */; };
 		842DCFDD1DACF5E800A71A8E /* RadarCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFDC1DACF5E800A71A8E /* RadarCanvas.swift */; };
@@ -139,31 +116,12 @@
 		181F4FAD1CFDBDC100B13E77 /* CommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
 		183E66191D06C41C00E1A4E9 /* CounterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		183E661B1D09E5BE00E1A4E9 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		183E661D1D0A831C00E1A4E9 /* cruiseOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cruiseOff.png; path = images/cruiseOff.png; sourceTree = "<group>"; };
-		1876A54E1C30D6CB0016EBCA /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = header.png; path = images/header.png; sourceTree = "<group>"; };
-		1876A5501C30DB400016EBCA /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = images/settings.png; sourceTree = "<group>"; };
 		1876A5701C311C890016EBCA /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = images/back.png; sourceTree = "<group>"; };
-		1876A5721C322EC00016EBCA /* digit_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = digit_1.png; path = images/digit_1.png; sourceTree = "<group>"; };
-		1876A5741C3238E60016EBCA /* digit_clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = digit_clear.png; path = images/digit_clear.png; sourceTree = "<group>"; };
-		1876A5751C3238E60016EBCA /* digit_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = digit_0.png; path = images/digit_0.png; sourceTree = "<group>"; };
-		1876A5761C3238E60016EBCA /* digit_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = digit_9.png; path = images/digit_9.png; sourceTree = "<group>"; };
-		1876A5771C3238E60016EBCA /* digit_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = digit_8.png; path = images/digit_8.png; sourceTree = "<group>"; };
-		1876A5781C3238E60016EBCA /* digit_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = digit_7.png; path = images/digit_7.png; sourceTree = "<group>"; };
-		1876A5791C3238E60016EBCA /* digit_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = digit_6.png; path = images/digit_6.png; sourceTree = "<group>"; };
-		1876A57A1C3238E60016EBCA /* digit_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = digit_5.png; path = images/digit_5.png; sourceTree = "<group>"; };
-		1876A57B1C3238E60016EBCA /* digit_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = digit_4.png; path = images/digit_4.png; sourceTree = "<group>"; };
-		1876A57C1C3238E60016EBCA /* digit_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = digit_3.png; path = images/digit_3.png; sourceTree = "<group>"; };
-		1876A57D1C3238E60016EBCA /* digit_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = digit_2.png; path = images/digit_2.png; sourceTree = "<group>"; };
 		1876A5891C3265430016EBCA /* iconBattery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconBattery.png; path = images/iconBattery.png; sourceTree = "<group>"; };
 		1876A58A1C3265430016EBCA /* iconNavi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconNavi.png; path = images/iconNavi.png; sourceTree = "<group>"; };
-		1876A58B1C3265430016EBCA /* iconPowerOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconPowerOff.png; path = images/iconPowerOff.png; sourceTree = "<group>"; };
-		1876A58C1C3265430016EBCA /* iconPowerOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconPowerOn.png; path = images/iconPowerOn.png; sourceTree = "<group>"; };
 		1876A58D1C3265430016EBCA /* iconProfile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconProfile.png; path = images/iconProfile.png; sourceTree = "<group>"; };
 		1876A58E1C3265430016EBCA /* iconSetting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconSetting.png; path = images/iconSetting.png; sourceTree = "<group>"; };
 		1876A58F1C3265430016EBCA /* iconSpeed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconSpeed.png; path = images/iconSpeed.png; sourceTree = "<group>"; };
-		1876A5901C3265430016EBCA /* infoBattery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = infoBattery.png; path = images/infoBattery.png; sourceTree = "<group>"; };
-		1876A5911C3265430016EBCA /* infoRangeEst.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = infoRangeEst.png; path = images/infoRangeEst.png; sourceTree = "<group>"; };
-		1876A5921C3265430016EBCA /* infoTrip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = infoTrip.png; path = images/infoTrip.png; sourceTree = "<group>"; };
 		1876A5931C3265430016EBCA /* lineBottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lineBottom.png; path = images/lineBottom.png; sourceTree = "<group>"; };
 		1876A5951C3265430016EBCA /* modeBoostOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = modeBoostOff.png; path = images/modeBoostOff.png; sourceTree = "<group>"; };
 		1876A5961C3265430016EBCA /* modeBoostOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = modeBoostOn.png; path = images/modeBoostOn.png; sourceTree = "<group>"; };
@@ -191,13 +149,10 @@
 		187B92E31C26716600DA3BDF /* ecorecoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ecorecoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		187B92E71C26716600DA3BDF /* ecorecoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ecorecoUITests.swift; sourceTree = "<group>"; };
 		187B92E91C26716600DA3BDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		187B93031C27FAAD00DA3BDF /* dash1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dash1.png; path = images/dash1.png; sourceTree = "<group>"; };
 		18B781821C2935FE00AF0C07 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		18EEF0B91C2A3C380065AFE7 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		18EEF0C71C2AFEB40065AFE7 /* NRFManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRFManager.swift; sourceTree = "<group>"; };
 		18EEF0F71C2BF06F0065AFE7 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
-		3C0B71571C34BDD700123C07 /* lineMiddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lineMiddle.png; path = images/lineMiddle.png; sourceTree = "<group>"; };
-		3C0B71591C34BDDF00123C07 /* speedMeter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = speedMeter.png; path = images/speedMeter.png; sourceTree = "<group>"; };
 		3C460A4D1C3CAFE100FB6EB6 /* mapPoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mapPoint.png; path = images/mapPoint.png; sourceTree = "<group>"; };
 		3CB16A6E1DADC990004C3191 /* RideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideViewController.swift; sourceTree = "<group>"; };
 		3CB16A701DADCB01004C3191 /* EditScooterComboViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditScooterComboViewController.swift; sourceTree = "<group>"; };
@@ -213,7 +168,6 @@
 		3CEAC1F31D01353C00F29628 /* FALL-DETECT_0002_RESET.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "FALL-DETECT_0002_RESET.png"; path = "images/FALL-DETECT_0002_RESET.png"; sourceTree = "<group>"; };
 		3CEAC1F61D04015400F29628 /* lock-_0036_board-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lock-_0036_board-1.png"; path = "images/lock-_0036_board-1.png"; sourceTree = "<group>"; };
 		3CEAC1F71D04015400F29628 /* lock-_0037_board2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lock-_0037_board2.png"; path = "images/lock-_0037_board2.png"; sourceTree = "<group>"; };
-		3CEAC2061D05007E00F29628 /* infoMeter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = infoMeter.png; path = images/infoMeter.png; sourceTree = "<group>"; };
 		8420B9121D651CA5009BA82A /* SettingCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingCollectionViewController.swift; path = Controller/SettingCollectionViewController.swift; sourceTree = "<group>"; };
 		842DCFD81DACCE7000A71A8E /* settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = settings.storyboard; sourceTree = "<group>"; };
 		842DCFDC1DACF5E800A71A8E /* RadarCanvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarCanvas.swift; sourceTree = "<group>"; };
@@ -400,7 +354,6 @@
 				84C3647C1D9CEF3C00AD4773 /* ride-w@3.png */,
 				84C3647D1D9CEF3C00AD4773 /* trip-g@3.png */,
 				84C3647E1D9CEF3C00AD4773 /* trip-w@3.png */,
-				3CEAC2061D05007E00F29628 /* infoMeter.png */,
 				3CEAC1F61D04015400F29628 /* lock-_0036_board-1.png */,
 				3CEAC1F71D04015400F29628 /* lock-_0037_board2.png */,
 				3CEAC1F21D01353C00F29628 /* FALL-DETECT_0001_TEL.png */,
@@ -410,19 +363,11 @@
 				1876A5C41C3B4CEB0016EBCA /* pointer.png */,
 				1876A5BC1C3616E30016EBCA /* icon_120_120.png */,
 				1876A5BD1C3616E40016EBCA /* icon_180_180.png */,
-				3C0B71591C34BDDF00123C07 /* speedMeter.png */,
-				183E661D1D0A831C00E1A4E9 /* cruiseOff.png */,
-				3C0B71571C34BDD700123C07 /* lineMiddle.png */,
 				1876A5891C3265430016EBCA /* iconBattery.png */,
 				1876A58A1C3265430016EBCA /* iconNavi.png */,
-				1876A58B1C3265430016EBCA /* iconPowerOff.png */,
-				1876A58C1C3265430016EBCA /* iconPowerOn.png */,
 				1876A58D1C3265430016EBCA /* iconProfile.png */,
 				1876A58E1C3265430016EBCA /* iconSetting.png */,
 				1876A58F1C3265430016EBCA /* iconSpeed.png */,
-				1876A5901C3265430016EBCA /* infoBattery.png */,
-				1876A5911C3265430016EBCA /* infoRangeEst.png */,
-				1876A5921C3265430016EBCA /* infoTrip.png */,
 				1876A5931C3265430016EBCA /* lineBottom.png */,
 				1876A5951C3265430016EBCA /* modeBoostOff.png */,
 				1876A5961C3265430016EBCA /* modeBoostOn.png */,
@@ -434,21 +379,7 @@
 				1876A59C1C3265430016EBCA /* modeEkickExtendOn.png */,
 				1876A59D1C3265430016EBCA /* modeRideOff.png */,
 				1876A59E1C3265430016EBCA /* modeRideOn.png */,
-				1876A5741C3238E60016EBCA /* digit_clear.png */,
-				1876A5751C3238E60016EBCA /* digit_0.png */,
-				1876A5761C3238E60016EBCA /* digit_9.png */,
-				1876A5771C3238E60016EBCA /* digit_8.png */,
-				1876A5781C3238E60016EBCA /* digit_7.png */,
-				1876A5791C3238E60016EBCA /* digit_6.png */,
-				1876A57A1C3238E60016EBCA /* digit_5.png */,
-				1876A57B1C3238E60016EBCA /* digit_4.png */,
-				1876A57C1C3238E60016EBCA /* digit_3.png */,
-				1876A57D1C3238E60016EBCA /* digit_2.png */,
-				1876A5721C322EC00016EBCA /* digit_1.png */,
 				1876A5701C311C890016EBCA /* back.png */,
-				1876A5501C30DB400016EBCA /* settings.png */,
-				1876A54E1C30D6CB0016EBCA /* header.png */,
-				187B93031C27FAAD00DA3BDF /* dash1.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -598,47 +529,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				84C364871D9CEF3C00AD4773 /* ride-g@3.png in Resources */,
-				1876A5811C3238E60016EBCA /* digit_8.png in Resources */,
 				3C460A4E1C3CAFE100FB6EB6 /* mapPoint.png in Resources */,
 				187B92D21C26716600DA3BDF /* LaunchScreen.storyboard in Resources */,
 				84C364891D9CEF3C00AD4773 /* trip-g@3.png in Resources */,
-				1876A5731C322EC00016EBCA /* digit_1.png in Resources */,
 				3CEAC1F81D04015400F29628 /* lock-_0036_board-1.png in Resources */,
 				84E61C291DAAA4F500A83B30 /* VDS_Thin.ttf in Resources */,
-				1876A5861C3238E60016EBCA /* digit_3.png in Resources */,
 				1876A5A41C3265430016EBCA /* iconProfile.png in Resources */,
-				1876A5831C3238E60016EBCA /* digit_6.png in Resources */,
 				1876A5AF1C3265430016EBCA /* modeEcoOn.png in Resources */,
 				1876A5AA1C3265430016EBCA /* lineBottom.png in Resources */,
 				1876A5A61C3265430016EBCA /* iconSpeed.png in Resources */,
-				1876A5821C3238E60016EBCA /* digit_7.png in Resources */,
-				3C0B71581C34BDD700123C07 /* lineMiddle.png in Resources */,
 				1876A5A01C3265430016EBCA /* iconBattery.png in Resources */,
 				84C3648C1D9D18EA00AD4773 /* setting-middle-divided.png in Resources */,
 				1876A5AD1C3265430016EBCA /* modeBoostOn.png in Resources */,
 				84E61C1D1DAA7C9600A83B30 /* iconDiagnose-g.png in Resources */,
 				84C364881D9CEF3C00AD4773 /* ride-w@3.png in Resources */,
-				1876A57E1C3238E60016EBCA /* digit_clear.png in Resources */,
 				3CEAC1F11D01352D00F29628 /* FALL-DETECT_0000_FALL-DETECTED.png in Resources */,
 				1876A5C51C3B4CEB0016EBCA /* pointer.png in Resources */,
-				1876A5511C30DB400016EBCA /* settings.png in Resources */,
 				1876A5BE1C3616E40016EBCA /* icon_120_120.png in Resources */,
 				1876A5711C311C890016EBCA /* back.png in Resources */,
-				1876A5871C3238E60016EBCA /* digit_2.png in Resources */,
-				1876A5A21C3265430016EBCA /* iconPowerOff.png in Resources */,
-				1876A5A91C3265430016EBCA /* infoTrip.png in Resources */,
-				1876A54F1C30D6CB0016EBCA /* header.png in Resources */,
-				1876A5A31C3265430016EBCA /* iconPowerOn.png in Resources */,
 				1876A5A11C3265430016EBCA /* iconNavi.png in Resources */,
 				84D588F41DBC6AAE00063BD6 /* LaunchScreen.storyboard in Resources */,
 				187B92CF1C26716600DA3BDF /* Assets.xcassets in Resources */,
 				1876A5B31C3265430016EBCA /* modeEkickExtendOn.png in Resources */,
-				3CEAC2071D05007E00F29628 /* infoMeter.png in Resources */,
-				1876A5851C3238E60016EBCA /* digit_4.png in Resources */,
 				84C364811D9CEF3C00AD4773 /* security-g@3.png in Resources */,
 				1876A5B01C3265430016EBCA /* modeEkickAmplifiedOff.png in Resources */,
 				84C364851D9CEF3C00AD4773 /* bluetooth-g@3.png in Resources */,
-				183E661E1D0A831C00E1A4E9 /* cruiseOff.png in Resources */,
 				1876A5A51C3265430016EBCA /* iconSetting.png in Resources */,
 				84C364901DA2B01E00AD4773 /* restcombo-w@3.png in Resources */,
 				1876A5BF1C3616E40016EBCA /* icon_180_180.png in Resources */,
@@ -648,18 +563,14 @@
 				1876A5AC1C3265430016EBCA /* modeBoostOff.png in Resources */,
 				1876A5B41C3265430016EBCA /* modeRideOff.png in Resources */,
 				84C364801D9CEF3C00AD4773 /* shop-w@3.png in Resources */,
-				1876A5A81C3265430016EBCA /* infoRangeEst.png in Resources */,
 				3CEAC1F41D01353C00F29628 /* FALL-DETECT_0001_TEL.png in Resources */,
 				1876A5AE1C3265430016EBCA /* modeEcoOff.png in Resources */,
-				1876A5A71C3265430016EBCA /* infoBattery.png in Resources */,
 				84C364861D9CEF3C00AD4773 /* bluetooth-w@3.png in Resources */,
 				84C364831D9CEF3C00AD4773 /* safety-g@3.png in Resources */,
 				1876A5B21C3265430016EBCA /* modeEkickExtendOff.png in Resources */,
 				84E61C1E1DAA7C9600A83B30 /* iconDiagnose-gr.png in Resources */,
 				1876A5B51C3265430016EBCA /* modeRideOn.png in Resources */,
-				3C0B715A1C34BDDF00123C07 /* speedMeter.png in Resources */,
 				84C364821D9CEF3C00AD4773 /* security-w@3.png in Resources */,
-				1876A5801C3238E60016EBCA /* digit_9.png in Resources */,
 				187B92CD1C26716600DA3BDF /* Main.storyboard in Resources */,
 				842DCFD91DACCE7000A71A8E /* settings.storyboard in Resources */,
 				84E61C281DAAA4F500A83B30 /* VDS_New.ttf in Resources */,
@@ -667,9 +578,6 @@
 				84E61C271DAAA4F500A83B30 /* VDS_Bold_New.ttf in Resources */,
 				84E61C1F1DAA7C9600A83B30 /* iconDiagnose-o.png in Resources */,
 				84C3648A1D9CEF3C00AD4773 /* trip-w@3.png in Resources */,
-				1876A57F1C3238E60016EBCA /* digit_0.png in Resources */,
-				1876A5841C3238E60016EBCA /* digit_5.png in Resources */,
-				187B93081C27FAAD00DA3BDF /* dash1.png in Resources */,
 				84C3647F1D9CEF3C00AD4773 /* shop-g@3.png in Resources */,
 				1876A5B11C3265430016EBCA /* modeEkickAmplifiedOn.png in Resources */,
 			);

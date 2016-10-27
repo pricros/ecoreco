@@ -267,8 +267,7 @@
                                         <exclude reference="S1P-P2-HLf"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="20" width="600" height="27"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="RVi-cL-Ahb"/>
                                         <exclude reference="S1P-P2-HLf"/>
@@ -288,8 +287,7 @@
                                         <exclude reference="dsq-aM-Qye"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="508" y="51" width="72" height="72"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="6jw-gM-sss"/>
                                         <exclude reference="S4A-Cl-wQw"/>
@@ -307,8 +305,7 @@
                                         <exclude reference="qTN-rm-ttk"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="428" width="600" height="172"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="qTN-rm-ttk"/>
                                     </mask>
@@ -325,8 +322,7 @@
                                         <exclude reference="exC-Qa-Pyj"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="51" width="72" height="72"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="LFO-Oo-Hne"/>
                                         <include reference="exC-Qa-Pyj"/>
@@ -348,7 +344,7 @@
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="81" width="600" height="8"/>
+                                            <rect key="frame" x="0.0" y="110" width="400" height="8"/>
                                             <mask key="constraints">
                                                 <exclude reference="VRN-re-ZWm"/>
                                                 <include reference="b3W-4q-T1C"/>
@@ -358,35 +354,35 @@
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HyR-Vj-CnV">
                                         <rect key="frame" x="0.0" y="446" width="600" height="90"/>
                                         <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="2" width="600" height="77"/>
+                                            <rect key="frame" x="0.0" y="2" width="400" height="103"/>
                                         </variation>
                                     </scrollView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X24-NT-eE5">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <state key="normal" backgroundImage="info-short"/>
                                         <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="8" y="91" width="120" height="48"/>
+                                            <rect key="frame" x="8" y="120" width="80" height="63"/>
                                         </variation>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNz-X6-j2j">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <state key="normal" backgroundImage="info-short"/>
                                         <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="143" y="91" width="120" height="48"/>
+                                            <rect key="frame" x="103" y="120" width="80" height="63"/>
                                         </variation>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIS-aX-O9g">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <state key="normal" backgroundImage="info-long"/>
                                         <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="495" y="91" width="99" height="48"/>
+                                            <rect key="frame" x="295" y="120" width="99" height="63"/>
                                         </variation>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IzL-Jb-SoW">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <state key="normal" backgroundImage="info-long"/>
                                         <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="360" y="91" width="120" height="48"/>
+                                            <rect key="frame" x="200" y="120" width="80" height="63"/>
                                         </variation>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="es8-iF-Hgx">
@@ -395,7 +391,7 @@
                                         <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="108" y="107" width="16" height="19"/>
+                                            <rect key="frame" x="68" y="151" width="12" height="18"/>
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Battery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btk-oR-Tva">
@@ -404,7 +400,7 @@
                                         <color key="textColor" red="0.56862745100000001" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="47" y="141" width="42" height="16"/>
+                                            <rect key="frame" x="29" y="185" width="39" height="15"/>
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Range Est." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufn-VQ-8LO">
@@ -413,7 +409,7 @@
                                         <color key="textColor" red="0.56862745100000001" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="172" y="141" width="63" height="16"/>
+                                            <rect key="frame" x="116" y="185" width="56" height="15"/>
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dli-Fp-vgM">
@@ -422,7 +418,7 @@
                                         <color key="textColor" red="0.56862745100000001" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="410" y="141" width="21" height="16"/>
+                                            <rect key="frame" x="232" y="185" width="18" height="15"/>
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Odometer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ba4-xL-uvZ">
@@ -431,7 +427,7 @@
                                         <color key="textColor" red="0.56862745100000001" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="515" y="141" width="59" height="16"/>
+                                            <rect key="frame" x="319" y="185" width="52" height="15"/>
                                         </variation>
                                     </label>
                                 </subviews>
@@ -578,8 +574,7 @@
                                         <exclude reference="Zme-o5-djp"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="430" width="600" height="170"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="m5a-Ip-goD"/>
                                         <include reference="HyR-Vj-CnV"/>
@@ -669,8 +664,7 @@
                                         <exclude reference="qEA-4t-dni"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="225" y="51" width="150" height="72"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="Asr-Bb-MhU"/>
                                         <exclude reference="qEA-4t-dni"/>
@@ -680,7 +674,7 @@
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ibO-3v-nCz" customClass="CounterView" customModule="ecoreco" customModuleProvider="target">
                                 <rect key="frame" x="152" y="119" width="295" height="293"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speedMeter.png" translatesAutoresizingMaskIntoConstraints="NO" id="W6q-aP-fbL">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speedMeter" translatesAutoresizingMaskIntoConstraints="NO" id="W6q-aP-fbL">
                                         <rect key="frame" x="160" y="126" width="280" height="280"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="W6q-aP-fbL" secondAttribute="height" multiplier="1:1" id="f7c-iy-lQy"/>
@@ -691,8 +685,7 @@
                                                 <exclude reference="zRF-jX-DN8"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="540" height="540"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <exclude reference="f7c-iy-lQy"/>
                                                 <include reference="zRF-jX-DN8"/>
@@ -724,8 +717,7 @@
                                                 <exclude reference="kwY-xF-FAB"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="162" y="157" width="216" height="226"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="4tB-s5-LB8"/>
                                             </mask>
@@ -734,9 +726,6 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eox-p4-Ygm">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <state key="normal" image="unlock"/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="262" y="520" width="16" height="22"/>
-                                        </variation>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -791,8 +780,7 @@
                                         <exclude reference="xUm-da-e05"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="30" y="133" width="540" height="540"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="W6q-aP-fbL"/>
                                         <include reference="eb6-Nc-FB9"/>
@@ -3429,7 +3417,7 @@
         <image name="reset-combo" width="462" height="228"/>
         <image name="right-g-rstCmb" width="82" height="82"/>
         <image name="right-w-rstCmb" width="82" height="82"/>
-        <image name="speedMeter.png" width="1051" height="991"/>
+        <image name="speedMeter" width="350" height="330"/>
         <image name="thermometer-g" width="49" height="95"/>
         <image name="uncheck-rstCmb" width="29" height="29"/>
         <image name="unlock" width="16" height="21"/>
