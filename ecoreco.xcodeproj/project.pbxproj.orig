@@ -79,11 +79,14 @@
 		842DCFF61DB3395600A71A8E /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFF51DB3395600A71A8E /* ColorUtil.swift */; };
 		842DCFFA1DB3976900A71A8E /* ResetComboViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFF91DB3976900A71A8E /* ResetComboViewController.swift */; };
 		842DCFFC1DB5D42400A71A8E /* SetDeviceNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFFB1DB5D42300A71A8E /* SetDeviceNameViewController.swift */; };
+<<<<<<< HEAD
 		84850A591DC7ABD000FA8F1D /* SlowDownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84850A581DC7ABD000FA8F1D /* SlowDownViewController.swift */; };
 		84850A5B1DC7AE9100FA8F1D /* HelmetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84850A5A1DC7AE9100FA8F1D /* HelmetViewController.swift */; };
 		84850A8A1DCA353B00FA8F1D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84850A8C1DCA353B00FA8F1D /* InfoPlist.strings */; };
 		84850A931DCAEBAC00FA8F1D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84850A921DCAEBAC00FA8F1D /* Constants.swift */; };
+=======
 		845D94941DC1E73B0065C79D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D94931DC1E73B0065C79D /* LoginViewController.swift */; };
+>>>>>>> ec755f2... add login view and view controller
 		8492C5AB1D60D2CD0021D2FC /* PairViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492C5AA1D60D2CD0021D2FC /* PairViewController.swift */; };
 		84C3647F1D9CEF3C00AD4773 /* shop-g@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C364731D9CEF3C00AD4773 /* shop-g@3.png */; };
 		84C364801D9CEF3C00AD4773 /* shop-w@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C364741D9CEF3C00AD4773 /* shop-w@3.png */; };
@@ -207,6 +210,7 @@
 		842DCFF91DB3976900A71A8E /* ResetComboViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResetComboViewController.swift; path = Controller/ResetComboViewController.swift; sourceTree = "<group>"; };
 		842DCFFB1DB5D42300A71A8E /* SetDeviceNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetDeviceNameViewController.swift; path = Controller/SetDeviceNameViewController.swift; sourceTree = "<group>"; };
 		845D944F1DC028B40065C79D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		84850A581DC7ABD000FA8F1D /* SlowDownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlowDownViewController.swift; path = Controller/SlowDownViewController.swift; sourceTree = "<group>"; };
 		84850A5A1DC7AE9100FA8F1D /* HelmetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelmetViewController.swift; sourceTree = "<group>"; };
 		84850A831DCA330300FA8F1D /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -215,7 +219,9 @@
 		84850A8D1DCA354C00FA8F1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		84850A8E1DCA354E00FA8F1D /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		84850A921DCAEBAC00FA8F1D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+=======
 		845D94931DC1E73B0065C79D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controller/LoginViewController.swift; sourceTree = "<group>"; };
+>>>>>>> ec755f2... add login view and view controller
 		8492C5AA1D60D2CD0021D2FC /* PairViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairViewController.swift; sourceTree = "<group>"; };
 		84C364731D9CEF3C00AD4773 /* shop-g@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shop-g@3.png"; path = "images/shop-g@3.png"; sourceTree = "<group>"; };
 		84C364741D9CEF3C00AD4773 /* shop-w@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shop-w@3.png"; path = "images/shop-w@3.png"; sourceTree = "<group>"; };
@@ -280,8 +286,11 @@
 		1863F3981CF4160F00B21266 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				3C6DBF731DCB1A6A00F097F0 /* UserProfileTableViewController.swift */,
+=======
 				845D94931DC1E73B0065C79D /* LoginViewController.swift */,
+>>>>>>> ec755f2... add login view and view controller
 				3CB16A7C1DADFDE9004C3191 /* ShopViewController.swift */,
 				3CB16A701DADCB01004C3191 /* EditScooterComboViewController.swift */,
 				3CB16A711DADCB01004C3191 /* SafetyViewController.swift */,
@@ -691,8 +700,11 @@
 				18EEF0F81C2BF06F0065AFE7 /* DashboardViewController.swift in Sources */,
 				842DCFDD1DACF5E800A71A8E /* RadarCanvas.swift in Sources */,
 				8492C5AB1D60D2CD0021D2FC /* PairViewController.swift in Sources */,
+<<<<<<< HEAD
 				3C642D8E1DD2F8240032BEC5 /* UserProfile+CoreDataProperties.swift in Sources */,
+=======
 				845D94941DC1E73B0065C79D /* LoginViewController.swift in Sources */,
+>>>>>>> ec755f2... add login view and view controller
 				842DCFF61DB3395600A71A8E /* ColorUtil.swift in Sources */,
 				3C642D8B1DD2F8240032BEC5 /* DeviceTrip+CoreDataClass.swift in Sources */,
 				183E661C1D09E5BF00E1A4E9 /* Event.swift in Sources */,
