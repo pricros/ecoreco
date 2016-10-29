@@ -36,12 +36,12 @@ class FallViewController: CommonViewController {
         self.modalPresentationStyle = .Custom
         
         //add tpa action to imgReset
-        let tapGestureRecognizerImgBack = UITapGestureRecognizer(target: self, action:Selector("tappedBack"))
+        let tapGestureRecognizerImgBack = UITapGestureRecognizer(target: self, action:#selector(FallViewController.tappedBack))
         imgBack.userInteractionEnabled = true
         imgBack.addGestureRecognizer(tapGestureRecognizerImgBack)
         
         //add tpa action to imgCall
-        let tapGestureRecognizerImgCall = UITapGestureRecognizer(target: self, action:Selector("tappedCall"))
+        let tapGestureRecognizerImgCall = UITapGestureRecognizer(target: self, action:#selector(FallViewController.tappedCall))
         imgCall.userInteractionEnabled = true
         imgCall.addGestureRecognizer(tapGestureRecognizerImgCall)
         
@@ -50,7 +50,7 @@ class FallViewController: CommonViewController {
         self.limitSec = userDefaults.integerForKey("ecoreco_fall_limitSec")
         print("limitSec=\(limitSec)")
         self.callTimer = NSTimer.scheduledTimerWithTimeInterval(
-            1, target : self, selector : Selector("showCounter"), userInfo : nil, repeats : true)
+            1, target : self, selector : #selector(FallViewController.showCounter), userInfo : nil, repeats : true)
         
         //        let limitSec = userDefaults.integerForKey("ecoreco_fall_limitSec")
         //        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT

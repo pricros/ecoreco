@@ -37,7 +37,7 @@ let π:CGFloat = CGFloat(M_PI)
         let endAngle: CGFloat =  π * (1 + 1 / 25 * CGFloat(speed))
         
         // 5
-        var path = UIBezierPath(arcCenter: center,
+        let path = UIBezierPath(arcCenter: center,
                                 radius: radius/2 - 24,
                                 startAngle: startAngle,
                                 endAngle: endAngle,

@@ -31,7 +31,7 @@ class SearchTableViewController: CommonViewController, UITableViewDataSource, UI
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = self.searchTableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! SearchTableViewCell
+        let cell = self.searchTableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! SearchTableViewCell
         cell.buttonDeviceListItem.userInteractionEnabled = true
        // cell.buttonDeviceListItem.setBackgroundImage(UIImage(named: "bgDevice"), forState: .Normal)
         cell.buttonDeviceListItem.setTitleColor(ColorUtil.hexStringToUIColor("0x8d8d8d"), forState: UIControlState.Normal)
@@ -39,7 +39,7 @@ class SearchTableViewController: CommonViewController, UITableViewDataSource, UI
         cell.buttonDeviceListItem.setTitleColor(ColorUtil.hexStringToUIColor("0x91aa00"), forState:UIControlState.Selected)
         cell.buttonDeviceListItem.setTitle(name[indexPath.row], forState: .Normal)
         cell.buttonDeviceListItem.setTitle(name[indexPath.row], forState: .Highlighted)
-        cell.buttonDeviceListItem.addTarget(self, action:  "deviceClicked:", forControlEvents: .TouchUpInside)
+        cell.buttonDeviceListItem.addTarget(self, action:  #selector(SearchTableViewController.deviceClicked(_:)), forControlEvents: .TouchUpInside)
        
         
         

@@ -490,15 +490,18 @@
 					187B92C31C26716500DA3BDF = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = 3TCWNJDF99;
+						LastSwiftMigration = 0810;
 					};
 					187B92D71C26716600DA3BDF = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = 3TCWNJDF99;
+						LastSwiftMigration = 0810;
 						TestTargetID = 187B92C31C26716500DA3BDF;
 					};
 					187B92E21C26716600DA3BDF = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = 3TCWNJDF99;
+						LastSwiftMigration = 0810;
 						TestTargetID = 187B92C31C26716500DA3BDF;
 					};
 				};
@@ -783,6 +786,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -799,6 +803,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -810,6 +815,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeez.jacky.ecorecoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ecoreco.app/ecoreco";
 			};
 			name = Debug;
@@ -822,6 +828,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeez.jacky.ecorecoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ecoreco.app/ecoreco";
 			};
 			name = Release;
@@ -833,6 +840,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeez.jacky.ecorecoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = ecoreco;
 				USES_XCTRUNNER = YES;
 			};
@@ -845,6 +853,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeez.jacky.ecorecoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = ecoreco;
 				USES_XCTRUNNER = YES;
 			};

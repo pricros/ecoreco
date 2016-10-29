@@ -98,16 +98,16 @@ class ScooterModel:NSObject, NRFManagerDelegate{
         super.init()
         nrfManager = NRFManager(
             onConnect: {
-                self.log("\(__FILE__) \(__LINE__) \nC: ★ Connected")
+                self.log("\(#file) \(#line) \nC: ★ Connected")
                 self.getDashboardInfo()
             },
             onDisconnect: {
-                self.log("\(__FILE__) \(__LINE__) \nC: ★ Disconnected")
+                self.log("\(#file) \(#line) \nC: ★ Disconnected")
                 self.status = ScooterStatus.None
             },
             onData: {
                 (data:NSData?, string:String?)->() in
-                self.log("\(__FILE__) \(__LINE__) \nC: ⬇ Received data - String: \(string) - Data: \(data)")
+                self.log("\(#file) \(#line) \nC: ⬇ Received data - String: \(string) - Data: \(data)")
                 // parsing data and call relative delegate method
                 if let rtnString = string {
                     let rtnCmd = (rtnString as NSString).substringToIndex(3)
@@ -172,7 +172,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
                         self.lockStatus.setNeedAck(false)
                         break
                     case self.BATT:
-                        var batt:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,3)))!
+                        let batt:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,3)))!
                         self.bat.set(batt)
                         self.bat.setNeedAck(false)
 
@@ -199,7 +199,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     func sendData(string:String)
     {
         let result = self.nrfManager.writeString(string)
-        log("\(__FILE__) \(__LINE__) \n⬆ Sent string: \(string) - Result: \(result)")
+        log("\(#file) \(#line) \n⬆ Sent string: \(string) - Result: \(result)")
     }
     
     func setMode(scooterMode:ScooterRunMode)->Bool

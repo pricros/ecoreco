@@ -24,13 +24,13 @@ class SettingViewController: CommonViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         
         //add tpa action to imgBack
-        let tapGestureRecognizerImgBack = UITapGestureRecognizer(target: self, action:Selector("tappedBack"))
+        let tapGestureRecognizerImgBack = UITapGestureRecognizer(target: self, action:#selector(SettingViewController.tappedBack))
         imgBack.userInteractionEnabled = true
         imgBack.addGestureRecognizer(tapGestureRecognizerImgBack)
     
         
         //add tpa action to imgUserProfile
-        let tapGestureRecognizerImgUserProfile = UITapGestureRecognizer(target: self, action:Selector("tappedUserProfile"))
+        let tapGestureRecognizerImgUserProfile = UITapGestureRecognizer(target: self, action:#selector(SettingViewController.tappedUserProfile))
         imgUserProfile.userInteractionEnabled = true
         imgUserProfile.addGestureRecognizer(tapGestureRecognizerImgUserProfile)
 

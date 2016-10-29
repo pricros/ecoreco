@@ -48,7 +48,7 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         
         //add tpa action to [Setting]
-        let tapGestureRecognizerSetting = UITapGestureRecognizer(target: self, action:Selector("tappedSetting"))
+        let tapGestureRecognizerSetting = UITapGestureRecognizer(target: self, action:#selector(DashboardViewController.tappedSetting))
         imgViewSetting.userInteractionEnabled = true
         imgViewSetting.addGestureRecognizer(tapGestureRecognizerSetting)
 
@@ -60,7 +60,7 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
 
         
         //add tpa action to [Profile]
-        let tapGestureRecognizerProfile = UITapGestureRecognizer(target: self, action:Selector("tappedProfile"))
+        let tapGestureRecognizerProfile = UITapGestureRecognizer(target: self, action:#selector(DashboardViewController.tappedProfile))
         imgViewProfile.userInteractionEnabled = true
         imgViewProfile.addGestureRecognizer(tapGestureRecognizerProfile)
 
@@ -300,7 +300,7 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
             //button.backgroundColor = UIColor.grayColor()
             
             button.tag = i
-            button.addTarget(self, action: "modePressed:", forControlEvents: .TouchUpInside)
+            button.addTarget(self, action: #selector(DashboardViewController.modePressed(_:)), forControlEvents: .TouchUpInside)
             
             buttonView.addSubview(button)
         }
