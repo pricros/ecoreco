@@ -28,12 +28,37 @@ class PairViewController: CommonViewController {
         //do search BLE device number x
 
         //draw x ecoreco items
+        drawEcorecoItem(100, y: 200, lableName: "A")
+        drawEcorecoItem(100, y: 100, lableName: "B")
+        drawEcorecoItem(300, y: 200, lableName: "C")
+
 
 
     }
     
     func tapIcon(){
          self.performSegueWithIdentifier("seguePairToLock", sender: nil)
+    }
+    
+    func drawEcorecoItem(x:CGFloat, y:CGFloat, lableName:String){
+        //new a view
+        var buttonView = UIView(frame: CGRectMake(x,y,100,100))
+        
+        //add button, lable to the view
+        let lbEcoreco = UILabel(frame:CGRect(x: 0, y:0, width:44, height:15))
+        lbEcoreco.text = lableName
+        lbEcoreco.font = ColorUtil.FONT_VDS_T3
+        lbEcoreco.textAlignment = NSTextAlignment.Center
+        
+        let btnEcoreco = UIButton(frame:CGRect(x: 0, y:15, width:44, height:30))
+        btnEcoreco.setBackgroundImage(UIImage(named:"iconEcoreco"), forState: .Normal)
+        btnEcoreco.setBackgroundImage(UIImage(named:"iconEcoreco-g"), forState: .Selected)
+        btnEcoreco.setBackgroundImage(UIImage(named:"iconEcoreco-g"), forState: .Focused)
+        btnEcoreco.contentMode = UIViewContentMode.ScaleAspectFit
+
+        buttonView.addSubview(lbEcoreco)
+        buttonView.addSubview(btnEcoreco)
+        radarView.addSubview(buttonView)
     }
 
 

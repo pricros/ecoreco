@@ -43,26 +43,6 @@
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1GR-gK-5Gq" customClass="RadarCanvas" customModule="ecoreco" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="104.66666666666666" width="414" height="414"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LSM-uL-bcx" customClass="RadarEcorecoIcon" customModule="ecoreco" customModuleProvider="target">
-                                        <rect key="frame" x="240" y="13" width="70" height="79"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vMW-ws-4fZ">
-                                                <rect key="frame" x="8" y="26" width="54" height="45"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UE-A9-tTd">
-                                                <rect key="frame" x="14" y="-3" width="42" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </view>
-                                </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1GR-gK-5Gq" secondAttribute="height" multiplier="1:1" id="Ioe-S5-3fs"/>
@@ -207,7 +187,6 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="labelSearch" destination="HpR-8Q-st4" id="7nE-mZ-ufC"/>
-                        <outlet property="radarEcorecoIcon" destination="LSM-uL-bcx" id="mXp-rn-5o5"/>
                         <outlet property="radarView" destination="1GR-gK-5Gq" id="lHp-wp-djr"/>
                     </connections>
                 </viewController>
