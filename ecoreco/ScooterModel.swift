@@ -37,22 +37,13 @@ public enum ScooterStatus {
     case None
 }
 
-//protocol EnumCollection : Hashable {}
-//extension EnumCollection {
-//    static func cases() -> AnySequence<Self> {
-//        typealias S = Self
-//        return AnySequence { () -> AnyGenerator<S> in
-//            var raw = 0
-//            return AnyGenerator {
-//                let current : Self = withUnsafePointer(&raw) { UnsafePointer($0).memory }
-//                guard current.hashValue == raw else { return nil }
-//                raw += 1
-//                return current
-//            }
-//        }
-//    }
-//}
-
+func iterateEnum<T: Hashable>(_: T.Type) -> AnyGenerator<T> {
+    var i = 0
+    return anyGenerator {
+        let next = withUnsafePointer(&i) { UnsafePointer<T>($0).memory }
+        return next.hashValue == i++ ? next : nil
+    }
+}
 
 protocol ScooterModelRunProtocol:class{
     func onSpeedReceived(speed:Int)
@@ -232,27 +223,27 @@ class ScooterModel:NSObject, NRFManagerDelegate{
         let mode:Int = self.userDefaults.integerForKey(self.MODE)
         self.mode.set(mode)
         
-//        for tripType in Array(OdoTripType.cases()) {
-//            let odoDistance:Int = self.userDefaults.integerForKey(self.ODO+UnitType.KM.rawValue+tripType)
-//      
-//            switch tripType {
-//            case OdoTripType.TotalDistanceTraveled.rawValue:
-//                self.odkTotal.set(odoDistance)
-//                break
-//            case OdoTripType.TripMeterADistance.rawValue:
-//                self.odkA.set(odoDistance)
-//                break
-//            case OdoTripType.TripMeterBDistance.rawValue:
-//                self.odkB.set(odoDistance)
-//                break
-//            case OdoTripType.TurnOnDistance.rawValue:
-//                self.odkTurnOn.set(odoDistance)
-//                break
-//            default:
-//                break
-//            }
+        for tripType in iterateEnum(OdoTripType) {
+            let odoDistance:Int = self.userDefaults.integerForKey(self.ODO+UnitType.KM.rawValue+tripType.rawValue)
+      
+            switch tripType.rawValue {
+            case OdoTripType.TotalDistanceTraveled.rawValue:
+                self.odkTotal.set(odoDistance)
+                break
+            case OdoTripType.TripMeterADistance.rawValue:
+                self.odkA.set(odoDistance)
+                break
+            case OdoTripType.TripMeterBDistance.rawValue:
+                self.odkB.set(odoDistance)
+                break
+            case OdoTripType.TurnOnDistance.rawValue:
+                self.odkTurnOn.set(odoDistance)
+                break
+            default:
+                break
+            }
 
-//        }
+        }
         
 
         // case ODO+UnitType.Miles:
