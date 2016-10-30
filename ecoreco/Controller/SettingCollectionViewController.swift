@@ -80,7 +80,7 @@ class SettingCollectionViewController:
     
     func collectionView(collectionView : UICollectionView,layout collectionViewLayout:UICollectionViewLayout,sizeForItemAtIndexPath indexPath:NSIndexPath) -> CGSize
     {
-        var cellSize:CGSize = CGSizeMake(self.view.frame.width/3, self.view.frame.width/3)
+        let cellSize:CGSize = CGSizeMake(self.view.frame.width/3, self.view.frame.width/3)
         return cellSize
     }
 
@@ -121,7 +121,7 @@ class SettingCollectionViewController:
         
         //add by eva
         imageView?.userInteractionEnabled = true
-        let tapGestureRecognizer = MyTapGestureRecognizer(target: self, action: "tappedSettings:")
+        let tapGestureRecognizer = MyTapGestureRecognizer(target: self, action: #selector(SettingCollectionViewController.tappedSettings(_:)))
         tapGestureRecognizer.index = indexPath.row
         imageView?.addGestureRecognizer(tapGestureRecognizer)
 

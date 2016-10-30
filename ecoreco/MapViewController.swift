@@ -53,7 +53,7 @@ class MapViewController: CommonViewController, MKMapViewDelegate, CLLocationMana
         self.locationManager.startUpdatingLocation()
         
         //add tpa action to imageView
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action:Selector("tappedImage"))
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(MapViewController.tappedImage))
         imgViewDashBoard.userInteractionEnabled = true
         imgViewDashBoard.addGestureRecognizer(tapGestureRecognizer)
     }

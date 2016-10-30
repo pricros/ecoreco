@@ -30,7 +30,7 @@ class RadarCanvas: UIView {
         let startAngle: CGFloat =  π*5/8
         let endAngle: CGFloat =  π*3/8
         // 5
-        var path = UIBezierPath(arcCenter: center,
+        let path = UIBezierPath(arcCenter: center,
                                 radius: radius/2 - 24,
                                 startAngle: startAngle,
                                 endAngle: endAngle,
