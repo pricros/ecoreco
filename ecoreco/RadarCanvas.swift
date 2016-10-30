@@ -17,9 +17,8 @@ class RadarCanvas: UIView {
     override func drawRect(rect: CGRect) {
         // Drawing code
         
-        let adjustDistance:CGFloat = 22
-        let circleWidth = self.frame.height - adjustDistance
-        // 1
+        let adjustDistance:CGFloat = 20
+                // 1
         let π:CGFloat = CGFloat(M_PI)
         let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
         // 3
@@ -27,11 +26,11 @@ class RadarCanvas: UIView {
         // 2
         let radius: CGFloat = max(bounds.width, bounds.height) - arcWidth
         // 4
-        let startAngle: CGFloat =  π*5/8
-        let endAngle: CGFloat =  π*3/8
+        let startAngle: CGFloat =  π*5/8  // left 22.5
+        let endAngle: CGFloat =  π*3/8  // right 22.5
         // 5
         let path = UIBezierPath(arcCenter: center,
-                                radius: radius/2 - 24,
+                                radius: radius/2 - adjustDistance,
                                 startAngle: startAngle,
                                 endAngle: endAngle,
                                 clockwise: true)
