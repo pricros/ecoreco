@@ -37,6 +37,22 @@ public enum ScooterStatus {
     case None
 }
 
+//protocol EnumCollection : Hashable {}
+//extension EnumCollection {
+//    static func cases() -> AnySequence<Self> {
+//        typealias S = Self
+//        return AnySequence { () -> AnyGenerator<S> in
+//            var raw = 0
+//            return AnyGenerator {
+//                let current : Self = withUnsafePointer(&raw) { UnsafePointer($0).memory }
+//                guard current.hashValue == raw else { return nil }
+//                raw += 1
+//                return current
+//            }
+//        }
+//    }
+//}
+
 
 protocol ScooterModelRunProtocol:class{
     func onSpeedReceived(speed:Int)
@@ -59,6 +75,8 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     private var status:ScooterStatus?
     
     static let sharedInstance = ScooterModel()
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+
     
     let speed = Observable<Int>(0)
     let mode = Observable<Int>(0)
@@ -96,6 +114,9 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     
     override init(){
         super.init()
+        
+        loadDashboardDatafromUserDefault()
+        
         nrfManager = NRFManager(
             onConnect: {
                 self.log("\(#file) \(#line) \nC: ★ Connected")
@@ -117,6 +138,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
                     case self.MODE :
                         let mode:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,1)))!
                         self.mode.set(mode)
+                        self.userDefaults.setInteger(mode, forKey: self.MODE)
                         self.mode.setNeedAck(false)
                         break
                     case self.MPH:
@@ -146,6 +168,8 @@ class ScooterModel:NSObject, NRFManagerDelegate{
                             
                         }
                         
+                        self.userDefaults.setInteger(odoDistance, forKey: self.ODO+UnitType.KM.rawValue+odoType)
+                        
                         break
                    // case ODO+UnitType.Miles:
 //                    case ODORES:
@@ -153,6 +177,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
                     case self.ESTIMATE+UnitType.KM.rawValue:
                         let rmm:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,3)))!
                         self.rmm.set(rmm)
+                        self.userDefaults.setInteger(rmm, forKey: self.ESTIMATE+UnitType.KM.rawValue)
                         break
                     case self.ARR:
                         self.alrStatus.set(0)
@@ -170,17 +195,22 @@ class ScooterModel:NSObject, NRFManagerDelegate{
                         let lockStatus:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,1)))!
                         self.lockStatus.set(lockStatus)
                         self.lockStatus.setNeedAck(false)
+                        self.userDefaults.setInteger(lockStatus, forKey: self.LOCK)
+
                         break
                     case self.BATT:
                         let batt:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,3)))!
                         self.bat.set(batt)
                         self.bat.setNeedAck(false)
+                        self.userDefaults.setInteger(batt, forKey: self.BATT)
 
                         break
 //                    case VER:
                     default:
                         break
                     }
+                    
+                    self.userDefaults.synchronize()
                     
                 }
             },
@@ -194,6 +224,50 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     func log(string:String)
     {
         print(string)
+    }
+    
+    func loadDashboardDatafromUserDefault()
+    {
+        
+        let mode:Int = self.userDefaults.integerForKey(self.MODE)
+        self.mode.set(mode)
+        
+//        for tripType in Array(OdoTripType.cases()) {
+//            let odoDistance:Int = self.userDefaults.integerForKey(self.ODO+UnitType.KM.rawValue+tripType)
+//      
+//            switch tripType {
+//            case OdoTripType.TotalDistanceTraveled.rawValue:
+//                self.odkTotal.set(odoDistance)
+//                break
+//            case OdoTripType.TripMeterADistance.rawValue:
+//                self.odkA.set(odoDistance)
+//                break
+//            case OdoTripType.TripMeterBDistance.rawValue:
+//                self.odkB.set(odoDistance)
+//                break
+//            case OdoTripType.TurnOnDistance.rawValue:
+//                self.odkTurnOn.set(odoDistance)
+//                break
+//            default:
+//                break
+//            }
+
+//        }
+        
+
+        // case ODO+UnitType.Miles:
+        //                    case ODORES:
+        //                    case ESTIMATE+UnitType.Miles:
+        
+        let rmm:Int = self.userDefaults.integerForKey(self.ESTIMATE+UnitType.KM.rawValue)
+        self.rmm.set(rmm)
+        
+        let lock:Int = self.userDefaults.integerForKey(self.LOCK)
+        self.lockStatus.set(lock)
+        
+        let batt:Int = self.userDefaults.integerForKey(self.BATT)
+        self.bat.set(batt)
+        
     }
     
     func sendData(string:String)
