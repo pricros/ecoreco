@@ -65,6 +65,7 @@
 		842DCFF61DB3395600A71A8E /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFF51DB3395600A71A8E /* ColorUtil.swift */; };
 		842DCFFA1DB3976900A71A8E /* ResetComboViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFF91DB3976900A71A8E /* ResetComboViewController.swift */; };
 		842DCFFC1DB5D42400A71A8E /* SetDeviceNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFFB1DB5D42300A71A8E /* SetDeviceNameViewController.swift */; };
+		84850A591DC7ABD000FA8F1D /* SlowDownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84850A581DC7ABD000FA8F1D /* SlowDownViewController.swift */; };
 		8492C5AB1D60D2CD0021D2FC /* PairViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492C5AA1D60D2CD0021D2FC /* PairViewController.swift */; };
 		84C3647F1D9CEF3C00AD4773 /* shop-g@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C364731D9CEF3C00AD4773 /* shop-g@3.png */; };
 		84C364801D9CEF3C00AD4773 /* shop-w@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C364741D9CEF3C00AD4773 /* shop-w@3.png */; };
@@ -174,6 +175,7 @@
 		842DCFF91DB3976900A71A8E /* ResetComboViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResetComboViewController.swift; path = Controller/ResetComboViewController.swift; sourceTree = "<group>"; };
 		842DCFFB1DB5D42300A71A8E /* SetDeviceNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetDeviceNameViewController.swift; path = Controller/SetDeviceNameViewController.swift; sourceTree = "<group>"; };
 		845D944F1DC028B40065C79D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		84850A581DC7ABD000FA8F1D /* SlowDownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlowDownViewController.swift; path = Controller/SlowDownViewController.swift; sourceTree = "<group>"; };
 		8492C5AA1D60D2CD0021D2FC /* PairViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairViewController.swift; sourceTree = "<group>"; };
 		84C364731D9CEF3C00AD4773 /* shop-g@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shop-g@3.png"; path = "images/shop-g@3.png"; sourceTree = "<group>"; };
 		84C364741D9CEF3C00AD4773 /* shop-w@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shop-w@3.png"; path = "images/shop-w@3.png"; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				842DCFF91DB3976900A71A8E /* ResetComboViewController.swift */,
 				842DCFFB1DB5D42300A71A8E /* SetDeviceNameViewController.swift */,
 				84D588F11DB6B5DF00063BD6 /* DiagnoseViewController.swift */,
+				84850A581DC7ABD000FA8F1D /* SlowDownViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				181F4FAE1CFDBDC100B13E77 /* CommonViewController.swift in Sources */,
+				84850A591DC7ABD000FA8F1D /* SlowDownViewController.swift in Sources */,
 				3CB16A7A1DADCB01004C3191 /* TripViewController.swift in Sources */,
 				3CB16A7D1DADFDE9004C3191 /* ShopViewController.swift in Sources */,
 				187B92CA1C26716500DA3BDF /* ViewController.swift in Sources */,

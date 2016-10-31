@@ -2324,6 +2324,43 @@
             </objects>
             <point key="canvasLocation" x="-541.5" y="564.75"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="IQU-ci-1Iy">
+            <objects>
+                <viewController id="hbJ-rV-f24" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="es5-nF-aXe"/>
+                        <viewControllerLayoutGuide type="bottom" id="U6u-GF-yXE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qgt-bx-a07">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slowdown" translatesAutoresizingMaskIntoConstraints="NO" id="x9I-oC-eWm">
+                                <rect key="frame" x="96" y="222.66666666666663" width="223.33333333333331" height="291"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slow Down" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5W2-Xc-lSL">
+                                <rect key="frame" x="123.66666666666669" y="182.66666666666666" width="167.66666666666663" height="40"/>
+                                <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="36"/>
+                                <color key="textColor" red="0.80000000000000004" green="0.43529411759999997" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5W2-Xc-lSL" firstAttribute="centerX" secondItem="qgt-bx-a07" secondAttribute="centerX" id="0Wj-my-esE"/>
+                            <constraint firstItem="x9I-oC-eWm" firstAttribute="centerX" secondItem="qgt-bx-a07" secondAttribute="centerX" id="BzX-Qj-adM"/>
+                            <constraint firstItem="x9I-oC-eWm" firstAttribute="top" secondItem="5W2-Xc-lSL" secondAttribute="bottom" id="UJl-uG-PjM"/>
+                            <constraint firstItem="x9I-oC-eWm" firstAttribute="top" secondItem="5W2-Xc-lSL" secondAttribute="bottom" id="lpS-BS-glt"/>
+                            <constraint firstItem="x9I-oC-eWm" firstAttribute="width" secondItem="qgt-bx-a07" secondAttribute="width" multiplier="0.54" id="nwd-Tq-2XA"/>
+                            <constraint firstItem="x9I-oC-eWm" firstAttribute="centerY" secondItem="qgt-bx-a07" secondAttribute="centerY" id="wnX-2i-OzW"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vnR-6O-rVD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="327" y="-238"/>
+        </scene>
         <!--Fall View Controller-->
         <scene sceneID="lOF-cW-odl">
             <objects>
@@ -3234,6 +3271,7 @@
         <image name="reset-combo" width="462" height="228"/>
         <image name="right-g-rstCmb" width="82" height="82"/>
         <image name="right-w-rstCmb" width="82" height="82"/>
+        <image name="slowdown" width="294" height="291"/>
         <image name="speedMeter" width="350" height="330"/>
         <image name="thermometer-g" width="49" height="95"/>
         <image name="uncheck-rstCmb" width="29" height="29"/>
