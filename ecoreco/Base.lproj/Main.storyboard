@@ -980,7 +980,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Battery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nwy-mw-piF">
-                                        <rect key="frame" x="30.666666666666664" y="53" width="38.333333333333336" height="14.666666666666629"/>
+                                        <rect key="frame" x="31" y="53" width="38.333333333333329" height="14.666666666666629"/>
                                         <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="13"/>
                                         <color key="textColor" red="0.56862745100000001" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -998,7 +998,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Odometer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9t-yz-52t">
-                                        <rect key="frame" x="333" y="53" width="51.666666666666686" height="14.666666666666629"/>
+                                        <rect key="frame" x="333.33333333333326" y="53" width="51.666666666666686" height="14.666666666666629"/>
                                         <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="13"/>
                                         <color key="textColor" red="0.56862745100000001" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1535,6 +1535,12 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="btnBattery" destination="OWH-LI-whB" id="VyD-Ns-D1R"/>
+                        <outlet property="btnOdo" destination="dvx-tW-T5O" id="ncl-fe-4Px"/>
+                        <outlet property="btnRmm" destination="MIQ-YV-u6o" id="wWF-gw-XW3"/>
+                        <outlet property="btnTrip" destination="DgW-6H-sau" id="tyH-Yx-Rh1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="95L-Uz-FVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2377,7 +2383,7 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="in 30 sec" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROY-tc-33u">
-                                <rect key="frame" x="100.66666666666666" y="435.33333333333331" width="89.999999999999972" height="25.333333333333371"/>
+                                <rect key="frame" x="100.66666666666666" y="435" width="89.999999999999972" height="25.666666666666686"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="UFu-K2-aMr"/>
                                     <constraint firstAttribute="width" constant="90" id="tDc-51-HJE"/>
@@ -3293,6 +3299,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="adM-II-OpK"/>
-        <segue reference="dp8-eq-zgJ"/>
+        <segue reference="pKt-is-sFY"/>
     </inferredMetricsTieBreakers>
 </document>

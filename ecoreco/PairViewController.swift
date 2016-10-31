@@ -53,7 +53,11 @@ class PairViewController: CommonViewController {
         let btnEcoreco = UIButton(frame:CGRect(x: 0, y:15, width:44, height:30))
         btnEcoreco.setBackgroundImage(UIImage(named:"iconEcoreco"), forState: .Normal)
         btnEcoreco.setBackgroundImage(UIImage(named:"iconEcoreco-g"), forState: .Selected)
-        btnEcoreco.setBackgroundImage(UIImage(named:"iconEcoreco-g"), forState: .Focused)
+        if #available(iOS 9.0, *) {
+            btnEcoreco.setBackgroundImage(UIImage(named:"iconEcoreco-g"), forState: .Focused)
+        } else {
+            // Fallback on earlier versions
+        }
         btnEcoreco.contentMode = UIViewContentMode.ScaleAspectFit
 
         buttonView.addSubview(lbEcoreco)
