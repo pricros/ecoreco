@@ -12,7 +12,8 @@ class FallViewController: CommonViewController {
     
     @IBOutlet weak var labelCount: UILabel!
     @IBOutlet weak var imgCall: UIImageView!
-    @IBOutlet weak var imgBack: UIImageView!
+
+    @IBOutlet weak var imgBack: UIButton!
     
     var limitSec : Int = 60
     var counter : Int = 0

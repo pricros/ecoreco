@@ -326,7 +326,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Battery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btk-oR-Tva">
-                                        <rect key="frame" x="30.333333333333329" y="170.66666666666674" width="38.333333333333343" height="15"/>
+                                        <rect key="frame" x="30.666666666666664" y="170.66666666666674" width="38.333333333333336" height="15"/>
                                         <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="13"/>
                                         <color key="textColor" red="0.56862745100000001" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -344,7 +344,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Odometer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ba4-xL-uvZ">
-                                        <rect key="frame" x="332.66666666666669" y="170.66666666666674" width="51.666666666666629" height="15"/>
+                                        <rect key="frame" x="333" y="170.66666666666674" width="51.666666666666686" height="15"/>
                                         <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="13"/>
                                         <color key="textColor" red="0.56862745100000001" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2336,13 +2336,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FALL-DETECT_0000_FALL-DETECTED.png" translatesAutoresizingMaskIntoConstraints="NO" id="22e-LI-Ntb">
-                                <rect key="frame" x="46" y="223" width="323" height="291"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fall" translatesAutoresizingMaskIntoConstraints="NO" id="22e-LI-Ntb">
+                                <rect key="frame" x="96" y="277" width="223" height="183"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="323" id="2LX-oZ-2av"/>
                                     <constraint firstAttribute="width" secondItem="22e-LI-Ntb" secondAttribute="height" multiplier="323:291" id="5SO-Uo-RSU"/>
+                                    <constraint firstAttribute="width" secondItem="22e-LI-Ntb" secondAttribute="height" multiplier="223:183" id="O40-Ig-QEp"/>
                                     <constraint firstAttribute="width" secondItem="22e-LI-Ntb" secondAttribute="height" multiplier="323:291" id="eXz-Oo-hzv"/>
-                                    <constraint firstAttribute="height" constant="291" id="j3o-k4-JSk"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -2351,141 +2350,70 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FALL-DETECT_0002_RESET.png" translatesAutoresizingMaskIntoConstraints="NO" id="DCS-tZ-CcU">
-                                <rect key="frame" x="224" y="420" width="145" height="57"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="145" id="Eu5-Qw-jKW"/>
-                                    <constraint firstAttribute="width" constant="145" id="S4l-N2-s41"/>
-                                    <constraint firstAttribute="height" constant="57" id="VHj-qs-zpR"/>
-                                    <constraint firstAttribute="width" constant="145" id="eIn-vT-fBS"/>
-                                    <constraint firstAttribute="height" constant="57" id="jbX-Nl-GG5"/>
-                                    <constraint firstAttribute="height" constant="57" id="xKF-hT-cRd"/>
-                                    <constraint firstAttribute="width" constant="145" id="yIM-1d-qFc"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Eu5-Qw-jKW"/>
-                                        <exclude reference="S4l-N2-s41"/>
-                                        <exclude reference="VHj-qs-zpR"/>
-                                        <exclude reference="xKF-hT-cRd"/>
-                                        <exclude reference="yIM-1d-qFc"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FALL-DETECT_0001_TEL.png" translatesAutoresizingMaskIntoConstraints="NO" id="KSl-4n-CDH">
-                                <rect key="frame" x="46" y="420" width="145" height="57"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="57" id="Eyb-VM-N86"/>
-                                    <constraint firstAttribute="width" constant="145" id="LCm-CS-k8R"/>
-                                    <constraint firstAttribute="width" constant="145" id="Q0i-iM-G05"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="145" id="WBd-hM-V8H"/>
-                                    <constraint firstAttribute="width" constant="145" id="X12-03-DjQ"/>
-                                    <constraint firstAttribute="width" constant="145" id="fAu-uN-4Yr"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="57" id="i5j-th-P8s"/>
-                                    <constraint firstAttribute="height" constant="57" id="vQ0-tt-7md"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Eyb-VM-N86"/>
-                                        <exclude reference="LCm-CS-k8R"/>
-                                        <exclude reference="WBd-hM-V8H"/>
-                                        <exclude reference="X12-03-DjQ"/>
-                                        <exclude reference="fAu-uN-4Yr"/>
-                                        <exclude reference="i5j-th-P8s"/>
-                                    </mask>
-                                </variation>
+                                <rect key="frame" x="76" y="468" width="145" height="46"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="in 30 sec" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROY-tc-33u">
-                                <rect key="frame" x="101" y="435" width="90" height="26"/>
+                                <rect key="frame" x="131" y="478" width="90" height="26"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="UFu-K2-aMr"/>
-                                    <constraint firstAttribute="width" constant="90" id="tDc-51-HJE"/>
+                                    <constraint firstAttribute="width" constant="90" id="vt7-Yk-WpE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="UFu-K2-aMr"/>
-                                    </mask>
-                                </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fall Detected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fck-Kh-NlH">
+                                <rect key="frame" x="107" y="237" width="201" height="40"/>
+                                <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="36"/>
+                                <color key="textColor" red="0.80000000000000004" green="0.43529411764705883" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9CZ-k4-5KY">
+                                <rect key="frame" x="229" y="466" width="109" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9CZ-k4-5KY" secondAttribute="height" multiplier="109:46" id="Mdn-4L-1g8"/>
+                                    <constraint firstAttribute="width" constant="109" id="g6y-ha-LHj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="24"/>
+                                <state key="normal" title="I'm OK" backgroundImage="info-short">
+                                    <color key="titleColor" red="0.93748756700000002" green="0.96612296880000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="DCS-tZ-CcU" firstAttribute="centerX" secondItem="22e-LI-Ntb" secondAttribute="centerX" constant="89" id="0ww-5u-Wwx"/>
                             <constraint firstItem="22e-LI-Ntb" firstAttribute="top" secondItem="OXM-dN-MUc" secondAttribute="bottom" constant="134" id="4Ef-GQ-Z7W"/>
-                            <constraint firstItem="KSl-4n-CDH" firstAttribute="leading" secondItem="DCS-tZ-CcU" secondAttribute="leading" id="53l-Iy-ohP"/>
                             <constraint firstItem="22e-LI-Ntb" firstAttribute="centerY" secondItem="cLX-R1-QiD" secondAttribute="centerY" id="5Ew-N8-jTh"/>
-                            <constraint firstItem="KSl-4n-CDH" firstAttribute="leading" secondItem="cLX-R1-QiD" secondAttribute="leading" constant="139" id="9c0-Tp-LQ1"/>
-                            <constraint firstItem="KSl-4n-CDH" firstAttribute="top" secondItem="OXM-dN-MUc" secondAttribute="bottom" constant="316" id="9pl-TK-UlO"/>
-                            <constraint firstItem="KSl-4n-CDH" firstAttribute="top" secondItem="OXM-dN-MUc" secondAttribute="bottom" constant="299" id="BUl-Pk-0Wa"/>
-                            <constraint firstItem="KSl-4n-CDH" firstAttribute="top" secondItem="OXM-dN-MUc" secondAttribute="bottom" constant="269" id="Hys-xg-FAz"/>
-                            <constraint firstItem="BFS-R4-tjp" firstAttribute="top" secondItem="KSl-4n-CDH" secondAttribute="bottom" constant="195" id="IP8-pg-cam"/>
-                            <constraint firstItem="22e-LI-Ntb" firstAttribute="trailing" secondItem="DCS-tZ-CcU" secondAttribute="trailing" id="ISv-d4-XAU"/>
-                            <constraint firstItem="BFS-R4-tjp" firstAttribute="top" secondItem="KSl-4n-CDH" secondAttribute="bottom" constant="207" id="JYU-PQ-nbb"/>
-                            <constraint firstItem="KSl-4n-CDH" firstAttribute="top" secondItem="OXM-dN-MUc" secondAttribute="bottom" constant="251" id="Jz7-vz-x1v"/>
-                            <constraint firstItem="DCS-tZ-CcU" firstAttribute="top" secondItem="OXM-dN-MUc" secondAttribute="bottom" constant="251" id="NVv-ej-bSD"/>
-                            <constraint firstItem="KSl-4n-CDH" firstAttribute="centerY" secondItem="22e-LI-Ntb" secondAttribute="centerY" constant="80" id="Ota-c0-KFB"/>
-                            <constraint firstItem="22e-LI-Ntb" firstAttribute="leading" secondItem="KSl-4n-CDH" secondAttribute="leading" id="SfZ-2q-bK7"/>
-                            <constraint firstItem="ROY-tc-33u" firstAttribute="centerY" secondItem="KSl-4n-CDH" secondAttribute="centerY" id="T3x-si-GJJ"/>
-                            <constraint firstItem="BFS-R4-tjp" firstAttribute="top" secondItem="KSl-4n-CDH" secondAttribute="bottom" constant="195" id="WNH-Ya-KmF"/>
-                            <constraint firstItem="KSl-4n-CDH" firstAttribute="top" secondItem="DCS-tZ-CcU" secondAttribute="bottom" constant="23" id="Xpc-xd-q2C"/>
-                            <constraint firstItem="BFS-R4-tjp" firstAttribute="top" secondItem="KSl-4n-CDH" secondAttribute="bottom" constant="207" id="aM8-jC-IRa"/>
-                            <constraint firstItem="KSl-4n-CDH" firstAttribute="centerX" secondItem="22e-LI-Ntb" secondAttribute="centerX" constant="-89" id="aew-wd-3Qn"/>
+                            <constraint firstItem="22e-LI-Ntb" firstAttribute="top" secondItem="fck-Kh-NlH" secondAttribute="bottom" id="6GH-qE-ql3"/>
+                            <constraint firstItem="KSl-4n-CDH" firstAttribute="top" secondItem="22e-LI-Ntb" secondAttribute="bottom" constant="8" symbolic="YES" id="AM9-pX-T8e"/>
+                            <constraint firstItem="KSl-4n-CDH" firstAttribute="leading" secondItem="cLX-R1-QiD" secondAttribute="leadingMargin" constant="56" id="Csj-Yt-yuk"/>
+                            <constraint firstItem="9CZ-k4-5KY" firstAttribute="leading" secondItem="ROY-tc-33u" secondAttribute="trailing" constant="8" symbolic="YES" id="DHV-w6-Iaq"/>
+                            <constraint firstItem="fck-Kh-NlH" firstAttribute="centerX" secondItem="cLX-R1-QiD" secondAttribute="centerX" id="EAY-wo-pXg"/>
                             <constraint firstItem="22e-LI-Ntb" firstAttribute="top" secondItem="OXM-dN-MUc" secondAttribute="bottom" constant="134" id="d1L-YT-hEU"/>
-                            <constraint firstItem="KSl-4n-CDH" firstAttribute="top" secondItem="OXM-dN-MUc" secondAttribute="bottom" constant="340" id="eOJ-k6-8wE"/>
-                            <constraint firstAttribute="trailing" secondItem="DCS-tZ-CcU" secondAttribute="trailing" constant="138" id="h4u-ec-H6h"/>
-                            <constraint firstItem="KSl-4n-CDH" firstAttribute="trailing" secondItem="DCS-tZ-CcU" secondAttribute="trailing" id="iTW-sb-tiN"/>
-                            <constraint firstItem="DCS-tZ-CcU" firstAttribute="leading" secondItem="KSl-4n-CDH" secondAttribute="trailing" constant="27" id="onE-Uy-A4P"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9CZ-k4-5KY" secondAttribute="trailing" constant="56" id="hS9-X3-xQC"/>
+                            <constraint firstItem="9CZ-k4-5KY" firstAttribute="leading" secondItem="KSl-4n-CDH" secondAttribute="trailing" constant="8" symbolic="YES" id="kkH-Vw-AhB"/>
+                            <constraint firstItem="KSl-4n-CDH" firstAttribute="height" secondItem="9CZ-k4-5KY" secondAttribute="height" id="q1i-RM-Z71"/>
+                            <constraint firstItem="22e-LI-Ntb" firstAttribute="width" secondItem="cLX-R1-QiD" secondAttribute="width" multiplier="0.54" id="q5A-mV-Afe"/>
                             <constraint firstItem="22e-LI-Ntb" firstAttribute="centerX" secondItem="cLX-R1-QiD" secondAttribute="centerX" id="rFJ-oh-weV"/>
-                            <constraint firstItem="BFS-R4-tjp" firstAttribute="top" secondItem="KSl-4n-CDH" secondAttribute="bottom" constant="155" id="sYm-Qt-nzu"/>
-                            <constraint firstItem="KSl-4n-CDH" firstAttribute="centerX" secondItem="22e-LI-Ntb" secondAttribute="centerX" id="xTO-qP-h9X"/>
-                            <constraint firstItem="ROY-tc-33u" firstAttribute="trailing" secondItem="KSl-4n-CDH" secondAttribute="trailing" id="ybN-kD-BX3"/>
-                            <constraint firstItem="BFS-R4-tjp" firstAttribute="top" secondItem="KSl-4n-CDH" secondAttribute="bottom" constant="254" id="zIe-Jh-DXe"/>
-                            <constraint firstItem="DCS-tZ-CcU" firstAttribute="centerY" secondItem="22e-LI-Ntb" secondAttribute="centerY" constant="80" id="zU1-tn-6xE"/>
-                            <constraint firstItem="BFS-R4-tjp" firstAttribute="top" secondItem="ROY-tc-33u" secondAttribute="bottom" constant="210" id="zfk-aI-rTq"/>
-                            <constraint firstItem="DCS-tZ-CcU" firstAttribute="top" secondItem="KSl-4n-CDH" secondAttribute="bottom" constant="26" id="zof-Cg-UwA"/>
+                            <constraint firstItem="KSl-4n-CDH" firstAttribute="centerY" secondItem="ROY-tc-33u" secondAttribute="centerY" id="vgQ-BD-BZv"/>
+                            <constraint firstItem="9CZ-k4-5KY" firstAttribute="top" secondItem="22e-LI-Ntb" secondAttribute="bottom" constant="6" id="y58-lS-2rY"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="4Ef-GQ-Z7W"/>
-                                <exclude reference="ISv-d4-XAU"/>
-                                <exclude reference="SfZ-2q-bK7"/>
                                 <exclude reference="d1L-YT-hEU"/>
-                                <exclude reference="53l-Iy-ohP"/>
-                                <exclude reference="9c0-Tp-LQ1"/>
-                                <exclude reference="9pl-TK-UlO"/>
-                                <exclude reference="BUl-Pk-0Wa"/>
-                                <exclude reference="Hys-xg-FAz"/>
-                                <exclude reference="Jz7-vz-x1v"/>
-                                <exclude reference="Xpc-xd-q2C"/>
-                                <exclude reference="eOJ-k6-8wE"/>
-                                <exclude reference="iTW-sb-tiN"/>
-                                <exclude reference="xTO-qP-h9X"/>
-                                <exclude reference="NVv-ej-bSD"/>
-                                <exclude reference="h4u-ec-H6h"/>
-                                <exclude reference="onE-Uy-A4P"/>
-                                <exclude reference="zof-Cg-UwA"/>
-                                <exclude reference="IP8-pg-cam"/>
-                                <exclude reference="JYU-PQ-nbb"/>
-                                <exclude reference="WNH-Ya-KmF"/>
-                                <exclude reference="aM8-jC-IRa"/>
-                                <exclude reference="sYm-Qt-nzu"/>
-                                <exclude reference="zIe-Jh-DXe"/>
-                                <exclude reference="zfk-aI-rTq"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="imgBack" destination="DCS-tZ-CcU" id="Dhd-eI-x1V"/>
+                        <outlet property="imgBack" destination="9CZ-k4-5KY" id="2Xz-gF-Kf3"/>
                         <outlet property="imgCall" destination="KSl-4n-CDH" id="eq3-wi-Yx9"/>
                         <outlet property="labelCount" destination="ROY-tc-33u" id="QdJ-4t-QVH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="57f-yB-kdi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1027" y="-287"/>
+            <point key="canvasLocation" x="1026.0869565217392" y="-287.77173913043481"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="fHV-2N-HwJ">
@@ -3279,9 +3207,7 @@
     </scenes>
     <resources>
         <image name="Ecorecologo" width="311" height="54"/>
-        <image name="FALL-DETECT_0000_FALL-DETECTED.png" width="647" height="583"/>
         <image name="FALL-DETECT_0001_TEL.png" width="406" height="128"/>
-        <image name="FALL-DETECT_0002_RESET.png" width="406" height="128"/>
         <image name="back.png" width="180" height="180"/>
         <image name="checked-rstCmb" width="29" height="29"/>
         <image name="cruise-green" width="94" height="31"/>
@@ -3290,6 +3216,7 @@
         <image name="divider-green" width="375" height="10"/>
         <image name="down-g-rstCmb" width="82" height="82"/>
         <image name="down-w-rstCmb" width="82" height="82"/>
+        <image name="fall" width="420" height="314"/>
         <image name="iconDiagnose-gr.png" width="180" height="180"/>
         <image name="iconSetting.png" width="180" height="180"/>
         <image name="iconSpeed.png" width="190" height="190"/>

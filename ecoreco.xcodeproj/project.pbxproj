@@ -53,9 +53,7 @@
 		3CB16A7B1DADCB01004C3191 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB16A751DADCB01004C3191 /* UserProfileViewController.swift */; };
 		3CB16A7D1DADFDE9004C3191 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB16A7C1DADFDE9004C3191 /* ShopViewController.swift */; };
 		3CEAC1EF1D0133A700F29628 /* FallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEAC1EE1D0133A700F29628 /* FallViewController.swift */; };
-		3CEAC1F11D01352D00F29628 /* FALL-DETECT_0000_FALL-DETECTED.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F01D01352C00F29628 /* FALL-DETECT_0000_FALL-DETECTED.png */; };
 		3CEAC1F41D01353C00F29628 /* FALL-DETECT_0001_TEL.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F21D01353C00F29628 /* FALL-DETECT_0001_TEL.png */; };
-		3CEAC1F51D01353C00F29628 /* FALL-DETECT_0002_RESET.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F31D01353C00F29628 /* FALL-DETECT_0002_RESET.png */; };
 		3CEAC1F81D04015400F29628 /* lock-_0036_board-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F61D04015400F29628 /* lock-_0036_board-1.png */; };
 		3CEAC1F91D04015400F29628 /* lock-_0037_board2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F71D04015400F29628 /* lock-_0037_board2.png */; };
 		8420B9131D651CA5009BA82A /* SettingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420B9121D651CA5009BA82A /* SettingCollectionViewController.swift */; };
@@ -163,9 +161,7 @@
 		3CB16A751DADCB01004C3191 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		3CB16A7C1DADFDE9004C3191 /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		3CEAC1EE1D0133A700F29628 /* FallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FallViewController.swift; sourceTree = "<group>"; };
-		3CEAC1F01D01352C00F29628 /* FALL-DETECT_0000_FALL-DETECTED.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "FALL-DETECT_0000_FALL-DETECTED.png"; path = "images/FALL-DETECT_0000_FALL-DETECTED.png"; sourceTree = "<group>"; };
 		3CEAC1F21D01353C00F29628 /* FALL-DETECT_0001_TEL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "FALL-DETECT_0001_TEL.png"; path = "images/FALL-DETECT_0001_TEL.png"; sourceTree = "<group>"; };
-		3CEAC1F31D01353C00F29628 /* FALL-DETECT_0002_RESET.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "FALL-DETECT_0002_RESET.png"; path = "images/FALL-DETECT_0002_RESET.png"; sourceTree = "<group>"; };
 		3CEAC1F61D04015400F29628 /* lock-_0036_board-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lock-_0036_board-1.png"; path = "images/lock-_0036_board-1.png"; sourceTree = "<group>"; };
 		3CEAC1F71D04015400F29628 /* lock-_0037_board2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lock-_0037_board2.png"; path = "images/lock-_0037_board2.png"; sourceTree = "<group>"; };
 		8420B9121D651CA5009BA82A /* SettingCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingCollectionViewController.swift; path = Controller/SettingCollectionViewController.swift; sourceTree = "<group>"; };
@@ -357,8 +353,6 @@
 				3CEAC1F61D04015400F29628 /* lock-_0036_board-1.png */,
 				3CEAC1F71D04015400F29628 /* lock-_0037_board2.png */,
 				3CEAC1F21D01353C00F29628 /* FALL-DETECT_0001_TEL.png */,
-				3CEAC1F31D01353C00F29628 /* FALL-DETECT_0002_RESET.png */,
-				3CEAC1F01D01352C00F29628 /* FALL-DETECT_0000_FALL-DETECTED.png */,
 				3C460A4D1C3CAFE100FB6EB6 /* mapPoint.png */,
 				1876A5C41C3B4CEB0016EBCA /* pointer.png */,
 				1876A5BC1C3616E30016EBCA /* icon_120_120.png */,
@@ -546,7 +540,6 @@
 				1876A5AD1C3265430016EBCA /* modeBoostOn.png in Resources */,
 				84E61C1D1DAA7C9600A83B30 /* iconDiagnose-g.png in Resources */,
 				84C364881D9CEF3C00AD4773 /* ride-w@3.png in Resources */,
-				3CEAC1F11D01352D00F29628 /* FALL-DETECT_0000_FALL-DETECTED.png in Resources */,
 				1876A5C51C3B4CEB0016EBCA /* pointer.png in Resources */,
 				1876A5BE1C3616E40016EBCA /* icon_120_120.png in Resources */,
 				1876A5711C311C890016EBCA /* back.png in Resources */,
@@ -577,7 +570,6 @@
 				187B92CD1C26716600DA3BDF /* Main.storyboard in Resources */,
 				842DCFD91DACCE7000A71A8E /* settings.storyboard in Resources */,
 				84E61C281DAAA4F500A83B30 /* VDS_New.ttf in Resources */,
-				3CEAC1F51D01353C00F29628 /* FALL-DETECT_0002_RESET.png in Resources */,
 				84E61C271DAAA4F500A83B30 /* VDS_Bold_New.ttf in Resources */,
 				84E61C1F1DAA7C9600A83B30 /* iconDiagnose-o.png in Resources */,
 				84C3648A1D9CEF3C00AD4773 /* trip-w@3.png in Resources */,
