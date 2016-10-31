@@ -2324,10 +2324,10 @@
             </objects>
             <point key="canvasLocation" x="-541.5" y="564.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Slow Down View Controller-->
         <scene sceneID="IQU-ci-1Iy">
             <objects>
-                <viewController id="hbJ-rV-f24" sceneMemberID="viewController">
+                <viewController id="hbJ-rV-f24" customClass="SlowDownViewController" customModule="ecoreco" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="es5-nF-aXe"/>
                         <viewControllerLayoutGuide type="bottom" id="U6u-GF-yXE"/>
@@ -2619,6 +2619,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5a2-yC-4Q8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="415.5" y="482.25"/>
+        </scene>
+        <!--Helmet View Controller-->
+        <scene sceneID="erb-5O-UOt">
+            <objects>
+                <viewController id="fag-uG-6lw" customClass="HelmetViewController" customModule="ecoreco" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RSl-hQ-PBl"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZfZ-MI-BLe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bRc-8p-KdO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="helmet" translatesAutoresizingMaskIntoConstraints="NO" id="Jje-xd-JLW">
+                                <rect key="frame" x="112.33333333333334" y="250" width="190.66666666666666" height="236"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helmet On" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxc-Wp-07g">
+                                <rect key="frame" x="127.33333333333331" y="210" width="159.33333333333337" height="40"/>
+                                <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="36"/>
+                                <color key="textColor" red="0.56862745100000001" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Jje-xd-JLW" firstAttribute="width" secondItem="bRc-8p-KdO" secondAttribute="width" multiplier="0.46" id="IOa-Dr-Ehe"/>
+                            <constraint firstItem="Jje-xd-JLW" firstAttribute="centerY" secondItem="bRc-8p-KdO" secondAttribute="centerY" id="JN3-aY-aqj"/>
+                            <constraint firstItem="xxc-Wp-07g" firstAttribute="centerX" secondItem="bRc-8p-KdO" secondAttribute="centerX" id="P3r-a5-3hE"/>
+                            <constraint firstItem="Jje-xd-JLW" firstAttribute="top" secondItem="xxc-Wp-07g" secondAttribute="bottom" id="dbk-4Z-6FX"/>
+                            <constraint firstItem="Jje-xd-JLW" firstAttribute="centerX" secondItem="bRc-8p-KdO" secondAttribute="centerX" id="xlf-eP-EI7"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yay-HL-Nat" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1088" y="413"/>
         </scene>
         <!--SettingView-->
         <scene sceneID="kSN-aU-Jby">
@@ -3254,6 +3290,7 @@
         <image name="down-g-rstCmb" width="82" height="82"/>
         <image name="down-w-rstCmb" width="82" height="82"/>
         <image name="fall" width="420" height="314"/>
+        <image name="helmet" width="294" height="236"/>
         <image name="iconDiagnose-gr.png" width="180" height="180"/>
         <image name="iconSetting.png" width="180" height="180"/>
         <image name="iconSpeed.png" width="190" height="190"/>

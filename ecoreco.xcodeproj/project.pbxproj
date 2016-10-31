@@ -66,6 +66,7 @@
 		842DCFFA1DB3976900A71A8E /* ResetComboViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFF91DB3976900A71A8E /* ResetComboViewController.swift */; };
 		842DCFFC1DB5D42400A71A8E /* SetDeviceNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFFB1DB5D42300A71A8E /* SetDeviceNameViewController.swift */; };
 		84850A591DC7ABD000FA8F1D /* SlowDownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84850A581DC7ABD000FA8F1D /* SlowDownViewController.swift */; };
+		84850A5B1DC7AE9100FA8F1D /* HelmetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84850A5A1DC7AE9100FA8F1D /* HelmetViewController.swift */; };
 		8492C5AB1D60D2CD0021D2FC /* PairViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492C5AA1D60D2CD0021D2FC /* PairViewController.swift */; };
 		84C3647F1D9CEF3C00AD4773 /* shop-g@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C364731D9CEF3C00AD4773 /* shop-g@3.png */; };
 		84C364801D9CEF3C00AD4773 /* shop-w@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C364741D9CEF3C00AD4773 /* shop-w@3.png */; };
@@ -176,6 +177,7 @@
 		842DCFFB1DB5D42300A71A8E /* SetDeviceNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetDeviceNameViewController.swift; path = Controller/SetDeviceNameViewController.swift; sourceTree = "<group>"; };
 		845D944F1DC028B40065C79D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		84850A581DC7ABD000FA8F1D /* SlowDownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlowDownViewController.swift; path = Controller/SlowDownViewController.swift; sourceTree = "<group>"; };
+		84850A5A1DC7AE9100FA8F1D /* HelmetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelmetViewController.swift; sourceTree = "<group>"; };
 		8492C5AA1D60D2CD0021D2FC /* PairViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairViewController.swift; sourceTree = "<group>"; };
 		84C364731D9CEF3C00AD4773 /* shop-g@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shop-g@3.png"; path = "images/shop-g@3.png"; sourceTree = "<group>"; };
 		84C364741D9CEF3C00AD4773 /* shop-w@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shop-w@3.png"; path = "images/shop-w@3.png"; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				842DCFFB1DB5D42300A71A8E /* SetDeviceNameViewController.swift */,
 				84D588F11DB6B5DF00063BD6 /* DiagnoseViewController.swift */,
 				84850A581DC7ABD000FA8F1D /* SlowDownViewController.swift */,
+				84850A5A1DC7AE9100FA8F1D /* HelmetViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				842DCFEB1DAE9D6C00A71A8E /* SearchTableViewController.swift in Sources */,
 				842DCFEF1DAEAAE200A71A8E /* RadarEcorecoIcon.swift in Sources */,
 				842DCFFC1DB5D42400A71A8E /* SetDeviceNameViewController.swift in Sources */,
+				84850A5B1DC7AE9100FA8F1D /* HelmetViewController.swift in Sources */,
 				3CEAC1EF1D0133A700F29628 /* FallViewController.swift in Sources */,
 				187B92C81C26716500DA3BDF /* AppDelegate.swift in Sources */,
 				183E661A1D06C41C00E1A4E9 /* CounterView.swift in Sources */,
