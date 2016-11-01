@@ -326,7 +326,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Battery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btk-oR-Tva">
-                                        <rect key="frame" x="31" y="170.66666666666674" width="38.333333333333329" height="15"/>
+                                        <rect key="frame" x="30.333333333333329" y="170.66666666666674" width="38.333333333333343" height="15"/>
                                         <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="13"/>
                                         <color key="textColor" red="0.56862745100000001" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -344,7 +344,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Odometer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ba4-xL-uvZ">
-                                        <rect key="frame" x="333.33333333333326" y="170.66666666666674" width="51.666666666666686" height="15"/>
+                                        <rect key="frame" x="332.66666666666669" y="170.66666666666674" width="51.666666666666629" height="15"/>
                                         <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="13"/>
                                         <color key="textColor" red="0.56862745100000001" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2341,10 +2341,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slowdown" translatesAutoresizingMaskIntoConstraints="NO" id="x9I-oC-eWm">
-                                <rect key="frame" x="96" y="222.66666666666663" width="223.33333333333331" height="291"/>
+                                <rect key="frame" x="96" y="223" width="223" height="291"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slow Down" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5W2-Xc-lSL">
-                                <rect key="frame" x="123.66666666666669" y="182.66666666666666" width="167.66666666666663" height="40"/>
+                                <rect key="frame" x="123" y="183" width="168" height="40"/>
                                 <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="36"/>
                                 <color key="textColor" red="0.80000000000000004" green="0.43529411759999997" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2637,10 +2637,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="helmet" translatesAutoresizingMaskIntoConstraints="NO" id="Jje-xd-JLW">
-                                <rect key="frame" x="112.33333333333334" y="250" width="190.66666666666666" height="236"/>
+                                <rect key="frame" x="112" y="250" width="191" height="236"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helmet On" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxc-Wp-07g">
-                                <rect key="frame" x="127.33333333333331" y="210" width="159.33333333333337" height="40"/>
+                                <rect key="frame" x="127" y="210" width="160" height="40"/>
                                 <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="36"/>
                                 <color key="textColor" red="0.56862745100000001" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2685,7 +2685,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXc-Ow-f6a">
-                                            <rect key="frame" x="103.66666666666669" y="6.6666666666666661" width="207" height="30.666666666666671"/>
+                                            <rect key="frame" x="104" y="7" width="207" height="30"/>
                                             <color key="backgroundColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="16"/>
                                             <state key="normal">
