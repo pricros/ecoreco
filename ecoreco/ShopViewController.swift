@@ -24,7 +24,7 @@ class ShopViewController: CommonViewController {
         
         
 
-        let url = NSURL (string: "http://www.apple.com");
+        let url = NSURL (string: "https://ecorecoscooter.com/");
         let requestObj = NSURLRequest(URL: url!);
         webView.loadRequest(requestObj);
         webView.scalesPageToFit = true
