@@ -9,40 +9,35 @@ import QuartzCore
 class DashboardViewController: CommonViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var imgViewSetting: UIImageView!
-//    @IBOutlet weak var imgViewPower: UIImageView!
     @IBOutlet weak var imgViewProfile: UIImageView!
 //    @IBOutlet weak var imgViewNavi: UIImageView!
-
 
     @IBOutlet weak var labelSpeed: UILabel!
     @IBOutlet weak var imgViewSpeedMeter: UIImageView!
     @IBOutlet weak var counterView: CounterView!
     @IBOutlet weak var scrollViewMode: UIScrollView!
-
-//    @IBOutlet weak var labelHeaderBattery: UILabel!
     @IBOutlet weak var btnBattery: UIButton!
     @IBOutlet weak var btnEstimateRange: UIButton!
     @IBOutlet weak var btnTrip: UIButton!
     @IBOutlet weak var btnOdo: UIButton!
     @IBOutlet weak var labelDeviceName: UILabel!
-    
     @IBOutlet weak var btnLock: UIButton!
+
     var layer:CALayer?
     var bDemoThreadStart:Bool = false
     var bDemoEnable:Bool = false
-    
-    let testSpeedArray:[Int] = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,20,20,20,20,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0]
+    var bLockStatus:Bool = false
     let SLEEPINTERVAL:UInt32 = 50000 //micro second
     
     override func viewDidLoad() {
         super.viewDidLoad()
  
         //set view bgcolor
-        self.view.backgroundColor = UIColor(
-            red: 250/255,
-            green: 250/255,
-            blue: 250/255,
-            alpha: 1.0)
+//        self.view.backgroundColor = UIColor(
+//            red: 250/255,
+//            green: 250/255,
+//            blue: 250/255,
+//            alpha: 1.0)
         
         
         self.navigationController?.setNavigationBarHidden(true, animated: true)
@@ -51,12 +46,6 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         let tapGestureRecognizerSetting = UITapGestureRecognizer(target: self, action:#selector(DashboardViewController.tappedSetting))
         imgViewSetting.userInteractionEnabled = true
         imgViewSetting.addGestureRecognizer(tapGestureRecognizerSetting)
-
-        
-//        //add tpa action to [Power]
-//        let tapGestureRecognizerPower = UITapGestureRecognizer(target: self, action:Selector("tappedPower"))
-//        imgViewPower.userInteractionEnabled = true
-//        imgViewPower.addGestureRecognizer(tapGestureRecognizerPower)
 
         
         //add tpa action to [Profile]
@@ -108,9 +97,15 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         labelDeviceName.textColor = ColorUtil.LABEL_INACTIVE_COLOR
         labelDeviceName.font = ColorUtil.FONT_VDS_T4
         
-
+        bLockStatus = scooter.getLockStatus()
         
-      
+        if (bLockStatus){
+            btnLock.setImage(UIImage(named: "unlock"), forState: UIControlState.Normal)
+        } else {
+            btnLock.setImage(UIImage(named: "lock"), forState: UIControlState.Normal)
+        }
+        
+
         scooter.speed.didChange.addHandler(self, handler: DashboardViewController.speedDidChange)
         scooter.bat.didChange.addHandler(self, handler: DashboardViewController.batteryDidChange)
         scooter.falStatus.didChange.addHandler(self, handler: DashboardViewController.falStatusDidChange)
@@ -157,33 +152,13 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
     }
 
     func tappedSetting(){
-        //self.createActionView().actionViewShow()
         self.performSegueWithIdentifier("segueDashToSetting", sender: nil)
-        //self.navigationController?.pushViewController(self.storyboard?.instantiateViewControllerWithIdentifier("SettingView") as! SettingViewController, animated: true)
-    }
-
-    var isPowerOn = true
-    let imgPowerOn = UIImage(named: "iconPowerOn.png") as UIImage!
-    let imgPowerOff = UIImage(named: "iconPowerOff.png") as UIImage!
-    func tappedPower(){
-        print("power off")
-        
-//        if (isPowerOn == true) {
-//            scooter.sendData("L1")
-//            self.imgViewPower.image = imgPowerOff
-//            isPowerOn = false
-//            clearAll()
-//        }else{
-//            scooter.sendData("L0")
-//            self.imgViewPower.image = imgPowerOn
-//            isPowerOn = true
-//        }
-    }
-    
-
-    @IBAction func lockUnlock(sender: UIButton) {
         
     }
+
+ 
+
+
     
     
     func tappedProfile(){
@@ -239,8 +214,6 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
     
     var lastMode: UIButton?
     func modePressed(sender:UIButton){
-        //lastMode?.backgroundColor = UIColor.grayColor()
-        //sender.backgroundColor = UIColor(hue: 0.5, saturation: 0.5, brightness: 1.0, alpha: 1.0)
         
         if(self.lastMode != nil){
             self.lastMode!.setImage(imagesModeOff[(lastMode!.tag)], forState: .Normal)
@@ -379,6 +352,13 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         
     }
 
+    @IBAction func lockUnlockScooter(sender: UIButton) {
+        if (bLockStatus){
+            scooter.unlock()
+        }else{
+            scooter.lock()
+        }
+    }
 
 }
 

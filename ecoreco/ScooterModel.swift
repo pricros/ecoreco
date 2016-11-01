@@ -393,6 +393,11 @@ class ScooterModel:NSObject, NRFManagerDelegate{
         return true
     }
     
+    func getLockStatus()->Bool{
+        sendData(LOCK+ASK)
+        return true
+    }
+    
     func resetFallStatus()->Bool{
         backgroundThread(background:{
             for _ in 1...self.RETRYTIME {
