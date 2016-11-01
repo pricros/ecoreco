@@ -24,6 +24,7 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
     @IBOutlet weak var btnLock: UIButton!
 
     var layer:CALayer?
+    var lastMode: UIButton?
     var bDemoThreadStart:Bool = false
     var bDemoEnable:Bool = false
     var bLockStatus:Bool = false
@@ -33,12 +34,11 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         super.viewDidLoad()
  
         //set view bgcolor
-//        self.view.backgroundColor = UIColor(
-//            red: 250/255,
-//            green: 250/255,
-//            blue: 250/255,
-//            alpha: 1.0)
-        
+        self.view.backgroundColor = UIColor(
+            red: 250/255,
+            green: 250/255,
+            blue: 250/255,
+            alpha: 1.0)
         
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         
@@ -58,14 +58,9 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
 //        imgViewNavi.userInteractionEnabled = true
 //        imgViewNavi.addGestureRecognizer(tapGestureRecognizerNavi)
         
-        //add tpa action to [lableSpeed]
- //       let tapGestureRecognizerSpeed = UITapGestureRecognizer(target: self, action:Selector("tappedSpeed"))
-//        labelSpeed.userInteractionEnabled = true
-//        labelSpeed.addGestureRecognizer(tapGestureRecognizerSpeed)
         
         let font = UIFont(name: (self.labelSpeed.font?.familyName)!, size:150)
         labelSpeed.font = font
-        
         
         //scroll view
         let scrollingView = modeButtonsView()
@@ -98,7 +93,6 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         labelDeviceName.font = ColorUtil.FONT_VDS_T4
         
         bLockStatus = scooter.getLockStatus()
-        
         if (bLockStatus){
             btnLock.setImage(UIImage(named: "unlock"), forState: UIControlState.Normal)
         } else {
@@ -156,11 +150,6 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         
     }
 
- 
-
-
-    
-    
     func tappedProfile(){
         print("go to diagnose")
         self.performSegueWithIdentifier("segueDashToDiagnose", sender: nil)
@@ -210,9 +199,6 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         }
     }
     
-    
-    
-    var lastMode: UIButton?
     func modePressed(sender:UIButton){
         
         if(self.lastMode != nil){
