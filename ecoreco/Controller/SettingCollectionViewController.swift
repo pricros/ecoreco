@@ -102,7 +102,7 @@ class SettingCollectionViewController:
             label!.tag = TAG_CELL_LABEL
             label!.textColor = UIColor.whiteColor()
             label!.textAlignment = NSTextAlignment.Center
-            label!.font = UIFont(name:"VDS", size:20.0)
+            label!.font = UIFont(name:"VDS", size:16.0)
             cell.contentView.addSubview(label!)
             //add constrains for the label to align center
             let xConstraint = NSLayoutConstraint(item: label!, attribute: .CenterX,
