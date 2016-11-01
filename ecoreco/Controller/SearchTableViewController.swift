@@ -10,7 +10,7 @@ import UIKit
 
 class SearchTableViewController: CommonViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var name = ["A-ID:", "B-ID:", "C-ID:"]
+    var name = ["A-ID:ECORECO1", "B-ID:ECORECO2", "C-ID:ECORECO3"]
     var images = [UIImage(named: "bgDevice"), UIImage(named: "bgDevice"), UIImage(named: "bgDevice")]
     
     @IBOutlet var searchTableView: UITableView!
