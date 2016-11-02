@@ -1,0 +1,111 @@
+
+/* Class = "UILabel"; text = "新名稱"; ObjectID = "25G-Bq-tok"; */
+"25G-Bq-tok.text" = "新名稱";
+
+/* Class = "UILabel"; text = "確認密碼"; ObjectID = "3hh-L8-Lom"; */
+"3hh-L8-Lom.text" = "確認密碼";
+
+/* Class = "UILabel"; text = "Slow Down"; ObjectID = "5W2-Xc-lSL"; */
+"5W2-Xc-lSL.text" = "Slow Down";
+
+/* Class = "UILabel"; text = "稍後再說"; ObjectID = "6H1-Bl-MUR"; */
+"6H1-Bl-MUR.text" = "稍後再說";
+
+/* Class = "UIButton"; normalTitle = "I'm OK"; ObjectID = "9CZ-k4-5KY"; */
+"9CZ-k4-5KY.normalTitle" = "I'm OK";
+
+/* Class = "UILabel"; text = "My Scooter"; ObjectID = "AzM-1I-ShJ"; */
+"AzM-1I-ShJ.text" = "My Scooter";
+
+/* Class = "UILabel"; text = "Odometer"; ObjectID = "Ba4-xL-uvZ"; */
+"Ba4-xL-uvZ.text" = "Odometer";
+
+/* Class = "UIButton"; normalTitle = "清除"; ObjectID = "D6x-E5-Oal"; */
+"D6x-E5-Oal.normalTitle" = "清除";
+
+/* Class = "UILabel"; text = "新密碼"; ObjectID = "FOZ-Hk-eEv"; */
+"FOZ-Hk-eEv.text" = "新密碼";
+
+/* Class = "UIButton"; normalTitle = "消去"; ObjectID = "GED-ts-ppR"; */
+"GED-ts-ppR.normalTitle" = "消去";
+
+/* Class = "UIButton"; normalTitle = "清除"; ObjectID = "GTe-Jf-QRf"; */
+"GTe-Jf-QRf.normalTitle" = "清除";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "HpR-8Q-st4"; */
+"HpR-8Q-st4.text" = "Label";
+
+/* Class = "UILabel"; text = "45"; ObjectID = "JkG-0h-z1F"; */
+"JkG-0h-z1F.text" = "45";
+
+/* Class = "UILabel"; text = "現在要為Scooter重新命名?"; ObjectID = "Kad-Ee-Ebf"; */
+"Kad-Ee-Ebf.text" = "現在要為Scooter重新命名?";
+
+/* Class = "UIButton"; normalTitle = "確認"; ObjectID = "Kia-f7-s8a"; */
+"Kia-f7-s8a.normalTitle" = "確認";
+
+/* Class = "UILabel"; text = "DIAGNOSE"; ObjectID = "MMf-zC-14e"; */
+"MMf-zC-14e.text" = "DIAGNOSE";
+
+/* Class = "UILabel"; text = "Battery"; ObjectID = "Nwy-mw-piF"; */
+"Nwy-mw-piF.text" = "Battery";
+
+/* Class = "UILabel"; text = "in 30 sec"; ObjectID = "ROY-tc-33u"; */
+"ROY-tc-33u.text" = "in 30 sec";
+
+/* Class = "UILabel"; text = "Battery Temp."; ObjectID = "SBa-RS-AJP"; */
+"SBa-RS-AJP.text" = "Battery Temp.";
+
+/* Class = "UILabel"; text = "原始名稱:Ecoreco 123"; ObjectID = "TLM-Nb-0Dw"; */
+"TLM-Nb-0Dw.text" = "原始名稱:Ecoreco 123";
+
+/* Class = "UILabel"; text = "Battery Health"; ObjectID = "TXZ-Eg-kTn"; */
+"TXZ-Eg-kTn.text" = "Battery Health";
+
+/* Class = "UILabel"; text = "Range Est."; ObjectID = "Ufn-VQ-8LO"; */
+"Ufn-VQ-8LO.text" = "Range Est.";
+
+/* Class = "UILabel"; text = "請重新設定六位數Combo密碼"; ObjectID = "WqF-F6-RtR"; */
+"WqF-F6-RtR.text" = "請重新設定六位數Combo密碼";
+
+/* Class = "UILabel"; text = "%"; ObjectID = "YI9-XD-zfA"; */
+"YI9-XD-zfA.text" = "%";
+
+/* Class = "UILabel"; text = "Odometer"; ObjectID = "Z9t-yz-52t"; */
+"Z9t-yz-52t.text" = "Odometer";
+
+/* Class = "UIButton"; normalTitle = "確認"; ObjectID = "bZS-gF-4Ro"; */
+"bZS-gF-4Ro.normalTitle" = "確認";
+
+/* Class = "UILabel"; text = "Battery"; ObjectID = "btk-oR-Tva"; */
+"btk-oR-Tva.text" = "Battery";
+
+/* Class = "UILabel"; text = "Trip"; ObjectID = "dli-Fp-vgM"; */
+"dli-Fp-vgM.text" = "Trip";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "eb6-Nc-FB9"; */
+"eb6-Nc-FB9.text" = "0";
+
+/* Class = "UILabel"; text = "%"; ObjectID = "es8-iF-Hgx"; */
+"es8-iF-Hgx.text" = "%";
+
+/* Class = "UILabel"; text = "顯示密碼"; ObjectID = "fa3-GI-i9Z"; */
+"fa3-GI-i9Z.text" = "顯示密碼";
+
+/* Class = "UILabel"; text = "Fall Detected"; ObjectID = "fck-Kh-NlH"; */
+"fck-Kh-NlH.text" = "Fall Detected";
+
+/* Class = "UILabel"; text = "Range Est."; ObjectID = "pfA-Q2-ylR"; */
+"pfA-Q2-ylR.text" = "Range Est.";
+
+/* Class = "UILabel"; text = "請輸入八個字元的名稱"; ObjectID = "pwD-Ke-lwd"; */
+"pwD-Ke-lwd.text" = "請輸入八個字元的名稱";
+
+/* Class = "UILabel"; text = "Trip"; ObjectID = "tkc-kJ-9By"; */
+"tkc-kJ-9By.text" = "Trip";
+
+/* Class = "UILabel"; text = "你的Scooter已成功認證"; ObjectID = "xo2-O3-dPg"; */
+"xo2-O3-dPg.text" = "你的Scooter已成功認證";
+
+/* Class = "UILabel"; text = "Helmet On"; ObjectID = "xxc-Wp-07g"; */
+"xxc-Wp-07g.text" = "Helmet On";
