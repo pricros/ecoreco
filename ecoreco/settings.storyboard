@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -636,7 +636,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAFETY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bV-5j-8EE">
-                                <rect key="frame" x="117.5" y="30" width="140" height="100"/>
+                                <rect key="frame" x="118" y="30" width="140" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="FV1-sF-P6M"/>
                                 </constraints>
@@ -910,10 +910,10 @@
             </objects>
             <point key="canvasLocation" x="279" y="-152"/>
         </scene>
-        <!--Table View Controller-->
+        <!--User Profile Table View Controller-->
         <scene sceneID="Hbd-H2-Qod">
             <objects>
-                <tableViewController id="Utn-m3-hxj" sceneMemberID="viewController">
+                <tableViewController id="Utn-m3-hxj" customClass="UserProfileTableViewController" customModule="ecoreco" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="YP3-m8-bok">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="491"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1134,6 +1134,14 @@
                             <outlet property="delegate" destination="Utn-m3-hxj" id="kAu-zh-nkb"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="txtBirthday" destination="p1t-5I-yIX" id="Mte-sv-5AS"/>
+                        <outlet property="txtEmail" destination="Usl-RU-dK9" id="MNw-qo-oUY"/>
+                        <outlet property="txtGender" destination="jfB-LT-sYn" id="qPe-Bv-axd"/>
+                        <outlet property="txtHeight" destination="ens-Oj-O5Y" id="K1u-6K-Ada"/>
+                        <outlet property="txtUnit" destination="IKH-Fm-GsE" id="t9a-U5-kI7"/>
+                        <outlet property="txtWeight" destination="mkQ-uX-yDt" id="9u5-El-wQi"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F8Q-Bm-OHp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1168,7 +1176,7 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHOP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3n-Hd-8Lh">
-                                <rect key="frame" x="162" y="26" width="51.5" height="62"/>
+                                <rect key="frame" x="162.5" y="26" width="51.5" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="zdi-Hv-nSw"/>
                                 </constraints>
@@ -1473,11 +1481,11 @@
                                 <exclude reference="eze-G3-SYc"/>
                                 <exclude reference="vnG-4D-Ipl"/>
                                 <exclude reference="Qet-3d-a6n"/>
+                                <exclude reference="CQs-cT-kdl"/>
+                                <exclude reference="LNT-JI-fiZ"/>
                                 <exclude reference="5sj-cE-GOx"/>
                                 <exclude reference="kHc-C9-SNd"/>
                                 <exclude reference="ndh-uG-G26"/>
-                                <exclude reference="CQs-cT-kdl"/>
-                                <exclude reference="LNT-JI-fiZ"/>
                             </mask>
                         </variation>
                     </view>

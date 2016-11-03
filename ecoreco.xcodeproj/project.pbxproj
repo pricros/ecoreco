@@ -44,6 +44,7 @@
 		18EEF0C81C2AFEB40065AFE7 /* NRFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEF0C71C2AFEB40065AFE7 /* NRFManager.swift */; };
 		18EEF0F81C2BF06F0065AFE7 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEF0F71C2BF06F0065AFE7 /* DashboardViewController.swift */; };
 		3C460A4E1C3CAFE100FB6EB6 /* mapPoint.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C460A4D1C3CAFE100FB6EB6 /* mapPoint.png */; };
+		3C6DBF741DCB1A6A00F097F0 /* UserProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DBF731DCB1A6A00F097F0 /* UserProfileTableViewController.swift */; };
 		3CB16A6F1DADC990004C3191 /* RideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB16A6E1DADC990004C3191 /* RideViewController.swift */; };
 		3CB16A761DADCB01004C3191 /* EditScooterComboViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB16A701DADCB01004C3191 /* EditScooterComboViewController.swift */; };
 		3CB16A771DADCB01004C3191 /* SafetyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB16A711DADCB01004C3191 /* SafetyViewController.swift */; };
@@ -155,6 +156,7 @@
 		18EEF0C71C2AFEB40065AFE7 /* NRFManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRFManager.swift; sourceTree = "<group>"; };
 		18EEF0F71C2BF06F0065AFE7 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		3C460A4D1C3CAFE100FB6EB6 /* mapPoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mapPoint.png; path = images/mapPoint.png; sourceTree = "<group>"; };
+		3C6DBF731DCB1A6A00F097F0 /* UserProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewController.swift; sourceTree = "<group>"; };
 		3CB16A6E1DADC990004C3191 /* RideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideViewController.swift; sourceTree = "<group>"; };
 		3CB16A701DADCB01004C3191 /* EditScooterComboViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditScooterComboViewController.swift; sourceTree = "<group>"; };
 		3CB16A711DADCB01004C3191 /* SafetyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafetyViewController.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 		1863F3981CF4160F00B21266 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3C6DBF731DCB1A6A00F097F0 /* UserProfileTableViewController.swift */,
 				3CB16A7C1DADFDE9004C3191 /* ShopViewController.swift */,
 				3CB16A701DADCB01004C3191 /* EditScooterComboViewController.swift */,
 				3CB16A711DADCB01004C3191 /* SafetyViewController.swift */,
@@ -649,6 +652,7 @@
 				18EEF0BA1C2A3C380065AFE7 /* MapViewController.swift in Sources */,
 				181F4FAC1CFD88D100B13E77 /* ScooterModel.swift in Sources */,
 				3CB16A7B1DADCB01004C3191 /* UserProfileViewController.swift in Sources */,
+				3C6DBF741DCB1A6A00F097F0 /* UserProfileTableViewController.swift in Sources */,
 				3CB16A6F1DADC990004C3191 /* RideViewController.swift in Sources */,
 				84D588F21DB6B5E000063BD6 /* DiagnoseViewController.swift in Sources */,
 				18EEF0C81C2AFEB40065AFE7 /* NRFManager.swift in Sources */,

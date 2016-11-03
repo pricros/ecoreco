@@ -1,5 +1,5 @@
 //
-//  RideViewController.swift
+//  SafetyViewController.swift
 //  ecoreco
 //
 

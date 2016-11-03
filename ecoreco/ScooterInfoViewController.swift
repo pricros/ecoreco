@@ -1,5 +1,5 @@
 //
-//  RideViewController.swift
+//  ScooterInfoViewController.swift
 //  ecoreco
 //
 
