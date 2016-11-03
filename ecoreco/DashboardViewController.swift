@@ -120,11 +120,11 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         let pointerHeight   = pointerImage.size.height/1920 * sizeRect.size.height
         layer = CALayer()
         let speedMeterStartX = imgViewSpeedMeter.frame.origin.x
-        let speedMeterStartY = imgViewSpeedMeter.frame.origin.y + imgViewSpeedMeter.frame.height/2 - pointerHeight/2
+        let speedMeterStartY = imgViewSpeedMeter.frame.origin.y + imgViewSpeedMeter.frame.height/2 - pointerHeight/2+Constants.kCGFloatAdjustWidth/2
         layer?.frame = CGRectMake(speedMeterStartX,speedMeterStartY, imgViewSpeedMeter.frame.width , pointerHeight)
         layer?.contents = pointerImage.CGImage as? AnyObject
         self.imgViewSpeedMeter.layer.addSublayer(layer!)
-        self.imgViewSpeedMeter.sendSubviewToBack(counterView)
+        self.imgViewSpeedMeter.bringSubviewToFront(counterView)
         scooter.enterStandby()
         
     }

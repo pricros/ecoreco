@@ -22,6 +22,8 @@ let π:CGFloat = CGFloat(M_PI)
     @IBInspectable var outlineColor: UIColor = UIColor.blueColor()
     @IBInspectable var counterColor: UIColor = UIColor.greenColor()
     
+
+    
     override func drawRect(rect: CGRect) {
         // 1
         let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
@@ -29,22 +31,19 @@ let π:CGFloat = CGFloat(M_PI)
         // 2
         let radius: CGFloat = max(bounds.width, bounds.height)
         
-        // 3
-        let arcWidth: CGFloat = 13
-        
         // 4
         let startAngle: CGFloat =  π
         let endAngle: CGFloat =  π * (1 + 1 / 25 * CGFloat(speed))
         
         // 5
         let path = UIBezierPath(arcCenter: center,
-                                radius: radius/2 - 24,
+                                radius: radius/2 - Constants.kCGFloatAdjustWidth,
                                 startAngle: startAngle,
                                 endAngle: endAngle,
                                 clockwise: true)
         
         // 6
-        path.lineWidth = arcWidth
+        path.lineWidth = Constants.kCGFloatArcWidth
         counterColor.setStroke()
         path.stroke()
         
