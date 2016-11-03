@@ -67,6 +67,7 @@
 		842DCFFC1DB5D42400A71A8E /* SetDeviceNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFFB1DB5D42300A71A8E /* SetDeviceNameViewController.swift */; };
 		84850A591DC7ABD000FA8F1D /* SlowDownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84850A581DC7ABD000FA8F1D /* SlowDownViewController.swift */; };
 		84850A5B1DC7AE9100FA8F1D /* HelmetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84850A5A1DC7AE9100FA8F1D /* HelmetViewController.swift */; };
+		84850A8A1DCA353B00FA8F1D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84850A8C1DCA353B00FA8F1D /* InfoPlist.strings */; };
 		8492C5AB1D60D2CD0021D2FC /* PairViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492C5AA1D60D2CD0021D2FC /* PairViewController.swift */; };
 		84C3647F1D9CEF3C00AD4773 /* shop-g@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C364731D9CEF3C00AD4773 /* shop-g@3.png */; };
 		84C364801D9CEF3C00AD4773 /* shop-w@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C364741D9CEF3C00AD4773 /* shop-w@3.png */; };
@@ -180,6 +181,9 @@
 		84850A5A1DC7AE9100FA8F1D /* HelmetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelmetViewController.swift; sourceTree = "<group>"; };
 		84850A831DCA330300FA8F1D /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		84850A841DCA330300FA8F1D /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		84850A8B1DCA353B00FA8F1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		84850A8D1DCA354C00FA8F1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		84850A8E1DCA354E00FA8F1D /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		8492C5AA1D60D2CD0021D2FC /* PairViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairViewController.swift; sourceTree = "<group>"; };
 		84C364731D9CEF3C00AD4773 /* shop-g@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shop-g@3.png"; path = "images/shop-g@3.png"; sourceTree = "<group>"; };
 		84C364741D9CEF3C00AD4773 /* shop-w@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shop-w@3.png"; path = "images/shop-w@3.png"; sourceTree = "<group>"; };
@@ -301,6 +305,7 @@
 		187B92C61C26716500DA3BDF /* ecoreco */ = {
 			isa = PBXGroup;
 			children = (
+				84850A851DCA347700FA8F1D /* Resource */,
 				84D588F51DBC6C1E00063BD6 /* Storyboard */,
 				842DCFF41DB3392900A71A8E /* Util */,
 				84E61C201DAA9DDF00A83B30 /* Fonts */,
@@ -400,6 +405,14 @@
 				842DCFF51DB3395600A71A8E /* ColorUtil.swift */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		84850A851DCA347700FA8F1D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				84850A8C1DCA353B00FA8F1D /* InfoPlist.strings */,
+			);
+			name = Resource;
 			sourceTree = "<group>";
 		};
 		84D588F51DBC6C1E00063BD6 /* Storyboard */ = {
@@ -515,6 +528,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
 			);
 			mainGroup = 187B92BB1C26716500DA3BDF;
 			productRefGroup = 187B92C51C26716500DA3BDF /* Products */;
@@ -555,6 +569,7 @@
 				84D588F41DBC6AAE00063BD6 /* LaunchScreen.storyboard in Resources */,
 				187B92CF1C26716600DA3BDF /* Assets.xcassets in Resources */,
 				1876A5B31C3265430016EBCA /* modeEkickExtendOn.png in Resources */,
+				84850A8A1DCA353B00FA8F1D /* InfoPlist.strings in Resources */,
 				84C364811D9CEF3C00AD4773 /* security-g@3.png in Resources */,
 				1876A5B01C3265430016EBCA /* modeEkickAmplifiedOff.png in Resources */,
 				84C364851D9CEF3C00AD4773 /* bluetooth-g@3.png in Resources */,
@@ -691,6 +706,16 @@
 				84850A831DCA330300FA8F1D /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		84850A8C1DCA353B00FA8F1D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84850A8B1DCA353B00FA8F1D /* Base */,
+				84850A8D1DCA354C00FA8F1D /* en */,
+				84850A8E1DCA354E00FA8F1D /* zh-Hant */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
