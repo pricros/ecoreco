@@ -18,7 +18,7 @@ class ResetComboViewController: CommonViewController, UITextFieldDelegate {
 
     @IBOutlet weak var btnLeft: UIButton!
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
     }
     
@@ -27,14 +27,14 @@ class ResetComboViewController: CommonViewController, UITextFieldDelegate {
         txtPassword.delegate = self
         txtPasswordConfirm.delegate = self
         bShowPassword = false
-        txtPassword.secureTextEntry = true
-        txtPasswordConfirm.secureTextEntry = true
+        txtPassword.isSecureTextEntry = true
+        txtPasswordConfirm.isSecureTextEntry = true
     }
     
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtPasswordConfirm: UITextField!
     @IBOutlet weak var btnConfirm: UIButton!
-    @IBAction func addLeft(sender: UIButton) {
+    @IBAction func addLeft(_ sender: UIButton) {
         let unicode:String = "\u{2190}"
         addTextToCurrentTextField(unicode)
 
@@ -42,21 +42,21 @@ class ResetComboViewController: CommonViewController, UITextFieldDelegate {
     
     var currentTextField: UITextField?
     
-    @IBAction func addRight(sender: UIButton) {
+    @IBAction func addRight(_ sender: UIButton) {
         let unicode:String = "\u{2192}"
         addTextToCurrentTextField(unicode)
         
         print(currentTextField)
     }
     
-    @IBAction func addDown(sender: UIButton) {
+    @IBAction func addDown(_ sender: UIButton) {
         let unicode:String = "\u{2193}"
         addTextToCurrentTextField(unicode)
 
         
     }
     
-    func addTextToCurrentTextField(unicode:String){
+    func addTextToCurrentTextField(_ unicode:String){
         if (currentTextField != nil){
             let currentCharacterCount = (currentTextField?.text)!.characters.count ?? 0
             if (currentCharacterCount < kMaxLength){
@@ -65,37 +65,37 @@ class ResetComboViewController: CommonViewController, UITextFieldDelegate {
         }
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
 
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder();
         
-        textField.borderStyle = UITextBorderStyle.Bezel
+        textField.borderStyle = UITextBorderStyle.bezel
         currentTextField = textField
         // Additional code here
         return false
     }
     
-    @IBAction func showPassword(sender: UIButton) {
+    @IBAction func showPassword(_ sender: UIButton) {
         if ((bShowPassword) == true){ // not show
-            sender.setImage(UIImage(named:"uncheck-rstCmb"), forState: UIControlState.Normal)
-            txtPassword.secureTextEntry = true
-            txtPasswordConfirm.secureTextEntry = true
+            sender.setImage(UIImage(named:"uncheck-rstCmb"), for: UIControlState())
+            txtPassword.isSecureTextEntry = true
+            txtPasswordConfirm.isSecureTextEntry = true
             bShowPassword = false
         } else { //  show
-            sender.setImage(UIImage(named:"checked-rstCmb"), forState: UIControlState.Normal)
-            txtPassword.secureTextEntry = false
-            txtPasswordConfirm.secureTextEntry = false
+            sender.setImage(UIImage(named:"checked-rstCmb"), for: UIControlState())
+            txtPassword.isSecureTextEntry = false
+            txtPasswordConfirm.isSecureTextEntry = false
             bShowPassword = true
         }
 
     }
 
-    @IBAction func clearText(sender: UIButton) {
+    @IBAction func clearText(_ sender: UIButton) {
         txtPassword.text = ""
         txtPasswordConfirm.text = ""
         password1 = ""
@@ -103,15 +103,15 @@ class ResetComboViewController: CommonViewController, UITextFieldDelegate {
         
     }
     
-    @IBAction func backSpace(sender: UIButton) {
+    @IBAction func backSpace(_ sender: UIButton) {
         let currentCharacterCount = (currentTextField?.text)!.characters.count ?? 0
         //currentTextField!.text = currentTextField!.text?.substringToIndex(Index)
     
     }
     
-    @IBAction func sendComboCommand(sender: UIButton) {
+    @IBAction func sendComboCommand(_ sender: UIButton) {
          //@todo: send the combo to target
-        self.performSegueWithIdentifier("segueRstCmbToSetName", sender: nil)
+        self.performSegue(withIdentifier: "segueRstCmbToSetName", sender: nil)
         
     }
 

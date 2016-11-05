@@ -16,7 +16,7 @@ class RideViewController: CommonViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         let tapGestureRecognizerImgBack = UITapGestureRecognizer(target: self, action:#selector(RideViewController.tappedBack))
-        imgBack.userInteractionEnabled = true
+        imgBack.isUserInteractionEnabled = true
         imgBack.addGestureRecognizer(tapGestureRecognizerImgBack)
 
     }
@@ -27,7 +27,7 @@ class RideViewController: CommonViewController {
     }
     
     func tappedBack(){
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     

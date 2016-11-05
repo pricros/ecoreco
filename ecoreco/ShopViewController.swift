@@ -19,13 +19,13 @@ class ShopViewController: CommonViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         let tapGestureRecognizerImgBack = UITapGestureRecognizer(target: self, action:#selector(RideViewController.tappedBack))
-        imgBack.userInteractionEnabled = true
+        imgBack.isUserInteractionEnabled = true
         imgBack.addGestureRecognizer(tapGestureRecognizerImgBack)
         
         
 
-        let url = NSURL (string: "https://ecorecoscooter.com/");
-        let requestObj = NSURLRequest(URL: url!);
+        let url = URL (string: "https://ecorecoscooter.com/");
+        let requestObj = URLRequest(url: url!);
         webView.loadRequest(requestObj);
         webView.scalesPageToFit = true
         
@@ -40,7 +40,7 @@ class ShopViewController: CommonViewController {
     }
     
     func tappedBack(){
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     

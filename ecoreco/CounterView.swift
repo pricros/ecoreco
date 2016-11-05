@@ -19,12 +19,12 @@ let π:CGFloat = CGFloat(M_PI)
             }
         }
     }
-    @IBInspectable var outlineColor: UIColor = UIColor.blueColor()
-    @IBInspectable var counterColor: UIColor = UIColor.greenColor()
+    @IBInspectable var outlineColor: UIColor = UIColor.blue
+    @IBInspectable var counterColor: UIColor = UIColor.green
     
 
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         // 1
         let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
         

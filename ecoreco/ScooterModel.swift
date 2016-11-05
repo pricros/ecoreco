@@ -31,22 +31,23 @@ public enum UnitType:String {
 
 
 public enum ScooterStatus {
-    case Connected
-    case Standby
-    case Fall
-    case None
+    case connected
+    case standby
+    case fall
+    case none
 }
 
-func iterateEnum<T: Hashable>(_: T.Type) -> AnyGenerator<T> {
+func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
     var i = 0
-    return anyGenerator {
-        let next = withUnsafePointer(&i) { UnsafePointer<T>($0).memory }
-        return next.hashValue == i++ ? next : nil
+    return AnyIterator {
+        let next = withUnsafePointer(to: &i) { UnsafeRawPointer($0).load(as: T.self) }
+        i = i+1
+        return next.hashValue == i ? next : nil
     }
 }
 
 protocol ScooterModelRunProtocol:class{
-    func onSpeedReceived(speed:Int)
+    func onSpeedReceived(_ speed:Int)
     func onFallDetected()
 }
 
@@ -55,18 +56,18 @@ protocol ScooterModelLockProtocol:class{
 }
 
 protocol ScooterModelProfileProtocol:class{
-    func onTripDataReceived(type:OdoTripType,value:Int)
-    func onEstimateDistanceReceived(value:Int)
+    func onTripDataReceived(_ type:OdoTripType,value:Int)
+    func onEstimateDistanceReceived(_ value:Int)
 }
 
 class ScooterModel:NSObject, NRFManagerDelegate{
     weak var runDelegate: ScooterModelRunProtocol!
     weak var lockDelegate: ScooterModelLockProtocol!
-    private var nrfManager:NRFManager!
-    private var status:ScooterStatus?
+    fileprivate var nrfManager:NRFManager!
+    fileprivate var status:ScooterStatus?
     
     static let sharedInstance = ScooterModel()
-    let userDefaults = NSUserDefaults.standardUserDefaults()
+    let userDefaults = UserDefaults.standard
 
     
     let speed = Observable<Int>(0)
@@ -115,31 +116,31 @@ class ScooterModel:NSObject, NRFManagerDelegate{
             },
             onDisconnect: {
                 self.log("\(#file) \(#line) \nC: ★ Disconnected")
-                self.status = ScooterStatus.None
+                self.status = ScooterStatus.none
             },
             onData: {
-                (data:NSData?, string:String?)->() in
+                (data:Data?, string:String?)->() in
                 self.log("\(#file) \(#line) \nC: ⬇ Received data - String: \(string) - Data: \(data)")
                 // parsing data and call relative delegate method
                 if let rtnString = string {
-                    let rtnCmd = (rtnString as NSString).substringToIndex(3)
+                    let rtnCmd = (rtnString as NSString).substring(to: 3)
                     
                     switch rtnCmd {
            
                     case self.MODE :
-                        let mode:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,1)))!
+                        let mode:Int = Int((rtnString as NSString).substring(with: NSMakeRange(3,1)))!
                         self.mode.set(mode)
-                        self.userDefaults.setInteger(mode, forKey: self.MODE)
+                        self.userDefaults.set(mode, forKey: self.MODE)
                         self.mode.setNeedAck(false)
                         break
                     case self.MPH:
-                        let speed:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,3)))!
+                        let speed:Int = Int((rtnString as NSString).substring(with: NSMakeRange(3,3)))!
                         self.speed.set(speed)
                         break
 //                    case KMPH:
                     case self.ODO+UnitType.KM.rawValue:
-                        let odoType:String = (rtnString as NSString).substringWithRange(NSMakeRange(3,1))
-                        let odoDistance:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(4,5)))!
+                        let odoType:String = (rtnString as NSString).substring(with: NSMakeRange(3,1))
+                        let odoDistance:Int = Int((rtnString as NSString).substring(with: NSMakeRange(4,5)))!
 
                         switch odoType {
                         case OdoTripType.TotalDistanceTraveled.rawValue:
@@ -159,16 +160,16 @@ class ScooterModel:NSObject, NRFManagerDelegate{
                             
                         }
                         
-                        self.userDefaults.setInteger(odoDistance, forKey: self.ODO+UnitType.KM.rawValue+odoType)
+                        self.userDefaults.set(odoDistance, forKey: self.ODO+UnitType.KM.rawValue+odoType)
                         
                         break
                    // case ODO+UnitType.Miles:
 //                    case ODORES:
 //                    case ESTIMATE+UnitType.Miles:
                     case self.ESTIMATE+UnitType.KM.rawValue:
-                        let rmm:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,3)))!
+                        let rmm:Int = Int((rtnString as NSString).substring(with: NSMakeRange(3,3)))!
                         self.rmm.set(rmm)
-                        self.userDefaults.setInteger(rmm, forKey: self.ESTIMATE+UnitType.KM.rawValue)
+                        self.userDefaults.set(rmm, forKey: self.ESTIMATE+UnitType.KM.rawValue)
                         break
                     case self.ARR:
                         self.alrStatus.set(0)
@@ -179,21 +180,21 @@ class ScooterModel:NSObject, NRFManagerDelegate{
                         self.falStatus.setNeedAck(false)
                         break
                     case self.FALL:
-                        let fallStatus:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,1)))!
+                        let fallStatus:Int = Int((rtnString as NSString).substring(with: NSMakeRange(3,1)))!
                         self.falStatus.set(fallStatus)
                         break
                     case self.LOCK:
-                        let lockStatus:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,1)))!
+                        let lockStatus:Int = Int((rtnString as NSString).substring(with: NSMakeRange(3,1)))!
                         self.lockStatus.set(lockStatus)
                         self.lockStatus.setNeedAck(false)
-                        self.userDefaults.setInteger(lockStatus, forKey: self.LOCK)
+                        self.userDefaults.set(lockStatus, forKey: self.LOCK)
 
                         break
                     case self.BATT:
-                        let batt:Int = Int((rtnString as NSString).substringWithRange(NSMakeRange(3,3)))!
+                        let batt:Int = Int((rtnString as NSString).substring(with: NSMakeRange(3,3)))!
                         self.bat.set(batt)
                         self.bat.setNeedAck(false)
-                        self.userDefaults.setInteger(batt, forKey: self.BATT)
+                        self.userDefaults.set(batt, forKey: self.BATT)
 
                         break
 //                    case VER:
@@ -212,7 +213,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
         nrfManager.delegate = self
     }
     
-    func log(string:String)
+    func log(_ string:String)
     {
         print(string)
     }
@@ -220,11 +221,11 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     func loadDashboardDatafromUserDefault()
     {
         
-        let mode:Int = self.userDefaults.integerForKey(self.MODE)
+        let mode:Int = self.userDefaults.integer(forKey: self.MODE)
         self.mode.set(mode)
         
         for tripType in iterateEnum(OdoTripType) {
-            let odoDistance:Int = self.userDefaults.integerForKey(self.ODO+UnitType.KM.rawValue+tripType.rawValue)
+            let odoDistance:Int = self.userDefaults.integer(forKey: self.ODO+UnitType.KM.rawValue+tripType.rawValue)
       
             switch tripType.rawValue {
             case OdoTripType.TotalDistanceTraveled.rawValue:
@@ -250,24 +251,24 @@ class ScooterModel:NSObject, NRFManagerDelegate{
         //                    case ODORES:
         //                    case ESTIMATE+UnitType.Miles:
         
-        let rmm:Int = self.userDefaults.integerForKey(self.ESTIMATE+UnitType.KM.rawValue)
+        let rmm:Int = self.userDefaults.integer(forKey: self.ESTIMATE+UnitType.KM.rawValue)
         self.rmm.set(rmm)
         
-        let lock:Int = self.userDefaults.integerForKey(self.LOCK)
+        let lock:Int = self.userDefaults.integer(forKey: self.LOCK)
         self.lockStatus.set(lock)
         
-        let batt:Int = self.userDefaults.integerForKey(self.BATT)
+        let batt:Int = self.userDefaults.integer(forKey: self.BATT)
         self.bat.set(batt)
         
     }
     
-    func sendData(string:String)
+    func sendData(_ string:String)
     {
         let result = self.nrfManager.writeString(string)
         log("\(#file) \(#line) \n⬆ Sent string: \(string) - Result: \(result)")
     }
     
-    func setMode(scooterMode:ScooterRunMode)->Bool
+    func setMode(_ scooterMode:ScooterRunMode)->Bool
     {
         backgroundThread(background:{
             for _ in 1...self.RETRYTIME {
@@ -292,12 +293,12 @@ class ScooterModel:NSObject, NRFManagerDelegate{
         self.nrfManager.disconnect()
     }
     
-    func getTrip(tripType:OdoTripType, unitType:UnitType)->Bool{
+    func getTrip(_ tripType:OdoTripType, unitType:UnitType)->Bool{
         sendData(ODO+unitType.rawValue+tripType.rawValue+ASK)
         return true
     }
     
-    func resetTrip(odoType:OdoTripType)->Bool{
+    func resetTrip(_ odoType:OdoTripType)->Bool{
         sendData(ODORES+odoType.rawValue)
         return true
     }
@@ -338,7 +339,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
         return true
     }
     
-    func getEstimateDistance(unitType:UnitType)->Bool{
+    func getEstimateDistance(_ unitType:UnitType)->Bool{
         sendData(ESTIMATE+unitType.rawValue+ASK)
         return true
     }
@@ -441,7 +442,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
         return self.status
     }
     
-    func setStatus(aStatus:ScooterStatus)->Bool{
+    func setStatus(_ aStatus:ScooterStatus)->Bool{
         self.status = aStatus
         return true
     }
@@ -468,14 +469,14 @@ class ScooterModel:NSObject, NRFManagerDelegate{
 
     
     func enterStandby()->Bool{
-        if(self.status == .Standby){
+        if(self.status == .standby){
             return false
         }else {
-            self.status = .Standby
+            self.status = .standby
             // start a thread to get/monitor all the dashboard data including speedmeter, battery,trip, odo, est meter
             backgroundThread(background:{
 
-                while(self.status == .Standby){
+                while(self.status == .standby){
                     self.getSpeed()
                     usleep(self.ONE_SECOND/2)
 
@@ -486,7 +487,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
             })
             
             backgroundThread(background:{
-                while(self.status == .Standby){
+                while(self.status == .standby){
                     self.getBatteryInfo()
                     usleep(self.ONE_SECOND*10)
                     self.getTrip(OdoTripType.TotalDistanceTraveled,unitType:UnitType.KM)
@@ -502,7 +503,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
             })
             
             backgroundThread(background:{
-                while(self.status == .Standby){
+                while(self.status == .standby){
                     self.getFallStatus()
                     usleep(self.ONE_SECOND*3)
                 }
@@ -518,7 +519,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     }
     
     func exitStandby()->Bool{
-        self.status = .Connected
+        self.status = .connected
         return true
     }
     
@@ -526,12 +527,12 @@ class ScooterModel:NSObject, NRFManagerDelegate{
         
     }
     
-    func backgroundThread(delay: Double = 0.0, background: (() -> Void)? = nil, completion:(() -> Void)?){
-        dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue),0)){
+    func backgroundThread(_ delay: Double = 0.0, background: (() -> Void)? = nil, completion:(() -> Void)?){
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async{
             if(background != nil){ background!()}
             
-            let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC)))
-            dispatch_after(popTime, dispatch_get_main_queue()){
+            let popTime = DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+            DispatchQueue.main.asyncAfter(deadline: popTime){
                 if (completion != nil){completion!()}
             }
         }

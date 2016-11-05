@@ -13,16 +13,16 @@ class RadarEcorecoIcon: UIView {
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         // Drawing code
         drawEcorecoIcon(32)
 
     }
  
     
-    func drawEcorecoIcon(strength:Float){
+    func drawEcorecoIcon(_ strength:Float){
         let image = UIImage(named: "ecorecoIcon")
-        image?.drawInRect(CGRectMake(0, 0, 50, 30))
+        image?.draw(in: CGRect(x: 0, y: 0, width: 50, height: 30))
         
     }
 

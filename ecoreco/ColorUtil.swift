@@ -27,19 +27,19 @@ class ColorUtil {
     static let FONT_VDS_T5:UIFont = UIFont(name:"VDS-Thin", size:13.3)!
     
     
-    static func hexStringToUIColor (hex:String) -> UIColor {
-        var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet() as NSCharacterSet).uppercaseString
+    static func hexStringToUIColor (_ hex:String) -> UIColor {
+        var cString:String = hex.trimmingCharacters(in:(NSCharacterSet.whitespacesAndNewlines as NSCharacterSet) as CharacterSet).uppercased()
         
         if (cString.hasPrefix("#")) {
-            cString = cString.substringFromIndex(cString.startIndex.advancedBy(1))
+            cString = cString.substring(from: cString.characters.index(cString.startIndex, offsetBy: 1))
         }
         
         if ((cString.characters.count) != 6) {
-            return UIColor.grayColor()
+            return UIColor.gray
         }
         
         var rgbValue:UInt32 = 0
-        NSScanner(string: cString).scanHexInt(&rgbValue)
+        Scanner(string: cString).scanHexInt32(&rgbValue)
         
         return UIColor(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,

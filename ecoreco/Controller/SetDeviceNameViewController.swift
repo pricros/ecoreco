@@ -16,12 +16,12 @@ class SetDeviceNameViewController: CommonViewController, UITextFieldDelegate {
         txtDeviceName.delegate = self
     }
 
-    @IBAction func confirmToNextPage(sender: UIButton) {
-        self.performSegueWithIdentifier("segueSetNameToDash", sender: nil)
+    @IBAction func confirmToNextPage(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "segueSetNameToDash", sender: nil)
     }
     
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }

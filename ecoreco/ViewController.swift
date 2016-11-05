@@ -50,23 +50,23 @@ class ViewController: CommonViewController {
             }
             
             let image_digit = UIImage(named: fileName)! as UIImage
-            digitImages[index].setBackgroundImage(image_digit, forState: .Normal)
-            digitImages[index].setTitle("", forState: .Normal)
+            digitImages[index].setBackgroundImage(image_digit, for: UIControlState())
+            digitImages[index].setTitle("", for: UIControlState())
         }
 
         scooter.alrStatus.didChange.addHandler(self, handler: ViewController.alarmStatusDidChange)
         
-        if (scooter.getStatus() == .Connected){
-            let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-            dispatch_async(dispatch_get_global_queue(priority, 0))
+        if (scooter.getStatus() == .connected){
+            let priority = DispatchQueue.GlobalQueuePriority.default
+            DispatchQueue.global(priority: priority).async
             {
 
-                while(self.scooter.getStatus() == .Connected){
+                while(self.scooter.getStatus() == .connected){
                     self.scooter.getAlarmStatus()
                     usleep(1000000)
                 }
 
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
             }
             }
 
@@ -79,7 +79,7 @@ class ViewController: CommonViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func appendDigit(sender: UIButton) {
+    @IBAction func appendDigit(_ sender: UIButton) {
         
         let digit = sender.currentTitle
         print("digit=\(digit)")
@@ -88,29 +88,29 @@ class ViewController: CommonViewController {
         
     }
     
-    func alarmStatusDidChange(oldValue:Int, newValue:Int) {
-        if (scooter.getStatus() == .Connected){
+    func alarmStatusDidChange(_ oldValue:Int, newValue:Int) {
+        if (scooter.getStatus() == .connected){
             if (newValue == 1){
                 let myAlert = UIAlertController(title: "Thief Detected!",
-                                                message:"Watch your scooter!", preferredStyle: .Alert)
-                let okAction = UIAlertAction(title: "Fine", style: .Default,
+                                                message:"Watch your scooter!", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Fine", style: .default,
                                              handler:{
                                                 (action:UIAlertAction)->() in
                                                 print("fine")
-                                                self.dismissViewControllerAnimated(true, completion: nil)
+                                                self.dismiss(animated: true, completion: nil)
                 })
                 
-                let cancelAction = UIAlertAction(title: "So So", style: .Default,
+                let cancelAction = UIAlertAction(title: "So So", style: .default,
                                              handler:{
                                                 (action:UIAlertAction)->() in
                                                 print("soso")
-                                                self.dismissViewControllerAnimated(true, completion: nil)
+                                                self.dismiss(animated: true, completion: nil)
                 })
                 
                 myAlert.addAction(okAction)
                 myAlert.addAction(cancelAction)
                 
-                self.presentViewController(myAlert, animated: true, completion: nil)
+                self.present(myAlert, animated: true, completion: nil)
             }
             else
             {

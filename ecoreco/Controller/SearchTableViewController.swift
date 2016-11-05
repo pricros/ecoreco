@@ -26,20 +26,20 @@ class SearchTableViewController: CommonViewController, UITableViewDataSource, UI
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.searchTableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! SearchTableViewCell
-        cell.buttonDeviceListItem.userInteractionEnabled = true
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.searchTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SearchTableViewCell
+        cell.buttonDeviceListItem.isUserInteractionEnabled = true
        // cell.buttonDeviceListItem.setBackgroundImage(UIImage(named: "bgDevice"), forState: .Normal)
-        cell.buttonDeviceListItem.setTitleColor(ColorUtil.hexStringToUIColor("0x8d8d8d"), forState: UIControlState.Normal)
-        cell.buttonDeviceListItem.setTitleColor(ColorUtil.hexStringToUIColor("0x91aa00"), forState: UIControlState.Highlighted)
-        cell.buttonDeviceListItem.setTitleColor(ColorUtil.hexStringToUIColor("0x91aa00"), forState:UIControlState.Selected)
-        cell.buttonDeviceListItem.setTitle(name[indexPath.row], forState: .Normal)
-        cell.buttonDeviceListItem.setTitle(name[indexPath.row], forState: .Highlighted)
-        cell.buttonDeviceListItem.addTarget(self, action:  #selector(SearchTableViewController.deviceClicked(_:)), forControlEvents: .TouchUpInside)
+        cell.buttonDeviceListItem.setTitleColor(ColorUtil.hexStringToUIColor("0x8d8d8d"), for: UIControlState())
+        cell.buttonDeviceListItem.setTitleColor(ColorUtil.hexStringToUIColor("0x91aa00"), for: UIControlState.highlighted)
+        cell.buttonDeviceListItem.setTitleColor(ColorUtil.hexStringToUIColor("0x91aa00"), for:UIControlState.selected)
+        cell.buttonDeviceListItem.setTitle(name[indexPath.row], for: UIControlState())
+        cell.buttonDeviceListItem.setTitle(name[indexPath.row], for: .highlighted)
+        cell.buttonDeviceListItem.addTarget(self, action:  #selector(SearchTableViewController.deviceClicked(_:)), for: .touchUpInside)
        
         
         
@@ -52,10 +52,10 @@ class SearchTableViewController: CommonViewController, UITableViewDataSource, UI
 //    }
     
     
-    func deviceClicked(sender:UIButton){
+    func deviceClicked(_ sender:UIButton){
         NSLog("item \(sender.titleLabel?.text) selected")
         scooter.connect()
-        self.performSegueWithIdentifier("seguePairToRstCmb", sender: nil)
+        self.performSegue(withIdentifier: "seguePairToRstCmb", sender: nil)
     }
     /*
     // MARK: - Navigation
