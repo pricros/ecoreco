@@ -27,6 +27,8 @@ class SafetyViewController: CommonViewController, UITextFieldDelegate {
         imgBack.isUserInteractionEnabled = true
         imgBack.addGestureRecognizer(tapGestureRecognizerImgBack)
         
+        //get setting view from db
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,14 +40,15 @@ class SafetyViewController: CommonViewController, UITextFieldDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
         self.view.endEditing(true)
         let checkValue = checkInputValue(inputText: textField.text!)
         
         if (checkValue) == true {
             if (textField)==txtEmergencyCall
             {
-            //@save data to user default
+                //@save data to user default
                 userDefaults.setValue(textField.text, forKey: Constants.kUserDefaultEmergencyCall)
             }
             else if (textField)==txtEmergencySMS
@@ -60,8 +63,9 @@ class SafetyViewController: CommonViewController, UITextFieldDelegate {
         
         resignFirstResponder()
         
-        
-        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return true
         
     }

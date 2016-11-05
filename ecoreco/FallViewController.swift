@@ -27,7 +27,7 @@ class FallViewController: CommonViewController {
         
         
         //===============setting sample
-        userDefaults.set("0937218247", forKey: "ecoreco_fall_phoneNo")
+       
         userDefaults.set(30, forKey: "ecoreco_fall_limitSec")
         //===============end setting sample
         
@@ -83,7 +83,8 @@ class FallViewController: CommonViewController {
         //stop counter
         self.isCalled = true
         
-        let phoneNo = userDefaults.object(forKey: "ecoreco_fall_phoneNo") as! String
+        let phoneNo = userDefaults.object(forKey: Constants.kUserDefaultEmergencyCall) as! String
+        
         print("phoneNo: \(phoneNo)")
         
         if !phoneNo.isEmpty{
