@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class Constants {
-    static let kCGFloatAdjustWidth:CGFloat = 0
+    static let kCGFloatAdjustWidth:CGFloat = 24
     static let kCGFloatArcWidth: CGFloat = 13
     static let kNotifyPeripheralUpdate: String = "NotifyPeripheralUpdate"
     static let kPeripherals: String = "kPeripherals"
