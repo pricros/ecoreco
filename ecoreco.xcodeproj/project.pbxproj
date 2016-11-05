@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -43,7 +43,11 @@
 		18EEF0BA1C2A3C380065AFE7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEF0B91C2A3C380065AFE7 /* MapViewController.swift */; };
 		18EEF0C81C2AFEB40065AFE7 /* NRFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEF0C71C2AFEB40065AFE7 /* NRFManager.swift */; };
 		18EEF0F81C2BF06F0065AFE7 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEF0F71C2BF06F0065AFE7 /* DashboardViewController.swift */; };
+		3C43645E1DCC541100E8E944 /* UserDeviceSetting+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C43645C1DCC541100E8E944 /* UserDeviceSetting+CoreDataClass.swift */; };
+		3C43645F1DCC541100E8E944 /* UserDeviceSetting+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C43645D1DCC541100E8E944 /* UserDeviceSetting+CoreDataProperties.swift */; };
 		3C460A4E1C3CAFE100FB6EB6 /* mapPoint.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C460A4D1C3CAFE100FB6EB6 /* mapPoint.png */; };
+		3C48D2351DCCE2BE0003FE8C /* BaseDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C48D2331DCCE2BE0003FE8C /* BaseDataController.swift */; };
+		3C48D2361DCCE2BE0003FE8C /* UserDeviceSettingDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C48D2341DCCE2BE0003FE8C /* UserDeviceSettingDC.swift */; };
 		3C6DBF741DCB1A6A00F097F0 /* UserProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DBF731DCB1A6A00F097F0 /* UserProfileTableViewController.swift */; };
 		3CB16A6F1DADC990004C3191 /* RideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB16A6E1DADC990004C3191 /* RideViewController.swift */; };
 		3CB16A761DADCB01004C3191 /* EditScooterComboViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB16A701DADCB01004C3191 /* EditScooterComboViewController.swift */; };
@@ -155,7 +159,11 @@
 		18EEF0B91C2A3C380065AFE7 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		18EEF0C71C2AFEB40065AFE7 /* NRFManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRFManager.swift; sourceTree = "<group>"; };
 		18EEF0F71C2BF06F0065AFE7 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		3C43645C1DCC541100E8E944 /* UserDeviceSetting+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserDeviceSetting+CoreDataClass.swift"; path = "model/UserDeviceSetting+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3C43645D1DCC541100E8E944 /* UserDeviceSetting+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserDeviceSetting+CoreDataProperties.swift"; path = "model/UserDeviceSetting+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3C460A4D1C3CAFE100FB6EB6 /* mapPoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mapPoint.png; path = images/mapPoint.png; sourceTree = "<group>"; };
+		3C48D2331DCCE2BE0003FE8C /* BaseDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseDataController.swift; path = model/BaseDataController.swift; sourceTree = "<group>"; };
+		3C48D2341DCCE2BE0003FE8C /* UserDeviceSettingDC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDeviceSettingDC.swift; path = model/UserDeviceSettingDC.swift; sourceTree = "<group>"; };
 		3C6DBF731DCB1A6A00F097F0 /* UserProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewController.swift; sourceTree = "<group>"; };
 		3CB16A6E1DADC990004C3191 /* RideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideViewController.swift; sourceTree = "<group>"; };
 		3CB16A701DADCB01004C3191 /* EditScooterComboViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditScooterComboViewController.swift; sourceTree = "<group>"; };
@@ -277,6 +285,10 @@
 		1863F3991CF4161D00B21266 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3C48D2331DCCE2BE0003FE8C /* BaseDataController.swift */,
+				3C48D2341DCCE2BE0003FE8C /* UserDeviceSettingDC.swift */,
+				3C43645C1DCC541100E8E944 /* UserDeviceSetting+CoreDataClass.swift */,
+				3C43645D1DCC541100E8E944 /* UserDeviceSetting+CoreDataProperties.swift */,
 				181F4FA81CFD887200B13E77 /* Scooter.xcdatamodeld */,
 				181F4FAB1CFD88D100B13E77 /* ScooterModel.swift */,
 				183E661B1D09E5BE00E1A4E9 /* Event.swift */,
@@ -525,7 +537,7 @@
 				};
 			};
 			buildConfigurationList = 187B92BF1C26716500DA3BDF /* Build configuration list for PBXProject "ecoreco" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -641,6 +653,7 @@
 				8492C5AB1D60D2CD0021D2FC /* PairViewController.swift in Sources */,
 				842DCFF61DB3395600A71A8E /* ColorUtil.swift in Sources */,
 				183E661C1D09E5BF00E1A4E9 /* Event.swift in Sources */,
+				3C48D2361DCCE2BE0003FE8C /* UserDeviceSettingDC.swift in Sources */,
 				842DCFEB1DAE9D6C00A71A8E /* SearchTableViewController.swift in Sources */,
 				842DCFEF1DAEAAE200A71A8E /* RadarEcorecoIcon.swift in Sources */,
 				842DCFFC1DB5D42400A71A8E /* SetDeviceNameViewController.swift in Sources */,
@@ -650,7 +663,9 @@
 				183E661A1D06C41C00E1A4E9 /* CounterView.swift in Sources */,
 				842DCFED1DAE9F3000A71A8E /* SearchTableViewCell.swift in Sources */,
 				18EEF0BA1C2A3C380065AFE7 /* MapViewController.swift in Sources */,
+				3C43645E1DCC541100E8E944 /* UserDeviceSetting+CoreDataClass.swift in Sources */,
 				181F4FAC1CFD88D100B13E77 /* ScooterModel.swift in Sources */,
+				3C43645F1DCC541100E8E944 /* UserDeviceSetting+CoreDataProperties.swift in Sources */,
 				3CB16A7B1DADCB01004C3191 /* UserProfileViewController.swift in Sources */,
 				3C6DBF741DCB1A6A00F097F0 /* UserProfileTableViewController.swift in Sources */,
 				3CB16A6F1DADC990004C3191 /* RideViewController.swift in Sources */,
@@ -658,6 +673,7 @@
 				18EEF0C81C2AFEB40065AFE7 /* NRFManager.swift in Sources */,
 				18B781831C2935FE00AF0C07 /* SettingViewController.swift in Sources */,
 				8420B9131D651CA5009BA82A /* SettingCollectionViewController.swift in Sources */,
+				3C48D2351DCCE2BE0003FE8C /* BaseDataController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -821,7 +837,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -838,7 +854,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -850,7 +866,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeez.jacky.ecorecoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ecoreco.app/ecoreco";
 			};
 			name = Debug;
@@ -863,7 +879,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeez.jacky.ecorecoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ecoreco.app/ecoreco";
 			};
 			name = Release;
@@ -875,7 +891,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeez.jacky.ecorecoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = ecoreco;
 				USES_XCTRUNNER = YES;
 			};
@@ -888,7 +904,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeez.jacky.ecorecoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = ecoreco;
 				USES_XCTRUNNER = YES;
 			};
