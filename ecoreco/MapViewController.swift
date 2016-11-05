@@ -20,7 +20,7 @@ class MapViewController: CommonViewController, MKMapViewDelegate, CLLocationMana
     
     @IBOutlet weak var mapView: MKMapView! {
         didSet{
-            self.mapView.mapType = .Standard
+            self.mapView.mapType = .standard
             self.mapView.delegate = self
             self.mapView.showsUserLocation = false //to hide the blue dot
         }
@@ -54,12 +54,12 @@ class MapViewController: CommonViewController, MKMapViewDelegate, CLLocationMana
         
         //add tpa action to imageView
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(MapViewController.tappedImage))
-        imgViewDashBoard.userInteractionEnabled = true
+        imgViewDashBoard.isUserInteractionEnabled = true
         imgViewDashBoard.addGestureRecognizer(tapGestureRecognizer)
     }
     
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         print("remove mapVIew")
         self.mapView.showsUserLocation = false
         self.mapView.delegate = nil
@@ -73,7 +73,7 @@ class MapViewController: CommonViewController, MKMapViewDelegate, CLLocationMana
     
     func tappedImage(){
         print("back to dashboard")
-        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     
@@ -82,11 +82,11 @@ class MapViewController: CommonViewController, MKMapViewDelegate, CLLocationMana
         super.didReceiveMemoryWarning()
     }
     
-    func locationManager(manager: CLLocationManager, didFailWithError error:NSError) {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error:Error) {
         print("Errors: " + error.localizedDescription)
     }
     
-    func locationManager(manager:CLLocationManager, didUpdateLocations locations:[CLLocation]) {
+    func locationManager(_ manager:CLLocationManager, didUpdateLocations locations:[CLLocation]) {
         
         let location = locations.last
         
@@ -112,14 +112,14 @@ class MapViewController: CommonViewController, MKMapViewDelegate, CLLocationMana
     
     
     
-    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+    func mapView(_ mapView: MKMapView!, viewFor annotation: MKAnnotation!) -> MKAnnotationView! {
         if !(annotation is CustomPointAnnotation) {
             return nil
         }
         
         let reuseId = "test"
         
-        var anView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
+        var anView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
         if anView == nil {
             anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             anView!.canShowCallout = true

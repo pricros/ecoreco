@@ -14,7 +14,7 @@ class RadarCanvas: UIView {
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         // Drawing code
         
         let adjustDistance:CGFloat = 24
@@ -46,8 +46,8 @@ class RadarCanvas: UIView {
         lineColor.set() // 设置线条颜色
         
         let aPath = UIBezierPath(arcCenter: center, radius: 12, startAngle: (CGFloat)(0), endAngle: (CGFloat)(360), clockwise: true)
-        aPath.addLineToPoint(center)
-        aPath.closePath()
+        aPath.addLine(to: center)
+        aPath.close()
         aPath.lineWidth = 5.0 // 线条宽度
         aPath.fill() // Draws line 根据坐标点连线，填充
 

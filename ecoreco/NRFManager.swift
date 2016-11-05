@@ -11,15 +11,15 @@ import CoreBluetooth
 
 
 public enum ConnectionMode {
-    case None
-    case PinIO
-    case UART
+    case none
+    case pinIO
+    case uart
 }
 
 public enum ConnectionStatus {
-    case Disconnected
-    case Scanning
-    case Connected
+    case disconnected
+    case scanning
+    case connected
 }
 
 
@@ -32,12 +32,12 @@ public enum ConnectionStatus {
 */
 
 // Mark: NRFManager Initialization
-public class NRFManager:NSObject, CBCentralManagerDelegate, UARTPeripheralDelegate {
+open class NRFManager:NSObject, CBCentralManagerDelegate, UARTPeripheralDelegate {
     
 
     //Private Properties
-    private var bluetoothManager:CBCentralManager!
-    private var currentPeripheral: UARTPeripheral? {
+    fileprivate var bluetoothManager:CBCentralManager!
+    fileprivate var currentPeripheral: UARTPeripheral? {
         didSet {
             if let p = currentPeripheral {
                 p.verbose = self.verbose
@@ -46,21 +46,21 @@ public class NRFManager:NSObject, CBCentralManagerDelegate, UARTPeripheralDelega
     }
     
     //Public Properties
-    public var verbose = false
-    public var autoConnect = true
-    public var delegate:NRFManagerDelegate?
+    open var verbose = false
+    open var autoConnect = true
+    open var delegate:NRFManagerDelegate?
 
     //callbacks
-    public var connectionCallback:(()->())?
-    public var disconnectionCallback:(()->())?
-    public var dataCallback:((data:NSData?, string:String?)->())?
+    open var connectionCallback:(()->())?
+    open var disconnectionCallback:(()->())?
+    open var dataCallback:((_ data:Data?, _ string:String?)->())?
     
-    public private(set) var connectionMode = ConnectionMode.None
-    public private(set) var connectionStatus:ConnectionStatus = ConnectionStatus.Disconnected {
+    open fileprivate(set) var connectionMode = ConnectionMode.none
+    open fileprivate(set) var connectionStatus:ConnectionStatus = ConnectionStatus.disconnected {
         didSet {
             if connectionStatus != oldValue {
                 switch connectionStatus {
-                    case .Connected:
+                    case .connected:
                         
                         connectionCallback?()
                         delegate?.nrfDidConnect?(self)
@@ -79,14 +79,14 @@ public class NRFManager:NSObject, CBCentralManagerDelegate, UARTPeripheralDelega
 
     
 
-    public class var sharedInstance : NRFManager {
+    open class var sharedInstance : NRFManager {
         struct Static {
             static let instance : NRFManager = NRFManager()
         }
         return Static.instance
     }
  
-    public init(delegate:NRFManagerDelegate? = nil, onConnect connectionCallback:(()->())? = nil, onDisconnect disconnectionCallback:(()->())? = nil, onData dataCallback:((data:NSData?, string:String?)->())? = nil, autoConnect:Bool = true)
+    public init(delegate:NRFManagerDelegate? = nil, onConnect connectionCallback:(()->())? = nil, onDisconnect disconnectionCallback:(()->())? = nil, onData dataCallback:((_ data:Data?, _ string:String?)->())? = nil, autoConnect:Bool = true)
     {
         super.init()
         self.delegate = delegate
@@ -102,39 +102,39 @@ public class NRFManager:NSObject, CBCentralManagerDelegate, UARTPeripheralDelega
 // MARK: - Private Methods
 extension NRFManager {
     
-    private func scanForPeripheral()
+    fileprivate func scanForPeripheral()
     {
-        let connectedPeripherals = bluetoothManager.retrieveConnectedPeripheralsWithServices([UARTPeripheral.uartServiceUUID()])
+        let connectedPeripherals = bluetoothManager.retrieveConnectedPeripherals(withServices: [UARTPeripheral.uartServiceUUID()])
 
         if connectedPeripherals.count > 0 {
-            log("\(__FILE__) \(__LINE__) \nAlready connected ...")
+            log("\(#file) \(#line) \nAlready connected ...")
             connectPeripheral(connectedPeripherals[0] as CBPeripheral)
         } else {
-            log("\(__FILE__) \(__LINE__) \nScan for Peripherials")
-            bluetoothManager.scanForPeripheralsWithServices([UARTPeripheral.uartServiceUUID()], options: [CBCentralManagerScanOptionAllowDuplicatesKey:false])
+            log("\(#file) \(#line) \nScan for Peripherials")
+            bluetoothManager.scanForPeripherals(withServices: [UARTPeripheral.uartServiceUUID()], options: [CBCentralManagerScanOptionAllowDuplicatesKey:false])
         }
     }
     
-    private func connectPeripheral(peripheral:CBPeripheral) {
-        log("\(__FILE__) \(__LINE__) \nConnect to Peripheral: \(peripheral)")
+    fileprivate func connectPeripheral(_ peripheral:CBPeripheral) {
+        log("\(#file) \(#line) \nConnect to Peripheral: \(peripheral)")
         
         bluetoothManager.cancelPeripheralConnection(peripheral)
         
         currentPeripheral = UARTPeripheral(peripheral: peripheral, delegate: self)
         
-        bluetoothManager.connectPeripheral(peripheral, options: [CBConnectPeripheralOptionNotifyOnDisconnectionKey:false])
+        bluetoothManager.connect(peripheral, options: [CBConnectPeripheralOptionNotifyOnDisconnectionKey:false])
     }
     
-    private func alertBluetoothPowerOff() {
-        log("\(__FILE__) \(__LINE__) \nBluetooth disabled");
+    fileprivate func alertBluetoothPowerOff() {
+        log("\(#file) \(#line) \nBluetooth disabled");
         disconnect()
     }
     
-    private func alertFailedConnection() {
-        log("\(__FILE__) \(__LINE__) \nUnable to connect");
+    fileprivate func alertFailedConnection() {
+        log("\(#file) \(#line) \nUnable to connect");
     }
 
-    private func log(logMessage: String) {
+    fileprivate func log(_ logMessage: String) {
         if (verbose) {
             print("NRFManager: \(logMessage)")
         }
@@ -145,8 +145,8 @@ extension NRFManager {
 extension NRFManager {
     
     public func connect() {
-        if currentPeripheral != nil && connectionStatus == .Connected {
-            log("\(__FILE__) \(__LINE__) \nAsked to connect, but already connected!")
+        if currentPeripheral != nil && connectionStatus == .connected {
+            log("\(#file) \(#line) \nAsked to connect, but already connected!")
             return
         }
         
@@ -156,35 +156,35 @@ extension NRFManager {
     public func disconnect()
     {
         if currentPeripheral == nil {
-            log("\(__FILE__) \(__LINE__) \nAsked to disconnect, but no current connection!")
+            log("\(#file) \(#line) \nAsked to disconnect, but no current connection!")
             return
         }
         
-        log("\(__FILE__) \(__LINE__) \nDisconnect ...")
+        log("\(#file) \(#line) \nDisconnect ...")
         bluetoothManager.cancelPeripheralConnection((currentPeripheral?.peripheral)!)
     }
     
-    public func writeString(string:String) -> Bool
+    public func writeString(_ string:String) -> Bool
     {
         if let currentPeripheral = self.currentPeripheral {
-            if connectionStatus == .Connected {
+            if connectionStatus == .connected {
                 currentPeripheral.writeString(string)
                 return true
             }
         }
-        log("\(__FILE__) \(__LINE__) \nCan't send string. No connection!")
+        log("\(#file) \(#line) \nCan't send string. No connection!")
         return false
     }
     
-    public func writeData(data:NSData) -> Bool
+    public func writeData(_ data:Data) -> Bool
     {
         if let currentPeripheral = self.currentPeripheral {
-            if connectionStatus == .Connected {
+            if connectionStatus == .connected {
                 currentPeripheral.writeRawData(data)
                 return true
             }
         }
-        log("\(__FILE__) \(__LINE__) \nCan't send data. No connection!")
+        log("\(#file) \(#line) \nCan't send data. No connection!")
         return false
     }
 
@@ -193,53 +193,53 @@ extension NRFManager {
 // MARK: - CBCentralManagerDelegate Methods
 extension NRFManager {
 
-        public func centralManagerDidUpdateState(central: CBCentralManager)
+        public func centralManagerDidUpdateState(_ central: CBCentralManager)
         {
-            log("\(__FILE__) \(__LINE__) \nCentral Manager Did UpdateState")
-            if central.state == .PoweredOn {
+            log("\(#file) \(#line) \nCentral Manager Did UpdateState")
+            if central.state == .poweredOn {
                 //respond to powered on
-                log("\(__FILE__) \(__LINE__) \nPowered on!")
+                log("\(#file) \(#line) \nPowered on!")
                 if (autoConnect) {
-                    log("\(__FILE__) \(__LINE__) \n AutoConnect!")
+                    log("\(#file) \(#line) \n AutoConnect!")
                     connect()
                 }
                 
-            } else if central.state == .PoweredOff {
-                log("\(__FILE__) \(__LINE__) \nPowered off!")
-                connectionStatus = ConnectionStatus.Disconnected
-                connectionMode = ConnectionMode.None
+            } else if central.state == .poweredOff {
+                log("\(#file) \(#line) \nPowered off!")
+                connectionStatus = ConnectionStatus.disconnected
+                connectionMode = ConnectionMode.none
             }
         }
     
-        public func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber)
+        public func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber)
         {
-            log("\(__FILE__) \(__LINE__) \nDid discover peripheral: \(peripheral.name)")
+            log("\(#file) \(#line) \nDid discover peripheral: \(peripheral.name)")
             bluetoothManager.stopScan()
             connectPeripheral(peripheral)
         }
     
-        public func centralManager(central: CBCentralManager, didConnectPeripheral peripheral: CBPeripheral)
+        public func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral)
         {
-            log("\(__FILE__) \(__LINE__) \nDid Connect Peripheral")
+            log("\(#file) \(#line) \nDid Connect Peripheral")
             if currentPeripheral?.peripheral == peripheral {
                 if (peripheral.services) != nil {
-                    log("\(__FILE__) \(__LINE__) \nDid connect to existing peripheral: \(peripheral.name)")
+                    log("\(#file) \(#line) \nDid connect to existing peripheral: \(peripheral.name)")
                     currentPeripheral?.peripheral(peripheral, didDiscoverServices: nil)
                 } else {
-                    log("\(__FILE__) \(__LINE__) \nDid connect peripheral: \(peripheral.name)")
+                    log("\(#file) \(#line) \nDid connect peripheral: \(peripheral.name)")
                     currentPeripheral?.didConnect()
                 }
             }
-            connectionStatus = .Connected
+            connectionStatus = .connected
         }
     
-        public func centralManager(central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: NSError?)
+        public func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?)
         {
-            log("\(__FILE__) \(__LINE__) \nPeripheral Disconnected: \(peripheral.name)")
+            log("\(#file) \(#line) \nPeripheral Disconnected: \(peripheral.name)")
             
             if currentPeripheral?.peripheral == peripheral {
-                connectionStatus = ConnectionStatus.Disconnected
-                connectionMode = ConnectionMode.None
+                connectionStatus = ConnectionStatus.disconnected
+                connectionMode = ConnectionMode.none
                 currentPeripheral = nil
             }
             
@@ -257,29 +257,29 @@ extension NRFManager {
 // MARK: - UARTPeripheralDelegate Methods
 extension NRFManager {
     
-    public func didReceiveData(newData:NSData)
+    public func didReceiveData(_ newData:Data)
     {
        // if connectionStatus == .Connected || connectionStatus == .Scanning {
-            log("\(__FILE__) \(__LINE__) \n\(__FILE__) \(__LINE__)Data: \(newData)");
+            log("\(#file) \(#line) \n\(#file) \(#line)Data: \(newData)");
             
-            let string = NSString(data: newData, encoding:NSUTF8StringEncoding)
-            log("\(__FILE__) \(__LINE__) \nString: \(string)")
+            let string = NSString(data: newData, encoding:String.Encoding.utf8.rawValue)
+            log("\(#file) \(#line) \nString: \(string)")
             
-            dataCallback?(data: newData, string: string! as String)
+            dataCallback?(newData, string! as String)
             delegate?.nrfReceivedData?(self, data:newData, string: string! as String)
             
         //}
     }
     
-    public func didReadHardwareRevisionString(string:String)
+    public func didReadHardwareRevisionString(_ string:String)
     {
-        log("\(__FILE__) \(__LINE__) \nHW Revision: \(string)")
-        connectionStatus = .Connected
+        log("\(#file) \(#line) \nHW Revision: \(string)")
+        connectionStatus = .connected
     }
     
-    public func uartDidEncounterError(error:String)
+    public func uartDidEncounterError(_ error:String)
     {
-        log("\(__FILE__) \(__LINE__) \nError: error")
+        log("\(#file) \(#line) \nError: error")
     }
     
 }
@@ -287,9 +287,9 @@ extension NRFManager {
 
 // MARK: NRFManagerDelegate Definition
 @objc public protocol NRFManagerDelegate {
-    optional func nrfDidConnect(nrfManager:NRFManager)
-    optional func nrfDidDisconnect(nrfManager:NRFManager)
-    optional func nrfReceivedData(nrfManager:NRFManager, data:NSData?, string:String?)
+    @objc optional func nrfDidConnect(_ nrfManager:NRFManager)
+    @objc optional func nrfDidDisconnect(_ nrfManager:NRFManager)
+    @objc optional func nrfReceivedData(_ nrfManager:NRFManager, data:Data?, string:String?)
 }
 
 
@@ -301,17 +301,17 @@ extension NRFManager {
 */
 
 // MARK: UARTPeripheral Initialization
-public class UARTPeripheral:NSObject, CBPeripheralDelegate {
+open class UARTPeripheral:NSObject, CBPeripheralDelegate {
     
-    private var peripheral:CBPeripheral
-    private var uartService:CBService?
-    private var rxCharacteristic:CBCharacteristic?
-    private var txCharacteristic:CBCharacteristic?
+    fileprivate var peripheral:CBPeripheral
+    fileprivate var uartService:CBService?
+    fileprivate var rxCharacteristic:CBCharacteristic?
+    fileprivate var txCharacteristic:CBCharacteristic?
     
-    private var delegate:UARTPeripheralDelegate
-    private var verbose = false
+    fileprivate var delegate:UARTPeripheralDelegate
+    fileprivate var verbose = false
     
-    private init(peripheral:CBPeripheral, delegate:UARTPeripheralDelegate)
+    fileprivate init(peripheral:CBPeripheral, delegate:UARTPeripheralDelegate)
     {
         
         self.peripheral = peripheral
@@ -326,28 +326,28 @@ public class UARTPeripheral:NSObject, CBPeripheralDelegate {
 // MARK: Private Methods
 extension UARTPeripheral {
     
-    private func compareID(firstID:CBUUID, toID secondID:CBUUID)->Bool {
-        return firstID.UUIDString == secondID.UUIDString
+    fileprivate func compareID(_ firstID:CBUUID, toID secondID:CBUUID)->Bool {
+        return firstID.uuidString == secondID.uuidString
         
     }
     
-    private func setupPeripheralForUse(peripheral:CBPeripheral)
+    fileprivate func setupPeripheralForUse(_ peripheral:CBPeripheral)
     {
-        log("\(__FILE__) \(__LINE__) \nSet up peripheral for use");
+        log("\(#file) \(#line) \nSet up peripheral for use");
         if let services = peripheral.services {
             for service:CBService in services {
                 if let characteristics = service.characteristics {
                     for characteristic:CBCharacteristic in characteristics {
-                        if compareID(characteristic.UUID, toID: UARTPeripheral.rxCharacteristicsUUID()) {
-                            log("\(__FILE__) \(__LINE__) \nFound RX Characteristics")
+                        if compareID(characteristic.uuid, toID: UARTPeripheral.rxCharacteristicsUUID()) {
+                            log("\(#file) \(#line) \nFound RX Characteristics")
                             rxCharacteristic = characteristic
-                            peripheral.setNotifyValue(true, forCharacteristic: rxCharacteristic!)
-                        } else if compareID(characteristic.UUID, toID: UARTPeripheral.txCharacteristicsUUID()) {
-                            log("\(__FILE__) \(__LINE__) \nFound TX Characteristics")
+                            peripheral.setNotifyValue(true, for: rxCharacteristic!)
+                        } else if compareID(characteristic.uuid, toID: UARTPeripheral.txCharacteristicsUUID()) {
+                            log("\(#file) \(#line) \nFound TX Characteristics")
                             txCharacteristic = characteristic
-                        } else if compareID(characteristic.UUID, toID: UARTPeripheral.hardwareRevisionStringUUID()) {
-                            log("\(__FILE__) \(__LINE__) \nFound Hardware Revision String characteristic")
-                            peripheral.readValueForCharacteristic(characteristic)
+                        } else if compareID(characteristic.uuid, toID: UARTPeripheral.hardwareRevisionStringUUID()) {
+                            log("\(#file) \(#line) \nFound Hardware Revision String characteristic")
+                            peripheral.readValue(for: characteristic)
                         }
                     }
                 }
@@ -355,45 +355,45 @@ extension UARTPeripheral {
         }
     }
     
-    private func log(logMessage: String) {
+    fileprivate func log(_ logMessage: String) {
         if (verbose) {
             print("UARTPeripheral: \(logMessage)")
         }
     }
 
-    private func didConnect()
+    fileprivate func didConnect()
     {
-        log("\(__FILE__) \(__LINE__) \nDid connect")
+        log("\(#file) \(#line) \nDid connect")
         
         if peripheral.services != nil {
-            log("\(__FILE__) \(__LINE__) \nSkipping service discovery for: \(peripheral.name)")
+            log("\(#file) \(#line) \nSkipping service discovery for: \(peripheral.name)")
             peripheral(peripheral, didDiscoverServices: nil)
             return
         }
         
-        log("\(__FILE__) \(__LINE__) \nStart service discovery: \(peripheral.name)")
+        log("\(#file) \(#line) \nStart service discovery: \(peripheral.name)")
         peripheral.discoverServices([UARTPeripheral.uartServiceUUID(), UARTPeripheral.deviceInformationServiceUUID()])
     }
     
-    private func writeString(string:String)
+    fileprivate func writeString(_ string:String)
     {
-        log("\(__FILE__) \(__LINE__) \nWrite string: \(string)")
-        let data = NSData(bytes: string, length: string.characters.count)
+        log("\(#file) \(#line) \nWrite string: \(string)")
+        let data = Data(bytes: UnsafePointer<UInt8>(string), count: string.characters.count)
         writeRawData(data)
     }
     
-    private func writeRawData(data:NSData)
+    fileprivate func writeRawData(_ data:Data)
     {
-        log("\(__FILE__) \(__LINE__) \nWrite data: \(data)")
+        log("\(#file) \(#line) \nWrite data: \(data)")
         
         if let txCharacteristic = self.txCharacteristic {
             
-            if txCharacteristic.properties.intersect(.WriteWithoutResponse) != [] {
-                peripheral.writeValue(data, forCharacteristic: txCharacteristic, type: .WithoutResponse)
-            } else if txCharacteristic.properties.intersect(.Write) != [] {
-                peripheral.writeValue(data, forCharacteristic: txCharacteristic, type: .WithResponse)
+            if txCharacteristic.properties.intersection(.writeWithoutResponse) != [] {
+                peripheral.writeValue(data, for: txCharacteristic, type: .withoutResponse)
+            } else if txCharacteristic.properties.intersection(.write) != [] {
+                peripheral.writeValue(data, for: txCharacteristic, type: .withResponse)
             } else {
-                log("\(__FILE__) \(__LINE__) \nNo write property on TX characteristics: \(txCharacteristic.properties)")
+                log("\(#file) \(#line) \nNo write property on TX characteristics: \(txCharacteristic.properties)")
             }
             
         }
@@ -402,7 +402,7 @@ extension UARTPeripheral {
 
 // MARK: CBPeripheral Delegate methods
 extension UARTPeripheral {
-    public func peripheral(peripheral: CBPeripheral, didDiscoverServices error:NSError?) {
+    public func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error:Error?) {
         
         if error == nil {
             if let services = peripheral.services {
@@ -410,56 +410,56 @@ extension UARTPeripheral {
                     if service.characteristics != nil {
                         //var e = NSError()
                         //peripheral(peripheral, didDiscoverCharacteristicsForService: s, error: e)
-                    } else if compareID(service.UUID, toID: UARTPeripheral.uartServiceUUID()) {
-                        log("\(__FILE__) \(__LINE__) \nFound correct service")
+                    } else if compareID(service.uuid, toID: UARTPeripheral.uartServiceUUID()) {
+                        log("\(#file) \(#line) \nFound correct service")
                         uartService = service
-                        peripheral.discoverCharacteristics([UARTPeripheral.txCharacteristicsUUID(),UARTPeripheral.rxCharacteristicsUUID()], forService: uartService!)
-                    } else if compareID(service.UUID, toID: UARTPeripheral.deviceInformationServiceUUID()) {
-                        peripheral.discoverCharacteristics([UARTPeripheral.hardwareRevisionStringUUID()], forService: service)
+                        peripheral.discoverCharacteristics([UARTPeripheral.txCharacteristicsUUID(),UARTPeripheral.rxCharacteristicsUUID()], for: uartService!)
+                    } else if compareID(service.uuid, toID: UARTPeripheral.deviceInformationServiceUUID()) {
+                        peripheral.discoverCharacteristics([UARTPeripheral.hardwareRevisionStringUUID()], for: service)
                     }
                 }
             }
         } else {
-            log("\(__FILE__) \(__LINE__) \nError discovering characteristics: \(error)")
+            log("\(#file) \(#line) \nError discovering characteristics: \(error)")
             delegate.uartDidEncounterError("Error discovering services")
             return
         }
     }
     
-    public func peripheral(peripheral: CBPeripheral, didDiscoverCharacteristicsForService service: CBService, error: NSError?)
+    public func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?)
     {
         if error  == nil {
-            log("\(__FILE__) \(__LINE__) \nDid Discover Characteristics For Service: \(service.description)")
+            log("\(#file) \(#line) \nDid Discover Characteristics For Service: \(service.description)")
             if let services = peripheral.services {
                 let s = services[services.count - 1]
-                if compareID(service.UUID, toID: s.UUID) {
+                if compareID(service.uuid, toID: s.uuid) {
                     setupPeripheralForUse(peripheral)
                 }
             }
         } else {
-            log("\(__FILE__) \(__LINE__) \nError discovering characteristics: \(error)")
+            log("\(#file) \(#line) \nError discovering characteristics: \(error)")
             delegate.uartDidEncounterError("Error discovering characteristics")
             return
         }
     }
     
-   public func peripheral(peripheral: CBPeripheral, didUpdateValueForCharacteristic characteristic: CBCharacteristic, error: NSError?)
+   public func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?)
     {
-        log("\(__FILE__) \(__LINE__) \nDid Update Value For Characteristic")
+        log("\(#file) \(#line) \nDid Update Value For Characteristic")
         if error == nil {
             if characteristic == rxCharacteristic {
                 if let value = characteristic.value {
-                    log("\(__FILE__) \(__LINE__) \nRecieved: \(value)")
+                    log("\(#file) \(#line) \nRecieved: \(value)")
                     delegate.didReceiveData(value)
                 }
-            } else if compareID(characteristic.UUID, toID: UARTPeripheral.hardwareRevisionStringUUID()){
-                log("\(__FILE__) \(__LINE__) \nDid read hardware revision string")
+            } else if compareID(characteristic.uuid, toID: UARTPeripheral.hardwareRevisionStringUUID()){
+                log("\(#file) \(#line) \nDid read hardware revision string")
                 // FIX ME: This is not how the original thing worked.
-                delegate.didReadHardwareRevisionString(NSString(CString:characteristic.description, encoding: NSUTF8StringEncoding)! as String)
+                delegate.didReadHardwareRevisionString(NSString(cString:characteristic.description, encoding: String.Encoding.utf8.rawValue)! as String)
 
             }
         } else {
-            log("\(__FILE__) \(__LINE__) \nError receiving notification for characteristic: \(error)")
+            log("\(#file) \(#line) \nError receiving notification for characteristic: \(error)")
             delegate.uartDidEncounterError("Error receiving notification for characteristic")
             return
         }
@@ -491,9 +491,9 @@ extension UARTPeripheral {
 
 // MARK: UARTPeripheralDelegate Definition
 private protocol UARTPeripheralDelegate {
-    func didReceiveData(newData:NSData)
-    func didReadHardwareRevisionString(string:String)
-    func uartDidEncounterError(error:String)
+    func didReceiveData(_ newData:Data)
+    func didReadHardwareRevisionString(_ string:String)
+    func uartDidEncounterError(_ error:String)
 }
 
 

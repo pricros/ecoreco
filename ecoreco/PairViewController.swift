@@ -17,11 +17,11 @@ class PairViewController: CommonViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        labelSearch!.textColor = UIColor.grayColor()
-        labelSearch!.textAlignment = NSTextAlignment.Center
+        labelSearch!.textColor = UIColor.gray
+        labelSearch!.textAlignment = NSTextAlignment.center
         labelSearch!.font = UIFont(name:"VDS", size:20.0)
         labelSearch.text = "Searching"
-        labelSearch.backgroundColor = UIColor.whiteColor()
+        labelSearch.backgroundColor = UIColor.white
 
         var radarEcorecoIconx : RadarEcorecoIcon?
 
@@ -37,28 +37,28 @@ class PairViewController: CommonViewController {
     }
     
     func tapIcon(){
-         self.performSegueWithIdentifier("seguePairToLock", sender: nil)
+         self.performSegue(withIdentifier: "seguePairToLock", sender: nil)
     }
     
-    func drawEcorecoItem(x:CGFloat, y:CGFloat, lableName:String){
+    func drawEcorecoItem(_ x:CGFloat, y:CGFloat, lableName:String){
         //new a view
-        var buttonView = UIView(frame: CGRectMake(x,y,100,100))
+        let buttonView = UIView(frame: CGRect(x: x,y: y,width: 100,height: 100))
         
         //add button, lable to the view
         let lbEcoreco = UILabel(frame:CGRect(x: 0, y:0, width:44, height:15))
         lbEcoreco.text = lableName
         lbEcoreco.font = ColorUtil.FONT_VDS_T3
-        lbEcoreco.textAlignment = NSTextAlignment.Center
+        lbEcoreco.textAlignment = NSTextAlignment.center
         
         let btnEcoreco = UIButton(frame:CGRect(x: 0, y:15, width:44, height:30))
-        btnEcoreco.setBackgroundImage(UIImage(named:"iconEcoreco"), forState: .Normal)
-        btnEcoreco.setBackgroundImage(UIImage(named:"iconEcoreco-g"), forState: .Selected)
+        btnEcoreco.setBackgroundImage(UIImage(named:"iconEcoreco"), for: UIControlState())
+        btnEcoreco.setBackgroundImage(UIImage(named:"iconEcoreco-g"), for: .selected)
         if #available(iOS 9.0, *) {
-            btnEcoreco.setBackgroundImage(UIImage(named:"iconEcoreco-g"), forState: .Focused)
+            btnEcoreco.setBackgroundImage(UIImage(named:"iconEcoreco-g"), for: .focused)
         } else {
             // Fallback on earlier versions
         }
-        btnEcoreco.contentMode = UIViewContentMode.ScaleAspectFit
+        btnEcoreco.contentMode = UIViewContentMode.scaleAspectFit
 
         buttonView.addSubview(lbEcoreco)
         buttonView.addSubview(btnEcoreco)

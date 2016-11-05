@@ -18,8 +18,8 @@ class FallViewController: CommonViewController {
     var limitSec : Int = 60
     var counter : Int = 0
     var isCalled : Bool = false
-    var callTimer : NSTimer?
-    let userDefaults = NSUserDefaults.standardUserDefaults()
+    var callTimer : Timer?
+    let userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,31 +27,31 @@ class FallViewController: CommonViewController {
         
         
         //===============setting sample
-        userDefaults.setObject("0937218247", forKey: "ecoreco_fall_phoneNo")
-        userDefaults.setObject(30, forKey: "ecoreco_fall_limitSec")
+        userDefaults.set("0937218247", forKey: "ecoreco_fall_phoneNo")
+        userDefaults.set(30, forKey: "ecoreco_fall_limitSec")
         //===============end setting sample
         
         
         
         
-        self.modalPresentationStyle = .Custom
+        self.modalPresentationStyle = .custom
         
         //add tpa action to imgReset
         let tapGestureRecognizerImgBack = UITapGestureRecognizer(target: self, action:#selector(FallViewController.tappedBack))
-        imgBack.userInteractionEnabled = true
+        imgBack.isUserInteractionEnabled = true
         imgBack.addGestureRecognizer(tapGestureRecognizerImgBack)
         
         //add tpa action to imgCall
         let tapGestureRecognizerImgCall = UITapGestureRecognizer(target: self, action:#selector(FallViewController.tappedCall))
-        imgCall.userInteractionEnabled = true
+        imgCall.isUserInteractionEnabled = true
         imgCall.addGestureRecognizer(tapGestureRecognizerImgCall)
         
         
         //counter
-        self.limitSec = userDefaults.integerForKey("ecoreco_fall_limitSec")
+        self.limitSec = userDefaults.integer(forKey: "ecoreco_fall_limitSec")
         print("limitSec=\(limitSec)")
-        self.callTimer = NSTimer.scheduledTimerWithTimeInterval(
-            1, target : self, selector : #selector(FallViewController.showCounter), userInfo : nil, repeats : true)
+        self.callTimer = Timer.scheduledTimer(
+            timeInterval: 1, target : self, selector : #selector(FallViewController.showCounter), userInfo : nil, repeats : true)
         
         //        let limitSec = userDefaults.integerForKey("ecoreco_fall_limitSec")
         //        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
@@ -75,7 +75,7 @@ class FallViewController: CommonViewController {
         self.scooter.resetFallStatus()
         self.callTimer!.invalidate()
         self.callTimer = nil
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     
@@ -83,12 +83,12 @@ class FallViewController: CommonViewController {
         //stop counter
         self.isCalled = true
         
-        let phoneNo = userDefaults.objectForKey("ecoreco_fall_phoneNo") as! String
+        let phoneNo = userDefaults.object(forKey: "ecoreco_fall_phoneNo") as! String
         print("phoneNo: \(phoneNo)")
         
         if !phoneNo.isEmpty{
-            let url = NSURL(string: "tel://\(phoneNo)")
-            UIApplication.sharedApplication().openURL(url!)
+            let url = URL(string: "tel://\(phoneNo)")
+            UIApplication.shared.openURL(url!)
         }
     }
     

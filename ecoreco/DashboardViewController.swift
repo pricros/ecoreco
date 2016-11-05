@@ -44,13 +44,13 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         
         //add tpa action to [Setting]
         let tapGestureRecognizerSetting = UITapGestureRecognizer(target: self, action:#selector(DashboardViewController.tappedSetting))
-        imgViewSetting.userInteractionEnabled = true
+        imgViewSetting.isUserInteractionEnabled = true
         imgViewSetting.addGestureRecognizer(tapGestureRecognizerSetting)
 
         
         //add tpa action to [Profile]
         let tapGestureRecognizerProfile = UITapGestureRecognizer(target: self, action:#selector(DashboardViewController.tappedProfile))
-        imgViewProfile.userInteractionEnabled = true
+        imgViewProfile.isUserInteractionEnabled = true
         imgViewProfile.addGestureRecognizer(tapGestureRecognizerProfile)
 
 //        //add tpa action to [Navi]
@@ -66,26 +66,26 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         let scrollingView = modeButtonsView()
         scrollViewMode.addSubview(scrollingView)
         scrollViewMode.contentSize = scrollingView.frame.size
-        scrollViewMode.scrollEnabled = true
+        scrollViewMode.isScrollEnabled = true
         scrollViewMode.showsHorizontalScrollIndicator = true
-        scrollViewMode.indicatorStyle = .Default
+        scrollViewMode.indicatorStyle = .default
         
         //set lable size, font, color
         
-        btnBattery.setTitle("\(scooter.bat.get())", forState: UIControlState.Normal)
-        btnBattery.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        btnBattery.setTitle("\(scooter.bat.get())", for: UIControlState())
+        btnBattery.setTitleColor(UIColor.white, for: UIControlState())
         btnBattery.titleLabel!.font = ColorUtil.FONT_VDS_R1
         
-        btnEstimateRange.setTitle("\(scooter.rmm.get())", forState: UIControlState.Normal)
-        btnEstimateRange.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        btnEstimateRange.setTitle("\(scooter.rmm.get())", for: UIControlState())
+        btnEstimateRange.setTitleColor(UIColor.white, for: UIControlState())
         btnEstimateRange.titleLabel!.font = ColorUtil.FONT_VDS_R1
         
-        btnTrip.setTitle("\(scooter.odkA.get())", forState: UIControlState.Normal)
-        btnTrip.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        btnTrip.setTitle("\(scooter.odkA.get())", for: UIControlState())
+        btnTrip.setTitleColor(UIColor.white, for: UIControlState())
         btnTrip.titleLabel!.font = ColorUtil.FONT_VDS_R1
         
-        btnOdo.setTitle("\(scooter.odkTotal.get())", forState: UIControlState.Normal)
-        btnOdo.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        btnOdo.setTitle("\(scooter.odkTotal.get())", for: UIControlState())
+        btnOdo.setTitleColor(UIColor.white, for: UIControlState())
         btnOdo.titleLabel!.font = ColorUtil.FONT_VDS_R1
         
         labelDeviceName.text = "My Scooter"
@@ -94,9 +94,9 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         
         bLockStatus = scooter.getLockStatus()
         if (bLockStatus){
-            btnLock.setImage(UIImage(named: "unlock"), forState: UIControlState.Normal)
+            btnLock.setImage(UIImage(named: "unlock"), for: UIControlState())
         } else {
-            btnLock.setImage(UIImage(named: "lock"), forState: UIControlState.Normal)
+            btnLock.setImage(UIImage(named: "lock"), for: UIControlState())
         }
         
 
@@ -109,54 +109,54 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         scooter.rmm.didChange.addHandler(self, handler: DashboardViewController.rmmDidChange)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        let sizeRect = UIScreen.mainScreen().applicationFrame
+        let sizeRect = UIScreen.main.applicationFrame
         
         // create init pointer image
         let pointerImage = UIImage(named: "pointer.png") as UIImage!
-        let pointerWidth   = pointerImage.size.width/1920 * sizeRect.size.width
-        let pointerHeight   = pointerImage.size.height/1920 * sizeRect.size.height
+        let pointerWidth   = (pointerImage?.size.width)!/1920 * sizeRect.size.width
+        let pointerHeight   = (pointerImage?.size.height)!/1920 * sizeRect.size.height
         layer = CALayer()
         let speedMeterStartX = imgViewSpeedMeter.frame.origin.x
-        let speedMeterStartY = imgViewSpeedMeter.frame.origin.y + imgViewSpeedMeter.frame.height/2 - pointerHeight/2
-        layer?.frame = CGRectMake(speedMeterStartX,speedMeterStartY, imgViewSpeedMeter.frame.width , pointerHeight)
-        layer?.contents = pointerImage.CGImage as? AnyObject
+        let speedMeterStartY = imgViewSpeedMeter.frame.origin.y + imgViewSpeedMeter.frame.height/2 - pointerHeight/2+Constants.kCGFloatAdjustWidth/2
+        layer?.frame = CGRect(x: speedMeterStartX,y: speedMeterStartY, width: imgViewSpeedMeter.frame.width , height: pointerHeight)
+        layer?.contents = pointerImage?.cgImage as? AnyObject
         self.imgViewSpeedMeter.layer.addSublayer(layer!)
-        self.imgViewSpeedMeter.sendSubviewToBack(counterView)
+        self.imgViewSpeedMeter.bringSubview(toFront: counterView)
         scooter.enterStandby()
         
     }
     
-    func speedToDegree(speed:Int)->Float{
+    func speedToDegree(_ speed:Int)->Float{
         var degree:Float = 0.0
         degree = Float(speed)/25 * 180
         return degree
     }
     
-    func speedToRotation(speed:Int)->CGAffineTransform?{
+    func speedToRotation(_ speed:Int)->CGAffineTransform?{
         var degree:Float = 0
         var rad:Float = 0
         var rotation:CGAffineTransform?
         degree = Float(speed)/25 * 180
         rad = degree/180.0 * Float(M_PI)
-        rotation = CGAffineTransformMakeRotation(CGFloat(rad))
+        rotation = CGAffineTransform(rotationAngle: CGFloat(rad))
         return rotation
     }
 
     func tappedSetting(){
-        self.performSegueWithIdentifier("segueDashToSetting", sender: nil)
+        self.performSegue(withIdentifier: "segueDashToSetting", sender: nil)
         
     }
 
     func tappedProfile(){
         print("go to diagnose")
-        self.performSegueWithIdentifier("segueDashToDiagnose", sender: nil)
+        self.performSegue(withIdentifier: "segueDashToDiagnose", sender: nil)
     }
     
     func tappedNavi(){
-        self.performSegueWithIdentifier("segueDashToMap", sender: nil)
+        self.performSegue(withIdentifier: "segueDashToMap", sender: nil)
         
        // self.navigationController?.pushViewController(self.storyboard?.instantiateViewControllerWithIdentifier("MapView") as! MapViewController, animated: true)
     }
@@ -165,7 +165,7 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         scooter.lock()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         scooter.exitStandby()
     }
@@ -186,26 +186,26 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         UIImage(named: "modeEcoOff.png") as UIImage!
     ]
     var modeButtons = [
-        UIButton(type: .Custom) as UIButton!,
-        UIButton(type: .Custom) as UIButton!,
-        UIButton(type: .Custom) as UIButton!,
-        UIButton(type: .Custom) as UIButton!,
-        UIButton(type: .Custom) as UIButton!
+        UIButton(type: .custom) as UIButton!,
+        UIButton(type: .custom) as UIButton!,
+        UIButton(type: .custom) as UIButton!,
+        UIButton(type: .custom) as UIButton!,
+        UIButton(type: .custom) as UIButton!
     ]
 
     func clearAll(){
         for i in 0 ... (modeButtons.count-1) {
-            modeButtons[i].setImage(imagesModeOff[i], forState: .Normal)
+            modeButtons[i]?.setImage(imagesModeOff[i], for: UIControlState())
         }
     }
     
-    func modePressed(sender:UIButton){
+    func modePressed(_ sender:UIButton){
         
         if(self.lastMode != nil){
-            self.lastMode!.setImage(imagesModeOff[(lastMode!.tag)], forState: .Normal)
+            self.lastMode!.setImage(imagesModeOff[(lastMode!.tag)], for: UIControlState())
         }
         
-        sender.setImage(imagesModeOn[sender.tag], forState: .Normal)
+        sender.setImage(imagesModeOn[sender.tag], for: UIControlState())
         self.lastMode = sender
         self.lastMode!.tag = sender.tag
         
@@ -233,57 +233,57 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
  
         let buttonView = UIView()
         //buttonView.backgroundColor = UIColor.blackColor()
-        buttonView.frame.origin = CGPointMake(0,0)
+        buttonView.frame.origin = CGPoint(x: 0,y: 0)
         
-        let padding = CGSizeMake(10, 10)
-        let buttonSize = CGSizeMake(UIScreen.mainScreen().applicationFrame
-            .size.width/3.3,UIScreen.mainScreen().applicationFrame
+        let padding = CGSize(width: 10, height: 10)
+        let buttonSize = CGSize(width: UIScreen.main.applicationFrame
+            .size.width/3.3,height: UIScreen.main.applicationFrame
             .size.height/8)//same with image size
         buttonView.frame.size.width = (buttonSize.width + padding.width) * CGFloat(imagesModeOff.count)
-        buttonView.frame.size.height = UIScreen.mainScreen().applicationFrame
+        buttonView.frame.size.height = UIScreen.main.applicationFrame
             .size.height/8
         
-        var buttonPosition = CGPointMake(padding.width * 0.5, padding.height)
+        var buttonPosition = CGPoint(x: padding.width * 0.5, y: padding.height)
         let buttonIncrement = buttonSize.width + padding.width
 
         for i in 0 ... (imagesModeOff.count-1)  {
             let button = modeButtons[i]  //UIButton(type: .Custom) as UIButton
-            button.setImage(imagesModeOff[i], forState: .Normal)
+            button?.setImage(imagesModeOff[i], for: UIControlState())
             
-            button.frame.size = buttonSize
-            button.frame.origin = buttonPosition
+            button?.frame.size = buttonSize
+            button?.frame.origin = buttonPosition
             buttonPosition.x = buttonPosition.x + buttonIncrement
             //button.layer.cornerRadius = 2;
             //button.layer.borderWidth = 1;
             //button.layer.borderColor = UIColor.whiteColor().CGColor
             //button.backgroundColor = UIColor.grayColor()
             
-            button.tag = i
-            button.addTarget(self, action: #selector(DashboardViewController.modePressed(_:)), forControlEvents: .TouchUpInside)
+            button?.tag = i
+            button?.addTarget(self, action: #selector(DashboardViewController.modePressed(_:)), for: .touchUpInside)
             
-            buttonView.addSubview(button)
+            buttonView.addSubview(button!)
         }
 
         return buttonView
     }
     
     
-    func nrfReceivedData(nrfManager:NRFManager, data:NSData?, string:String?) {
+    func nrfReceivedData(_ nrfManager:NRFManager, data:Data?, string:String?) {
         print(string)
         
     }
     
-    func speedDidChange(oldSpeed:Int, newSpeed:Int) {
+    func speedDidChange(_ oldSpeed:Int, newSpeed:Int) {
         
         var rotation:CGAffineTransform?
-        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+        let priority = DispatchQueue.GlobalQueuePriority.default
         
-        dispatch_async(dispatch_get_global_queue(priority, 0))
+        DispatchQueue.global(priority: priority).async
         {
             
                 rotation = self.speedToRotation(newSpeed)
                 
-                dispatch_async(dispatch_get_main_queue())
+                DispatchQueue.main.async
                 {
                     self.layer?.setAffineTransform(rotation!)
                     self.labelSpeed.text = "\(newSpeed)"
@@ -293,52 +293,52 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         
     }
     
-    func batteryDidChange(oldValue:Int, newValue:Int) {
-        dispatch_async(dispatch_get_main_queue()) {
-            self.btnBattery.setTitle("\(newValue)",forState: UIControlState.Normal)
+    func batteryDidChange(_ oldValue:Int, newValue:Int) {
+        DispatchQueue.main.async {
+            self.btnBattery.setTitle("\(newValue)",for: UIControlState())
             //self.labelHeaderBattery.text = "\(newValue)%"
         }
     }
     
-    func odkADidChange(oldValue:Int, newValue:Int) {
-        dispatch_async(dispatch_get_main_queue()) {
-            self.btnTrip.setTitle("\(newValue)",forState: UIControlState.Normal)
+    func odkADidChange(_ oldValue:Int, newValue:Int) {
+        DispatchQueue.main.async {
+            self.btnTrip.setTitle("\(newValue)",for: UIControlState())
         }
     }
 
-    func odkTotalDidChange(oldValue:Int, newValue:Int) {
-        dispatch_async(dispatch_get_main_queue()) {
-            self.btnOdo.setTitle("\(newValue)",forState: UIControlState.Normal)
+    func odkTotalDidChange(_ oldValue:Int, newValue:Int) {
+        DispatchQueue.main.async {
+            self.btnOdo.setTitle("\(newValue)",for: UIControlState())
         }
     }
 
-    func rmmDidChange(oldValue:Int, newValue:Int) {
-        dispatch_async(dispatch_get_main_queue()) {
-            self.btnEstimateRange.setTitle( "\(newValue)",forState: UIControlState.Normal)
+    func rmmDidChange(_ oldValue:Int, newValue:Int) {
+        DispatchQueue.main.async {
+            self.btnEstimateRange.setTitle( "\(newValue)",for: UIControlState())
         }
     }
 
     
-    func falStatusDidChange(oldValue:Int, newValue:Int) {
-        if (newValue == 1 && scooter.getStatus() != ScooterStatus.Fall){
+    func falStatusDidChange(_ oldValue:Int, newValue:Int) {
+        if (newValue == 1 && scooter.getStatus() != ScooterStatus.fall){
           
-            scooter.setStatus(ScooterStatus.Fall)
-            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("FallView") as! FallViewController
+            scooter.setStatus(ScooterStatus.fall)
+            let vc = self.storyboard!.instantiateViewController(withIdentifier: "FallView") as! FallViewController
             vc.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
-            self.presentViewController(vc, animated: true, completion: nil)
+            self.present(vc, animated: true, completion: nil)
         }
     }
     
-    func lockStatusDidChange(oldValue:Int, newValue:Int) {
+    func lockStatusDidChange(_ oldValue:Int, newValue:Int) {
         if (newValue == 1){
-            btnLock.setImage(UIImage(named: "unlock"), forState: UIControlState.Normal)
+            btnLock.setImage(UIImage(named: "unlock"), for: UIControlState())
         } else {
-            btnLock.setImage(UIImage(named: "lock"), forState: UIControlState.Normal)
+            btnLock.setImage(UIImage(named: "lock"), for: UIControlState())
         }
         
     }
 
-    @IBAction func lockUnlockScooter(sender: UIButton) {
+    @IBAction func lockUnlockScooter(_ sender: UIButton) {
         if (bLockStatus){
             scooter.unlock()
         }else{

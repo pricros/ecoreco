@@ -25,19 +25,19 @@ class SettingViewController: CommonViewController {
         
         //add tpa action to imgBack
         let tapGestureRecognizerImgBack = UITapGestureRecognizer(target: self, action:#selector(SettingViewController.tappedBack))
-        imgBack.userInteractionEnabled = true
+        imgBack.isUserInteractionEnabled = true
         imgBack.addGestureRecognizer(tapGestureRecognizerImgBack)
     
         
         //add tpa action to imgUserProfile
         let tapGestureRecognizerImgUserProfile = UITapGestureRecognizer(target: self, action:#selector(SettingViewController.tappedUserProfile))
-        imgUserProfile.userInteractionEnabled = true
+        imgUserProfile.isUserInteractionEnabled = true
         imgUserProfile.addGestureRecognizer(tapGestureRecognizerImgUserProfile)
 
         
         let imageSettings  = UIImage(named: "settings")
         //        partitionImage.image = image1
-        if let version = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as? String {
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
             self.labelVer.text = version
         }
         
@@ -49,13 +49,13 @@ class SettingViewController: CommonViewController {
     }
     
     func tappedBack(){
-        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     //add by eva
     func tappedUserProfile()
     {
-        self.performSegueWithIdentifier("segueToUserProfile", sender: nil)
+        self.performSegue(withIdentifier: "segueToUserProfile", sender: nil)
     }
 
 }
