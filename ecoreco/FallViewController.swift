@@ -15,7 +15,8 @@ class FallViewController: CommonViewController {
 
     @IBOutlet weak var imgBack: UIButton!
     
-    var limitSec : Int = 60
+    var phoneNo: String?
+    let limitSec : Int = 30
     var counter : Int = 0
     var isCalled : Bool = false
     var callTimer : Timer?
@@ -27,13 +28,23 @@ class FallViewController: CommonViewController {
         
         
         //===============setting sample
-        userDefaults.set("0937218247", forKey: "ecoreco_fall_phoneNo")
-        userDefaults.set(30, forKey: "ecoreco_fall_limitSec")
+
+        userDefaults.set("DEVICE_ID_AAAA", forKey: "ecoreco_fall_deviceId")
+
         //===============end setting sample
+        print("##### GET SMS CALL IN CORE DATA")
+        if(phoneNo==nil){
+            let dc = UserDeviceSettingDC()
+            var entity = dc.find(
+                deviceId: userDefaults.object(forKey: "ecoreco_fall_deviceId") as! String)
+            phoneNo = entity?.emergencycall
+        }
+        print("phoneNo is \(phoneNo)")
+        print("##### END OF GET SMS CALL IN CORE DATA")
+
         
         
-        
-        
+
         self.modalPresentationStyle = .custom
         
         //add tpa action to imgReset
@@ -48,22 +59,9 @@ class FallViewController: CommonViewController {
         
         
         //counter
-        self.limitSec = userDefaults.integer(forKey: "ecoreco_fall_limitSec")
-        print("limitSec=\(limitSec)")
         self.callTimer = Timer.scheduledTimer(
             timeInterval: 1, target : self, selector : #selector(FallViewController.showCounter), userInfo : nil, repeats : true)
-        
-        //        let limitSec = userDefaults.integerForKey("ecoreco_fall_limitSec")
-        //        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-        //        dispatch_async(dispatch_get_global_queue(priority, 0)){
-        //            for i in 0...limitSec {
-        //                usleep(10000)
-        //                dispatch_async(dispatch_get_main_queue()){
-        //                    self.labelCount.text = "in \(limitSec-i) sec"
-        //                }
-        //            }
-        //        }
-        
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -83,10 +81,8 @@ class FallViewController: CommonViewController {
         //stop counter
         self.isCalled = true
         
-        let phoneNo = userDefaults.object(forKey: "ecoreco_fall_phoneNo") as! String
-        print("phoneNo: \(phoneNo)")
-        
-        if !phoneNo.isEmpty{
+
+        if (phoneNo != nil){
             let url = URL(string: "tel://\(phoneNo)")
             UIApplication.shared.openURL(url!)
         }

@@ -12,6 +12,7 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate ,NRFManagerDelegate {
 
+
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -45,8 +46,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,NRFManagerDelegate {
     
 
     
-    /*Adding Core Data to existing project must add this*/
+    
     // MARK: - Core Data stack
+    
     @available(iOS 10.0, *)
     lazy var persistentContainer: NSPersistentContainer = {
         /*
@@ -55,11 +57,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,NRFManagerDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
          */
-        let container = NSPersistentContainer(name: "tets")
+        let container = NSPersistentContainer(name: "Scooter")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                
                 /*
                  Typical reasons for an error here include:
                  * The parent directory does not exist, cannot be created, or disallows writing.
@@ -74,6 +77,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,NRFManagerDelegate {
         return container
     }()
     
+    // MARK: - Core Data Saving support
+    
+    func saveContext () {
+        if #available(iOS 10.0, *) {
+            let context = persistentContainer.viewContext
+            if context.hasChanges {
+                do {
+                    try context.save()
+                } catch {
+                    // Replace this implementation with code to handle the error appropriately.
+                    // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                    let nserror = error as NSError
+                    fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                }
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+    
+
     
 
 }

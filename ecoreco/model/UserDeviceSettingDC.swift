@@ -12,8 +12,7 @@ import CoreData
 class UserDeviceSettingDC: BaseDataController {
     
     
-    public func save(deviceId: String!, email: String?, emergencycall: String?, emergencysms: String?,
-                     sound: NSNumber?, speedLimit: NSNumber?, vibrate: NSNumber?) {
+    public func save(deviceId: String!, email: String?, emergencycall: String?, emergencysms: String?, sound: NSNumber?, speedLimit: NSNumber?, vibrate: NSNumber?) {
         
         if super.managedObjectContext==nil{
             prepareManagedObjectContext()
@@ -22,12 +21,12 @@ class UserDeviceSettingDC: BaseDataController {
         do{
             let entity = NSEntityDescription.insertNewObject(forEntityName: "UserDeviceSetting", into: super.managedObjectContext!) as! UserDeviceSetting
             entity.deviceId = deviceId
-            entity.email = email
-            entity.emergencycall = emergencycall
-            entity.emergencysms = emergencysms
-            entity.sound = sound
-            entity.speedLimit = speedLimit
-            entity.vibrate = vibrate
+                entity.email = email
+                entity.emergencycall = emergencycall
+                entity.emergencysms = emergencysms
+                entity.sound = sound
+                entity.speedLimit = speedLimit
+                entity.vibrate = vibrate
             try super.managedObjectContext!.save()
         }catch {
             fatalError("Failed to save data: \(error)")
@@ -46,7 +45,7 @@ class UserDeviceSettingDC: BaseDataController {
         do {
             let results = try super.managedObjectContext!.fetch(request) as! [UserDeviceSetting]
             for result in results {
-                print("deviceId: \(result.deviceId!), emergencycall: \(result.emergencycall)")
+                print("* deviceId: \(result.deviceId!), email: \(result.email), emergencycall: \(result.emergencycall), emergencysms: \(result.emergencysms), sound: \(result.sound), speedLimit: \(result.speedLimit), vibrate: \(result.vibrate)")
             }
         }catch{
             fatalError("Failed to show data: \(error)")
@@ -55,15 +54,14 @@ class UserDeviceSettingDC: BaseDataController {
     }
     
     
-    public func update(deviceId: String!, email: String?, emergencycall: String?, emergencysms: String?,
-                       sound: NSNumber?, speedLimit: NSNumber?, vibrate: NSNumber?){
+    public func update(deviceId: String!, email: String?, emergencycall: String?, emergencysms: String?, sound: NSNumber?, speedLimit: NSNumber?, vibrate: NSNumber?){
         
         if super.managedObjectContext==nil{
             prepareManagedObjectContext()
         }
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserDeviceSetting")
-        request.predicate = NSPredicate(format: "id == %@", deviceId)//wildword??
+        request.predicate = NSPredicate(format: "deviceId == %@", deviceId)
         //request.predicate = NSPredicate(format: "id == \(id)")//integer
         
         do{
@@ -92,12 +90,12 @@ class UserDeviceSettingDC: BaseDataController {
         }
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserDeviceSetting")
-        request.predicate = NSPredicate(format: "id == %@", deviceId)//wildword??
+        request.predicate = NSPredicate(format: "deviceId == %@", deviceId)//wildword??
         
         do{
             let results = try super.managedObjectContext!.fetch(request) as! [UserDeviceSetting]
             if (results.count > 0){
-                super.managedObjectContext!.delete(results[0])
+                super.managedObjectContext!.delete(results[results.count-1])
                 try super.managedObjectContext!.save()
             }
         } catch {
@@ -114,7 +112,7 @@ class UserDeviceSettingDC: BaseDataController {
         }
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserDeviceSetting")
-        request.predicate = NSPredicate(format: "id == %@", deviceId)//wildword??
+        request.predicate = NSPredicate(format: "deviceId == %@", deviceId)//wildword??
         
         do{
             let results = try super.managedObjectContext!.fetch(request) as! [UserDeviceSetting]

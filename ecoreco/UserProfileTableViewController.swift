@@ -24,29 +24,40 @@ class UserProfileTableViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         
+        
+//        print("###########TEST Core Data################")
+//        let dc = UserDeviceSettingDC()
+//        //dc.save(deviceId: "DEVICE_ID_AAAA", email: nil, emergencycall: "0937218247", emergencysms: "0937218247", sound: nil, speedLimit: nil, vibrate: nil)
+//        var entity = dc.find(deviceId: "DEVICE_ID_AAAA")
+//        dc.show()
+//        print("###########END TEST Core Data################")
+        
+        
+        
+        
         //default show local data
         
+        /*
         
         //refresh data & update
         
         let requestURL: NSURL = NSURL(string: "http://www.learnswiftonline.com/Samples/subway.json")!
-        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(URL: requestURL)
-        let session = NSURLSession.sharedSession()
-        let task = session.dataTaskWithRequest(urlRequest) {
+        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL as URL)
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest as URLRequest) {
             (data, response, error) -> Void in
             
-            let httpResponse = response as! NSHTTPURLResponse
+            let httpResponse = response as! HTTPURLResponse
             let statusCode = httpResponse.statusCode
             
             if (statusCode == 200) {
                 print("Everyone is fine, file downloaded successfully.")
                 
-                
                 do{
                     
-                    let json = try NSJSONSerialization.JSONObjectWithData(data!, options:.AllowFragments)
+                    let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments)
                     
-                    if let stations = json["stations"] as? [[String: AnyObject]] {
+                    if let stations = json["stations"] as? [[String: Any]] {
                         
                         for station in stations {
                             
@@ -61,9 +72,8 @@ class UserProfileTableViewController: UITableViewController {
                                 
                             }
                         }
-                        
-                    }
-                    
+                                     }
+ 
                 }catch {
                     print("Error with Json: \(error)")
                 }
@@ -71,6 +81,7 @@ class UserProfileTableViewController: UITableViewController {
         }
         
         task.resume()
+                 */
         
         
         

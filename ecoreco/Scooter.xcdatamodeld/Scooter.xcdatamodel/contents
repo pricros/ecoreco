@@ -14,7 +14,7 @@
         <attribute name="tripTime" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
     </entity>
     <entity name="UserDeviceSetting" representedClassName="UserDeviceSetting" syncable="YES">
-        <attribute name="deviceId" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="deviceId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="emergencycall" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="emergencysms" optional="YES" attributeType="String" syncable="YES"/>
