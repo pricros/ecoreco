@@ -37,6 +37,13 @@ class FallViewController: CommonViewController {
             let dc = UserDeviceSettingDC()
             var entity = dc.find(
                 deviceId: userDefaults.object(forKey: "ecoreco_fall_deviceId") as! String)
+
+            if(entity==nil){
+                dc.save(deviceId: "DEVICE_ID_AAAA", email: nil, emergencycall: "0937218247", emergencysms: "0937218247", sound: nil, speedLimit: nil, vibrate: nil)
+                entity = dc.find(
+                    deviceId: userDefaults.object(forKey: "ecoreco_fall_deviceId") as! String)
+            }
+            
             phoneNo = entity?.emergencycall
         }
         print("phoneNo is \(phoneNo)")
