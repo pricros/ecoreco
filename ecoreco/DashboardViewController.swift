@@ -120,7 +120,7 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         let pointerHeight   = (pointerImage?.size.height)!/1920 * sizeRect.size.height
         layer = CALayer()
         let speedMeterStartX = imgViewSpeedMeter.frame.origin.x
-        let speedMeterStartY = imgViewSpeedMeter.frame.origin.y + imgViewSpeedMeter.frame.height/2 - pointerHeight/2+Constants.kCGFloatAdjustWidth/2
+        let speedMeterStartY = imgViewSpeedMeter.frame.origin.y + imgViewSpeedMeter.frame.height/2 - pointerHeight/2
         layer?.frame = CGRect(x: speedMeterStartX,y: speedMeterStartY, width: imgViewSpeedMeter.frame.width , height: pointerHeight)
         layer?.contents = pointerImage?.cgImage as? AnyObject
         self.imgViewSpeedMeter.layer.addSublayer(layer!)
