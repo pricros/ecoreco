@@ -28,6 +28,17 @@ class SafetyViewController: CommonViewController, UITextFieldDelegate {
         imgBack.addGestureRecognizer(tapGestureRecognizerImgBack)
         
         //get setting view from db
+        if ((userDefaults.value(forKey: Constants.kUserDefaultEmergencyCall)) != nil)
+        {
+            txtEmergencyCall.text = userDefaults.value(forKey: Constants.kUserDefaultEmergencyCall) as! String?
+        }
+        
+        if ((userDefaults.value(forKey: Constants.kUserDefaultEmergencySMS)) != nil)
+        {
+            txtEmergencySMS.text = userDefaults.value(forKey: Constants.kUserDefaultEmergencySMS) as! String?
+        }
+
+        
         
     }
     
