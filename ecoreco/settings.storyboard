@@ -1211,8 +1211,45 @@
                         <sections>
                             <tableViewSection headerTitle="Scooter Info" id="S4G-30-Fhn">
                                 <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="73" id="qXv-Ii-t1R">
+                                        <rect key="frame" x="0.0" y="56" width="375" height="73"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qXv-Ii-t1R" id="vcf-yh-i9G">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Software Version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gm1-YM-xVM">
+                                                    <rect key="frame" x="17" y="8" width="188" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="JBq-Nj-K3Q"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="16"/>
+                                                    <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.1.7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9H-gM-kui">
+                                                    <rect key="frame" x="17" y="29" width="188" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="3Ip-cK-rwb"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="14"/>
+                                                    <color key="textColor" red="0.56862745100000001" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Gm1-YM-xVM" firstAttribute="top" secondItem="vcf-yh-i9G" secondAttribute="topMargin" id="0Bb-rW-cGM"/>
+                                                <constraint firstItem="Gm1-YM-xVM" firstAttribute="leading" secondItem="vcf-yh-i9G" secondAttribute="leadingMargin" constant="9" id="4su-ko-ZEr"/>
+                                                <constraint firstItem="C9H-gM-kui" firstAttribute="top" secondItem="Gm1-YM-xVM" secondAttribute="bottom" id="QaG-Ud-mr7"/>
+                                                <constraint firstItem="Gm1-YM-xVM" firstAttribute="top" secondItem="vcf-yh-i9G" secondAttribute="topMargin" id="SuP-cQ-CC8"/>
+                                                <constraint firstItem="Gm1-YM-xVM" firstAttribute="width" secondItem="vcf-yh-i9G" secondAttribute="width" multiplier="0.5" id="VkB-Lf-CKG"/>
+                                                <constraint firstItem="C9H-gM-kui" firstAttribute="leading" secondItem="Gm1-YM-xVM" secondAttribute="leading" id="m9l-N2-ser"/>
+                                                <constraint firstItem="C9H-gM-kui" firstAttribute="width" secondItem="Gm1-YM-xVM" secondAttribute="width" id="rXn-F2-tcF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="0jz-LD-1k5">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="129" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0jz-LD-1k5" id="3pT-mN-x2N">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
@@ -1246,7 +1283,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="FJs-L7-Hyv">
-                                        <rect key="frame" x="0.0" y="136" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="209" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FJs-L7-Hyv" id="H8B-Do-lyM">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
@@ -1274,7 +1311,7 @@
                             <tableViewSection headerTitle="Security" id="A8A-OI-pjS">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bkn-PS-3vh">
-                                        <rect key="frame" x="0.0" y="233" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="306" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bkn-PS-3vh" id="6wI-Qn-L5d">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
@@ -1305,7 +1342,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="z96-ve-SCo">
-                                        <rect key="frame" x="0.0" y="273" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="346" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z96-ve-SCo" id="56h-KM-lA0">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
@@ -1346,7 +1383,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zp8-yd-tlb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1758" y="2542.5"/>
+            <point key="canvasLocation" x="1967" y="2549"/>
         </scene>
         <!--Scooter Info View Controller-->
         <scene sceneID="oIn-dT-drC">
