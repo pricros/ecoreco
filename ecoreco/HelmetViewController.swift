@@ -16,16 +16,19 @@ class HelmetViewController: CommonViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // @todo : start a thread to check if the speed < speed limit.
-        
-        // if yes, dismiss this view
-        
-        
+        // @todo : show helmet 2 second and dismiss
+        let timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.update), userInfo: nil, repeats: true);
+        timer.fire()
+       
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources thatp can be recreated.
+    }
+    
+    func update(){
+         self.dismiss(animated: true, completion: nil)
     }
     
     

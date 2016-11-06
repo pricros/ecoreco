@@ -275,6 +275,14 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
     
     func speedDidChange(_ oldSpeed:Int, newSpeed:Int) {
         
+        if (oldSpeed == 0 && newSpeed > 0){
+            
+            scooter.setStatus(ScooterStatus.fall)
+            let vc = self.storyboard!.instantiateViewController(withIdentifier: "HelmetView") as! HelmetViewController
+            vc.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+            self.present(vc, animated: true, completion: nil)
+        }
+        
         var rotation:CGAffineTransform?
         let priority = DispatchQueue.GlobalQueuePriority.default
         
