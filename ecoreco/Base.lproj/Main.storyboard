@@ -320,31 +320,31 @@
                                         <state key="normal" backgroundImage="info-long"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="es8-iF-Hgx">
-                                        <rect key="frame" x="79" y="136.66666666666674" width="16" height="18"/>
+                                        <rect key="frame" x="79" y="136.66666666666674" width="11.666666666666671" height="18"/>
                                         <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="16"/>
                                         <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Battery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btk-oR-Tva">
-                                        <rect key="frame" x="32.666666666666671" y="170.66666666666674" width="42.000000000000014" height="15"/>
+                                        <rect key="frame" x="34.666666666666657" y="170.66666666666674" width="38.333333333333343" height="15"/>
                                         <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="13"/>
                                         <color key="textColor" red="0.56862745100000001" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Range Est." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufn-VQ-8LO">
-                                        <rect key="frame" x="118.33333333333334" y="170.66666666666674" width="63.333333333333343" height="15"/>
+                                        <rect key="frame" x="122" y="170.66666666666674" width="56" height="15"/>
                                         <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="13"/>
                                         <color key="textColor" red="0.56862745100000001" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dli-Fp-vgM">
-                                        <rect key="frame" x="247.66666666666663" y="170.66666666666674" width="21.333333333333371" height="15"/>
+                                        <rect key="frame" x="249.00000000000003" y="170.66666666666674" width="18.666666666666714" height="15"/>
                                         <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="13"/>
                                         <color key="textColor" red="0.56862745100000001" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Odometer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ba4-xL-uvZ">
-                                        <rect key="frame" x="329.33333333333326" y="170.66666666666674" width="58.666666666666686" height="15"/>
+                                        <rect key="frame" x="333" y="170.66666666666674" width="51.666666666666686" height="15"/>
                                         <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="13"/>
                                         <color key="textColor" red="0.56862745100000001" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -650,7 +650,7 @@
                                         </variation>
                                     </label>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nt5-Ky-RmC">
-                                        <rect key="frame" x="157" y="271" width="60" height="19"/>
+                                        <rect key="frame" x="157" y="260" width="60" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Nt5-Ky-RmC" secondAttribute="height" multiplier="60:19" id="mnP-fy-6hu"/>
                                         </constraints>
@@ -671,9 +671,9 @@
                                     <constraint firstItem="W6q-aP-fbL" firstAttribute="top" secondItem="ibO-3v-nCz" secondAttribute="top" id="AKB-mv-JpZ"/>
                                     <constraint firstAttribute="width" secondItem="ibO-3v-nCz" secondAttribute="height" multiplier="1:1" id="Bfc-dD-OAI"/>
                                     <constraint firstItem="eb6-Nc-FB9" firstAttribute="width" secondItem="W6q-aP-fbL" secondAttribute="width" multiplier="0.6" id="BuI-QV-sIL"/>
+                                    <constraint firstItem="Nt5-Ky-RmC" firstAttribute="centerY" secondItem="ibO-3v-nCz" secondAttribute="centerY" constant="83" id="GLE-FA-Vht"/>
                                     <constraint firstItem="W6q-aP-fbL" firstAttribute="leading" secondItem="ibO-3v-nCz" secondAttribute="leading" id="GcM-dv-k51"/>
                                     <constraint firstItem="W6q-aP-fbL" firstAttribute="width" secondItem="ibO-3v-nCz" secondAttribute="width" id="HP3-CD-kSQ"/>
-                                    <constraint firstItem="Eox-p4-Ygm" firstAttribute="top" secondItem="Nt5-Ky-RmC" secondAttribute="bottom" constant="62.670000000000002" id="JwD-Jt-Axx"/>
                                     <constraint firstItem="W6q-aP-fbL" firstAttribute="width" secondItem="ibO-3v-nCz" secondAttribute="width" id="eeZ-KR-dRo"/>
                                     <constraint firstItem="W6q-aP-fbL" firstAttribute="centerY" secondItem="ibO-3v-nCz" secondAttribute="centerY" id="g5y-Q1-66F"/>
                                     <constraint firstItem="Nt5-Ky-RmC" firstAttribute="width" secondItem="ibO-3v-nCz" secondAttribute="width" multiplier="0.16" id="kkJ-Nt-mJ2"/>
@@ -699,7 +699,6 @@
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="Bfc-dD-OAI"/>
-                                        <exclude reference="BuI-QV-sIL"/>
                                         <exclude reference="4Dr-Qb-rPC"/>
                                         <exclude reference="9z9-gN-mte"/>
                                         <exclude reference="AKB-mv-JpZ"/>
@@ -711,6 +710,7 @@
                                         <exclude reference="pj6-ot-85c"/>
                                         <exclude reference="upt-me-Kc7"/>
                                         <exclude reference="xUm-da-e05"/>
+                                        <exclude reference="BuI-QV-sIL"/>
                                         <exclude reference="17y-uS-WUM"/>
                                         <exclude reference="8T4-X6-UeV"/>
                                     </mask>
@@ -723,7 +723,6 @@
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="Bfc-dD-OAI"/>
-                                        <include reference="BuI-QV-sIL"/>
                                         <include reference="4Dr-Qb-rPC"/>
                                         <include reference="9z9-gN-mte"/>
                                         <exclude reference="AKB-mv-JpZ"/>
@@ -735,6 +734,7 @@
                                         <exclude reference="pj6-ot-85c"/>
                                         <include reference="upt-me-Kc7"/>
                                         <exclude reference="xUm-da-e05"/>
+                                        <include reference="BuI-QV-sIL"/>
                                         <include reference="17y-uS-WUM"/>
                                         <include reference="8T4-X6-UeV"/>
                                     </mask>
@@ -1015,7 +1015,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Odometer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9t-yz-52t">
-                                        <rect key="frame" x="333.66666666666669" y="53" width="51.666666666666629" height="15"/>
+                                        <rect key="frame" x="332.66666666666669" y="53" width="51.666666666666629" height="15"/>
                                         <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="13"/>
                                         <color key="textColor" red="0.56862745100000001" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
