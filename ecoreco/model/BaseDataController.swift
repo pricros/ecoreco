@@ -22,23 +22,26 @@ class BaseDataController: NSObject {
             
         } else {
             // iOS 9.0 and below - however you were previously handling it
-            guard let modelURL = Bundle.main.url(forResource: "Model", withExtension:"momd") else {
+            guard let modelURL = Bundle.main.url(forResource: "Scooter", withExtension:"momd") else {
                 fatalError("Error loading model from bundle")
             }
             guard let mom = NSManagedObjectModel(contentsOf: modelURL) else {
                 fatalError("Error initializing mom from: \(modelURL)")
             }
             let psc = NSPersistentStoreCoordinator(managedObjectModel: mom)
-            self.managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+
             let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
             let docURL = urls[urls.endIndex-1]
-            let storeURL = docURL.appendingPathComponent("Model.sqlite")
+            let storeURL = docURL.appendingPathComponent("Scooter.sqlite")
             do {
                 try psc.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeURL, options: nil)
             } catch {
                 fatalError("Error migrating store: \(error)")
             }
             
+            self.managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+            self.managedObjectContext?.persistentStoreCoordinator = psc
+
         }
     }
     
