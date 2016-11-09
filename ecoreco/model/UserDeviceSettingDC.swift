@@ -90,7 +90,7 @@ class UserDeviceSettingDC: BaseDataController {
         }
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserDeviceSetting")
-        request.predicate = NSPredicate(format: "deviceId == %@", deviceId)//wildword??
+        request.predicate = NSPredicate(format: "deviceId == %@", deviceId)
         
         do{
             let results = try super.managedObjectContext!.fetch(request) as! [UserDeviceSetting]
@@ -112,7 +112,7 @@ class UserDeviceSettingDC: BaseDataController {
         }
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserDeviceSetting")
-        request.predicate = NSPredicate(format: "deviceId == %@", deviceId)//wildword??
+        request.predicate = NSPredicate(format: "deviceId == %@", deviceId)
         
         do{
             let results = try super.managedObjectContext!.fetch(request) as! [UserDeviceSetting]
