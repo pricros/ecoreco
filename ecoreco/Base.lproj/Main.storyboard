@@ -344,7 +344,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Odometer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ba4-xL-uvZ">
-                                        <rect key="frame" x="333.33333333333326" y="170.66666666666674" width="51.666666666666686" height="15"/>
+                                        <rect key="frame" x="333" y="170.66666666666674" width="51.666666666666686" height="15"/>
                                         <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="13"/>
                                         <color key="textColor" red="0.56862745100000001" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -650,7 +650,7 @@
                                         </variation>
                                     </label>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nt5-Ky-RmC">
-                                        <rect key="frame" x="157" y="271" width="60" height="19"/>
+                                        <rect key="frame" x="157" y="260" width="60" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Nt5-Ky-RmC" secondAttribute="height" multiplier="60:19" id="mnP-fy-6hu"/>
                                         </constraints>
@@ -671,9 +671,9 @@
                                     <constraint firstItem="W6q-aP-fbL" firstAttribute="top" secondItem="ibO-3v-nCz" secondAttribute="top" id="AKB-mv-JpZ"/>
                                     <constraint firstAttribute="width" secondItem="ibO-3v-nCz" secondAttribute="height" multiplier="1:1" id="Bfc-dD-OAI"/>
                                     <constraint firstItem="eb6-Nc-FB9" firstAttribute="width" secondItem="W6q-aP-fbL" secondAttribute="width" multiplier="0.6" id="BuI-QV-sIL"/>
+                                    <constraint firstItem="Nt5-Ky-RmC" firstAttribute="centerY" secondItem="ibO-3v-nCz" secondAttribute="centerY" constant="83" id="GLE-FA-Vht"/>
                                     <constraint firstItem="W6q-aP-fbL" firstAttribute="leading" secondItem="ibO-3v-nCz" secondAttribute="leading" id="GcM-dv-k51"/>
                                     <constraint firstItem="W6q-aP-fbL" firstAttribute="width" secondItem="ibO-3v-nCz" secondAttribute="width" id="HP3-CD-kSQ"/>
-                                    <constraint firstItem="Eox-p4-Ygm" firstAttribute="top" secondItem="Nt5-Ky-RmC" secondAttribute="bottom" constant="62.670000000000002" id="JwD-Jt-Axx"/>
                                     <constraint firstItem="W6q-aP-fbL" firstAttribute="width" secondItem="ibO-3v-nCz" secondAttribute="width" id="eeZ-KR-dRo"/>
                                     <constraint firstItem="W6q-aP-fbL" firstAttribute="centerY" secondItem="ibO-3v-nCz" secondAttribute="centerY" id="g5y-Q1-66F"/>
                                     <constraint firstItem="Nt5-Ky-RmC" firstAttribute="width" secondItem="ibO-3v-nCz" secondAttribute="width" multiplier="0.16" id="kkJ-Nt-mJ2"/>
@@ -997,7 +997,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Battery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nwy-mw-piF">
-                                        <rect key="frame" x="30.666666666666664" y="53" width="38.333333333333336" height="15"/>
+                                        <rect key="frame" x="31" y="53" width="38.333333333333329" height="15"/>
                                         <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="13"/>
                                         <color key="textColor" red="0.56862745100000001" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1015,7 +1015,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Odometer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9t-yz-52t">
-                                        <rect key="frame" x="333.33333333333326" y="53" width="51.666666666666686" height="15"/>
+                                        <rect key="frame" x="332.66666666666669" y="53" width="51.666666666666629" height="15"/>
                                         <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="13"/>
                                         <color key="textColor" red="0.56862745100000001" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1469,12 +1469,12 @@
                             <mask key="constraints">
                                 <exclude reference="4hY-fX-qtH"/>
                                 <exclude reference="w58-vh-JTM"/>
-                                <exclude reference="awg-ht-G7h"/>
-                                <exclude reference="pJa-n9-ZQz"/>
                                 <exclude reference="haq-fq-9NH"/>
                                 <exclude reference="qBT-g4-vNV"/>
                                 <exclude reference="s33-WP-DRJ"/>
                                 <exclude reference="xq9-RZ-0X0"/>
+                                <exclude reference="awg-ht-G7h"/>
+                                <exclude reference="pJa-n9-ZQz"/>
                                 <exclude reference="AMx-L0-5Rv"/>
                                 <exclude reference="RDO-xo-tCS"/>
                                 <exclude reference="1T3-Lh-pSF"/>
@@ -1516,12 +1516,12 @@
                             <mask key="constraints">
                                 <exclude reference="4hY-fX-qtH"/>
                                 <include reference="w58-vh-JTM"/>
-                                <exclude reference="awg-ht-G7h"/>
-                                <exclude reference="pJa-n9-ZQz"/>
                                 <include reference="haq-fq-9NH"/>
                                 <include reference="qBT-g4-vNV"/>
                                 <include reference="s33-WP-DRJ"/>
                                 <include reference="xq9-RZ-0X0"/>
+                                <exclude reference="awg-ht-G7h"/>
+                                <exclude reference="pJa-n9-ZQz"/>
                                 <include reference="AMx-L0-5Rv"/>
                                 <include reference="RDO-xo-tCS"/>
                                 <include reference="1T3-Lh-pSF"/>
@@ -2344,7 +2344,7 @@
                                 <rect key="frame" x="96" y="223" width="223" height="291"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slow Down" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5W2-Xc-lSL">
-                                <rect key="frame" x="123.33333333333334" y="183.66666666666663" width="167.66666666666666" height="39.333333333333343"/>
+                                <rect key="frame" x="123.66666666666669" y="183.66666666666663" width="167.66666666666663" height="39.333333333333343"/>
                                 <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="36"/>
                                 <color key="textColor" red="0.80000000000000004" green="0.43529411759999997" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2395,7 +2395,7 @@
                                 <rect key="frame" x="32.333333333333343" y="468" width="186.33333333333331" height="47.333333333333371"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="in 30 sec" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROY-tc-33u">
-                                <rect key="frame" x="106.66666666666666" y="478.66666666666674" width="111.99999999999997" height="26.333333333333314"/>
+                                <rect key="frame" x="106.66666666666666" y="479" width="111.99999999999997" height="26.333333333333314"/>
                                 <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2626,7 +2626,7 @@
         <!--Helmet View Controller-->
         <scene sceneID="erb-5O-UOt">
             <objects>
-                <viewController id="fag-uG-6lw" customClass="HelmetViewController" customModule="ecoreco" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HelmetView" id="fag-uG-6lw" customClass="HelmetViewController" customModule="ecoreco" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RSl-hQ-PBl"/>
                         <viewControllerLayoutGuide type="bottom" id="ZfZ-MI-BLe"/>
@@ -2639,7 +2639,7 @@
                                 <rect key="frame" x="112" y="250" width="191" height="236"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helmet On" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxc-Wp-07g">
-                                <rect key="frame" x="127.66666666666666" y="210.66666666666663" width="159.33333333333334" height="39.333333333333343"/>
+                                <rect key="frame" x="128" y="210.66666666666663" width="159.33333333333331" height="39.333333333333343"/>
                                 <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="36"/>
                                 <color key="textColor" red="0.56862745100000001" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -3324,6 +3324,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="86F-Yz-tOh"/>
-        <segue reference="dp8-eq-zgJ"/>
+        <segue reference="pKt-is-sFY"/>
     </inferredMetricsTieBreakers>
 </document>

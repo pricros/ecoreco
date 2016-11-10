@@ -275,6 +275,15 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
     
     func speedDidChange(_ oldSpeed:Int, newSpeed:Int) {
         
+//        if (oldSpeed == 0 && newSpeed > 0){
+//            
+//            let vc = self.storyboard!.instantiateViewController(withIdentifier: "HelmetView") as! HelmetViewController
+//            vc.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+//            self.present(vc, animated: true, completion: nil)
+//        }
+//        else
+        
+        
         var rotation:CGAffineTransform?
         let priority = DispatchQueue.GlobalQueuePriority.default
         
@@ -290,6 +299,7 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
                     self.counterView.speed = newSpeed
                 }
         }
+        
         
     }
     
@@ -321,7 +331,6 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
     
     func falStatusDidChange(_ oldValue:Int, newValue:Int) {
         if (newValue == 1 && scooter.getStatus() != ScooterStatus.fall){
-          
             scooter.setStatus(ScooterStatus.fall)
             let vc = self.storyboard!.instantiateViewController(withIdentifier: "FallView") as! FallViewController
             vc.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
@@ -344,6 +353,11 @@ class DashboardViewController: CommonViewController, UIScrollViewDelegate {
         }else{
             scooter.lock()
         }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        scooter.exitStandby()
+
     }
 
 }

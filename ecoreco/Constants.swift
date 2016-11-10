@@ -15,4 +15,7 @@ class Constants {
     static let kNotifyPeripheralUpdate: String = "NotifyPeripheralUpdate"
     static let kPeripherals: String = "kPeripherals"
     
+    static let kUserDefaultEmergencyCall: String = "txtEmergencyCall"
+    static let kUserDefaultEmergencySMS: String = "txtEmergencySMS"
+    
 }
