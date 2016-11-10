@@ -48,6 +48,15 @@
 		3C460A4E1C3CAFE100FB6EB6 /* mapPoint.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C460A4D1C3CAFE100FB6EB6 /* mapPoint.png */; };
 		3C48D2351DCCE2BE0003FE8C /* BaseDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C48D2331DCCE2BE0003FE8C /* BaseDataController.swift */; };
 		3C48D2361DCCE2BE0003FE8C /* UserDeviceSettingDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C48D2341DCCE2BE0003FE8C /* UserDeviceSettingDC.swift */; };
+		3C642D891DD2F8240032BEC5 /* DeviceInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C642D831DD2F8240032BEC5 /* DeviceInfo+CoreDataClass.swift */; };
+		3C642D8A1DD2F8240032BEC5 /* DeviceInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C642D841DD2F8240032BEC5 /* DeviceInfo+CoreDataProperties.swift */; };
+		3C642D8B1DD2F8240032BEC5 /* DeviceTrip+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C642D851DD2F8240032BEC5 /* DeviceTrip+CoreDataClass.swift */; };
+		3C642D8C1DD2F8240032BEC5 /* DeviceTrip+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C642D861DD2F8240032BEC5 /* DeviceTrip+CoreDataProperties.swift */; };
+		3C642D8D1DD2F8240032BEC5 /* UserProfile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C642D871DD2F8240032BEC5 /* UserProfile+CoreDataClass.swift */; };
+		3C642D8E1DD2F8240032BEC5 /* UserProfile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C642D881DD2F8240032BEC5 /* UserProfile+CoreDataProperties.swift */; };
+		3C642D931DD2F89E0032BEC5 /* DeviceInfoDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C642D8F1DD2F89E0032BEC5 /* DeviceInfoDC.swift */; };
+		3C642D941DD2F89E0032BEC5 /* DeviceTripDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C642D901DD2F89E0032BEC5 /* DeviceTripDC.swift */; };
+		3C642D961DD2F89E0032BEC5 /* UserProfileDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C642D921DD2F89E0032BEC5 /* UserProfileDC.swift */; };
 		3C6DBF741DCB1A6A00F097F0 /* UserProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DBF731DCB1A6A00F097F0 /* UserProfileTableViewController.swift */; };
 		3CB16A6F1DADC990004C3191 /* RideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB16A6E1DADC990004C3191 /* RideViewController.swift */; };
 		3CB16A761DADCB01004C3191 /* EditScooterComboViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB16A701DADCB01004C3191 /* EditScooterComboViewController.swift */; };
@@ -165,6 +174,15 @@
 		3C460A4D1C3CAFE100FB6EB6 /* mapPoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mapPoint.png; path = images/mapPoint.png; sourceTree = "<group>"; };
 		3C48D2331DCCE2BE0003FE8C /* BaseDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseDataController.swift; path = model/BaseDataController.swift; sourceTree = "<group>"; };
 		3C48D2341DCCE2BE0003FE8C /* UserDeviceSettingDC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDeviceSettingDC.swift; path = model/UserDeviceSettingDC.swift; sourceTree = "<group>"; };
+		3C642D831DD2F8240032BEC5 /* DeviceInfo+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DeviceInfo+CoreDataClass.swift"; path = "model/DeviceInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3C642D841DD2F8240032BEC5 /* DeviceInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DeviceInfo+CoreDataProperties.swift"; path = "model/DeviceInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3C642D851DD2F8240032BEC5 /* DeviceTrip+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DeviceTrip+CoreDataClass.swift"; path = "model/DeviceTrip+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3C642D861DD2F8240032BEC5 /* DeviceTrip+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DeviceTrip+CoreDataProperties.swift"; path = "model/DeviceTrip+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3C642D871DD2F8240032BEC5 /* UserProfile+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserProfile+CoreDataClass.swift"; path = "model/UserProfile+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3C642D881DD2F8240032BEC5 /* UserProfile+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserProfile+CoreDataProperties.swift"; path = "model/UserProfile+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3C642D8F1DD2F89E0032BEC5 /* DeviceInfoDC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceInfoDC.swift; path = model/DeviceInfoDC.swift; sourceTree = "<group>"; };
+		3C642D901DD2F89E0032BEC5 /* DeviceTripDC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceTripDC.swift; path = model/DeviceTripDC.swift; sourceTree = "<group>"; };
+		3C642D921DD2F89E0032BEC5 /* UserProfileDC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileDC.swift; path = model/UserProfileDC.swift; sourceTree = "<group>"; };
 		3C6DBF731DCB1A6A00F097F0 /* UserProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewController.swift; sourceTree = "<group>"; };
 		3CB16A6E1DADC990004C3191 /* RideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideViewController.swift; sourceTree = "<group>"; };
 		3CB16A701DADCB01004C3191 /* EditScooterComboViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditScooterComboViewController.swift; sourceTree = "<group>"; };
@@ -287,6 +305,15 @@
 		1863F3991CF4161D00B21266 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3C642D8F1DD2F89E0032BEC5 /* DeviceInfoDC.swift */,
+				3C642D901DD2F89E0032BEC5 /* DeviceTripDC.swift */,
+				3C642D921DD2F89E0032BEC5 /* UserProfileDC.swift */,
+				3C642D831DD2F8240032BEC5 /* DeviceInfo+CoreDataClass.swift */,
+				3C642D841DD2F8240032BEC5 /* DeviceInfo+CoreDataProperties.swift */,
+				3C642D851DD2F8240032BEC5 /* DeviceTrip+CoreDataClass.swift */,
+				3C642D861DD2F8240032BEC5 /* DeviceTrip+CoreDataProperties.swift */,
+				3C642D871DD2F8240032BEC5 /* UserProfile+CoreDataClass.swift */,
+				3C642D881DD2F8240032BEC5 /* UserProfile+CoreDataProperties.swift */,
 				3C48D2331DCCE2BE0003FE8C /* BaseDataController.swift */,
 				3C48D2341DCCE2BE0003FE8C /* UserDeviceSettingDC.swift */,
 				3C43645C1DCC541100E8E944 /* UserDeviceSetting+CoreDataClass.swift */,
@@ -661,21 +688,30 @@
 				18EEF0F81C2BF06F0065AFE7 /* DashboardViewController.swift in Sources */,
 				842DCFDD1DACF5E800A71A8E /* RadarCanvas.swift in Sources */,
 				8492C5AB1D60D2CD0021D2FC /* PairViewController.swift in Sources */,
+				3C642D8E1DD2F8240032BEC5 /* UserProfile+CoreDataProperties.swift in Sources */,
 				842DCFF61DB3395600A71A8E /* ColorUtil.swift in Sources */,
+				3C642D8B1DD2F8240032BEC5 /* DeviceTrip+CoreDataClass.swift in Sources */,
 				183E661C1D09E5BF00E1A4E9 /* Event.swift in Sources */,
 				3C48D2361DCCE2BE0003FE8C /* UserDeviceSettingDC.swift in Sources */,
 				842DCFEB1DAE9D6C00A71A8E /* SearchTableViewController.swift in Sources */,
 				842DCFEF1DAEAAE200A71A8E /* RadarEcorecoIcon.swift in Sources */,
+				3C642D961DD2F89E0032BEC5 /* UserProfileDC.swift in Sources */,
+				3C642D8C1DD2F8240032BEC5 /* DeviceTrip+CoreDataProperties.swift in Sources */,
 				842DCFFC1DB5D42400A71A8E /* SetDeviceNameViewController.swift in Sources */,
 				84850A5B1DC7AE9100FA8F1D /* HelmetViewController.swift in Sources */,
+				3C642D931DD2F89E0032BEC5 /* DeviceInfoDC.swift in Sources */,
+				3C642D8A1DD2F8240032BEC5 /* DeviceInfo+CoreDataProperties.swift in Sources */,
 				3CEAC1EF1D0133A700F29628 /* FallViewController.swift in Sources */,
 				187B92C81C26716500DA3BDF /* AppDelegate.swift in Sources */,
 				183E661A1D06C41C00E1A4E9 /* CounterView.swift in Sources */,
+				3C642D941DD2F89E0032BEC5 /* DeviceTripDC.swift in Sources */,
 				84850A931DCAEBAC00FA8F1D /* Constants.swift in Sources */,
 				842DCFED1DAE9F3000A71A8E /* SearchTableViewCell.swift in Sources */,
+				3C642D8D1DD2F8240032BEC5 /* UserProfile+CoreDataClass.swift in Sources */,
 				18EEF0BA1C2A3C380065AFE7 /* MapViewController.swift in Sources */,
 				3C43645E1DCC541100E8E944 /* UserDeviceSetting+CoreDataClass.swift in Sources */,
 				181F4FAC1CFD88D100B13E77 /* ScooterModel.swift in Sources */,
+				3C642D891DD2F8240032BEC5 /* DeviceInfo+CoreDataClass.swift in Sources */,
 				3C43645F1DCC541100E8E944 /* UserDeviceSetting+CoreDataProperties.swift in Sources */,
 				3CB16A7B1DADCB01004C3191 /* UserProfileViewController.swift in Sources */,
 				3C6DBF741DCB1A6A00F097F0 /* UserProfileTableViewController.swift in Sources */,
