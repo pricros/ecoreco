@@ -100,6 +100,19 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     let VER:String = "VER"
     let ASK:String = "?"
     
+    //VER007 command
+    let NAM:String = "NAM" //NAMxxxxxxxx , xxxxxxxx is the personalized name
+    let FACTORY:String = "FAC" //FAC0 = From Factory, FAC1 = Used
+    let ODOTIME:String = "ODT" //return ODTddddhhmmss, dddd= Days, hh=hours,mm=minutes, ss= seconds
+    let ODORESET:String = "ODR"
+    let CRUISE:String = "CRS"
+    let SAFESTART:String = "SAS"
+    let CELLVOLTS:String = "CEL" //return CELvvd, vv= voltage in decimal, 
+    //d=decimal portion of voltage
+    let SENSORSTATUS:String = "SEN" //return SENaeb, 0 = NG, 1=Sensor OK,
+    //a(0,1) = Accel, e(0,1) = EEPROM, b(0,1) = battery
+    let CHARGINGCYCLES:String = "CHA" // return CHAxxx, xxx = number of charging cycles
+    
     let RETRYTIME:Int = 5
     
     let ONE_SECOND:UInt32 = 1000000 //micro second
@@ -268,21 +281,13 @@ class ScooterModel:NSObject, NRFManagerDelegate{
         log("\(#file) \(#line) \n⬆ Sent string: \(string) - Result: \(result)")
     }
     
+    func isActived(){
+        
+    }
+    
     func setMode(_ scooterMode:ScooterRunMode)->Bool
     {
-        backgroundThread(background:{
-            for _ in 1...self.RETRYTIME {
-                self.sendData(self.MODE+scooterMode.rawValue)
-                self.mode.setNeedAck(true)
-                usleep(self.ONE_SECOND*3)
-                if (!self.mode.isNeedAck()){
-                    break
-                }
-            }
-            },
-                         completion:{
-        })
-        return true
+        return sendCommandInBackgroundThread(self.MODE+scooterMode.rawValue, observerValue: self.mode)
     }
     
     func connect(){
@@ -305,38 +310,12 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     
     func lock()->Bool{
         //send command to lock scooter
-                backgroundThread(background:{
-            for _ in 1...self.RETRYTIME {
-                self.sendData(self.LOCK+"1")
-                self.lockStatus.setNeedAck(true)
-                usleep(self.ONE_SECOND*3)
-                if (!self.lockStatus.isNeedAck()){
-                    break
-                }
-            }
-            },
-                         completion:{
-        })
-        return true
-
-        //start a thread to detect thief
+        return sendCommandInBackgroundThread(self.LOCK+"1", observerValue: self.lockStatus)
         
     }
     
     func unlock()->Bool{
-        backgroundThread(background:{
-            for _ in 1...self.RETRYTIME {
-                self.sendData(self.LOCK+"0")
-                self.lockStatus.setNeedAck(true)
-                usleep(self.ONE_SECOND*3)
-                if (!self.lockStatus.isNeedAck()){
-                    break
-                }
-            }
-            },
-                         completion:{
-        })
-        return true
+        return sendCommandInBackgroundThread(self.LOCK+"0", observerValue: self.lockStatus)
     }
     
     func getEstimateDistance(_ unitType:UnitType)->Bool{
@@ -366,22 +345,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     }
     
     func getBatteryInfo()->Bool{
-        sendData(BATT+ASK)
-        backgroundThread(background:{
-            for _ in 1...self.RETRYTIME {
-                self.sendData(self.BATT+self.ASK)
-                self.bat.setNeedAck(true)
-                usleep(self.ONE_SECOND*3)
-                if (!self.bat.isNeedAck()){
-                    self.enterStandby()
-                    break
-                }
-            }
-            },
-                         completion:{
-        })
-        return true
- 
+        return sendCommandInBackgroundThread(BATT+ASK, observerValue: self.bat)
     }
     
     func getSpeed()->Bool{
@@ -422,20 +386,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     }
     
     func resetAlarmStatus()->Bool{
-
-        backgroundThread(background:{
-            for _ in 1...self.RETRYTIME {
-                self.sendData(self.ARR)
-                self.alrStatus.setNeedAck(true)
-                usleep(self.ONE_SECOND*3)
-                if (!self.alrStatus.isNeedAck()){
-                    break
-                }
-            }
-            },
-                         completion:{
-        })
-        return true
+        return sendCommandInBackgroundThread(self.ARR, observerValue: self.alrStatus)
     }
     
     func getStatus()->ScooterStatus?{
@@ -523,12 +474,29 @@ class ScooterModel:NSObject, NRFManagerDelegate{
         return true
     }
     
-    func sendCommandWithRetry(){
+    fileprivate func sendCommandInBackgroundThread(_ command:String, observerValue:Observable<Int> )->Bool{
+        backgroundThread(background:{
+            for _ in 1...self.RETRYTIME {
+                self.sendData(command)
+                observerValue.setNeedAck(true)
+                usleep(self.ONE_SECOND*3)
+                if (!observerValue.isNeedAck()){
+                    break
+                }
+            }
+        },
+                         completion:{
+        })
+        return true
         
     }
     
-    func backgroundThread(_ delay: Double = 0.0, background: (() -> Void)? = nil, completion:(() -> Void)?){
-        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async{
+    fileprivate func sendCommandInBackgroundThread(){
+        
+    }
+    
+    fileprivate func backgroundThread(_ delay: Double = 0.0, background: (() -> Void)? = nil, completion:(() -> Void)?){
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInteractive).async{
             if(background != nil){ background!()}
             
             let popTime = DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
