@@ -153,7 +153,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
 //                    case KMPH:
                     case self.ODO+UnitType.KM.rawValue:
                         let odoType:String = (rtnString as NSString).substring(with: NSMakeRange(3,1))
-                        let odoDistance:Int = Int((rtnString as NSString).substring(with: NSMakeRange(4,5)))!
+                        let odoDistance:Int = Int((rtnString as NSString).substring(with: NSMakeRange(4,6)))!
 
                         switch odoType {
                         case OdoTripType.TotalDistanceTraveled.rawValue:
