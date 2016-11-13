@@ -29,19 +29,19 @@ class FallViewController: CommonViewController {
         
         //===============setting sample
 
-        userDefaults.set("DEVICE_ID_AAAA", forKey: "ecoreco_fall_deviceId")
+        userDefaults.set("DEVICE_ID_AAAA", forKey: Constants.kUserDefaultDeviceId)
 
         //===============end setting sample
         print("##### GET SMS CALL IN CORE DATA")
         if(phoneNo==nil){
             let dc = UserDeviceSettingDC()
             var entity = dc.find(
-                deviceId: userDefaults.object(forKey: "ecoreco_fall_deviceId") as! String)
+                deviceId: userDefaults.object(forKey: Constants.kUserDefaultDeviceId) as! String)
 
             if(entity==nil){
                 dc.save(deviceId: "DEVICE_ID_AAAA", email: nil, emergencycall: "0937218247", emergencysms: "0937218247", sound: nil, speedLimit: nil, vibrate: nil)
                 entity = dc.find(
-                    deviceId: userDefaults.object(forKey: "ecoreco_fall_deviceId") as! String)
+                    deviceId: userDefaults.object(forKey: Constants.kUserDefaultDeviceId) as! String)
             }
             
             phoneNo = entity?.emergencycall

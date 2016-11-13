@@ -22,4 +22,9 @@ class Constants {
     static let kUserDefaultDeviceId: String = "kUserDeviceId"
     static let kUserDefaultRememberMe: String = "kUserDefaultRememberMe"
     
+    static let kDefaultSettingEmergencyCall:String = "911"
+    static let kDefaultSettingSound:Bool = false
+    static let kDefaultSettingVibrate:Bool = false
+    
+    
 }
