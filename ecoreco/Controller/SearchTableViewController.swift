@@ -13,6 +13,8 @@ class SearchTableViewController: CommonViewController, UITableViewDataSource, UI
     var name = ["A-ID:ECORECO1", "B-ID:ECORECO2", "C-ID:ECORECO3"]
     var images = [UIImage(named: "bgDevice"), UIImage(named: "bgDevice"), UIImage(named: "bgDevice")]
     
+    let userDefaults = UserDefaults.standard
+    
     @IBOutlet var searchTableView: UITableView!
 
     override func viewDidLoad() {
@@ -54,6 +56,33 @@ class SearchTableViewController: CommonViewController, UITableViewDataSource, UI
     
     func deviceClicked(_ sender:UIButton){
         NSLog("item \(sender.titleLabel?.text) selected")
+        //search device and user email in db, 
+        //if exist, get data
+        //@todo: get data by email, deviceId
+        let email = userDefaults.string(forKey: Constants.kUserDefaultAccount)
+        let deviceId = sender.currentTitle
+        userDefaults.set(deviceId, forKey: Constants.kUserDefaultAccount)
+
+        
+        //===============setting sample
+        
+        userDefaults.set(deviceId, forKey: Constants.kUserDefaultDeviceId)
+        
+        //===============end setting sample
+        print("##### GET SMS CALL IN CORE DATA")
+        
+        let dc = UserDeviceSettingDC()
+        var entity = dc.find(
+                deviceId: userDefaults.object(forKey: Constants.kUserDefaultDeviceId) as! String)
+            
+        //else create data
+        if(entity==nil){
+            dc.save(deviceId: deviceId, email: nil, emergencycall: Constants.kDefaultSettingEmergencyCall, emergencysms: "", sound: nil, speedLimit: nil, vibrate: nil)
+            NSLog("create core data : \(deviceId!)")
+        }else{
+            NSLog("found core data : \(deviceId!)")
+        }
+
         scooter.connect()
         self.performSegue(withIdentifier: "seguePairToRstCmb", sender: nil)
     }
