@@ -17,5 +17,9 @@ class Constants {
     
     static let kUserDefaultEmergencyCall: String = "txtEmergencyCall"
     static let kUserDefaultEmergencySMS: String = "txtEmergencySMS"
+    static let kUserDefaultAccount: String = "kUserAccount"
+    static let kUserDefaultPassword: String = "kUserPassword"
+    static let kUserDefaultDeviceId: String = "kUserDeviceId"
+    static let kUserDefaultRememberMe: String = "kUserDefaultRememberMe"
     
 }
