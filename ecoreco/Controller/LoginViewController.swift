@@ -27,5 +27,17 @@ class LoginViewController: CommonViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    @IBAction func actionConfirm(_ sender: UIButton) {
+        
+        // @todo: send username /password to server to validate and get user profile
+        // if success update user profile to DB
+        // else alert error message.
+        
+        // if everything ready, go to next step
+        self.performSegue(withIdentifier: "segueLoginToPair", sender: nil)
+
+    }
+    
 
 }
