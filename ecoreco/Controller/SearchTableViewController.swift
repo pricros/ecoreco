@@ -69,18 +69,33 @@ class SearchTableViewController: CommonViewController, UITableViewDataSource, UI
         userDefaults.set(deviceId, forKey: Constants.kUserDefaultDeviceId)
         
         //===============end setting sample
-        print("##### GET SMS CALL IN CORE DATA")
+        print("##### GET User Device Setting CORE DATA ")
         
-        let dc = UserDeviceSettingDC()
-        var entity = dc.find(
+        let dcUserDevice = UserDeviceSettingDC()
+        var entity = dcUserDevice.find(
                 deviceId: userDefaults.object(forKey: Constants.kUserDefaultDeviceId) as! String)
             
         //else create data
         if(entity==nil){
-            dc.save(deviceId: deviceId, email: nil, emergencycall: Constants.kDefaultSettingEmergencyCall, emergencysms: "", sound: nil, speedLimit: nil, vibrate: nil)
-            NSLog("create core data : \(deviceId!)")
+            dcUserDevice.save(deviceId: deviceId, email: nil, emergencycall: Constants.kDefaultSettingEmergencyCall, emergencysms: "", sound: nil, speedLimit: nil, vibrate: nil)
+            NSLog("create UserDeviceSettingDC core data : \(deviceId!)")
         }else{
-            NSLog("found core data : \(deviceId!)")
+            NSLog("found UserDeviceSettingDC core data : \(deviceId!)")
+        }
+        
+        print("##### GET Device Info CORE DATA ")
+
+        
+        let dcUserInfo = DeviceInfoDC()
+        var entityUserInfo = dcUserInfo.find(
+            deviceId: userDefaults.object(forKey: Constants.kUserDefaultDeviceId) as! String)
+        
+        //else create data
+        if(entityUserInfo==nil){
+            dcUserInfo.save(deviceId: deviceId, deviceName: "", batteryAmount: nil, estimateRange: nil, mode: nil, odometer: nil)
+            NSLog("create DeviceInfoDC core data : \(deviceId!)")
+        }else{
+            NSLog("found DeviceInfoDC core data : \(deviceId!)")
         }
 
         scooter.connect()
