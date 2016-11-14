@@ -10,6 +10,9 @@ class RideViewController: CommonViewController {
     
     @IBOutlet weak var imgBack: UIImageView!
     
+    @IBOutlet weak var switchAutoLight: UISwitch!
+    
+    @IBOutlet weak var sliderSpeedLimit: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()

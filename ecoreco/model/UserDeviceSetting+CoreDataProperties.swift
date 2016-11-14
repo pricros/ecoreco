@@ -20,8 +20,8 @@ extension UserDeviceSetting {
     @NSManaged public var email: String?
     @NSManaged public var emergencycall: String?
     @NSManaged public var emergencysms: String?
-    @NSManaged public var sound: NSNumber?
+    @NSManaged public var sound: Bool
     @NSManaged public var speedLimit: NSNumber?
-    @NSManaged public var vibrate: NSNumber?
+    @NSManaged public var vibrate: Bool
 
 }

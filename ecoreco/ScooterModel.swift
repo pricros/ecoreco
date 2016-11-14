@@ -61,14 +61,12 @@ protocol ScooterModelProfileProtocol:class{
 }
 
 class ScooterModel:NSObject, NRFManagerDelegate{
+    static let sharedInstance = ScooterModel()
     weak var runDelegate: ScooterModelRunProtocol!
     weak var lockDelegate: ScooterModelLockProtocol!
     fileprivate var nrfManager:NRFManager!
     fileprivate var status:ScooterStatus?
-    
-    static let sharedInstance = ScooterModel()
     let userDefaults = UserDefaults.standard
-
     
     let speed = Observable<Int>(0)
     let mode = Observable<Int>(0)
@@ -82,8 +80,6 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     let falStatus = Observable<Int>(0)
     let bat = Observable<Int>(0)
     let alrStatus = Observable<Int>(0)
-    
-
     
     let MODE:String = "MOD"
     let MPH:String = "MPH"
@@ -229,6 +225,61 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     func log(_ string:String)
     {
         print(string)
+    }
+    
+    
+    
+    func loadDefaultConfiguration(deviceId:String, userAccount:String?){
+        
+        let email = userDefaults.string(forKey: Constants.kUserDefaultAccount)
+        userDefaults.set(deviceId, forKey: Constants.kUserDefaultAccount)
+
+        //===============setting sample
+        userDefaults.set(deviceId, forKey: Constants.kUserDefaultDeviceId)
+        //===============end setting sample
+        print("##### GET User Device Setting CORE DATA ")
+        
+        let dcUserDevice = UserDeviceSettingDC()
+        if  dcUserDevice.find(
+            deviceId: userDefaults.object(forKey: Constants.kUserDefaultDeviceId) as! String) == nil
+        {
+            dcUserDevice.save(deviceId: deviceId, email: nil, emergencycall: Constants.kDefaultSettingEmergencyCall, emergencysms: Constants.kDefaultSettingEmergencyCall, sound: Constants.kDefaultSettingSound, speedLimit: (Constants.kDefaultSpeedLimit) as NSNumber, vibrate: Constants.kDefaultSettingVibrate)
+            NSLog("create UserDeviceSettingDC core data : \(deviceId)")
+        }
+        
+        let entity = dcUserDevice.find(
+            deviceId: userDefaults.object(forKey: Constants.kUserDefaultDeviceId) as! String)
+        
+            NSLog("found UserDeviceSettingDC core data : \(deviceId)")
+            //get db data to user default
+            userDefaults.setValue(entity?.emergencycall, forKey: Constants.kUserDefaultEmergencyCall)
+            userDefaults.setValue(entity?.emergencysms, forKey: Constants.kUserDefaultEmergencySMSNo)
+            userDefaults.set(entity?.vibrate, forKey: Constants.kUserDefaultVibrate)
+            userDefaults.set(entity?.sound, forKey: Constants.kUserDefaultSound)
+        
+        
+        print("##### GET Device Info CORE DATA ")
+
+        let dcDeviceInfo = DeviceInfoDC()
+        
+        if  (dcDeviceInfo.find(
+            deviceId: userDefaults.object(forKey: Constants.kUserDefaultDeviceId) as! String) == nil)
+        {
+            dcDeviceInfo.save(deviceId: deviceId, deviceName: "", batteryAmount: 0, estimateRange: 0, mode: 0, odometer: 0)
+            NSLog("create DeviceInfoDC core data : \(deviceId)")
+        }
+        
+        let entityDeviceInfo = dcDeviceInfo.find(
+            deviceId: userDefaults.object(forKey: Constants.kUserDefaultDeviceId) as! String)
+            
+            
+            print("battery amount\(entityDeviceInfo?.batteryAmount)")
+            self.bat.set(entityDeviceInfo?.batteryAmount as! Int)
+            self.rmm.set(entityDeviceInfo?.estimateRange as! Int)
+            self.mode.set(entityDeviceInfo?.mode as! Int)
+            self.odkTotal.set(entityDeviceInfo?.odometer as! Int)
+            
+            NSLog("found DeviceInfoDC core data : \(deviceId)")
     }
     
     func loadDashboardDatafromUserDefault()

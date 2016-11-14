@@ -11,7 +11,6 @@ class SafetyViewController: CommonViewController, UITextFieldDelegate {
     @IBOutlet weak var imgBack: UIImageView!
     @IBOutlet weak var txtEmergencyCall: UITextField!
     @IBOutlet weak var txtEmergencySMS: UITextField!
-    let userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +32,9 @@ class SafetyViewController: CommonViewController, UITextFieldDelegate {
             txtEmergencyCall.text = userDefaults.value(forKey: Constants.kUserDefaultEmergencyCall) as! String?
         }
         
-        if ((userDefaults.value(forKey: Constants.kUserDefaultEmergencySMS)) != nil)
+        if ((userDefaults.value(forKey: Constants.kUserDefaultEmergencySMSNo)) != nil)
         {
-            txtEmergencySMS.text = userDefaults.value(forKey: Constants.kUserDefaultEmergencySMS) as! String?
+            txtEmergencySMS.text = userDefaults.value(forKey: Constants.kUserDefaultEmergencySMSNo) as! String?
         }
 
         
@@ -64,7 +63,7 @@ class SafetyViewController: CommonViewController, UITextFieldDelegate {
             }
             else if (textField)==txtEmergencySMS
             {
-                userDefaults.setValue(textField.text, forKey: Constants.kUserDefaultEmergencySMS)
+                userDefaults.setValue(textField.text, forKey: Constants.kUserDefaultEmergencySMSNo)
             }
             
         } else {

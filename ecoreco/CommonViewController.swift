@@ -10,6 +10,8 @@ import UIKit
 
 class CommonViewController: UIViewController {
     
+    let userDefaults = UserDefaults.standard
+    
     var scooter : ScooterModel = ScooterModel.sharedInstance
     override func viewDidLoad() {
         super.viewDidLoad()

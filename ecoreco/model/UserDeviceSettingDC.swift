@@ -12,7 +12,7 @@ import CoreData
 class UserDeviceSettingDC: BaseDataController {
     
     
-    public func save(deviceId: String!, email: String?, emergencycall: String?, emergencysms: String?, sound: NSNumber?, speedLimit: NSNumber?, vibrate: NSNumber?) {
+    public func save(deviceId: String!, email: String?, emergencycall: String?, emergencysms: String?, sound: Bool, speedLimit: NSNumber?, vibrate: Bool) {
         
         if super.managedObjectContext==nil{
             prepareManagedObjectContext()
@@ -53,8 +53,7 @@ class UserDeviceSettingDC: BaseDataController {
         
     }
     
-    
-    public func update(deviceId: String!, email: String?, emergencycall: String?, emergencysms: String?, sound: NSNumber?, speedLimit: NSNumber?, vibrate: NSNumber?){
+    public func update(deviceId: String!, email: String?, emergencycall: String?, emergencysms: String?, sound: Bool, speedLimit: NSNumber?, vibrate: Bool){
         
         if super.managedObjectContext==nil{
             prepareManagedObjectContext()

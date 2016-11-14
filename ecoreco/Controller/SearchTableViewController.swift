@@ -13,8 +13,6 @@ class SearchTableViewController: CommonViewController, UITableViewDataSource, UI
     var name = ["A-ID:ECORECO1", "B-ID:ECORECO2", "C-ID:ECORECO3"]
     var images = [UIImage(named: "bgDevice"), UIImage(named: "bgDevice"), UIImage(named: "bgDevice")]
     
-    let userDefaults = UserDefaults.standard
-    
     @IBOutlet var searchTableView: UITableView!
 
     override func viewDidLoad() {
@@ -56,49 +54,17 @@ class SearchTableViewController: CommonViewController, UITableViewDataSource, UI
     
     func deviceClicked(_ sender:UIButton){
         NSLog("item \(sender.titleLabel?.text) selected")
+        scooter.connect()
         //search device and user email in db, 
         //if exist, get data
         //@todo: get data by email, deviceId
-        let email = userDefaults.string(forKey: Constants.kUserDefaultAccount)
+
         let deviceId = sender.currentTitle
-        userDefaults.set(deviceId, forKey: Constants.kUserDefaultAccount)
 
+        //load device setting into user default dictionary
+        scooter.loadDefaultConfiguration(deviceId: deviceId!, userAccount: nil)
         
-        //===============setting sample
         
-        userDefaults.set(deviceId, forKey: Constants.kUserDefaultDeviceId)
-        
-        //===============end setting sample
-        print("##### GET User Device Setting CORE DATA ")
-        
-        let dcUserDevice = UserDeviceSettingDC()
-        var entity = dcUserDevice.find(
-                deviceId: userDefaults.object(forKey: Constants.kUserDefaultDeviceId) as! String)
-            
-        //else create data
-        if(entity==nil){
-            dcUserDevice.save(deviceId: deviceId, email: nil, emergencycall: Constants.kDefaultSettingEmergencyCall, emergencysms: "", sound: nil, speedLimit: nil, vibrate: nil)
-            NSLog("create UserDeviceSettingDC core data : \(deviceId!)")
-        }else{
-            NSLog("found UserDeviceSettingDC core data : \(deviceId!)")
-        }
-        
-        print("##### GET Device Info CORE DATA ")
-
-        
-        let dcUserInfo = DeviceInfoDC()
-        var entityUserInfo = dcUserInfo.find(
-            deviceId: userDefaults.object(forKey: Constants.kUserDefaultDeviceId) as! String)
-        
-        //else create data
-        if(entityUserInfo==nil){
-            dcUserInfo.save(deviceId: deviceId, deviceName: "", batteryAmount: nil, estimateRange: nil, mode: nil, odometer: nil)
-            NSLog("create DeviceInfoDC core data : \(deviceId!)")
-        }else{
-            NSLog("found DeviceInfoDC core data : \(deviceId!)")
-        }
-
-        scooter.connect()
         self.performSegue(withIdentifier: "seguePairToRstCmb", sender: nil)
     }
     /*

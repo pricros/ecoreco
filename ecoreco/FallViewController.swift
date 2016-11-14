@@ -16,11 +16,11 @@ class FallViewController: CommonViewController {
     @IBOutlet weak var imgBack: UIButton!
     
     var phoneNo: String?
+    var smsNo: String?
     let limitSec : Int = 30
     var counter : Int = 0
     var isCalled : Bool = false
     var callTimer : Timer?
-    let userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,28 +29,38 @@ class FallViewController: CommonViewController {
         
         //===============setting sample
 
-        userDefaults.set("DEVICE_ID_AAAA", forKey: Constants.kUserDefaultDeviceId)
+       // userDefaults.set("DEVICE_ID_AAAA", forKey: Constants.kUserDefaultDeviceId)
 
         //===============end setting sample
         print("##### GET SMS CALL IN CORE DATA")
-        if(phoneNo==nil){
-            let dc = UserDeviceSettingDC()
-            var entity = dc.find(
-                deviceId: userDefaults.object(forKey: Constants.kUserDefaultDeviceId) as! String)
-
-            if(entity==nil){
-                dc.save(deviceId: "DEVICE_ID_AAAA", email: nil, emergencycall: "0937218247", emergencysms: "0937218247", sound: nil, speedLimit: nil, vibrate: nil)
-                entity = dc.find(
-                    deviceId: userDefaults.object(forKey: Constants.kUserDefaultDeviceId) as! String)
-            }
+//if(phoneNo==nil){
+//            let dc = UserDeviceSettingDC()
+//            guard let entity = dc.find(
+//                deviceId: userDefaults.object(forKey: Constants.kUserDefaultDeviceId) as! String)
+//            else{
+//                dc.save(deviceId: "DEVICE_ID_AAAA", email: nil, emergencycall: "0937218247", emergencysms: "0937218247", sound: nil, speedLimit: nil, vibrate: nil)
+//                entity = dc.find(
+//                    deviceId: userDefaults.object(forKey: Constants.kUserDefaultDeviceId) as! String)
+//                NSLog("Error get user device setting")
+//            }
             
-            phoneNo = entity?.emergencycall
+
+       // }
+        
+        if (userDefaults.value(forKey: Constants.kUserDefaultEmergencyCall) == nil){
+            phoneNo = userDefaults.value(forKey: Constants.kDefaultSettingEmergencyCall) as? String
+        }else{
+            phoneNo = userDefaults.value(forKey: Constants.kUserDefaultEmergencyCall) as? String
         }
-        print("phoneNo is \(phoneNo)")
-        print("##### END OF GET SMS CALL IN CORE DATA")
+        
+        if (userDefaults.value(forKey: Constants.kUserDefaultEmergencySMSNo) == nil){
+            smsNo = userDefaults.value(forKey: Constants.kDefaultSettingEmergencyCall) as? String
+        }else{
+            smsNo = userDefaults.value(forKey: Constants.kUserDefaultEmergencyCall) as? String
+        }
 
         
-        
+        print("##### END OF GET SMS CALL IN CORE DATA")
 
         self.modalPresentationStyle = .custom
         

@@ -30,6 +30,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,NRFManagerDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        //save user data to db
+        let userDefaults = UserDefaults.standard
+        let dcUserDevice = UserDeviceSettingDC()
+        dcUserDevice.save(deviceId: userDefaults.string(forKey: Constants.kUserDefaultDeviceId),
+                          email: userDefaults.string(forKey: Constants.kUserDefaultAccount),
+                          emergencycall: userDefaults.string(forKey: Constants.kUserDefaultEmergencyCall),
+                          emergencysms: userDefaults.string(forKey: Constants.kUserDefaultEmergencySMSNo),
+                          sound: userDefaults.bool(forKey: Constants.kUserDefaultEmergencySMSNo),
+                          speedLimit: userDefaults.object(forKey: Constants.kUserDefaultSpeedLimit) as! NSNumber,
+                          vibrate: userDefaults.bool(forKey: Constants.kUserDefaultVibrate))
+        
+        //save user default of profile into database
+        let dcUserProfile = UserProfileDC()
+        dcUserProfile.save(email: userDefaults.string(forKey: Constants.kUserDefaultAccount),
+                           birthday: userDefaults.object(forKey: Constants.kUserDefaultBirthday) as? NSDate,
+                           gender: userDefaults.object(forKey: Constants.kUserDefaultGender) as? NSNumber,
+                           unit: userDefaults.object(forKey: Constants.kUserDefaultUnit) as? NSNumber,
+                           height: userDefaults.object(forKey: Constants.kUserDefaultHeight) as? NSDecimalNumber,
+                           weight: userDefaults.object(forKey: Constants.kUserDefaultWeight) as? NSDecimalNumber)
+
+        
+        let dcDeviceTrip = DeviceTripDC()
+        let dcDeviceInfo = DeviceInfoDC()
+        let scooter = ScooterModel()
+        dcDeviceInfo.save(deviceId: userDefaults.string(forKey: Constants.kUserDefaultDeviceId),
+                          deviceName: userDefaults.string(forKey: Constants.kUserDefaultDeviceName),
+                          batteryAmount: scooter.bat.get() as NSNumber,
+                          estimateRange: scooter.rmm.get() as NSNumber,
+                          mode: scooter.mode.get() as NSNumber,
+                          odometer: scooter.odkTotal.get() as NSNumber)
+        
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
