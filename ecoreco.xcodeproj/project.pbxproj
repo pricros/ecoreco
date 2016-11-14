@@ -70,6 +70,105 @@
 		3CEAC1F41D01353C00F29628 /* FALL-DETECT_0001_TEL.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F21D01353C00F29628 /* FALL-DETECT_0001_TEL.png */; };
 		3CEAC1F81D04015400F29628 /* lock-_0036_board-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F61D04015400F29628 /* lock-_0036_board-1.png */; };
 		3CEAC1F91D04015400F29628 /* lock-_0037_board2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F71D04015400F29628 /* lock-_0037_board2.png */; };
+		8404547E1DDA154E00830C3E /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F4FAD1CFDBDC100B13E77 /* CommonViewController.swift */; };
+		8404547F1DDA154E00830C3E /* SlowDownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84850A581DC7ABD000FA8F1D /* SlowDownViewController.swift */; };
+		840454801DDA154E00830C3E /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB16A741DADCB01004C3191 /* TripViewController.swift */; };
+		840454811DDA154E00830C3E /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB16A7C1DADFDE9004C3191 /* ShopViewController.swift */; };
+		840454821DDA154E00830C3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B92C91C26716500DA3BDF /* ViewController.swift */; };
+		840454831DDA154E00830C3E /* Scooter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 181F4FA81CFD887200B13E77 /* Scooter.xcdatamodeld */; };
+		840454841DDA154E00830C3E /* SafetyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB16A711DADCB01004C3191 /* SafetyViewController.swift */; };
+		840454851DDA154E00830C3E /* ScooterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB16A721DADCB01004C3191 /* ScooterInfoViewController.swift */; };
+		840454861DDA154E00830C3E /* SecurityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB16A731DADCB01004C3191 /* SecurityViewController.swift */; };
+		840454871DDA154E00830C3E /* EditScooterComboViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB16A701DADCB01004C3191 /* EditScooterComboViewController.swift */; };
+		840454881DDA154E00830C3E /* ResetComboViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFF91DB3976900A71A8E /* ResetComboViewController.swift */; };
+		840454891DDA154E00830C3E /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEF0F71C2BF06F0065AFE7 /* DashboardViewController.swift */; };
+		8404548A1DDA154E00830C3E /* RadarCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFDC1DACF5E800A71A8E /* RadarCanvas.swift */; };
+		8404548B1DDA154E00830C3E /* PairViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492C5AA1D60D2CD0021D2FC /* PairViewController.swift */; };
+		8404548C1DDA154E00830C3E /* UserProfile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C642D881DD2F8240032BEC5 /* UserProfile+CoreDataProperties.swift */; };
+		8404548D1DDA154E00830C3E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D94931DC1E73B0065C79D /* LoginViewController.swift */; };
+		8404548E1DDA154E00830C3E /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFF51DB3395600A71A8E /* ColorUtil.swift */; };
+		8404548F1DDA154E00830C3E /* DeviceTrip+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C642D851DD2F8240032BEC5 /* DeviceTrip+CoreDataClass.swift */; };
+		840454901DDA154E00830C3E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E661B1D09E5BE00E1A4E9 /* Event.swift */; };
+		840454911DDA154E00830C3E /* UserDeviceSettingDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C48D2341DCCE2BE0003FE8C /* UserDeviceSettingDC.swift */; };
+		840454921DDA154E00830C3E /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFEA1DAE9D6C00A71A8E /* SearchTableViewController.swift */; };
+		840454931DDA154E00830C3E /* RadarEcorecoIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFEE1DAEAAE200A71A8E /* RadarEcorecoIcon.swift */; };
+		840454941DDA154E00830C3E /* UserProfileDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C642D921DD2F89E0032BEC5 /* UserProfileDC.swift */; };
+		840454951DDA154E00830C3E /* DeviceTrip+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C642D861DD2F8240032BEC5 /* DeviceTrip+CoreDataProperties.swift */; };
+		840454961DDA154E00830C3E /* SetDeviceNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFFB1DB5D42300A71A8E /* SetDeviceNameViewController.swift */; };
+		840454971DDA154E00830C3E /* HelmetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84850A5A1DC7AE9100FA8F1D /* HelmetViewController.swift */; };
+		840454981DDA154E00830C3E /* DeviceInfoDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C642D8F1DD2F89E0032BEC5 /* DeviceInfoDC.swift */; };
+		840454991DDA154E00830C3E /* DeviceInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C642D841DD2F8240032BEC5 /* DeviceInfo+CoreDataProperties.swift */; };
+		8404549A1DDA154E00830C3E /* FallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEAC1EE1D0133A700F29628 /* FallViewController.swift */; };
+		8404549B1DDA154E00830C3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B92C71C26716500DA3BDF /* AppDelegate.swift */; };
+		8404549C1DDA154E00830C3E /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E66191D06C41C00E1A4E9 /* CounterView.swift */; };
+		8404549D1DDA154E00830C3E /* DeviceTripDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C642D901DD2F89E0032BEC5 /* DeviceTripDC.swift */; };
+		8404549E1DDA154E00830C3E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84850A921DCAEBAC00FA8F1D /* Constants.swift */; };
+		8404549F1DDA154E00830C3E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFEC1DAE9F3000A71A8E /* SearchTableViewCell.swift */; };
+		840454A01DDA154E00830C3E /* UserProfile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C642D871DD2F8240032BEC5 /* UserProfile+CoreDataClass.swift */; };
+		840454A11DDA154E00830C3E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEF0B91C2A3C380065AFE7 /* MapViewController.swift */; };
+		840454A21DDA154E00830C3E /* UserDeviceSetting+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C43645C1DCC541100E8E944 /* UserDeviceSetting+CoreDataClass.swift */; };
+		840454A31DDA154E00830C3E /* ScooterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F4FAB1CFD88D100B13E77 /* ScooterModel.swift */; };
+		840454A41DDA154E00830C3E /* DeviceInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C642D831DD2F8240032BEC5 /* DeviceInfo+CoreDataClass.swift */; };
+		840454A51DDA154E00830C3E /* UserDeviceSetting+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C43645D1DCC541100E8E944 /* UserDeviceSetting+CoreDataProperties.swift */; };
+		840454A61DDA154E00830C3E /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB16A751DADCB01004C3191 /* UserProfileViewController.swift */; };
+		840454A71DDA154E00830C3E /* UserProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DBF731DCB1A6A00F097F0 /* UserProfileTableViewController.swift */; };
+		840454A81DDA154E00830C3E /* RideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB16A6E1DADC990004C3191 /* RideViewController.swift */; };
+		840454A91DDA154E00830C3E /* DiagnoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D588F11DB6B5DF00063BD6 /* DiagnoseViewController.swift */; };
+		840454AA1DDA154E00830C3E /* NRFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEF0C71C2AFEB40065AFE7 /* NRFManager.swift */; };
+		840454AB1DDA154E00830C3E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B781821C2935FE00AF0C07 /* SettingViewController.swift */; };
+		840454AC1DDA154E00830C3E /* SettingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420B9121D651CA5009BA82A /* SettingCollectionViewController.swift */; };
+		840454AD1DDA154E00830C3E /* BaseDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C48D2331DCCE2BE0003FE8C /* BaseDataController.swift */; };
+		840454B01DDA154E00830C3E /* ride-g@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C3647B1D9CEF3C00AD4773 /* ride-g@3.png */; };
+		840454B11DDA154E00830C3E /* mapPoint.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C460A4D1C3CAFE100FB6EB6 /* mapPoint.png */; };
+		840454B21DDA154E00830C3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187B92D01C26716600DA3BDF /* LaunchScreen.storyboard */; };
+		840454B31DDA154E00830C3E /* trip-g@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C3647D1D9CEF3C00AD4773 /* trip-g@3.png */; };
+		840454B41DDA154E00830C3E /* lock-_0036_board-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F61D04015400F29628 /* lock-_0036_board-1.png */; };
+		840454B51DDA154E00830C3E /* VDS_Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84E61C261DAAA4F500A83B30 /* VDS_Thin.ttf */; };
+		840454B61DDA154E00830C3E /* iconProfile.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A58D1C3265430016EBCA /* iconProfile.png */; };
+		840454B71DDA154E00830C3E /* modeEcoOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5981C3265430016EBCA /* modeEcoOn.png */; };
+		840454B81DDA154E00830C3E /* lineBottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5931C3265430016EBCA /* lineBottom.png */; };
+		840454B91DDA154E00830C3E /* iconSpeed.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A58F1C3265430016EBCA /* iconSpeed.png */; };
+		840454BA1DDA154E00830C3E /* iconBattery.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5891C3265430016EBCA /* iconBattery.png */; };
+		840454BB1DDA154E00830C3E /* setting-middle-divided.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C3648B1D9D18EA00AD4773 /* setting-middle-divided.png */; };
+		840454BC1DDA154E00830C3E /* modeBoostOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5961C3265430016EBCA /* modeBoostOn.png */; };
+		840454BD1DDA154E00830C3E /* iconDiagnose-g.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E61C1A1DAA7C9600A83B30 /* iconDiagnose-g.png */; };
+		840454BE1DDA154E00830C3E /* ride-w@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C3647C1D9CEF3C00AD4773 /* ride-w@3.png */; };
+		840454BF1DDA154E00830C3E /* pointer.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5C41C3B4CEB0016EBCA /* pointer.png */; };
+		840454C01DDA154E00830C3E /* icon_120_120.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5BC1C3616E30016EBCA /* icon_120_120.png */; };
+		840454C11DDA154E00830C3E /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5701C311C890016EBCA /* back.png */; };
+		840454C21DDA154E00830C3E /* iconNavi.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A58A1C3265430016EBCA /* iconNavi.png */; };
+		840454C31DDA154E00830C3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D588F31DBC6AAE00063BD6 /* LaunchScreen.storyboard */; };
+		840454C41DDA154E00830C3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 187B92CE1C26716600DA3BDF /* Assets.xcassets */; };
+		840454C51DDA154E00830C3E /* modeEkickExtendOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A59C1C3265430016EBCA /* modeEkickExtendOn.png */; };
+		840454C61DDA154E00830C3E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84850A8C1DCA353B00FA8F1D /* InfoPlist.strings */; };
+		840454C71DDA154E00830C3E /* security-g@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C364751D9CEF3C00AD4773 /* security-g@3.png */; };
+		840454C81DDA154E00830C3E /* modeEkickAmplifiedOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5991C3265430016EBCA /* modeEkickAmplifiedOff.png */; };
+		840454C91DDA154E00830C3E /* bluetooth-g@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C364791D9CEF3C00AD4773 /* bluetooth-g@3.png */; };
+		840454CA1DDA154E00830C3E /* iconSetting.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A58E1C3265430016EBCA /* iconSetting.png */; };
+		840454CB1DDA154E00830C3E /* restcombo-w@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C3648E1DA2B01E00AD4773 /* restcombo-w@3.png */; };
+		840454CC1DDA154E00830C3E /* icon_180_180.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5BD1C3616E40016EBCA /* icon_180_180.png */; };
+		840454CD1DDA154E00830C3E /* safety-w@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C364781D9CEF3C00AD4773 /* safety-w@3.png */; };
+		840454CE1DDA154E00830C3E /* lock-_0037_board2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F71D04015400F29628 /* lock-_0037_board2.png */; };
+		840454CF1DDA154E00830C3E /* restcombo-g@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C3648D1DA2B01E00AD4773 /* restcombo-g@3.png */; };
+		840454D01DDA154E00830C3E /* modeBoostOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5951C3265430016EBCA /* modeBoostOff.png */; };
+		840454D11DDA154E00830C3E /* modeRideOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A59D1C3265430016EBCA /* modeRideOff.png */; };
+		840454D21DDA154E00830C3E /* shop-w@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C364741D9CEF3C00AD4773 /* shop-w@3.png */; };
+		840454D31DDA154E00830C3E /* FALL-DETECT_0001_TEL.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CEAC1F21D01353C00F29628 /* FALL-DETECT_0001_TEL.png */; };
+		840454D41DDA154E00830C3E /* modeEcoOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A5971C3265430016EBCA /* modeEcoOff.png */; };
+		840454D51DDA154E00830C3E /* bluetooth-w@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C3647A1D9CEF3C00AD4773 /* bluetooth-w@3.png */; };
+		840454D61DDA154E00830C3E /* safety-g@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C364771D9CEF3C00AD4773 /* safety-g@3.png */; };
+		840454D71DDA154E00830C3E /* modeEkickExtendOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A59B1C3265430016EBCA /* modeEkickExtendOff.png */; };
+		840454D81DDA154E00830C3E /* iconDiagnose-gr.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E61C1B1DAA7C9600A83B30 /* iconDiagnose-gr.png */; };
+		840454D91DDA154E00830C3E /* modeRideOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A59E1C3265430016EBCA /* modeRideOn.png */; };
+		840454DA1DDA154E00830C3E /* security-w@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C364761D9CEF3C00AD4773 /* security-w@3.png */; };
+		840454DB1DDA154E00830C3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187B92CB1C26716600DA3BDF /* Main.storyboard */; };
+		840454DC1DDA154E00830C3E /* settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842DCFD81DACCE7000A71A8E /* settings.storyboard */; };
+		840454DD1DDA154E00830C3E /* VDS_New.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84E61C251DAAA4F500A83B30 /* VDS_New.ttf */; };
+		840454DE1DDA154E00830C3E /* VDS_Bold_New.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84E61C241DAAA4F500A83B30 /* VDS_Bold_New.ttf */; };
+		840454DF1DDA154E00830C3E /* iconDiagnose-o.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E61C1C1DAA7C9600A83B30 /* iconDiagnose-o.png */; };
+		840454E01DDA154E00830C3E /* trip-w@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C3647E1D9CEF3C00AD4773 /* trip-w@3.png */; };
+		840454E11DDA154E00830C3E /* shop-g@3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C364731D9CEF3C00AD4773 /* shop-g@3.png */; };
+		840454E21DDA154E00830C3E /* modeEkickAmplifiedOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1876A59A1C3265430016EBCA /* modeEkickAmplifiedOn.png */; };
 		8420B9131D651CA5009BA82A /* SettingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420B9121D651CA5009BA82A /* SettingCollectionViewController.swift */; };
 		842DCFD91DACCE7000A71A8E /* settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842DCFD81DACCE7000A71A8E /* settings.storyboard */; };
 		842DCFDD1DACF5E800A71A8E /* RadarCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DCFDC1DACF5E800A71A8E /* RadarCanvas.swift */; };
@@ -197,6 +296,8 @@
 		3CEAC1F21D01353C00F29628 /* FALL-DETECT_0001_TEL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "FALL-DETECT_0001_TEL.png"; path = "images/FALL-DETECT_0001_TEL.png"; sourceTree = "<group>"; };
 		3CEAC1F61D04015400F29628 /* lock-_0036_board-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lock-_0036_board-1.png"; path = "images/lock-_0036_board-1.png"; sourceTree = "<group>"; };
 		3CEAC1F71D04015400F29628 /* lock-_0037_board2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lock-_0037_board2.png"; path = "images/lock-_0037_board2.png"; sourceTree = "<group>"; };
+		840454E61DDA154E00830C3E /* Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Debug.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		840454E71DDA154F00830C3E /* ecoreco copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ecoreco copy-Info.plist"; path = "/Users/admin/GoogleDrive/Developer/Ecoreco/ecoreco/ecoreco copy-Info.plist"; sourceTree = "<absolute>"; };
 		8420B9121D651CA5009BA82A /* SettingCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingCollectionViewController.swift; path = Controller/SettingCollectionViewController.swift; sourceTree = "<group>"; };
 		842DCFD81DACCE7000A71A8E /* settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = settings.storyboard; sourceTree = "<group>"; };
 		842DCFDC1DACF5E800A71A8E /* RadarCanvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarCanvas.swift; sourceTree = "<group>"; };
@@ -258,6 +359,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		187B92E01C26716600DA3BDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		840454AE1DDA154E00830C3E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -336,6 +444,7 @@
 				187B92DB1C26716600DA3BDF /* ecorecoTests */,
 				187B92E61C26716600DA3BDF /* ecorecoUITests */,
 				187B92C51C26716500DA3BDF /* Products */,
+				840454E71DDA154F00830C3E /* ecoreco copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -345,6 +454,7 @@
 				187B92C41C26716500DA3BDF /* ecoreco.app */,
 				187B92D81C26716600DA3BDF /* ecorecoTests.xctest */,
 				187B92E31C26716600DA3BDF /* ecorecoUITests.xctest */,
+				840454E61DDA154E00830C3E /* Debug.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -548,6 +658,23 @@
 			productReference = 187B92E31C26716600DA3BDF /* ecorecoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		8404547C1DDA154E00830C3E /* Debug */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 840454E31DDA154E00830C3E /* Build configuration list for PBXNativeTarget "Debug" */;
+			buildPhases = (
+				8404547D1DDA154E00830C3E /* Sources */,
+				840454AE1DDA154E00830C3E /* Frameworks */,
+				840454AF1DDA154E00830C3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Debug;
+			productName = ecoreco;
+			productReference = 840454E61DDA154E00830C3E /* Debug.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -593,6 +720,7 @@
 				187B92C31C26716500DA3BDF /* ecoreco */,
 				187B92D71C26716600DA3BDF /* ecorecoTests */,
 				187B92E21C26716600DA3BDF /* ecorecoUITests */,
+				8404547C1DDA154E00830C3E /* Debug */,
 			);
 		};
 /* End PBXProject section */
@@ -670,6 +798,64 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		840454AF1DDA154E00830C3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				840454B01DDA154E00830C3E /* ride-g@3.png in Resources */,
+				840454B11DDA154E00830C3E /* mapPoint.png in Resources */,
+				840454B21DDA154E00830C3E /* LaunchScreen.storyboard in Resources */,
+				840454B31DDA154E00830C3E /* trip-g@3.png in Resources */,
+				840454B41DDA154E00830C3E /* lock-_0036_board-1.png in Resources */,
+				840454B51DDA154E00830C3E /* VDS_Thin.ttf in Resources */,
+				840454B61DDA154E00830C3E /* iconProfile.png in Resources */,
+				840454B71DDA154E00830C3E /* modeEcoOn.png in Resources */,
+				840454B81DDA154E00830C3E /* lineBottom.png in Resources */,
+				840454B91DDA154E00830C3E /* iconSpeed.png in Resources */,
+				840454BA1DDA154E00830C3E /* iconBattery.png in Resources */,
+				840454BB1DDA154E00830C3E /* setting-middle-divided.png in Resources */,
+				840454BC1DDA154E00830C3E /* modeBoostOn.png in Resources */,
+				840454BD1DDA154E00830C3E /* iconDiagnose-g.png in Resources */,
+				840454BE1DDA154E00830C3E /* ride-w@3.png in Resources */,
+				840454BF1DDA154E00830C3E /* pointer.png in Resources */,
+				840454C01DDA154E00830C3E /* icon_120_120.png in Resources */,
+				840454C11DDA154E00830C3E /* back.png in Resources */,
+				840454C21DDA154E00830C3E /* iconNavi.png in Resources */,
+				840454C31DDA154E00830C3E /* LaunchScreen.storyboard in Resources */,
+				840454C41DDA154E00830C3E /* Assets.xcassets in Resources */,
+				840454C51DDA154E00830C3E /* modeEkickExtendOn.png in Resources */,
+				840454C61DDA154E00830C3E /* InfoPlist.strings in Resources */,
+				840454C71DDA154E00830C3E /* security-g@3.png in Resources */,
+				840454C81DDA154E00830C3E /* modeEkickAmplifiedOff.png in Resources */,
+				840454C91DDA154E00830C3E /* bluetooth-g@3.png in Resources */,
+				840454CA1DDA154E00830C3E /* iconSetting.png in Resources */,
+				840454CB1DDA154E00830C3E /* restcombo-w@3.png in Resources */,
+				840454CC1DDA154E00830C3E /* icon_180_180.png in Resources */,
+				840454CD1DDA154E00830C3E /* safety-w@3.png in Resources */,
+				840454CE1DDA154E00830C3E /* lock-_0037_board2.png in Resources */,
+				840454CF1DDA154E00830C3E /* restcombo-g@3.png in Resources */,
+				840454D01DDA154E00830C3E /* modeBoostOff.png in Resources */,
+				840454D11DDA154E00830C3E /* modeRideOff.png in Resources */,
+				840454D21DDA154E00830C3E /* shop-w@3.png in Resources */,
+				840454D31DDA154E00830C3E /* FALL-DETECT_0001_TEL.png in Resources */,
+				840454D41DDA154E00830C3E /* modeEcoOff.png in Resources */,
+				840454D51DDA154E00830C3E /* bluetooth-w@3.png in Resources */,
+				840454D61DDA154E00830C3E /* safety-g@3.png in Resources */,
+				840454D71DDA154E00830C3E /* modeEkickExtendOff.png in Resources */,
+				840454D81DDA154E00830C3E /* iconDiagnose-gr.png in Resources */,
+				840454D91DDA154E00830C3E /* modeRideOn.png in Resources */,
+				840454DA1DDA154E00830C3E /* security-w@3.png in Resources */,
+				840454DB1DDA154E00830C3E /* Main.storyboard in Resources */,
+				840454DC1DDA154E00830C3E /* settings.storyboard in Resources */,
+				840454DD1DDA154E00830C3E /* VDS_New.ttf in Resources */,
+				840454DE1DDA154E00830C3E /* VDS_Bold_New.ttf in Resources */,
+				840454DF1DDA154E00830C3E /* iconDiagnose-o.png in Resources */,
+				840454E01DDA154E00830C3E /* trip-w@3.png in Resources */,
+				840454E11DDA154E00830C3E /* shop-g@3.png in Resources */,
+				840454E21DDA154E00830C3E /* modeEkickAmplifiedOn.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -741,6 +927,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				187B92E81C26716600DA3BDF /* ecorecoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8404547D1DDA154E00830C3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8404547E1DDA154E00830C3E /* CommonViewController.swift in Sources */,
+				8404547F1DDA154E00830C3E /* SlowDownViewController.swift in Sources */,
+				840454801DDA154E00830C3E /* TripViewController.swift in Sources */,
+				840454811DDA154E00830C3E /* ShopViewController.swift in Sources */,
+				840454821DDA154E00830C3E /* ViewController.swift in Sources */,
+				840454831DDA154E00830C3E /* Scooter.xcdatamodeld in Sources */,
+				840454841DDA154E00830C3E /* SafetyViewController.swift in Sources */,
+				840454851DDA154E00830C3E /* ScooterInfoViewController.swift in Sources */,
+				840454861DDA154E00830C3E /* SecurityViewController.swift in Sources */,
+				840454871DDA154E00830C3E /* EditScooterComboViewController.swift in Sources */,
+				840454881DDA154E00830C3E /* ResetComboViewController.swift in Sources */,
+				840454891DDA154E00830C3E /* DashboardViewController.swift in Sources */,
+				8404548A1DDA154E00830C3E /* RadarCanvas.swift in Sources */,
+				8404548B1DDA154E00830C3E /* PairViewController.swift in Sources */,
+				8404548C1DDA154E00830C3E /* UserProfile+CoreDataProperties.swift in Sources */,
+				8404548D1DDA154E00830C3E /* LoginViewController.swift in Sources */,
+				8404548E1DDA154E00830C3E /* ColorUtil.swift in Sources */,
+				8404548F1DDA154E00830C3E /* DeviceTrip+CoreDataClass.swift in Sources */,
+				840454901DDA154E00830C3E /* Event.swift in Sources */,
+				840454911DDA154E00830C3E /* UserDeviceSettingDC.swift in Sources */,
+				840454921DDA154E00830C3E /* SearchTableViewController.swift in Sources */,
+				840454931DDA154E00830C3E /* RadarEcorecoIcon.swift in Sources */,
+				840454941DDA154E00830C3E /* UserProfileDC.swift in Sources */,
+				840454951DDA154E00830C3E /* DeviceTrip+CoreDataProperties.swift in Sources */,
+				840454961DDA154E00830C3E /* SetDeviceNameViewController.swift in Sources */,
+				840454971DDA154E00830C3E /* HelmetViewController.swift in Sources */,
+				840454981DDA154E00830C3E /* DeviceInfoDC.swift in Sources */,
+				840454991DDA154E00830C3E /* DeviceInfo+CoreDataProperties.swift in Sources */,
+				8404549A1DDA154E00830C3E /* FallViewController.swift in Sources */,
+				8404549B1DDA154E00830C3E /* AppDelegate.swift in Sources */,
+				8404549C1DDA154E00830C3E /* CounterView.swift in Sources */,
+				8404549D1DDA154E00830C3E /* DeviceTripDC.swift in Sources */,
+				8404549E1DDA154E00830C3E /* Constants.swift in Sources */,
+				8404549F1DDA154E00830C3E /* SearchTableViewCell.swift in Sources */,
+				840454A01DDA154E00830C3E /* UserProfile+CoreDataClass.swift in Sources */,
+				840454A11DDA154E00830C3E /* MapViewController.swift in Sources */,
+				840454A21DDA154E00830C3E /* UserDeviceSetting+CoreDataClass.swift in Sources */,
+				840454A31DDA154E00830C3E /* ScooterModel.swift in Sources */,
+				840454A41DDA154E00830C3E /* DeviceInfo+CoreDataClass.swift in Sources */,
+				840454A51DDA154E00830C3E /* UserDeviceSetting+CoreDataProperties.swift in Sources */,
+				840454A61DDA154E00830C3E /* UserProfileViewController.swift in Sources */,
+				840454A71DDA154E00830C3E /* UserProfileTableViewController.swift in Sources */,
+				840454A81DDA154E00830C3E /* RideViewController.swift in Sources */,
+				840454A91DDA154E00830C3E /* DiagnoseViewController.swift in Sources */,
+				840454AA1DDA154E00830C3E /* NRFManager.swift in Sources */,
+				840454AB1DDA154E00830C3E /* SettingViewController.swift in Sources */,
+				840454AC1DDA154E00830C3E /* SettingCollectionViewController.swift in Sources */,
+				840454AD1DDA154E00830C3E /* BaseDataController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -963,6 +1204,44 @@
 			};
 			name = Release;
 		};
+		840454E41DDA154E00830C3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3TCWNJDF99;
+				INFOPLIST_FILE = "ecoreco copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				NEW_SETTING = "-DDEBUG";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeez.jacky;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		840454E51DDA154E00830C3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3TCWNJDF99;
+				INFOPLIST_FILE = "ecoreco copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				NEW_SETTING = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeez.jacky;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -998,6 +1277,15 @@
 			buildConfigurations = (
 				187B92F31C26716600DA3BDF /* Debug */,
 				187B92F41C26716600DA3BDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		840454E31DDA154E00830C3E /* Build configuration list for PBXNativeTarget "Debug" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				840454E41DDA154E00830C3E /* Debug */,
+				840454E51DDA154E00830C3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

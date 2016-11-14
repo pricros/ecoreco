@@ -240,10 +240,25 @@ class ScooterModel:NSObject, NRFManagerDelegate{
         print("##### GET User Device Setting CORE DATA ")
         
         let dcUserDevice = UserDeviceSettingDC()
+        let dcDeviceInfo = DeviceInfoDC()
+
+        
+        //for testing , delete database first
+        #if DEBUG
+        dcUserDevice.delete(deviceId: deviceId)
+        dcDeviceInfo.delete(deviceId: deviceId)
+        #endif
+        
+        
         if  dcUserDevice.find(
             deviceId: userDefaults.object(forKey: Constants.kUserDefaultDeviceId) as! String) == nil
         {
-            dcUserDevice.save(deviceId: deviceId, email: nil, emergencycall: Constants.kDefaultSettingEmergencyCall, emergencysms: Constants.kDefaultSettingEmergencyCall, sound: Constants.kDefaultSettingSound, speedLimit: (Constants.kDefaultSpeedLimit) as NSNumber, vibrate: Constants.kDefaultSettingVibrate)
+            dcUserDevice.save(deviceId: deviceId, email: nil,
+                              emergencycall: Constants.kDefaultSettingEmergencyCall,
+                              emergencysms: Constants.kDefaultSettingEmergencyCall,
+                              sound: Constants.kDefaultSettingSound,
+                              speedLimit: (Constants.kDefaultSpeedLimit) as NSNumber,
+                              vibrate: Constants.kDefaultSettingVibrate)
             NSLog("create UserDeviceSettingDC core data : \(deviceId)")
         }
         
@@ -256,16 +271,20 @@ class ScooterModel:NSObject, NRFManagerDelegate{
             userDefaults.setValue(entity?.emergencysms, forKey: Constants.kUserDefaultEmergencySMSNo)
             userDefaults.set(entity?.vibrate, forKey: Constants.kUserDefaultVibrate)
             userDefaults.set(entity?.sound, forKey: Constants.kUserDefaultSound)
+            userDefaults.set(entity?.speedLimit, forKey:Constants.kUserDefaultSpeedLimit)
         
         
         print("##### GET Device Info CORE DATA ")
 
-        let dcDeviceInfo = DeviceInfoDC()
-        
         if  (dcDeviceInfo.find(
             deviceId: userDefaults.object(forKey: Constants.kUserDefaultDeviceId) as! String) == nil)
         {
-            dcDeviceInfo.save(deviceId: deviceId, deviceName: "", batteryAmount: 0, estimateRange: 0, mode: 0, odometer: 0)
+            dcDeviceInfo.save(deviceId: deviceId,
+                              deviceName: "",
+                              batteryAmount: 0,
+                              estimateRange: 0,
+                              mode: 0,
+                              odometer: 0)
             NSLog("create DeviceInfoDC core data : \(deviceId)")
         }
         
@@ -274,6 +293,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
             
             
             print("battery amount\(entityDeviceInfo?.batteryAmount)")
+            userDefaults.set(entityDeviceInfo?.deviceName, forKey:Constants.kUserDefaultDeviceName)
             self.bat.set(entityDeviceInfo?.batteryAmount as! Int)
             self.rmm.set(entityDeviceInfo?.estimateRange as! Int)
             self.mode.set(entityDeviceInfo?.mode as! Int)
