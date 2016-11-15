@@ -65,7 +65,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     weak var runDelegate: ScooterModelRunProtocol!
     weak var lockDelegate: ScooterModelLockProtocol!
     fileprivate var nrfManager:NRFManager!
-    fileprivate var status:ScooterStatus?
+    static fileprivate var status:ScooterStatus?
     let userDefaults = UserDefaults.standard
     
     let speed = Observable<Int>(0)
@@ -125,7 +125,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
             },
             onDisconnect: {
                 self.log("\(#file) \(#line) \nC: ★ Disconnected")
-                self.status = ScooterStatus.none
+                ScooterModel.status = ScooterStatus.none
             },
             onData: {
                 (data:Data?, string:String?)->() in
@@ -461,11 +461,11 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     }
     
     func getStatus()->ScooterStatus?{
-        return self.status
+        return ScooterModel.status
     }
     
     func setStatus(_ aStatus:ScooterStatus)->Bool{
-        self.status = aStatus
+        ScooterModel.status = aStatus
         return true
     }
     
@@ -491,14 +491,14 @@ class ScooterModel:NSObject, NRFManagerDelegate{
 
     
     func enterStandby()->Bool{
-        if(self.status == .standby){
+        if(ScooterModel.status == .standby){
             return false
         }else {
-            self.status = .standby
+            ScooterModel.status = .standby
             // start a thread to get/monitor all the dashboard data including speedmeter, battery,trip, odo, est meter
             backgroundThread(background:{
 
-                while(self.status == .standby){
+                while(ScooterModel.status == .standby){
                     self.getSpeed()
                     usleep(self.ONE_SECOND/2)
 
@@ -509,7 +509,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
             })
             
             backgroundThread(background:{
-                while(self.status == .standby){
+                while(ScooterModel.status == .standby){
                     self.getBatteryInfo()
                     usleep(self.ONE_SECOND*10)
                     self.getTrip(OdoTripType.TotalDistanceTraveled,unitType:UnitType.KM)
@@ -525,7 +525,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
             })
             
             backgroundThread(background:{
-                while(self.status == .standby){
+                while(ScooterModel.status == .standby){
                     self.getFallStatus()
                     usleep(self.ONE_SECOND*3)
                 }
@@ -541,7 +541,7 @@ class ScooterModel:NSObject, NRFManagerDelegate{
     }
     
     func exitStandby()->Bool{
-        self.status = .connected
+        ScooterModel.status = .connected
         return true
     }
     
