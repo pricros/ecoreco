@@ -49,7 +49,8 @@ class SettingViewController: CommonViewController {
     }
     
     func tappedBack(){
-        self.navigationController?.popViewController(animated: true)
+        let sbSettings:UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
+        self.navigationController?.pushViewController(sbSettings.instantiateViewController(withIdentifier: "DashboardView") as! DashboardViewController, animated: true)
     }
     
     //add by eva
